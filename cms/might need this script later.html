@@ -1,0 +1,37 @@
+    <script type="text/javascript" charset="utf-8">
+      $(window).load(function() {
+        // store the slider in a local variable
+        var $window = $(window),
+            flexslider;
+       
+        // tiny helper function to add breakpoints
+        function getGridSize1() {
+          return (window.innerWidth < 768) ? 2 :
+                 (window.innerWidth >= 768) ? 3 : 3;
+        }
+        function getGridSize2() {
+          return (window.innerWidth < 768) ? 3 :
+                 (window.innerWidth >= 768) ? 4 : 4;
+        }
+
+        $('#fandf-visionary-partners-carousel').flexslider({
+            slideshow: false,
+            animation: "slide",
+            controlNav: false,
+//            itemWidth: 140,
+//            itemMargin: 34,
+            move: 1
+//            minItems: getGridSize(),
+//            maxItems: getGridSize()
+        });
+
+        // check grid size on resize event
+        $window.resize(function() {
+          var gridSize = getGridSize();
+       
+          flexslider.vars.minItems = gridSize;
+          flexslider.vars.maxItems = gridSize;
+        });
+
+      });
+    </script>

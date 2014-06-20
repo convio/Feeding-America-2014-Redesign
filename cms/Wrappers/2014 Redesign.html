@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+  <!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <![endif]-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <t:value id="meta.keywords">meta.keywords</t:value>
+  <t:value id="meta.description">meta.description</t:value>
+  <title>Feeding America</title>
+  <link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/assets/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/assets/css/cms-styles.css" type="text/css">
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+  <![endif]-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <!--[if lt IE 8]>
+    <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE8.js"></script>
+  <![endif]-->
+  <!--[if lt IE 9]>
+    <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+  <![endif]-->
+  <!--[if lte IE 9]>
+    <script src="/assets/js/placeholders.js"></script>
+  <![endif]-->
+  <script src="/assets/js/modernizr.js"></script>
+
+  <t:if test="itemID == '520109360' || itemID == '524633950'">
+    <script type="text/javascript" src="/assets/js/jquery-flexslider-min.js"></script>
+    <link href="/assets/css/flexslider.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" charset="utf-8">
+      $(window).load(function() {
+        $('#homepage_slideshow').flexslider({
+          animation: "slide",
+          smoothHeight: false,
+          slideshowSpeed: 9000,
+          animationSpeed: 600,
+          pauseOnAction: true,
+          pauseOnHover: true,
+          controlNav: true,
+          directionNav: true,
+          touch: false,
+          manualControls: ".homepage-slideshow-manual-control-nav li"
+        });
+      });
+    </script>
+</t:if>
+
+</head>
+
+<t:set id="pathclasses" value="trim(replace(replace(path,'/',' '),'.html','DOThtml'))" />
+<t:set id="templatename" value="trim(replace(replace(templateID,' ','-'),':',''))" />
+<t:if test="itemID == '520109360' || itemID == '524633950'">
+  <t:set id="hometest" value="'is-homepage'" />
+</t:if>
+<t:else>
+  <t:set id="hometest" value="'not-homepage'" />
+</t:else>
+<body class="${pathclasses} ${templatename} ${hometest}">
+
+  <!-- reus_wrpr_header -->
+    <t:include id="convio-content-520108847" />
+  <!-- /reus_wrpr_header -->
+  <div class="templateComponent" id="body"></div>
+  <!-- reus_wrpr_footer -->
+    <t:include id="convio-content-520190361" />
+  <!-- /reus_wrpr_footer -->
+  <div class="templateComponent" id="poweredBy"></div>
+
+  <script src="/assets/js/selector.js"></script>
+  <script src="/assets/js/jquery-equalheights-min.js"></script>
+  <script src="/assets/js/scripts.js?v1.6"></script>
+
+</body>
+</html>

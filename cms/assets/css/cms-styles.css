@@ -1,0 +1,2806 @@
+
+/* --------------------------------------------------------------
+ All Widths
+-------------------------------------------------------------- */
+
+/* --------------------------------------------
+  Global Elements
+-------------------------------------------- */
+
+/* Footer Promos */
+#footer_promos {
+  background-color: #53682b;
+  background-image: url('../images/broccoli.jpg');
+  padding: 50px 0px;
+  margin-bottom: 50px;
+  text-align: center;
+  color: #ffffff;
+}
+#footer_promos .container {
+  padding: 0px;
+}
+#footer_promos .headline {
+  font-size: 34px;
+  font-weight: 500;
+  margin-bottom: 25px;
+}
+#footer_promo_boxes .footer-promo {
+  display: inline-block;
+  vertical-align: top;
+  float: left;
+  width: 33.33%;
+  border-right: 1px solid #a4ae92;
+  padding: 18px 35px;
+  height: 350px;
+}
+#footer_promo_boxes .footer-promo:nth-child(3) {
+  border-right: none;
+}
+#footer_promo_boxes .footer-promo img {
+  display: block;
+  margin: 0px auto;
+}
+#footer_promo_boxes .footer-promo .promo-title {
+  display: block;
+  margin: 15px auto 10px auto;
+  font-size: 36px;
+  -moz-text-shadow: 0px 0px 8.1px rgba(5, 5, 6, .8);
+  -webkit-text-shadow: 0px 0px 8.1px rgba(5, 5, 6, .8);
+  text-shadow: 0px 0px 8.1px rgba(5, 5, 6, .8);
+  text-transform: uppercase;
+}
+#footer_promo_boxes .footer-promo .promo-text {
+  display: block;
+  margin: 0px auto;
+  font-size: 18px;
+  line-height: 24px;
+  -moz-text-shadow: 0px 0px 8.1px rgba(5, 5, 6, .8);
+  -webkit-text-shadow: 0px 0px 8.1px rgba(5, 5, 6, .8);
+  text-shadow: 0px 0px 8.1px rgba(5, 5, 6, .8);
+  margin-bottom: 10px;
+}
+#footer_promo_boxes .footer-promo input[type="text"], #footer_promo_boxes .footer-promo input[type="email"] {
+  display: inline-block;
+  vertical-align: top;
+  font-family: Gotham, 'Gotham Book', Gotham-Book, 'Gotham A', 'Gotham B', Arial, sans-serif;
+  color: #777777;
+  font-size: 14px;
+  font-weight: 200;
+  padding: 0px 0px 0px 20px;
+  border: 1px solid #dedede;
+  outline: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  height: 40px;
+  line-height: 38px;
+}
+#footer_promo_boxes .footer-promo .full-width {
+  width: 100%;
+  margin: 0px auto 10px auto;
+}
+#footer_promo_boxes .footer-promo .half-width {
+  width: 50%;
+  margin: 0px;
+  display: inline-block;
+  float: left;
+}
+#footer_promo_boxes .footer-promo div.half-width {
+  padding-left: 10px;
+}
+#footer_promo_boxes .footer-promo div.half-width button {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0px;
+  border: none;
+  outline: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  color: #ffffff;
+  font-family: Gotham, 'Gotham Book', Gotham-Book, 'Gotham A', 'Gotham B', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 200;
+  padding: 0px 20px;
+  height: 40px;
+  width: 100%;
+  line-height: 40px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+#footer_promo_boxes .footer-promo a.button {
+  display: inline-block;
+  vertical-align: top;
+  margin: 10px auto 0px auto;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-family: Gotham, 'Gotham Book', Gotham-Book, 'Gotham A', 'Gotham B', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 200;
+  padding: 0px 20px;
+  height: 40px;
+  line-height: 40px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+#footer_promo_boxes .footer-promo .promo-learn {
+  padding-top: 10px;
+}
+#footer_promo_boxes .footer-promo .red {
+  background-color: #b22d3a;
+}
+#footer_promo_boxes .footer-promo .red:hover {
+  /*
+  background-color: #5a2559;
+  */
+  background-color: #bfd730;
+  color: #333333;
+}
+#footer_promo_boxes .footer-promo .purple {
+  background-color: #5a2559;
+}
+#footer_promo_boxes .footer-promo .purple:hover {
+  /*
+  background-color: #4d1f4c;
+  */
+  background-color: #bfd730;
+  color: #333333;
+}
+#footer_promo_boxes .footer-promo .blue {
+  background-color: #006c9d;
+}
+#footer_promo_boxes .footer-promo .blue:hover {
+  /*
+  background-color: #5a2559;
+  */
+  background-color: #bfd730;
+  color: #333333;
+}
+
+/* --------------------------------------------
+  Section Landing Page elements
+-------------------------------------------- */
+/* section boxes */
+#section-boxes {
+  background-color: #fafafa;
+  border-top: 1px solid #dedede;
+  border-bottom: 1px solid #dedede;
+}
+#section-boxes .container {
+  padding: 0px 10px;
+  max-width: 1060px;
+  border-bottom: 1px solid #dedede;
+  position: relative;
+}
+#section-boxes .container:last-child {
+  border-bottom: none;
+}
+#section-boxes .section-box {
+  height: 100%;
+}
+#section-boxes .section-box.left, #section-boxes .section-box.right {
+  width: 50%;
+  display: inline-block;
+  vertical-align: top;
+}
+#section-boxes .section-box.left {
+  border-right: 1px solid #dedede;
+  padding: 90px 39px 40px 40px;
+}
+#section-boxes .section-box.right {
+  padding: 90px 40px 40px 40px;
+}
+#section-boxes .section-box .section-title {
+  position: absolute;
+  bottom: 100%;
+  margin-bottom: -2.5em;
+  font-size: 30px;
+  line-height: 30px;
+  font-weight: 500;
+}
+#section-boxes .section-img {
+  position: relative;
+}
+#section-boxes .section-img img {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+}
+#section-boxes .full-width .section-img {
+  width: 50%;
+  padding: 40px;
+}
+#section-boxes .full-width .section-img img {
+  margin-bottom: 0px;
+}
+#section-boxes .section-box .section-text {
+  font-size: 14px;
+  line-height: 20px;
+}
+#section-boxes .section-img .section-img-hover {
+  display: none;
+  color: #ffffff;
+  padding: 25px;
+  font-size: 14px;
+  line-height: 18px;
+  background-image: url('../images/transparent_gray70.png');
+}
+#section-boxes .section-img .section-img-hover span {
+  display: inline-block;
+  width: 50%;
+  margin-bottom: 10px;
+  font-weight: 200;
+}
+#section-boxes .section-img .section-img-hover span.in-this-section {
+  display: block;
+  width: 100%;
+  float: none;
+  font-weight: 500;
+}
+#section-boxes .section-img:hover .section-img-hover {
+  display: block;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+#section-boxes .full-width {
+  position: relative;
+}
+#section-boxes .full-width .section-img:hover .section-img-hover {
+  display: block;
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  bottom: 40px;
+  left: 40px;
+}
+#section-boxes .section-box.full-width .section-title {
+  left: 50%;
+  right: 40px;
+  bottom: auto;
+  top: 40px;
+  margin-right: 40px;
+  margin-left: 40px;
+  margin-bottom: 0px;
+}
+#section-boxes .section-box.full-width .section-text {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  right: 40px;
+  margin-left: 40px;
+}
+/* "Latest News" */
+body.not-homepage #recent_news_boxes .recent_news_item .news_expanded {
+  display: block;
+  position: initial;
+  bottom: auto;
+  left: auto;
+  background-image: none;
+  color: #333333;
+  padding: 20px 0px 0px 0px;
+}
+body.not-homepage #recent_news_boxes .recent_news_item .news_expanded span {
+  color: #e98300;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: normal;
+}
+body.not-homepage #recent_news_boxes .recent_news_item .news_expanded span.link {
+  font-size: 14px;
+  line-height: 20px;
+}
+body.not-homepage #recent_news_boxes {
+  border-bottom: 1px solid #dedede;
+  padding-bottom: 25px;
+  margin-bottom: 20px;
+}
+body.not-homepage #recent_news {
+  border-bottom: 1px solid #dedede;
+  margin-bottom: 50px;
+}
+
+/* --------------------------------------------
+  Food Bank Profile elements
+-------------------------------------------- */
+/* logo and title */
+#title-and-share.food-bank-profile {
+
+}
+#title-and-share.food-bank-profile div.profile-logo {
+  display: inline-block;
+  margin-right: 30px;
+  vertical-align: middle;
+}
+#title-and-share.food-bank-profile h1 {
+  vertical-align: middle;
+  max-width: 810px;
+  line-height: 38px;
+}
+#title-and-share.food-bank-profile div.profile-logo img {
+  max-width: 115px;
+  max-height: 115px;
+  display: block;
+}
+/* address and map */
+#food-bank-profile-address-map {
+  background-color: #fafafa;
+  border-top: 1px solid #dedede;
+  border-bottom: 1px solid #dedede;
+  margin-bottom: 10px;
+}
+#food-bank-profile-address-map .container {
+  padding: 0px;
+}
+#food-bank-profile-address-map .left, #food-bank-profile-address-map .right {
+  width: 50%;
+  height: 414px;
+  display: inline-block;
+  vertical-align: top;
+}
+#food-bank-profile-address-map .right iframe {
+  width: 100%;
+  height: 100%;
+}
+#food-bank-profile-address-map .left {
+  padding: 40px 20px 40px 0px;
+  border-right: 1px solid #dedede;
+}
+#food-bank-profile-address-map .left a.profile-link {
+  font-size: 16px;
+  text-decoration: underline;
+  word-wrap: break-word;
+  word-break: break-all;
+  display: inline-block;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+}
+#food-bank-profile-address-map .left p {
+  font-size: 14px;
+  line-height: 20px;
+}
+#food-bank-profile-address-map .left p strong, #food-bank-profile-address-map .left p span {
+  display: inline-block;
+}
+#food-bank-profile-address-map .left a.button {
+  margin: 0px 10px 10px 0px;
+}
+#food-bank-profile-address-map .left .profile-buttons {
+  margin-bottom: 15px;
+}
+#food-bank-profile-address-map .left .social_icons li a {
+  background-image: url('../images/header_social_sprite.png');
+  width: 44px;
+  height: 44px;
+}
+@media only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+  #food-bank-profile-address-map .left .social_icons li a {
+    background-image: url('../images/header_social_sprite2.png');
+    background-size: 156px 100px;
+  }
+}
+#food-bank-profile-address-map .left .social_icons li.fbk a {
+  background-position: 0 0;
+}
+#food-bank-profile-address-map .left .social_icons li.fbk a:hover {
+  background-position: 0 -49px;
+}
+#food-bank-profile-address-map .left .social_icons li.twt a {
+  background-position: -56px 0;
+}
+#food-bank-profile-address-map .left .social_icons li.twt a:hover {
+  background-position: -56px -49px;
+}
+#food-bank-profile-address-map .left .profile-social span {
+  display: inline-block;
+  vertical-align: top;
+  line-height: 44px;
+}
+/* Pounds and Counties */
+#pounds-and-counties {
+  background-color: #e98300;
+  background-image: url('../images/oranges.jpg');
+  background-position: center center;
+  padding: 40px 0px;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+#profile-pounds {
+  padding-bottom: 25px;
+  border-bottom: 1px solid #ffffff;
+}
+#profile-pounds .left, #profile-pounds .right {
+  width: 50%;
+  display: inline-block;
+  vertical-align: top;
+}
+#profile-pounds span.top-text {
+  font-size: 22px;
+  line-height: 22px;
+  display: block;
+  margin-bottom: 15px;
+}
+#profile-pounds span.name {
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 34px;
+  display: block;
+  -moz-text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+  -webkit-text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+  position: relative;
+  padding-right: 42px;
+}
+#profile-pounds span.name:after {
+  content: '\00bb';
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  font-size: 60px;
+  font-weight: normal;
+  line-height: 60px;
+  height: 60px;
+  margin-top: -33px;
+}
+#profile-pounds span.number {
+  font-size: 80px;
+  font-weight: bold;
+  line-height: 77px;
+  display: block;
+  -moz-text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+  -webkit-text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+  white-space: nowrap;
+  margin-bottom: 10px;
+}
+#profile-pounds span.bottom-text {
+  font-size: 17px;
+  line-height: 20px;
+  display: block;
+}
+#profile-counties {
+  padding-top: 30px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 22px;
+}
+#profile-counties span {
+  display: block;
+}
+/* profile CEO quote */
+#food-bank-profile-quote {
+  background-color: #53682b;
+  padding: 10px 0px;
+}
+#food-bank-profile-quote .container {
+  position: relative;
+  min-height: 195px;
+}
+#food-bank-profile-quote .left, #food-bank-profile-quote .right {
+  display: inline-block;
+  vertical-align: middle;
+}
+#food-bank-profile-quote .left {
+  padding: 40px 192px 40px 0px;
+  color: #ffffff;
+}
+#food-bank-profile-quote .left .quote-text {
+  font-size: 21px;
+  line-height: 26px;
+  margin-bottom: 15px;
+}
+#food-bank-profile-quote .left .quote-by {
+  font-size: 18px;
+  line-height: 18px;
+  text-align: right;
+}
+#food-bank-profile-quote .right {
+  float: right;
+  position: absolute;
+  top: 0px;
+  right: 20px;
+  bottom: 0px;
+}
+#food-bank-profile-quote .right img {
+  display: block;
+  height: 100%;
+  border: 1px solid #ced1ca;
+}
+/* Area Info and Featured Story */
+#area-info-and-featured-story {
+  padding: 40px 0px;
+  background-color: #ffffff;
+  background-image: url('../images/stalks2.png');
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+#area-info-and-featured-story .container {
+  padding: 0px;
+}
+#area-info-and-featured-story .left, #area-info-and-featured-story .right {
+width: 50%;
+display: inline-block;
+vertical-align: top;
+}
+#area-info-and-featured-story .left {
+  padding: 15px 40px 15px 0px;
+  border-right: 1px solid #dedede;
+}
+#area-info-and-featured-story .right {
+  padding: 15px 0px 15px 40px;
+  position: relative;
+}
+#area-info-and-featured-story .headline {
+  font-size: 30px;
+  line-height: 32px;
+  font-weight: 500;
+  margin-bottom: 25px;
+}
+#area-info-and-featured-story .people-stat {
+  width: 50%;
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  padding: 10px 20px 10px 0px;
+  border-right: 1px solid #dedede;
+}
+#area-info-and-featured-story .children-stat {
+  width: 50%;
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  padding: 10px 0px 10px 20px;
+}
+#area-info-and-featured-story .people-stat img, #area-info-and-featured-story .children-stat img {
+  display: block;
+  margin: 10px auto;
+  max-width: 100%;
+}
+#area-info-and-featured-story .people-stat span, #area-info-and-featured-story .children-stat span {
+  display: block;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 500;
+}
+#area-info-and-featured-story .people-stat span.stat.green, #area-info-and-featured-story .children-stat span.stat.green {
+  font-size: 55px;
+  line-height: 45px;
+  font-weight: 900;
+  color: #53682b;
+  margin-top: 10px;
+}
+#area-info-and-featured-story .people-stat span.stat.orange, #area-info-and-featured-story .children-stat span.stat.orange {
+  font-size: 47px;
+  line-height: 45px;
+  font-weight: 900;
+  color: #e98300;
+}
+#profile-story-area {
+  min-height: 132px;
+  margin-bottom: 30px;
+}
+#profile-story-area .thumbnail {
+  position: absolute;
+  top: 72px;
+  left: 40px;
+  width: 200px;
+}
+#profile-story-area .thumbnail img {
+  width: 100%;
+  display: block;
+}
+#profile-story-area .story-text {
+  padding-left: 230px;
+  line-height: 20px;
+}
+#profile-story-area .story-text p {
+  margin: 0px 0px 10px 0px;
+}
+#profile-story-area .story-text p:last-child {
+  margin: 0px;
+}
+#area-info-and-featured-story .right .profile-buttons a.button {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 0px 16px;
+}
+#area-info-and-featured-story .right .profile-buttons a.button:last-child {
+  margin-right: 0px;
+}
+/* Partner Distribution Organizations */
+#partner-distribution-orgs {
+  padding: 40px 0px;
+  background-color: #fafafa;
+  border-top: 1px solid #dedede;
+  border-bottom: 1px solid #dedede;
+  margin-bottom: 40px;
+}
+#partner-distribution-orgs .container {
+  padding: 0px;
+}
+#partner-distribution-orgs .headline {
+  font-size: 30px;
+  line-height: 32px;
+  font-weight: 500;
+  margin-bottom: 25px;
+}
+#partner-orgs-boxes {
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+  -webkit-column-gap: 80px;
+  -moz-column-gap: 80px;
+  column-gap: 80px;
+}
+#partner-orgs-boxes .partner-org {
+  display: inline-block;
+  margin: 0px 0px 20px 0px;
+  line-height: 20px;
+}
+#partner-orgs-boxes .partner-org span {
+  display: block;
+}
+#partner-orgs-boxes .partner-org span.name {
+  font-weight: bold;
+}
+#partner-orgs-boxes .partner-org span a {
+  text-decoration: underline;
+  word-wrap: break-word;
+  word-break: break-all;
+  display: inline-block;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+}
+
+/* --------------------------------------------
+  Find Your Local Food Bank elements
+-------------------------------------------- */
+/* Page intro */
+#page-intro {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 200;
+  margin-bottom: 40px;
+}
+#page-intro .container {
+  padding: 0px;
+}
+#page-intro p:first-child {
+  margin-top: 0px;
+}
+#page-intro p:last-child {
+  margin-bottom: 0px;
+}
+/* row containing search and map */
+#find-fb-search-and-map {
+  background-image: url('../images/manystalks_optim.png');
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  border-bottom: 1px solid #dedede;
+  margin-bottom: 50px;
+  padding-bottom: 50px;
+}
+#find-fb-search-and-map .container {
+  padding: 0px;
+  display: table;
+}
+#find-fb-search-and-map .left {
+  width: 300px;
+  display: table-cell;
+  vertical-align: top;
+}
+#find-fb-search-and-map .right {
+  height: 575px;
+  /*
+  max-width: 620px;
+  */
+  display: table-cell;
+  vertical-align: top;
+  padding-left: 40px;
+}
+/* map */
+#find-fb-search-and-map .right iframe {
+  height: 100%;
+  max-height: 535px;
+  width: 100%;
+  max-width: 620px;
+}
+#find-fb-search-and-map .right iframe.fixed {
+  position: fixed;
+  top: 30px;
+}
+#find-fb-search-and-map.bottom {
+  position: relative;
+}
+#find-fb-search-and-map .right iframe.bottom {
+  position: absolute;
+  top: auto;
+  bottom: 50px;
+}
+/* search form */
+#find-fb-search-formbox {
+  background-color: #e98300;
+  color: #ffffff;
+  padding: 30px 20px;
+  margin-bottom: 17px;
+  position: relative;
+}
+#find-fb-search-formbox.has-results:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 100%;
+  left: 50%;
+  right: auto;
+  border-top: 12px solid #e98300;
+  border-right: 16px dotted rgba(255, 255, 255, 0);
+  border-bottom: 0px;
+  border-left: 16px dotted rgba(255, 255, 255, 0);
+  margin: 0 0 0 -16px;
+}
+#find-fb-search-formbox .headline {
+  font-size: 26px;
+  line-height: 28px;
+  margin-bottom: 15px;
+}
+#find-fb-search-formbox .headline span {
+  display: block;
+}
+#find-fb-search-form .row {
+  /*
+  display: table;
+  width: 100%;
+  */
+  margin-bottom: 10px;
+}
+#find-fb-search-form .row input, #find-fb-search-form .row select {
+  /*
+  display: table-cell;
+  */
+  display: inline-block;
+  width: 190px;
+  vertical-align: middle;
+  float: left;
+}
+#find-fb-search-form .row span {
+  font-size: 26px;
+}
+#find-fb-search-form .row span, #find-fb-search-form .row button {
+  /*
+  display: table-cell;
+  */
+  display: inline-block;
+  width: auto;
+  vertical-align: middle;
+  text-align: center;
+  border-left: 10px solid #e98300;
+  float: left;
+  height: 40px;
+  line-height: 40px;
+  width: 70px;
+  padding: 0px;
+}
+#find-fb-search-form a {
+  display: block;
+  margin-top: 20px;
+  color: #ffffff;
+  text-decoration: underline;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 200;
+}
+#find-fb-search-form a:hover {
+  color: #333333;
+}
+#find-fb-search-results {
+  width: 300px;
+}
+#find-fb-search-results .results-box {
+  background-color: #ffffff;
+  border-top: none;
+  border-right: 1px solid #f2f2f2;
+  border-bottom: 1px solid #f2f2f2;
+  border-left: 1px solid #f2f2f2;
+  padding: 30px 20px;
+}
+#find-fb-search-results .results-box:first-child {
+  border-top: 1px solid #f2f2f2 !important;
+}
+#find-fb-search-results .results-box .headline {
+  font-size: 21px;
+  line-height: 23px;
+}
+#find-fb-search-results .results-box p {
+  font-size: 14px;
+  line-height: 20px;
+}
+#find-fb-search-results .results-box p:last-child {
+  margin-bottom: 0px;
+}
+#find-fb-search-results .results-box img {
+  display: block;
+}
+#find-fb-search-results .results-box p.name a {
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: underline;
+}
+#find-fb-search-results .results-box p.url a {
+  font-size: 16px;
+  text-decoration: underline;
+  word-wrap: break-word;
+  word-break: break-all;
+  display: inline-block;
+  width: 100%;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+}
+#find-fb-search-results .results-box .partner-orgs {
+  margin-top: 40px;
+}
+#find-fb-search-results .results-box .partner-orgs span {
+  font-weight: bold;
+}
+#find-fb-search-results .results-box .partner-orgs ul {
+  margin: 20px 0px 0px 0px;
+  padding-left: 25px;
+}
+#find-fb-search-results .results-box .partner-orgs ul li {
+  margin: 0px 0px 20px 0px;
+  line-height: 20px;
+}
+#find-fb-search-results .results-box .partner-orgs ul li:last-child {
+  margin: 0px;
+}
+#find-fb-search-results .results-box .partner-orgs ul a {
+  text-decoration: underline;
+  word-wrap: break-word;
+  word-break: break-all;
+  display: inline-block;
+  width: 100%;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+}
+
+/* --------------------------------------------
+  Individual Corporate Partner page elements
+-------------------------------------------- */
+/* How Partner is Helping */
+#how-partner-helps {
+
+}
+#how-partner-helps h2 {
+  margin: 0px;
+}
+#how-partner-helps #badges {
+  margin: 30px 0px 20px 0px;
+}
+#badges .badge {
+  display: inline-block;
+  vertical-align: top;
+  float: left;
+  margin-left: 58px;
+  margin-bottom: 20px;
+  width: 162px;
+  height: 162px;
+  position: relative;
+}
+#badges .badge:first-child, #badges .badge:nth-child(4) {
+  margin-left: 0px;
+}
+#badges .badge img {
+  cursor: pointer;
+  display: block;
+  width: 100%;
+}
+#badges .badge .hover-text {
+  display: none;
+  width: 265px;
+  padding: 15px 60px 15px 15px;
+  border: 1px solid #999999;
+  font-size: 14px;
+  line-height: 20px;
+  position: absolute;
+  bottom: 124px;
+  left: 50%;
+  margin-left: -132.5px;
+  background-color: #ebebeb;
+  z-index: 2;
+  /*
+  -moz-box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.35);
+  -webkit-box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.35);
+  box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.35);
+  */
+}
+#badges .badge .hover-text:before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 100%;
+  left: 50%;
+  right: auto;
+  border-top: 13px solid #999999;
+  border-right: 18px dotted rgba(255, 255, 255, 0);
+  border-bottom: 0px;
+  border-left: 18px dotted rgba(255, 255, 255, 0);
+  margin: 0 0 0 -18px;
+}
+#badges .badge .hover-text:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 100%;
+  left: 50%;
+  right: auto;
+  border-top: 12px solid #ebebeb;
+  border-right: 16px dotted rgba(255, 255, 255, 0);
+  border-bottom: 0px;
+  border-left: 16px dotted rgba(255, 255, 255, 0);
+  margin: 0 0 0 -16px;
+}
+#badges .badge:first-child .hover-text, #badges .badge:nth-child(4) .hover-text {
+  left: 0px;
+  margin-left: 0px;
+}
+#badges .badge:first-child .hover-text:before, #badges .badge:first-child .hover-text:after, #badges .badge:nth-child(4) .hover-text:before, #badges .badge:nth-child(4) .hover-text:after {
+  left: 80px;
+}
+/*
+#badges .badge:nth-child(3) .hover-text, #badges .badge:nth-child(6) .hover-text {
+  left: auto;
+  margin-left: 0px;
+  right: 0px;
+}
+#badges .badge:nth-child(3) .hover-text:before, #badges .badge:nth-child(3) .hover-text:after, #badges .badge:nth-child(6) .hover-text:before, #badges .badge:nth-child(6) .hover-text:after {
+  left: auto;
+  right: 80px;
+  margin: 0 -18px 0 0;
+}
+#badges .badge:nth-child(3) .hover-text:after, #badges .badge:nth-child(6) .hover-text:after {
+  margin: 0 -16px 0 0;
+}
+*/
+#badges .badge .hover-text .close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 16px;
+  line-height: 23px;
+  height: 23px;
+  width: 24px;
+  text-align: center;
+  border: 1px solid #999999;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+#badges .badge:hover .hover-text {
+  display: block;
+}
+/* Quotes */
+.quote {
+  background-color: #53682b;
+  padding: 40px 20px;
+  color: #ffffff;
+  position: relative;
+  margin-bottom: 40px;
+}
+.quote .left, .quote .right {
+  display: inline-block;
+  vertical-align: middle;
+}
+.quote .left {
+  padding-right: 190px;
+}
+.quote .right {
+  position: absolute;
+  top: 40px;
+  right: 20px;
+  bottom: 40px;
+  width: 147px;
+}
+.quote .left .quote-text {
+  font-size: 21px;
+  line-height: 26px;
+  margin-bottom: 15px;
+}
+.quote .left .quote-by {
+  font-size: 18px;
+  line-height: 23px;
+  text-align: right;
+  padding-left: 50px;
+}
+.quote .right img {
+  /*
+  display: block;
+  */
+  width: 100%;
+  border: 1px solid #ced1ca;
+}
+/* Photo or Video */
+#photo-video {
+  margin-bottom: 40px;
+  border-bottom: 1px solid #e5e5e5;
+}
+#photo-video .video-container {
+  margin-bottom: 40px;
+}
+/* Partner News */
+#partner-news {
+  position: relative;
+}
+#partner-news .thumbnail {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 180px;
+}
+#partner-news .thumbnail img {
+  width: 100%;
+  display: block;
+}
+#partner-news .story-text {
+  padding-left: 220px;
+  min-height: 180px;
+}
+#partner-news .story-text .story-title {
+  font-weight: 500;
+}
+#partner-news .story-text p:first-child {
+  margin-top: 0px;
+}
+#partner-news .story-text p:last-child {
+  margin-bottom: 0px;
+}
+
+/* --------------------------------------------
+  Sidebar elements
+-------------------------------------------- */
+/* sidebar section navigation */
+.column-2 .section-nav {
+  padding: 0px;
+  margin: 0px 0px 50px 0px;
+  list-style: none;
+  text-transform: uppercase;
+}
+.column-2 .section-nav li.parentOfActive li.parentOfActive ul, .column-2 .section-nav li.parentOfActive li.current ul {
+  text-transform: none;
+}
+.column-2 .section-nav a {
+  border-top: 1px solid #ffffff;
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: #dedede;
+  color: #333333;
+  vertical-align: middle;
+  padding: 15px 5px 15px 26px;
+}
+.column-2 .section-nav a:hover {
+  color: #e98300;
+}
+.column-2 .section-nav h4 {
+  background: #e98300;
+  font-size: 14px;
+  line-height: initial;
+  font-weight: initial;
+  margin: 0 !important;
+}
+.column-2 .section-nav h4 a {
+  color: #ffffff;
+  background: transparent;
+  width: 100%;
+  vertical-align: middle;
+  padding: 15px 5px 15px 26px;
+}
+.column-2 .section-nav h4 a:hover {
+  color: #ffffff;
+}
+.column-2 .section-nav li.parentOfActive li.parentOfActive a, .column-2 .section-nav li.parentOfActive li.current a {
+  background-color: #ebebeb;
+}
+.column-2 .section-nav li.parentOfActive > a {
+  background-image: url('../images/grain_bulletpoint.png');
+  background-repeat: no-repeat;
+  background-position: 27px 14px;
+}
+.column-2 .section-nav li.parentOfActive.expanded > a {
+  background-image: none;
+}
+.column-2 .section-nav li.current > a {
+  background-image: url('../images/grain_bulletpoint.png');
+  background-repeat: no-repeat;
+  background-position: 27px 14px;
+}
+.column-2 .section-nav li.parentOfActive.expanded li.parentOfActive li.current > a {
+  background-image: none;
+}
+.column-2 .section-nav li.subMenu ul,
+.column-2 .section-nav li.parentOfActive ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.column-2 .section-nav li.subMenu ul a,
+.column-2 .section-nav li.parentOfActive ul a {
+  padding: 15px 5px 15px 48px;
+}
+.column-2 .section-nav ul,
+.column-2 .section-nav li.parentOfActive li.parentOfActive ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.column-2 .section-nav li.parentOfActive li.current ul a,
+.column-2 .section-nav li.subMenu li.subMenu ul a,
+.column-2 .section-nav li.parentOfActive li.parentOfActive ul a {
+  padding: 15px 5px 15px 68px;
+}
+.column-2 .section-nav li.current > a {
+  color: #e98300;
+}
+.column-2 .section-nav li.current h4 > a {
+  color: #ffffff;
+}
+
+/* sidebar promos */
+.sidebar-promo-box {
+  margin-bottom: 50px;
+}
+.sidebar-promo-box:last-child {
+  margin-bottom: 0px;
+}
+.sidebar-promo-box .sidebar-promo span.small {
+  font-size: 18px;
+  line-height: 22px;
+}
+.sidebar-promo-box .sidebar-promo span.big {
+  font-size: 24px;
+  line-height: 28px;
+}
+.sidebar-promo-box .sidebar-promo.icon {
+  padding: 18px 20px 20px 20px;
+  text-align: center;
+}
+.sidebar-promo-box .sidebar-promo.icon img, .sidebar-promo-box .sidebar-promo.icon span {
+  display: block;
+  margin: auto;
+}
+.sidebar-promo-box .sidebar-promo.icon img {
+  margin-bottom: 18px;
+}
+.sidebar-promo-box .sidebar-promo.icon span.small + span.big {
+  margin-top: 18px;
+}
+.sidebar-promo-box .sidebar-promo.standard {
+  padding: 30px 20px;
+  text-align: center;
+}
+.sidebar-promo-box .sidebar-promo.standard img, .sidebar-promo-box .sidebar-promo.standard span {
+  display: block;
+  margin: auto;
+}
+.sidebar-promo-box .sidebar-promo.standard span.big {
+  margin-bottom: 10px;
+}
+.sidebar-promo-box .sidebar-promo.standard span.small {
+  margin-bottom: 18px;
+}
+.sidebar-promo-box .sidebar-promo.search span.big {
+  font-size: 21px;
+  line-height: 23px;
+  font-weight: 500;
+  margin-bottom: 15px;
+  display: block;
+}
+.sidebar-promo-box .sidebar-promo.search span.small {
+  font-size: 14px;
+  line-height: 20px;
+}
+.sidebar-promo-box .sidebar-promo.search span.small a {
+  font-weight: 500;
+}
+.sidebar-promo-box .sidebar-promo.text {
+  padding: 30px 20px;
+}
+.sidebar-promo-box .sidebar-promo.text span.big {
+  font-size: 21px;
+  line-height: 23px;
+  font-weight: 500;
+  margin-bottom: 15px;
+  display: block;
+}
+.sidebar-promo-box .sidebar-promo.text span.small {
+  font-size: 14px;
+  line-height: 20px;
+}
+.sidebar-promo-box .sidebar-promo.text span.small a {
+  font-weight: 500;
+}
+.sidebar-promo-box a.button {
+  margin: 0px 20px;
+}
+.keyword-search-form {
+  position: relative;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #dedede;
+}
+.keyword-search-form div {
+  padding-right: 78px;
+}
+.keyword-search-form input {
+  width: 100%;
+}
+.keyword-search-form button {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+.filter-search-form label {
+  display: block;
+  margin-bottom: 15px;
+  position: relative;
+}
+.filter-search-form label input {
+  vertical-align: top;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  margin: 2px 0px 0px 0px;
+}
+.filter-search-form label span {
+  vertical-align: top;
+  font-size: 14px;
+  line-height: 18px;
+  padding-left: 30px;
+  display: inline-block;
+}
+#sidebar-filter-dates {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+#sidebar-filter-dates select {
+  width: 107px;
+}
+#sidebar-filter-dates select:first-child {
+  margin-right: 10px;
+}
+.sidebar-promo-box .sidebar-promo.form form {
+  margin-top: 20px;
+  padding: 0px 10px;
+}
+.sidebar-promo-box .sidebar-promo.form form .half-width {
+  width: 50%;
+  margin: 0px;
+  display: inline-block;
+  float: left;
+}
+.sidebar-promo-box .sidebar-promo.form form div.half-width {
+  padding-left: 10px;
+}
+.sidebar-promo-box .sidebar-promo.form form div.half-width button {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0px;
+  border: none;
+  outline: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  color: #ffffff;
+  font-family: Gotham, 'Gotham Book', Gotham-Book, 'Gotham A', 'Gotham B', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 200;
+  padding: 0px 20px;
+  height: 40px;
+  width: 100%;
+  line-height: 40px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+.sidebar-promo-box .sidebar-promo.search {
+  padding: 30px;
+}
+.sidebar-promo-box .sidebar-promo.border {
+  border: 1px solid #dedede;
+}
+.sidebar-promo-box .sidebar-promo.blue {
+  background-color: #006b9d;
+  color: #ffffff;
+}
+.sidebar-promo-box .sidebar-promo.gray {
+  background-color: #dedede;
+  color: #333333;
+}
+.sidebar-promo-box .sidebar-promo.lightgray {
+  background-color: #fafafa;
+  color: #333333;
+}
+.sidebar-promo-box .sidebar-promo.white {
+  background-color: #ffffff;
+  color: #333333;
+}
+.sidebar-promo-box .sidebar-promo.purple {
+  background-color: #5a2559;
+  color: #ffffff;
+}
+.sidebar-promo-box a.grainbutton {
+  display: inline-block;
+  padding: 0px 27px;
+  margin: 25px auto 10px auto;
+  height: 66px;
+  line-height: 56px;
+  border: 5px solid #ffffff;
+  -webkit-border-top-left-radius: 20px;
+  -webkit-border-bottom-right-radius: 20px;
+  -moz-border-radius-topleft: 20px;
+  -moz-border-radius-bottomright: 20px;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-shadow: 0px 0px 1px 0px white;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 200;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  -moz-box-shadow: 0px 0px 6.72px 0.28px rgba(6, 6, 6, 0.2);
+  -webkit-box-shadow: 0px 0px 6.72px 0.28px rgba(6, 6, 6, 0.2);
+  box-shadow: 0px 0px 6.72px 0.28px rgba(6, 6, 6, 0.2);
+}
+.sidebar-promo-box a.grainbutton.red {
+  background-color: #b22d3a;
+}
+.sidebar-promo-box a.grainbutton.red:hover {
+  /*
+  background-color: #5a2559;
+  */
+  background-color: #bfd730;
+  color: #333333;
+}
+
+/* --------------------------------------------
+  our partners landing page
+-------------------------------------------- */
+.our-partners-lp #page-description {
+  padding-bottom: 0px;
+  border-bottom: none;
+}
+.logo-boxes {
+  margin: 35px auto 40px auto;
+  display: inline-block;
+  clear: both;
+}
+.logo-boxes a.logo-box {
+  display: inline-block;
+  float: left;
+  margin-left: 30px;
+  width: 207px;
+  height: 207px;
+  line-height: 185px;
+  vertical-align: middle;
+  padding: 10px;
+  border: 1px solid #ffffff;
+  background-color: #ffffff;
+}
+.logo-boxes a.logo-box:first-child {
+  margin-left: 0px;
+}
+.logo-boxes a.logo-box img {
+  max-width: 100%;
+  max-height: 100%;
+  vertical-align: middle;
+  display: inline-block;
+  margin: 0px auto;
+}
+.fullwidth-promo a.learn-more {
+  color: #ffffff;
+  font-weight: 500;
+  display: inline-block;
+  clear: both;
+}
+.fullwidth-promo a.learn-more span {
+  text-decoration: underline;
+}
+.fullwidth-promo a.learn-more:hover {
+  color: #333333;
+}
+.fullwidth-promo p {
+  margin-bottom: 0px;
+}
+#current-promotions.logo-boxes div.item {
+  display: inline-block;
+  float: left;
+  margin-left: 30px;
+  width: 207px;
+  vertical-align: top;
+}
+#current-promotions.logo-boxes div.item:first-child {
+  margin-left: 0px;
+}
+#current-promotions.logo-boxes a.logo-box {
+  padding: 0px;
+  line-height: 205px;
+  float: none;
+}
+#current-promotions.logo-boxes .item-text {
+  clear: both;
+  text-align: left;
+  margin-top: 20px;
+}
+#current-promotions.logo-boxes .item-text p {
+  margin-top: 15px;
+}
+#media-entertainment-disaster .container {
+  padding: 0px;
+}
+#media-entertainment-disaster .logo-boxes {
+  margin: 0px;
+}
+#media-entertainment-disaster .logo-boxes div.item {
+  width: 33.33%;
+  display: inline-block;
+  float: left;
+  vertical-align: top;
+  padding: 0px 20px;
+  border-left: 1px solid #7c8c5e;
+}
+#media-entertainment-disaster .logo-boxes div.item:first-child {
+  border-left: none;
+}
+#media-entertainment-disaster .logo-boxes h2 {
+  max-width: 220px;
+  display: block;
+  margin: 0px auto 10px auto;
+}
+#media-entertainment-disaster .logo-boxes .item-text {
+  width: 220px;
+  display: block;
+  margin: 0px auto;
+}
+#media-entertainment-disaster .logo-boxes a.logo-box {
+  padding: 0px;
+  line-height: 205px;
+  float: none;
+  margin: 25px auto 0px auto;
+}
+
+#recent_news.our-partners-lp {
+  border-top: 1px solid #dedede;
+}
+.our-partners-lp #recent_news_boxes .recent_news_item {
+  width: 207px;
+  margin: 0px 15px 0px 15px;
+}
+
+
+/* --------------------------------------------
+  food and fund partners landing page
+-------------------------------------------- */
+/* Visionary Partners carousel */
+#fandf-visionary-partners {
+  border-bottom: 1px solid #dedede;
+  margin-bottom: 40px;
+}
+#fandf-visionary-partners-carousel {
+  position: relative;
+  padding: 40px 30px;
+}
+#fandf-visionary-partners-carousel .flex-direction-nav a {
+  width: 18px;
+  height: 32px;
+  opacity: initial;
+  color: #dedede;;
+}
+#fandf-visionary-partners-carousel .flex-direction-nav a.flex-prev:before {
+  content: '\2039';
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 60px;
+  line-height: 32px;
+  margin-top: -2px;
+}
+#fandf-visionary-partners-carousel .flex-direction-nav a.flex-next:before {
+  content: '\203A';
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 60px;
+  line-height: 32px;
+  margin-top: -2px;
+}
+#fandf-visionary-partners-carousel .flex-direction-nav .flex-prev {
+  left: 0px;
+}
+#fandf-visionary-partners-carousel .flex-direction-nav .flex-next {
+  right: 0px;
+}
+#fandf-visionary-partners-carousel .slides li a {
+  display: block;
+  height: 160px;
+  width: 160px;
+  margin: 0px auto;
+  padding: 10px;
+  border: 1px solid #ffffff;
+  line-height: 138px;
+  vertical-align: middle;
+}
+#fandf-visionary-partners-carousel .slides li img {
+  display: inline-block;
+  max-width: 100%;
+  margin: 0px auto;
+  vertical-align: middle;
+}
+/* Leadership Partners carousel */
+#fandf-leadership-partners {
+  margin-bottom: 40px;
+}
+#fandf-leadership-partners-carousel {
+  position: relative;
+  padding: 20px 30px;
+}
+#fandf-leadership-partners-carousel .flex-direction-nav a {
+  width: 18px;
+  height: 32px;
+  opacity: initial;
+  color: #dedede;;
+}
+#fandf-leadership-partners-carousel .flex-direction-nav a.flex-prev:before {
+  content: '\2039';
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 60px;
+  line-height: 32px;
+  margin-top: -2px;
+}
+#fandf-leadership-partners-carousel .flex-direction-nav a.flex-next:before {
+  content: '\203A';
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 60px;
+  line-height: 32px;
+  margin-top: -2px;
+}
+#fandf-leadership-partners-carousel .flex-direction-nav .flex-prev {
+  left: 0px;
+}
+#fandf-leadership-partners-carousel .flex-direction-nav .flex-next {
+  right: 0px;
+}
+#fandf-leadership-partners-carousel .slides li a {
+  display: block;
+  height: 116px;
+  width: 116px;
+  margin: 0px auto;
+  padding: 10px;
+  border: 1px solid #ffffff;
+  line-height: 94px;
+  vertical-align: middle;
+}
+#fandf-leadership-partners-carousel .slides li img {
+  display: inline-block;
+  max-width: 100%;
+  margin: 0px auto;
+  vertical-align: middle;
+}
+
+
+/*
+shortcut to end of desktop
+*/
+
+
+
+/* --------------------------------------------
+  section-name elements
+-------------------------------------------- */
+/* sub-section description */
+
+
+/* "sub-section title" */
+
+
+/* --------------------------------------------
+  
+-------------------------------------------- */
+
+
+
+
+
+
+/* --------------------------------------------
+  sprites - move later
+-------------------------------------------- */
+.fivesteps_1_big {
+  background-position: 0 0;
+  width: 78px;
+  height: 78px;
+}
+.fivesteps_1_small {
+  background-position: -88px 0;
+  width: 50px;
+  height: 50px;
+}
+.fivesteps_2_big {
+  background-position: -148px 0;
+  width: 78px;
+  height: 78px;
+}
+.fivesteps_2_small {
+  background-position: -236px 0;
+  width: 50px;
+  height: 50px;
+}
+.fivesteps_3_big {
+  background-position: -296px 0;
+  width: 78px;
+  height: 78px;
+}
+.fivesteps_3_small {
+  background-position: -384px 0;
+  width: 50px;
+  height: 50px;
+}
+.fivesteps_4_big {
+  background-position: -444px 0;
+  width: 78px;
+  height: 78px;
+}
+.fivesteps_4_small {
+  background-position: -532px 0;
+  width: 50px;
+  height: 50px;
+}
+.fivesteps_5_big {
+  background-position: -592px 0;
+  width: 78px;
+  height: 78px;
+}
+.fivesteps_5_small {
+  background-position: -680px 0;
+  width: 50px;
+  height: 50px;
+}
+.alertbanner_icon {
+  background-position: -740px 0;
+  width: 52px;
+  height: 52px;
+}
+.hero_next {
+  background-position: -802px 0;
+  width: 40px;
+  height: 80px;
+}
+.hero_prev {
+  background-position: -852px 0;
+  width: 38px;
+  height: 80px;
+}
+.howweareending_icon {
+  background-position: -900px 0;
+  width: 80px;
+  height: 80px;
+}
+.mobile_menu_expand {
+  background-position: -990px 0;
+  width: 24px;
+  height: 18px;
+}
+.mobile_menu_search {
+  background-position: -1024px 0;
+  width: 21px;
+  height: 21px;
+}
+.textalerts_icon {
+  background-position: -1775px 0;
+  width: 78px;
+  height: 78px;
+}
+.util_find {
+  background-position: -1863px 0;
+  width: 9px;
+  height: 14px;
+}
+.util_search {
+  background-position: -1882px 0;
+  width: 14px;
+  height: 14px;
+}
+.zip_search_icon {
+  background-position: -1906px 0;
+  width: 17px;
+  height: 25px;
+}
+
+/* --------------------------------------------------------------
+ Desktop Only: >= 992px
+-------------------------------------------------------------- */
+@media only screen and (min-width: 992px) {
+
+}
+/* --------------------------------------------
+  special section-name styles
+-------------------------------------------- */
+@media only screen and (min-width: 1101px) and (max-width: 1250px) {
+
+}
+@media only screen and (min-width: 992px) and (max-width: 1100px) {
+
+}
+
+
+/* --------------------------------------------------------------
+ Tablet Only: 768px - 991px
+-------------------------------------------------------------- */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+
+  /* --------------------------------------------
+    global elements
+  -------------------------------------------- */
+  .sidebar-promo-box a.button {
+    margin: 0px;
+  }
+  /* Footer Promos */
+  #footer_promos {
+    padding: 30px 0px 25px 0px;
+    margin-bottom: 30px;
+  }
+  #footer_promos .headline {
+    font-size: 28px;
+  }
+  #footer_promo_boxes .footer-promo {
+    padding: 15px 20px;
+    height: 400px;
+  }
+  #footer_promo_boxes .footer-promo .half-width {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  #footer_promo_boxes .footer-promo div.half-width {
+    padding-left: 0px;
+    margin-bottom: 0px;
+  }
+
+
+  /* --------------------------------------------
+    Section Landing Page elements
+  -------------------------------------------- */
+  /* section boxes */
+  #section-boxes .container {
+    padding: 0px;
+  }
+  #section-boxes .section-box.left {
+    padding: 70px 19px 30px 20px;
+  }
+  #section-boxes .section-box.right {
+    padding: 70px 20px 30px 20px;
+  }
+  #section-boxes .full-width .section-img {
+    padding: 20px;
+  }
+  #section-boxes .section-box.full-width .section-title {
+    top: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+  #section-boxes .section-box.full-width .section-text {
+    top: 60px;
+    margin-left: 20px;
+  }
+  #section-boxes .section-box .section-title {
+    font-size: 24px;
+    line-height: 24px;
+    margin-right: 20px;
+  }
+  #section-boxes .section-img:hover .section-img-hover {
+    display: none !important;
+  }
+  /* "Latest News" */
+  body.not-homepage #recent_news_boxes .recent_news_item.morenews {
+    background-color: #efefef;
+    color: #e98300;
+    font-size: 32px;
+    line-height: 32px;
+  }
+  body.not-homepage #recent_news_boxes .recent_news_item.morenews {
+    height: 318px;
+    padding: 30px;
+    position: relative;
+  }
+  body.not-homepage #recent_news_boxes .recent_news_item.morenews span.link {
+    position: absolute;
+    bottom: 30px;
+  }
+  body.not-homepage #recent_news_boxes {
+    border-bottom: none;
+    padding-bottom: 10px;
+  }
+  body.not-homepage #recent_news_boxes .recent_news_item .news_expanded p:last-child {
+    margin-bottom: 0px;
+  }
+  body.not-homepage #recent_news {
+    margin-bottom: 30px;
+  }
+  body.not-homepage #recent_news .headline {
+    font-size: 36px;
+  }
+
+  /* --------------------------------------------
+    Food Bank Profile elements
+  -------------------------------------------- */
+  /* logo and title */
+  #title-and-share.food-bank-profile {
+
+  }
+  #title-and-share.food-bank-profile .container {
+    padding: 0px 20px;
+    display: table;
+  }
+  /* address and map */
+  #food-bank-profile-address-map .left {
+    padding: 40px 20px;
+  }
+  #food-bank-profile-address-map .left, #food-bank-profile-address-map .right {
+    height: 430px;
+  }
+  #title-and-share.food-bank-profile div.profile-logo {
+    display: table-cell;
+    margin-right: 0px;
+  }
+  #title-and-share.food-bank-profile h1 {
+    display: table-cell;
+    padding-left: 30px;
+  }
+  /* Pounds and Counties */
+  #pounds-and-counties {
+    padding: 40px 10px;
+  }
+  #profile-pounds .left, #profile-pounds .right {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  #profile-pounds span.name {
+    max-width: 440px;
+    position: initial;
+    padding-right: 0px;
+    margin: 0px auto 15px auto;
+  }
+  #profile-pounds span.name:after {
+    content: '';
+    display: none;
+  }
+  #profile-pounds span.number {
+    margin-bottom: 5px;
+  }
+  /* profile CEO quote */
+  #food-bank-profile-quote {
+    padding: 10px 20px;
+  }
+  #food-bank-profile-quote .left {
+    padding: 30px 192px 30px 0px;
+  }
+  /* Area Info and Featured Story */
+  #area-info-and-featured-story {
+    padding: 0px;
+  }
+  #area-info-and-featured-story .left, #area-info-and-featured-story .right {
+    display: block;
+    width: 100%;
+  }
+  #area-info-and-featured-story .left {
+    padding: 30px 40px;
+    border-right: none;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #dedede;
+  }
+  #area-info-and-featured-story .right {
+    padding: 30px 40px;
+    min-height: 240px;
+  }
+  #area-info-and-featured-story .people-stat, #area-info-and-featured-story .children-stat {
+    width: 246px;
+  }
+  #profile-story-area {
+    min-height: 0px;
+    margin-bottom: 20px;
+  }
+  #profile-story-area .thumbnail {
+    position: absolute;
+    top: 87px;
+    left: 40px;
+    width: 200px;
+  }
+  #area-info-and-featured-story .right .profile-buttons {
+    padding-left: 230px;
+  }
+/* Partner Distribution Organizations */
+  #partner-distribution-orgs {
+    padding: 40px;
+    margin-bottom: 30px;
+  }
+  #partner-orgs-boxes {
+    -webkit-column-count: auto;
+    -moz-column-count: auto;
+    column-count: auto;
+    -webkit-column-gap: normal;
+    -moz-column-gap: normal;
+    column-gap: normal;
+  }
+  #partner-orgs-boxes .partner-org {
+    display: inline-block;
+    margin: 0px 0px 20px 0px;
+    line-height: 20px;
+  }
+
+  /* --------------------------------------------
+    Find Your Local Food Bank elements
+  -------------------------------------------- */
+  /* Page intro */
+  #page-intro {
+
+  }
+  #page-intro .container {
+    padding: 0px 20px;
+  }
+  #find-fb-search-and-map {
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    background-image: none;
+  }
+  #find-fb-search-and-map .container {
+    padding: 0px 20px;
+  }
+  #find-fb-search-and-map .left {
+    width: 215px;
+    z-index: 2;
+    position: relative;
+  }
+  #find-fb-search-results {
+    width: 100%;
+  }
+  #find-fb-search-form .row {
+    margin-bottom: 0px;
+  }
+  #find-fb-search-form .row input, #find-fb-search-form .row select {
+    display: block;
+    width: 100%;
+    float: none;
+  }
+  #find-fb-search-form .row span, #find-fb-search-form .row button {
+    border-left: none;
+    display: block;
+    width: 62px;
+    margin: 0px auto;
+    float: none;
+  }
+  #find-fb-search-form .row button {
+    margin: 10px auto 20px auto;
+  }
+  #find-fb-search-and-map .right {
+    height: 448px;
+    z-index: 1;
+  }
+  #find-fb-search-and-map .right iframe {
+    max-height: 408px;
+    /*
+    max-width: 480px;
+    */
+  }
+  #find-fb-search-and-map .right iframe.bottom {
+    bottom: 30px;
+    right: 20px;
+    max-width: 100%;
+    padding-left: 295px;
+  }
+  #find-fb-search-and-map .right iframe.fixed {
+    max-width: 100%;
+    padding-left: 295px;
+    right: 20px;
+  }
+
+  /* --------------------------------------------
+    Individual Corporate Partner page elements
+  -------------------------------------------- */
+  /* How Partner is Helping */
+  #how-partner-helps {
+
+  }
+  #how-partner-helps h2 {
+
+  }
+  #how-partner-helps #badges {
+    max-width: 460px;
+  }
+  #badges .badge {
+    width: 133px;
+    height: 133px;
+    margin-left: 19px;
+  }
+  #badges .badge .hover-text {
+    bottom: 100px;
+  }
+  #badges .badge:hover .hover-text {
+    display: none;
+  }
+  #badges .badge:first-child .hover-text, #badges .badge:nth-child(4) .hover-text {
+    left: 0px;
+    margin-left: 0px;
+  }
+  #badges .badge:first-child .hover-text:before, #badges .badge:first-child .hover-text:after, #badges .badge:nth-child(4) .hover-text:before, #badges .badge:nth-child(4) .hover-text:after {
+    left: 65px;
+  }
+  .quote .left {
+    padding-right: 0px;
+  }
+  .quote .right {
+    display: none;
+  }
+  #partner-news .thumbnail {
+    width: 125px;
+  }
+  #partner-news .story-text {
+    padding-left: 165px;
+    min-height: 125px;
+  }
+  .sidebar-promo-box .sidebar-promo.standard {
+    padding: 30px 10px;
+  }
+  .sidebar-promo-box .sidebar-promo.standard span.big {
+    font-size: 20px;
+  }
+  .sidebar-promo-box .sidebar-promo.form form .half-width {
+    width: 100%;
+  }
+  .sidebar-promo-box .sidebar-promo.form form div.half-width {
+    padding-left: 0px;
+    margin-top: 10px;
+  }
+  .keyword-search-form input {
+    padding-left: 10px;
+    font-size: 12px;
+  }
+  #sidebar-filter-dates select {
+    width: 80px;
+    padding-left: 10px;
+    font-size: 12px;
+  }
+
+  /* --------------------------------------------
+    our partners landing page
+  -------------------------------------------- */
+  #interested-in-partnering span.small a {
+    white-space: nowrap;
+  }
+  .logo-boxes a.logo-box {
+    width: 167px;
+    height: 167px;
+    line-height: 145px;
+    margin-left: 20px;
+  }
+  #current-promotions.logo-boxes {
+    margin: 35px -20px 40px -20px;
+    display: block;
+  }
+  #current-promotions.logo-boxes a.logo-box {
+    width: 150px;
+    height: 150px;
+    line-height: 148px;
+  }
+  #current-promotions.logo-boxes div.item {
+    width: 33.33%;
+    margin-left: 0px;
+    border-left: 1px solid #eea13d;
+    padding: 0px 20px;
+  }
+  #current-promotions.logo-boxes div.item:first-child {
+    border-left: none;
+  }
+  #current-promotions.logo-boxes div.item:nth-child(4) {
+    display: none;
+  }
+  #current-promotions.logo-boxes .item-text {
+    display: block;
+    margin: 20px auto 0px auto;
+    width: 150px;
+  }
+  #media-entertainment-disaster .logo-boxes a.logo-box {
+    width: 150px;
+    height: 150px;
+    line-height: 148px;
+  }
+  #recent_news.our-partners-lp #recent_news_boxes {
+    width: 100%;
+  }
+  #recent_news.our-partners-lp .container {
+    padding: 0px 20px;
+  }
+  #recent_news.our-partners-lp #recent_news_boxes .recent_news_item:nth-child(4) {
+    display: none;
+  }
+  .our-partners-lp #recent_news_boxes .recent_news_item {
+    width: 33.33%;
+    padding: 0px 15px;
+    margin: 0px;
+  }
+
+  /* --------------------------------------------
+    food and fund partners landing page
+  -------------------------------------------- */
+  /* Visionary Partners carousel */
+  #fandf-visionary-partners-carousel {
+    padding: 30px;
+  }
+  #fandf-visionary-partners-carousel .slides li a {
+    height: 114px;
+    width: 114px;
+    padding: 5px;
+    line-height: 102px;
+  }
+  /* Leadership Partners carousel */
+  #fandf-leadership-partners {
+    margin-bottom: 0px;
+  }
+  #fandf-leadership-partners-carousel {
+    padding: 30px;
+  }
+  #fandf-leadership-partners-carousel .slides li a {
+    height: 86px;
+    width: 86px;
+    padding: 5px;
+    line-height: 74px;
+  }
+
+
+
+/* shortcut to end of tablet */
+
+
+  /* --------------------------------------------
+    section-name elements
+  -------------------------------------------- */
+    /* sub-section description */
+
+
+    /* "sub-section title" */
+
+}
+  /* --------------------------------------------
+    special section-name elements
+  -------------------------------------------- */
+  @media only screen and (min-width: 812px) and (max-width: 991px) {
+
+  }
+  @media only screen and (min-width: 811px) and (max-width: 913px) {
+
+  }
+
+
+
+/* --------------------------------------------------------------
+  Mobile Only: ~320px - 767px
+-------------------------------------------------------------- */
+@media only screen and (max-width: 767px) {
+
+  /* --------------------------------------------
+    global elements
+  -------------------------------------------- */
+  .column-2 .section-nav {
+    margin-right: -20px;
+    margin-left: -20px;
+    margin-bottom: 20px;
+  }
+  .column-2 .section-nav a {
+    padding: 15px 20px;
+  }
+  .sidebar-promo-box {
+    margin-bottom: 20px;
+  }
+  .keyword-search-form input {
+    padding-left: 10px;
+    font-size: 12px;
+  }
+  #sidebar-filter-dates select {
+    width: 80px;
+    padding-left: 10px;
+    font-size: 12px;
+  }
+  /* Footer Promos */
+  #footer_promos {
+    padding: 30px 0px 0px 0px;
+    margin-bottom: 30px;
+  }
+  #footer_promos .container {
+    padding: 0px 20px;
+  }
+  #footer_promo_boxes .footer-promo {
+    display: block;
+    width: 100%;
+    float: none;
+    border-right: none;
+    padding: 30px 20px;
+    border-top: 1px solid #a4ae92;
+    height: auto;
+    margin: 0px auto;
+    /*
+    max-width: 280px;
+    */
+  }
+  #footer_promos .headline {
+    font-size: 24px;
+    line-height: 28px;
+    margin-bottom: 25px;
+    max-width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #footer_promo_boxes .footer-promo .promo-action form {
+    max-width: 280px;
+    margin: 0px auto;
+  }
+
+
+  /* --------------------------------------------
+    Section Landing Page elements
+  -------------------------------------------- */
+  /* section boxes */
+  #section-boxes .container {
+    padding: 0px;
+    border-bottom: none;
+  }
+  #section-boxes .section-box {
+    border-bottom: 1px solid #dedede;
+  }
+  #section-boxes .container:last-child > .section-box:last-child {
+    border-bottom: none;
+  }
+  #section-boxes .section-box.left, #section-boxes .section-box.right {
+    padding: 30px 20px;
+    display: block;
+    width: 100%;
+  }
+  #section-boxes .section-box.left {
+    border-right: none;
+  }
+  #section-boxes .full-width {
+    position: initial;
+    padding: 30px 20px;
+  }
+  #section-boxes .left .section-img, #section-boxes .right .section-img {
+    max-width: 280px;
+    margin: 0px auto;
+  }
+  #section-boxes .full-width .section-img {
+    width: 100%;
+    padding: 0px;
+    max-width: 280px;
+    margin: 0px auto;
+  }
+  #section-boxes .section-img img {
+    width: auto;
+    max-width: 100%;
+  }
+  #section-boxes .full-width .section-img img {
+    margin-bottom: 15px;
+  }
+  #section-boxes .section-box.left .section-text, #section-boxes .section-box.right .section-text {
+    max-width: 280px;
+    margin: 0px auto;
+  }
+  #section-boxes .section-box.full-width .section-text {
+    position: initial;
+    top: auto;
+    left: auto;
+    right: auto;
+    max-width: 280px;
+    margin: 0px auto;
+  }
+  #section-boxes .section-box .section-title {
+    font-size: 24px;
+    line-height: 28px;
+    position: initial;
+    bottom: auto;
+    max-width: 280px;
+    margin: 0px auto 15px auto;
+  }
+  #section-boxes .section-box.full-width .section-title {
+    left: auto;
+    right: auto;
+    bottom: auto;
+    top: auto;
+    margin: 0px auto 15px auto;
+  }
+  #section-boxes .section-img:hover .section-img-hover {
+    display: none !important;
+  }
+
+  /* --------------------------------------------
+    Food Bank Profile elements
+  -------------------------------------------- */
+  /* logo and title */
+  #title-and-share.food-bank-profile {
+    padding: 0px 0px 20px 0px;
+  }
+  #title-and-share.food-bank-profile .container {
+    padding: 0px 20px;
+  }
+  #title-and-share.food-bank-profile div.profile-logo {
+    display: none;
+  }
+  #title-and-share.food-bank-profile h1 {
+    font-size: 24px;
+    line-height: 26px;
+  }
+  /* address and map */
+  #food-bank-profile-address-map {
+    background-color: transparent;
+    border-top: none;
+    border-bottom: none;
+  }
+  #food-bank-profile-address-map .left {
+    background-color: #fafafa;
+    border-top: 1px solid #dedede;
+    border-right: none;
+    border-bottom: 1px solid #dedede;
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 30px 20px;
+  }
+  #food-bank-profile-address-map .right {
+    display: block;
+    width: 100%;
+    height: 250px;
+    padding: 30px 20px;
+  }
+  /* Pounds and Counties */
+  #pounds-and-counties {
+    padding: 30px 0px;
+  }
+  #profile-pounds .left, #profile-pounds .right {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  #profile-pounds span.top-text {
+    font-size: 17px;
+    line-height: 17px;
+  }
+  #profile-pounds span.name {
+    font-size: 24px;
+    line-height: 26px;
+    position: initial;
+    padding-right: 0px;
+    margin: 0px auto 15px auto;
+  }
+  #profile-pounds span.name:after {
+    content: '';
+    display: none;
+  }
+  #profile-pounds span.number {
+    font-size: 54px;
+    line-height: 54px;
+  }
+  #profile-counties {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  /* profile CEO quote */
+  #food-bank-profile-quote {
+    padding: 30px 0px;
+  }
+  #food-bank-profile-quote .container {
+    min-height: 0px;
+  }
+  #food-bank-profile-quote .left {
+    padding: 0px;
+  }
+  #food-bank-profile-quote .right {
+    display: none;
+  }
+  #food-bank-profile-quote .left .quote-text {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  #food-bank-profile-quote .left .quote-by {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  #food-bank-profile-quote .left .quote-by span {
+    display: block;
+  }
+  /* Area Info and Featured Story */
+  #area-info-and-featured-story {
+    padding: 0px;
+  }
+  #area-info-and-featured-story .headline {
+    font-size: 24px;
+    line-height: 26px;
+  }
+  #area-info-and-featured-story .left, #area-info-and-featured-story .right {
+    display: block;
+    width: 100%;
+  }
+  #area-info-and-featured-story .left {
+    padding: 30px 20px;
+    border-right: none;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #dedede;
+  }
+  #area-info-and-featured-story .right {
+    padding: 30px 20px 20px 20px;
+    min-height: 240px;
+  }
+  #area-info-and-featured-story .people-stat, #area-info-and-featured-story .children-stat {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+  #area-info-and-featured-story .people-stat img, #area-info-and-featured-story .children-stat img {
+    margin: 10px 0px;
+  }
+  #area-info-and-featured-story .people-stat {
+    border-right: none;
+    border-bottom: 1px solid #dedede;
+    padding: 0px 0px 30px 0px;
+  }
+  #area-info-and-featured-story .children-stat {
+    padding: 30px 0px 0px 0px;
+  }
+  #profile-story-area {
+    min-height: 0px;
+    margin-bottom: 20px;
+  }
+  #profile-story-area .thumbnail {
+    position: initial;
+    top: auto;
+    left: auto;
+    margin-bottom: 25px;
+  }
+  #profile-story-area .story-text, #area-info-and-featured-story .right .profile-buttons {
+    padding-left: 0px;
+  }
+  #area-info-and-featured-story .right .profile-buttons a.button {
+    margin-bottom: 10px;
+  }
+  /* Partner Distribution Organizations */
+  #partner-distribution-orgs {
+    padding: 40px 20px;
+    margin-bottom: 30px;
+  }
+  #partner-orgs-boxes {
+    -webkit-column-count: auto;
+    -moz-column-count: auto;
+    column-count: auto;
+    -webkit-column-gap: normal;
+    -moz-column-gap: normal;
+    column-gap: normal;
+  }
+  #partner-orgs-boxes .partner-org {
+    display: inline-block;
+    margin: 0px 0px 20px 0px;
+    line-height: 20px;
+  }
+
+  /* --------------------------------------------
+    Find Your Local Food Bank elements
+  -------------------------------------------- */
+  /* Page intro */
+  #page-intro {
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 30px;
+  }
+  #page-intro .container {
+    padding: 0px 20px;
+  }
+  #find-fb-search-and-map {
+    background-image: none;
+    padding-bottom: 0px;
+    margin-bottom: 30px;
+    border-bottom: none;
+  }
+  #find-fb-search-and-map .container {
+    padding: 0px 10px;
+    display: block;
+  }
+  #find-fb-search-and-map .left {
+    width: 100%;
+    display: block;
+    margin-bottom: 17px;
+  }
+  #find-fb-search-form .row {
+    position: relative;
+    width: 100%;
+    padding-right: 70px;
+  }
+  #find-fb-search-form .row input, #find-fb-search-form .row select {
+    width: 100%;
+  }
+  #find-fb-search-form .row span, #find-fb-search-form .row button {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+  }
+  #find-fb-search-results {
+    width: 100%;
+  }
+  #find-fb-search-and-map .right {
+    height: auto;
+    width: 100%;
+    display: block;
+    padding: 13px 10px 0px 10px;
+  }
+  #find-fb-search-and-map .right iframe {
+    width: 100%;
+    max-width: 100%;
+    height: 230px;
+  }
+
+  /* --------------------------------------------
+    Individual Corporate Partner page elements
+  -------------------------------------------- */
+  /* How Partner is Helping */
+  #how-partner-helps {
+
+  }
+  #how-partner-helps h2 {
+    font-size: 24px;
+    line-height: 26px;
+  }
+  #how-partner-helps #badges {
+    max-width: 320px;
+  }
+  #badges .badge, #badges .badge:nth-child(4) {
+    width: 133px;
+    height: 133px;
+    margin-left: 14px;
+    margin-bottom: 10px;
+  }
+  #badges .badge:nth-child(3), #badges .badge:nth-child(5) {
+    margin-left: 0px;
+  }
+  #badges .badge .hover-text {
+    bottom: 100px;
+  }
+  #badges .badge:hover .hover-text {
+    display: none;
+  }
+  #badges .badge:first-child .hover-text, #badges .badge:nth-child(3) .hover-text, #badges .badge:nth-child(5) .hover-text {
+    left: 0px;
+    margin-left: 0px;
+  }
+  #badges .badge:first-child .hover-text:before, #badges .badge:first-child .hover-text:after, #badges .badge:nth-child(3) .hover-text:before, #badges .badge:nth-child(3) .hover-text:after, #badges .badge:nth-child(5) .hover-text:before, #badges .badge:nth-child(5) .hover-text:after {
+    left: 65px;
+  }
+
+
+  #badges .badge:nth-child(2) .hover-text, #badges .badge:nth-child(4) .hover-text, #badges .badge:nth-child(6) .hover-text {
+    left: auto;
+    margin-left: 0px;
+    right: 0px;
+  }
+  #badges .badge:nth-child(2) .hover-text:before, #badges .badge:nth-child(2) .hover-text:after, #badges .badge:nth-child(4) .hover-text:before, #badges .badge:nth-child(4) .hover-text:after, #badges .badge:nth-child(6) .hover-text:before, #badges .badge:nth-child(6) .hover-text:after {
+    left: auto;
+    right: 65px;
+    margin: 0 -18px 0 0;
+  }
+  #badges .badge:nth-child(2) .hover-text:after, #badges .badge:nth-child(4) .hover-text:after, #badges .badge:nth-child(6) .hover-text:after {
+    margin: 0 -16px 0 0;
+  }
+  /* Quotes */
+  .quote {
+    padding: 30px 20px;
+    margin-bottom: 30px;
+  }
+  .quote .left {
+    padding-right: 0px;
+  }
+  .quote .right {
+    display: none;
+  }
+  .quote .left .quote-text {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .quote .left .quote-by {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  /* Photo or Video */
+  #photo-video {
+    margin-bottom: 30px;
+  }
+  #photo-video .video-container {
+    margin-bottom: 30px;
+  }
+  /* Partner News */
+  #partner-news {
+  }
+  #partner-news .thumbnail {
+    position: initial;
+    top: auto;
+    left: auto;
+    margin-bottom: 30px;
+  }
+  #partner-news .story-text {
+    padding-left: 0px;
+    min-height: 0px;
+  }
+  /* partner footer promos */
+  body.individual-corp-partnerDOThtml #footer_promos, body.Partner #footer_promos {
+    /*
+    In production, this will need to be based off body.content-type, or body.template
+    */
+    display: none;
+  }
+
+  /* --------------------------------------------
+    our partners landing page
+  -------------------------------------------- */
+  .two-column.our-partners-lp .container {
+    padding: 0px;
+  }
+  .two-column.our-partners-lp .column-1 {
+    padding: 0px 20px;
+    margin-bottom: 20px;
+  }
+  .two-column.our-partners-lp .column-2 {
+    margin-bottom: 20px;
+  }
+  .two-column.our-partners-lp .column-2 .sidebar-promo-box .sidebar-promo.border {
+    border-right: none;
+    border-left: none;
+  }
+  .fullwidth-promo .container {
+    padding: 0px;
+  }
+  .fullwidth-promo .container > h2, .fullwidth-promo .container > p {
+    padding: 0px 20px;
+  }
+  .fullwidth-promo a.learn-more {
+    max-width: 190px;
+    line-height: 20px;
+  }
+  .logo-boxes a.logo-box {
+    padding: 5px;
+    width: 134px;
+    height: 134px;
+    line-height: 122px;
+  }
+  .logo-boxes a.logo-box, .logo-boxes a.logo-box:first-child, #current-promotions.logo-boxes div.item:first-child {
+    margin: 0px 6px 12px 6px;
+  }
+  #food-and-fund.logo-boxes, #current-promotions.logo-boxes {
+    width: 292px;
+    display: block;
+    margin: 25px auto 15px auto;
+  }
+  #current-promotions.logo-boxes {
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eea13d;
+  }
+  #current-promotions.logo-boxes a.logo-box {
+    line-height: 132px;
+    margin: 0px 0px 12px 0px;
+  }
+  #current-promotions.logo-boxes div.item {
+    width: 134px;
+    margin: 0px 6px;
+  }
+  #current-promotions.logo-boxes div.item:nth-child(3), #current-promotions.logo-boxes div.item:nth-child(4) {
+    display: none;
+  }
+  #current-promotions.logo-boxes .item-text, #current-promotions.logo-boxes .item-text p:first-child {
+    margin-top: 0px;
+  }
+  #media-entertainment-disaster .logo-boxes div.item {
+    width: 100%;
+    display: block;
+    float: none;
+    border-left: none;
+    padding-bottom: 27px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #7c8c5e;
+  }
+  #media-entertainment-disaster .logo-boxes div.item:nth-child(3) {
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    border-bottom: none;
+  }
+  #media-entertainment-disaster .logo-boxes a.logo-box {
+    line-height: 132px;
+  }
+  .our-partners-lp #recent_news_boxes .recent_news_item {
+    margin: 0px auto 25px auto;
+  }
+  .our-partners-lp #recent_news_boxes .recent_news_item:nth-child(2) {
+    margin-bottom: 0px;
+  }
+  .our-partners-lp #recent_news_boxes .recent_news_item:nth-child(3), .our-partners-lp #recent_news_boxes .recent_news_item:nth-child(4) {
+    display: none;
+  }
+  #recent_news.our-partners-lp {
+    margin-bottom: 20px;
+  }
+
+  /* --------------------------------------------
+    food and fund partners landing page
+  -------------------------------------------- */
+  /* Visionary Partners carousel */
+  #fandf-visionary-partners {
+    margin: 0px -20px 30px -20px;
+    padding: 0px 20px 0px 20px;
+  }
+  #fandf-visionary-partners-carousel {
+    padding: 20px 30px;
+  }
+  #fandf-visionary-partners-carousel .slides li a {
+    height: 90px;
+    width: 90px;
+    padding: 5px;
+    line-height: 78px;
+  }
+  /* Leadership Partners carousel */
+  #fandf-leadership-partners {
+    margin: 0px -20px 30px -20px;
+    padding: 0px 20px 0px 20px;
+    border-bottom: 1px solid #dedede;
+  }
+  #fandf-leadership-partners-carousel {
+    padding: 20px 30px;
+  }
+  #fandf-leadership-partners-carousel .slides li a {
+    height: 70px;
+    width: 70px;
+    padding: 5px;
+    line-height: 58px;
+  }
+
+
+  /* --------------------------------------------
+    section-name elements
+  -------------------------------------------- */
+    /* sub-section description */
+
+
+    /* "sub-section title" */
+
+}
+  /* --------------------------------------------
+    special food bank profile map elements
+  -------------------------------------------- */
+  @media only screen and (min-width: 500px) and (max-width: 767px) {
+    #food-bank-profile-address-map .right {
+      height: 350px;
+    }
+  }
+
+
+  /* --------------------------------------------
+    special section-name elements
+  -------------------------------------------- */
+  @media only screen and (min-width: 610px) and (max-width: 767px) {
+
+  }
+  @media only screen and (min-width: 501px) and (max-width: 609px) {
+
+  }
