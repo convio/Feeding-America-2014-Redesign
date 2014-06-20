@@ -1280,6 +1280,9 @@ html.mobile .navbar .dropdown:hover .dropdown-menu, html.tabletnarrow .navbar .d
   border-radius: 4px;
   background-image: none;
 }
+.navbar-toggle:hover {
+  background-color: transparent;
+}
 .sr-only {
   position: absolute;
   width: 1px;
@@ -3390,6 +3393,15 @@ html.ff #homepage_ending_select {
   }
 
 
+
+  /* overriding font-weight for smaller screens */
+  #page-description, a.button, a.grainbutton, button, input[type="text"], input[type="email"], textarea, select, #util_search_query, #util_search_button, #footer_text, #homepage_slideshow .headline-bar .headline-button a, #homepage_zip_search_form input, #homepage_zip_search_form button, #homepage_ending_select, #recent_news_boxes .recent_news_item .news_preview span, #recent_news_boxes .recent_news_item .news_expanded span, #homepage_together .headline span:last-child:after, #homepage_together p, #together_form input, #together_form button, #textalerts_form input, #textalerts_form button, #homepage_fivesteps_find_out_more, #homepage_fivesteps_share_this, #section-banner .headline-subhead, #recent_news_boxes .recent_news_item.one .news_expanded p, #recent_news_boxes .recent_news_item.two .news_expanded p, #recent_news_boxes .recent_news_item.one .news_expanded span.link, #recent_news_boxes .recent_news_item.one .news_expanded p, #recent_news_boxes .recent_news_item.morenews, .navbar-toggle:after, #footer_links, #homepage_ending .left p {
+    font-weight: 300;
+  }
+
+
+
+
 }
   /* --------------------------------------------
     special header elements
@@ -4349,6 +4361,13 @@ html.ff #homepage_ending_select {
   }
   .two-boxes .half-width:nth-child(2) .special-box {
     margin-bottom: 0px;
+  }
+
+
+
+  /* overriding font-weight for smaller screens */
+  #page-description, a.button, a.grainbutton, button, input[type="text"], input[type="email"], textarea, select, #util_search_query, #util_search_button, #footer_text, #homepage_slideshow .headline-bar .headline-button a, #homepage_zip_search_form input, #homepage_zip_search_form button, #homepage_ending_select, #recent_news_boxes .recent_news_item .news_preview span, #recent_news_boxes .recent_news_item .news_expanded span, #homepage_together .headline span:last-child:after, #homepage_together p, #together_form input, #together_form button, #textalerts_form input, #textalerts_form button, #homepage_fivesteps_find_out_more, #homepage_fivesteps_share_this, #section-banner .headline-subhead, #recent_news_boxes .recent_news_item.one .news_expanded p, #recent_news_boxes .recent_news_item.two .news_expanded p, #recent_news_boxes .recent_news_item.one .news_expanded span.link, #recent_news_boxes .recent_news_item.one .news_expanded p, #recent_news_boxes .recent_news_item.morenews, .navbar-toggle:after, #footer_links, #homepage_ending .left p {
+    font-weight: 300;
   }
 
 }
