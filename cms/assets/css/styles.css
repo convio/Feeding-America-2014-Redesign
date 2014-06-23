@@ -250,6 +250,9 @@ button {
 #body-content a {
   text-decoration: underline;
 }
+#body-content a.button, #body-content a.grainbutton{
+  text-decoration: none;
+}
 #body-content a span {
   display: inline-block;
   margin-left: 5px;
@@ -637,6 +640,9 @@ p.req {
   font-weight: 500;
   margin: 0px 0px 15px 0px;
 }
+.list-item-text .list-item-title a, #body-content .list-item-text .list-item-title a {
+  text-decoration: none;
+}
 .list-item-text .list-item-date {
   line-height: 14px;
   margin-bottom: 20px;
@@ -727,6 +733,7 @@ p.req {
   display: block;
   width: 100%;
   margin-bottom: 15px;
+  border: 1px solid #ffffff;
 }
 .lightbox-content {
   display: none;
@@ -752,6 +759,9 @@ table.paginator td.pg-items {
 }
 table.paginator td.pg-curr, table.paginator td.pg-page {
   text-align: center;
+}
+table.paginator a, #body-content table.paginator a {
+  text-decoration: none;
 }
 table.paginator td.pg-curr, table.paginator td a {
   font-weight: 500;
@@ -1113,14 +1123,14 @@ html.gecko .dropdown-menu:before, html.ie .dropdown-menu:before {
   display: block;
 }
 /*
-body.not-homepage .navbar .dropdown:hover .dropdown-menu {
+header.has-horizontal-nav .navbar .dropdown:hover .dropdown-menu {
   display: none;
 }
 */
-body.not-homepage .active .dropdown-menu .container {
+header.has-horizontal-nav .active .dropdown-menu .container {
   position: relative;
 }
-body.not-homepage .active .dropdown-menu .container:before, html.gecko.ff body.not-homepage .active .dropdown-menu .container:before {
+header.has-horizontal-nav .active .dropdown-menu .container:before, html.gecko.ff header.has-horizontal-nav .active .dropdown-menu .container:before {
   content: "";
   position: absolute;
   width: 0;
@@ -1135,28 +1145,28 @@ body.not-homepage .active .dropdown-menu .container:before, html.gecko.ff body.n
   margin: 0 0 0 -15px;
   z-index: 3;
 }
-html.gecko.ff body.not-homepage .active .dropdown-menu .container:before {
+html.gecko.ff header.has-horizontal-nav .active .dropdown-menu .container:before {
   top: -25px;
 }
-html.gecko body.not-homepage .active .dropdown-menu .container:before, html.ie body.not-homepage .active .dropdown-menu .container:before {
+html.gecko header.has-horizontal-nav .active .dropdown-menu .container:before, html.ie header.has-horizontal-nav .active .dropdown-menu .container:before {
   border-top: 0px solid transparent;
   border-right: 15px solid transparent;
   border-bottom: 17px solid #dedede;
   border-left: 15px solid transparent;
 }
-body.not-homepage .active .dropdown-menu {
+header.has-horizontal-nav .active .dropdown-menu {
   padding: 24px 0px 0px 0px;
 }
-body.not-homepage .nav > li.active {
+header.has-horizontal-nav .nav > li.active {
   position: initial;
 }
-body.not-homepage .navbar .dropdown.active .dropdown-menu, body.not-homepage .navbar .dropdown.active:hover .dropdown-menu {
+header.has-horizontal-nav .navbar .dropdown.active .dropdown-menu, header.has-horizontal-nav .navbar .dropdown.active:hover .dropdown-menu {
   display: block;
 }
-body.not-homepage .navbar .no-dropdown.active, body.not-homepage .nav > li.no-dropdown.active {
+header.has-horizontal-nav .navbar .no-dropdown.active, header.has-horizontal-nav .nav > li.no-dropdown.active {
   position: relative;
 }
-body.not-homepage .navbar .no-dropdown.active:before {
+header.has-horizontal-nav .navbar .no-dropdown.active:before {
   content: "";
   position: absolute;
   width: 0;
@@ -1171,7 +1181,7 @@ body.not-homepage .navbar .no-dropdown.active:before {
   margin: 0 0 0 -15px;
   z-index: 3;
 }
-body.not-homepage .active #drop1 + a + .dropdown-menu, body.not-homepage .active #drop2 + a + .dropdown-menu, body.not-homepage .active #drop3 + a + .dropdown-menu, body.not-homepage .active #drop4 + a + .dropdown-menu {
+header.has-horizontal-nav .active #drop1 + a + .dropdown-menu, header.has-horizontal-nav .active #drop2 + a + .dropdown-menu, header.has-horizontal-nav .active #drop3 + a + .dropdown-menu, header.has-horizontal-nav .active #drop4 + a + .dropdown-menu {
   left: 0px;
   right: 0px;
   top: auto;
@@ -1186,36 +1196,36 @@ body.not-homepage .active #drop1 + a + .dropdown-menu, body.not-homepage .active
   -webkit-box-shadow: 0px 5px 5px 0px rgba(6, 6, 6, 0.18);
   box-shadow: 0px 5px 5px 0px rgba(6, 6, 6, 0.18);
 }
-body.not-homepage .active .dropdown-menu:before {
+header.has-horizontal-nav .active .dropdown-menu:before {
   top: auto;
   bottom: 100%;
   display: none;
 }
-body.not-homepage .active .dropdown-menu .container:before {
+header.has-horizontal-nav .active .dropdown-menu .container:before {
   top: -25px;
   bottom: auto;
 }
-body.not-homepage .active #drop1 + a + .dropdown-menu .container:before {
+header.has-horizontal-nav .active #drop1 + a + .dropdown-menu .container:before {
   left: 320px;
 }
-body.not-homepage .active #drop2 + a + .dropdown-menu .container:before {
+header.has-horizontal-nav .active #drop2 + a + .dropdown-menu .container:before {
   left: 472px;
 }
-body.not-homepage .active #drop3 + a + .dropdown-menu .container:before {
+header.has-horizontal-nav .active #drop3 + a + .dropdown-menu .container:before {
   left: 610px;
 }
-body.not-homepage .active #drop4 + a + .dropdown-menu .container:before {
+header.has-horizontal-nav .active #drop4 + a + .dropdown-menu .container:before {
   left: 890px;
 }
-body.not-homepage .active .dropdown-menu li {
+header.has-horizontal-nav .active .dropdown-menu li {
   display: inline-block;
   border-top: none;
   padding: 5px 0px;
 }
-body.not-homepage .active .dropdown-menu li:last-child {
+header.has-horizontal-nav .active .dropdown-menu li:last-child {
   border-bottom: none;
 }
-body.not-homepage .active .dropdown-menu li a {
+header.has-horizontal-nav .active .dropdown-menu li a {
   display: inline-block;
   color: #333333;
   background-color: transparent;
@@ -1224,16 +1234,16 @@ body.not-homepage .active .dropdown-menu li a {
   padding: 2px 14px;
   border-right: 1.5px solid #707070;
 }
-body.not-homepage .active .dropdown-menu li.active a {
+header.has-horizontal-nav .active .dropdown-menu li.active a {
   font-weight: 500;
 }
-body.not-homepage .active #drop4 + a + .dropdown-menu li:nth-child(5) a {
+header.has-horizontal-nav .active #drop4 + a + .dropdown-menu li:nth-child(5) a {
   border-right: none;
  }
-body.not-homepage .active .dropdown-menu li:last-child a {
+header.has-horizontal-nav .active .dropdown-menu li:last-child a {
   border-right: none;
 }
-body.not-homepage .active .dropdown-menu li a:hover {
+header.has-horizontal-nav .active .dropdown-menu li a:hover {
   color: #e98300;
   background-color: transparent;
 }
@@ -2732,9 +2742,11 @@ html.ff #homepage_ending_select {
     background-color: #bfd730;
     color: #333333;
   }
+  /*
   #recent_news_boxes .recent_news_item.one .news_expanded span.link:hover {
     color: #ffffff;
   }
+  */
   #recent_news_boxes .recent_news_item.two .news_expanded span.link, #recent_news_boxes .recent_news_item.four .news_expanded span.link {
     font-size: inherit;
     line-height: inherit;
@@ -2912,10 +2924,10 @@ html.ff #homepage_ending_select {
   .navbar-default .navbar-nav > li > a {
     padding: 8px 0px;
   }
-  .navbar .dropdown:hover .dropdown-menu, body.not-homepage .navbar .dropdown .dropdown-menu {
+  .navbar .dropdown:hover .dropdown-menu, header.has-horizontal-nav .navbar .dropdown .dropdown-menu {
     display: none;
   }
-  body.not-homepage .navbar .no-dropdown.active:before {
+  header.has-horizontal-nav .navbar .no-dropdown.active:before {
     top: auto;
     bottom: -24px;
   }
@@ -2948,16 +2960,16 @@ html.ff #homepage_ending_select {
     top: auto;
     bottom: 100%;
   }
-  #drop1 + a + .dropdown-menu:before, body.not-homepage #drop1 + a + .dropdown-menu .container:before, body.not-homepage .active #drop1 + a + .dropdown-menu .container:before {
+  #drop1 + a + .dropdown-menu:before, header.has-horizontal-nav #drop1 + a + .dropdown-menu .container:before, header.has-horizontal-nav .active #drop1 + a + .dropdown-menu .container:before {
     left: 13.5%;
   }
-  #drop2 + a + .dropdown-menu:before, body.not-homepage #drop2 + a + .dropdown-menu .container:before, body.not-homepage .active #drop2 + a + .dropdown-menu .container:before {
+  #drop2 + a + .dropdown-menu:before, header.has-horizontal-nav #drop2 + a + .dropdown-menu .container:before, header.has-horizontal-nav .active #drop2 + a + .dropdown-menu .container:before {
     left: 34.5%;
   }
-  #drop3 + a + .dropdown-menu:before, body.not-homepage #drop3 + a + .dropdown-menu .container:before, body.not-homepage .active #drop3 + a + .dropdown-menu .container:before {
+  #drop3 + a + .dropdown-menu:before, header.has-horizontal-nav #drop3 + a + .dropdown-menu .container:before, header.has-horizontal-nav .active #drop3 + a + .dropdown-menu .container:before {
     left: 52%;
   }
-  #drop4 + a + .dropdown-menu:before, body.not-homepage #drop4 + a + .dropdown-menu .container:before, body.not-homepage .active #drop4 + a + .dropdown-menu .container:before {
+  #drop4 + a + .dropdown-menu:before, header.has-horizontal-nav #drop4 + a + .dropdown-menu .container:before, header.has-horizontal-nav .active #drop4 + a + .dropdown-menu .container:before {
     left: 90%;
   }
   .dropdown-menu li {
@@ -3796,7 +3808,7 @@ html.ff #homepage_ending_select {
   .navbar .dropdown:hover .dropdown-menu {
     display: none;
   }
-  body.not-homepage #drop1 + a + .dropdown-menu, body.not-homepage #drop2 + a + .dropdown-menu, body.not-homepage #drop3 + a + .dropdown-menu, #drop4 + a + .dropdown-menu {
+  header.has-horizontal-nav #drop1 + a + .dropdown-menu, header.has-horizontal-nav #drop2 + a + .dropdown-menu, header.has-horizontal-nav #drop3 + a + .dropdown-menu, #drop4 + a + .dropdown-menu {
     display: none;
   }
 
@@ -4271,7 +4283,7 @@ html.ff #homepage_ending_select {
   /* --------------------------------------------
     title and banner area elements
   -------------------------------------------- */
-  header.has-horizontal-nav, body.not-homepage header {
+  header.has-horizontal-nav, header.has-horizontal-nav header {
     margin-bottom: 30px;
   }
   #title-and-share {

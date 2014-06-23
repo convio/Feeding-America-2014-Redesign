@@ -276,7 +276,7 @@
   margin-left: 40px;
 }
 /* "Latest News" */
-body.not-homepage #recent_news_boxes .recent_news_item .news_expanded {
+body.expand-news #recent_news_boxes .recent_news_item .news_expanded {
   display: block;
   position: initial;
   bottom: auto;
@@ -285,22 +285,22 @@ body.not-homepage #recent_news_boxes .recent_news_item .news_expanded {
   color: #333333;
   padding: 20px 0px 0px 0px;
 }
-body.not-homepage #recent_news_boxes .recent_news_item .news_expanded span {
+body.expand-news #recent_news_boxes .recent_news_item .news_expanded span {
   color: #e98300;
   font-size: 18px;
   line-height: 24px;
   font-weight: normal;
 }
-body.not-homepage #recent_news_boxes .recent_news_item .news_expanded span.link {
+body.expand-news #recent_news_boxes .recent_news_item .news_expanded span.link {
   font-size: 14px;
   line-height: 20px;
 }
-body.not-homepage #recent_news_boxes {
+body.expand-news #recent_news_boxes {
   border-bottom: 1px solid #dedede;
   padding-bottom: 25px;
   margin-bottom: 20px;
 }
-body.not-homepage #recent_news {
+body.expand-news #recent_news {
   border-bottom: 1px solid #dedede;
   margin-bottom: 50px;
 }
@@ -1823,32 +1823,32 @@ shortcut to end of desktop
     display: none !important;
   }
   /* "Latest News" */
-  body.not-homepage #recent_news_boxes .recent_news_item.morenews {
+  body.expand-news #recent_news_boxes .recent_news_item.morenews {
     background-color: #efefef;
     color: #e98300;
     font-size: 32px;
     line-height: 32px;
   }
-  body.not-homepage #recent_news_boxes .recent_news_item.morenews {
+  body.expand-news #recent_news_boxes .recent_news_item.morenews {
     height: 318px;
     padding: 30px;
     position: relative;
   }
-  body.not-homepage #recent_news_boxes .recent_news_item.morenews span.link {
+  body.expand-news #recent_news_boxes .recent_news_item.morenews span.link {
     position: absolute;
     bottom: 30px;
   }
-  body.not-homepage #recent_news_boxes {
+  body.expand-news #recent_news_boxes {
     border-bottom: none;
     padding-bottom: 10px;
   }
-  body.not-homepage #recent_news_boxes .recent_news_item .news_expanded p:last-child {
+  body.expand-news #recent_news_boxes .recent_news_item .news_expanded p:last-child {
     margin-bottom: 0px;
   }
-  body.not-homepage #recent_news {
+  body.expand-news #recent_news {
     margin-bottom: 30px;
   }
-  body.not-homepage #recent_news .headline {
+  body.expand-news #recent_news .headline {
     font-size: 36px;
   }
 
