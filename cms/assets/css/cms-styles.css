@@ -1275,9 +1275,18 @@ vertical-align: top;
   margin-top: 30px;
   margin-bottom: 20px;
 }
+#sidebar-filter-dates input,
 #sidebar-filter-dates select {
   width: 107px;
 }
+#sidebar-filter-dates input {
+	cursor: pointer;
+    padding-left: 5px;
+	background-image: url('../images/dropdown.png');
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+#sidebar-filter-dates input:first-child,
 #sidebar-filter-dates select:first-child {
   margin-right: 10px;
 }
@@ -2083,6 +2092,11 @@ shortcut to end of desktop
     padding-left: 10px;
     font-size: 12px;
   }
+  #sidebar-filter-dates input {
+	width: 80px;
+	padding-left: 5px;
+	font-size: 11px;
+  }
 
   /* --------------------------------------------
     our partners landing page
@@ -2167,15 +2181,16 @@ shortcut to end of desktop
     width: 86px;
     padding: 5px;
     line-height: 74px;
-  }
+  } 
 
-
-  /* overriding font-weight for smaller screens */
+  
+   /* overriding font-weight for smaller screens */
   #footer_promo_boxes .footer-promo input[type="text"], #footer_promo_boxes .footer-promo input[type="email"], #footer_promo_boxes .footer-promo div.half-width button, #footer_promo_boxes .footer-promo a.button, #section-boxes .section-img .section-img-hover span, #page-intro, #find-fb-search-form a, .sidebar-promo-box .sidebar-promo.form form div.half-width button, .sidebar-promo-box a.grainbutton {
     font-weight: 300;
   }
 
 
+  
 /* shortcut to end of tablet */
 
 
@@ -2779,13 +2794,12 @@ shortcut to end of desktop
     padding: 5px;
     line-height: 58px;
   }
-
-
-  /* overriding font-weight for smaller screens */
+  
+  
+ /* overriding font-weight for smaller screens */
   #footer_promo_boxes .footer-promo input[type="text"], #footer_promo_boxes .footer-promo input[type="email"], #footer_promo_boxes .footer-promo div.half-width button, #footer_promo_boxes .footer-promo a.button, #section-boxes .section-img .section-img-hover span, #page-intro, #find-fb-search-form a, .sidebar-promo-box .sidebar-promo.form form div.half-width button, .sidebar-promo-box a.grainbutton {
     font-weight: 300;
-  }
-  
+  } 
 
 
   /* --------------------------------------------
