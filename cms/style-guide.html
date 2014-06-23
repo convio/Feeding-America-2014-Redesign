@@ -124,12 +124,9 @@
           </select>
           <label>Select Date Range</label>
           <div class="select-date-range">
-            <select id="style-guide-field-4" name="start-date" placeholder="From">
-              <option value="" selected="" disabled="">From</option>
-            </select>
-            <select id="style-guide-field-5" name="end-date" placeholder="To">
-              <option value="" selected="" disabled="">To</option>
-            </select>
+            <input type="hidden" value="news_date" name="dateType">
+            <input type="text" id="sidebar-filter-date-from" name="startDate" class="js__datepicker" placeholder="From" />
+            <input type="text" id="sidebar-sidebar-filter-date-to-date-from" name="endDate" class="js__datepicker" placeholder="To" />
           </div>
           <label class="req">Radio Button Options</label>
           <div class="radios">
@@ -452,7 +449,9 @@
         </div><!--/#ty-sidebar-promo-->
       </div><!--/.sidebar-promo-box-->
 
-
+      <link rel="stylesheet" href="/assets/js/pickadate/lib/themes/default.css">
+      <link rel="stylesheet" href="/assets/js/pickadate/lib/themes/default-date.css">
+      <link rel="stylesheet" href="/assets/js/pickadate/lib/themes/default-fa.css">
       <div class="sidebar-promo-box">
         <div id="sidebarpromosearch" class="sidebar-promo search lightgray border">
           <div class="by-keyword">
@@ -491,18 +490,26 @@
               </label>
               <div id="sidebar-filter-dates">
                 <!-- calendar JS: amsul.ca/pickadate.js/index.htm#demo -->
-                <select id="sidebar-filter-date-from" placeholder="From">
-                  <option value="" selected="" disabled="">From</option>
-                </select><!--/#sidebar-filter-date-from-->
-                <select id="sidebar-filter-date-to" placeholder="To">
-                  <option value="" selected="" disabled="">To</option>
-                </select><!--/#sidebar-filter-date-from-->
+                <input type="hidden" value="news_date" name="dateType">
+                <input type="text" id="sidebar-filter-date-from" name="startDate" class="js__datepicker" placeholder="From" />
+                <input type="text" id="sidebar-sidebar-filter-date-to-date-from" name="endDate" class="js__datepicker" placeholder="To" />
               </div><!--/#sidebar-filter-dates-->
               <button type="submit" class="red">GO</button>
             </form><!--/.filter-search-form-->
           </div><!--/.filter-by-->                  
         </div><!--/#sidebarpromosearch.sidebar-promo-->
       </div><!--/.sidebar-promo-box-->
+      <script src="/assets/js/pickadate/lib/picker.js"></script>
+      <script src="/assets/js/pickadate/lib/picker-date.js"></script>
+      <script>
+      $( '.js__datepicker' ).pickadate({
+        // Work-around for some mobile browsers clipping off the picker.
+        onOpen: function() { $('pre').css('overflow', 'hidden') },
+        onClose: function() { $('pre').css('overflow', '') },
+        format: 'mm/dd/yyyy'
+      })
+      </script>
+
     </div><!--/.column-2-->
     <div class="clearfix"></div>
   </div><!--/.container-->
