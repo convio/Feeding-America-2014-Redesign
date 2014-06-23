@@ -7,6 +7,8 @@ $(document).ready(function() {
     });
     $('.hover-text .close').click(function() {
         $(this).parent().hide();
+        var tempThis = $(this);
+        setTimeout(function(){tempThis.parent().removeAttr('style');}, 1000);
     });
     $('#util_search_expand').click(function() {
         if ($(window).width() < 768) {
