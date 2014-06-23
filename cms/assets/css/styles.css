@@ -247,6 +247,13 @@ button {
 #body-content form button {
   margin-top: 20px;
 }
+#body-content a {
+  text-decoration: underline;
+}
+#body-content a span {
+  display: inline-block;
+  margin-left: 5px;
+}
 input, textarea, select {
   margin: 0px;
   display: inline-block;
