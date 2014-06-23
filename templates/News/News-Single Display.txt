@@ -1,0 +1,91 @@
+<div class="two-column">
+  <div class="container">
+    <div class="column-1">
+      <div id="page-title">
+        <h1 class="page-title">${title}</h1>
+      </div><!--/#page-title-->
+      <t:if test="!isNull(description)"><div id="page-description">
+        <p>${description}</p>
+      </div></t:if><!--/#page-description-->
+      ${body}
+
+    </div><!--/.column-1-->
+    <div class="column-2">
+      <ul class="social_icons">
+        <li class="fbk"><a href="https://www.facebook.com/FeedingAmerica" title="Facebook">facebook</a></li>
+        <li class="twt"><a href="https://twitter.com/feedingamerica" title="Twitter">twitter</a></li>
+        <li class="more"><a href="#" title="More">more</a></li>
+      </ul><!--/.social_icons-->
+      <div class="clearfix"></div>
+     
+      <!-- Section Navigation --> 
+      <div style="display: inline;" class="templateComponent" id="sectionNavigation-535274647"></div>
+
+      <!-- Search News --> 
+      <t:include id="item-536428902"/>
+      <!--/.sidebar-promo-box-->
+      <div class="sidebar-promo-box">
+        <div id="ty-sidebar-promo" class="sidebar-promo icon blue">
+          <img src="http://fa.pub30.convio.net/assets/images/heart-icon-white.png" alt="alttext" border="0">
+          <span class="small">You make our work possible.</span>
+          <span class="big">Thank you for your ongoing support.</span>
+        </div><!--/#ty-sidebar-promo-->
+      </div><!--/.sidebar-promo-box-->
+      <div class="sidebar-promo-box">
+        <div id="yourarea-sidebar-promo" class="sidebar-promo standard form gray">
+          <span class="big">Hunger in Your Area</span>
+          <span class="small">Use our map to learn about hunger in your community.</span>
+          <img src="http://fa.pub30.convio.net/assets/images/usa_smallgray.png" alt="alttext" border="0">
+          <form id="yourarea-sidebar-promo-form" action="#">
+            <input type="text" name="cons_zip_code" class="half-width" placeholder="Enter Zip" />
+            <div class="half-width">
+              <button type="submit" class="purple">GO</button>
+            </div>
+            <div class="clearfix"></div>
+          </form><!--/#yourarea-sidebar-promo-form-->          
+        </div><!--/#yourarea-sidebar-promo-->
+      </div><!--/.sidebar-promo-box-->
+
+    </div><!--/.column-2-->
+    <div class="clearfix"></div>
+  </div><!--/.container-->
+</div><!--/.two-column-->
+
+<div id="footer_promos">
+  <div class="container">
+    <div class="headline">How You Can Help Feeding America Solve Hunger</div>
+    <div id="footer_promo_boxes">
+      <div class="footer-promo">
+        <img src="http://fa.pub30.convio.net/assets/images/learn-icon-white.png" alt="alttext" border="0">
+        <div class="promo-title">Learn</div>
+        <div class="promo-text">What does hunger look like in your state?<br />Find out.</div>
+        <div class="promo-action">
+          <form class="promo-learn" action="#">
+            <input type="text" name="cons_zip_code" class="half-width" placeholder="Enter Zip">
+            <div class="half-width">
+              <button type="submit" class="red">GO</button>
+            </div>
+            <div class="clearfix"></div>
+          </form><!--/.promo-learn-->
+        </div><!--/.promo-action-->
+      </div><!--/.footer-promo-->
+      <div class="footer-promo">
+        <img src="http://fa.pub30.convio.net/assets/images/act-icon-1-white.png" alt="alttext" border="0">
+        <div class="promo-title">Act</div>
+        <div class="promo-text">Tell your member of Congress to visit your local food bank.</div>
+        <div class="promo-action">
+          <a href="#" class="button purple">Act Now</a>
+        </div><!--/.promo-action-->
+      </div><!--/.footer-promo-->
+      <div class="footer-promo">
+        <img src="http://fa.pub30.convio.net/assets/images/give-icon-1-white.png" alt="alttext" border="0">
+        <div class="promo-title">Give</div>
+        <div class="promo-text">Give hope to children and families in need year round. Become a monthly donor.</div>
+        <div class="promo-action">
+          <a href="#" class="button blue">Donate</a>
+        </div><!--/.promo-action-->
+      </div><!--/.footer-promo-->
+      <div class="clearfix"></div>
+    </div><!--/#footer_promo_boxes-->
+  </div><!--/.container-->
+</div><!--/#footer_promos-->

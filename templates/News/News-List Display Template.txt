@@ -1,0 +1,21 @@
+<t:if test="length>0">
+<div class="blog-posts list-items-container">
+<div class="list-items">
+<t:list>
+<div class="list-item">
+<t:if test="thumb.length>0"><div class="list-item-thumbnail"><a href="${url}"><img border="0" alt="${thumb.alt_text}" src="${thumb.url}"></a></div></t:if>
+<div class="list-item-text">
+<div class="list-item-title"><a href="${url}">${title}</a></div>
+<t:if test="!isNull(news_date)"><div class="list-item-date"><t:value id="news_date" type="date" format="EEEE, MMM d yyyy"></t:value></div></t:if>
+<t:if test="!isNull(description)"><div class="list-item-description">${description}</div></t:if>
+<!-- <div class="list-item-tags">Tags: <a href="#">Hunger in America</a>, <a href="#">Hunger Study</a>, <a href="#">Monica Hake</a>, <a href="#">Research</a></div> -->
+<t:if test="!isNull(author_name)" || author_profile.length>0"><div class="list-item-by">Posted by <t:if test="author_profile.length>0"><t:list id="author_profile"><a href="${url}">${title}</a></t:list></t:if><t:else><t:if test="!isNull(author_name)">${author_name}</t:if></t:else><t:if test="!isNull(news_date)">on <t:value id="news_date" type="date" format="EEEE, MMM d yyyy"></t:value></t:if></div></t:if>
+</div><!--/.list-item-text-->
+<div class="clearfix"></div>
+</div><!--/.list-item-->
+</t:list>
+</div>
+</div>
+<div style="display: inline;" class="templateComponent" id="pagination-536426765"></div>
+</t:if>
+

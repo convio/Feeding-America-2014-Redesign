@@ -1,0 +1,45 @@
+.picker__table th {
+    background-color: #fff;
+}
+.picker__table td,
+.picker__table td:first-child {
+    background-color: #fff;
+}
+.picker__footer button {
+    color: #000;
+    height: auto;
+    line-height: normal;
+}
+@media (min-width: 1025px) { /* Up to iPad */
+    .picker {
+        font-size: 14px;
+    }
+    .picker__holder {
+        display: none;
+    }
+    .picker--opened .picker__holder {
+        display: block;
+        position: static;
+    }
+    .picker--opened .picker__frame {
+        display: block;
+        width: 260px;
+        height: 270px;
+        top: 3px;
+        margin: 0;
+    }
+    .picker__box {
+        border-image: none;
+        border-radius: 0;
+        border: 1px solid #dedede;
+        box-shadow: 0 4px 16px 0px rgba(0, 0, 0, 0.24); /* box-shadow: none; */
+        display: block;
+        font-size: 14px;
+    }
+    .picker__table th {
+        padding: 0;
+    }
+    .picker__footer {
+        margin-bottom: .5em;
+    }
+}

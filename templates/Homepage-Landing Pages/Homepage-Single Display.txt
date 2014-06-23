@@ -1,0 +1,197 @@
+<div id="homepage_slideshow">
+<!-- Feature slides --> 
+<ul class="slides">
+<t:if test="feature_slides.length>0">
+<t:list id="feature_slides">
+<t:if test="index==1"><div></div></t:if>
+<li><img border="0" src="${url}" />
+<div class="headline-bar">
+<div class="container">
+<div class="headline-text"><span class="headline-title">${title}</span><t:if test="!isNull(subtitle)"><span class="headline-subhead">${subtitle}</span></t:if></span></div>
+<t:if test="!isNull(call_to_action_button)"><div class="headline-button"><a href="${action_button_url}">${call_to_action_button}</a></div></t:if>
+</div>
+</div>
+</li>
+</t:list>
+</t:if>
+</ul>
+<div class="container homepage-slideshow-controls">
+<ul class="homepage-slideshow-manual-control-nav">
+<t:if test="feature_slides.length>0">
+<t:list id="feature_slides">
+<li>${title}</li>
+</t:list>
+</t:if>
+</ul>
+</div>
+</div>
+<!-- Zip search --> 
+<div id="homepage_zip_search">
+<div class="container"><form id="homepage_zip_search_form" onsubmit="event.preventDefault();"><span>Find Your</span> <span>Local Food Bank</span><input name="zip" placeholder="Zip Code" type="text" /><button type="submit">GO</button></form>
+<div id="homepage_zip_search_results">
+<div class="find_local_food_bank_result"><a href="#">Greater Chicago Food Bank</a> &nbsp;&bull;&nbsp; Chicago, IL</div>
+<div class="find_local_food_bank_result"><a href="#">Waukegan Food Bank</a> &nbsp;&bull;&nbsp; Waukegan, IL</div>
+</div>
+</div>
+</div>
+<div id="homepage_ending">
+<div class="container">
+<div class="left">
+<!-- How We Are Ending Hunger --> 
+<t:include id="item-532519955"/>
+</div>
+<div class="right"><img id="howweareending_state_img" alt="Illinois" border="0" class="state" src="http://fa.pub30.convio.net/assets/images/howweareending_state.png" />
+<div id="howweareending_stat_msg" class="above_img"><span>In Illinois,</span> <span>1 in 5 people</span></div>
+<img id="howweareending_stat_img" alt="1 in 5" border="0" class="people" src="http://fa.pub30.convio.net/assets/images/howweareending_1in5.png" />
+<div class="below_img">struggles with hunger</div>
+<div class="bottom_row">
+<ul class="social_icons">
+<li class="fbk"><a href="https://www.facebook.com/FeedingAmerica" title="Facebook">facebook</a></li>
+<li class="twt"><a href="https://twitter.com/feedingamerica" title="Twitter">twitter</a></li>
+</ul>
+<form id="homepage_ending_form"><!-- onchange="event.preventDefault(); window.location = '/states/' + $('#homepage_ending_select').val();" --> <select id="homepage_ending_select"> <option disabled="disabled" selected="selected" value="">Search Another State</option><t:data name="state" class="categories" parent="/state" /><t:list id="state"><option value="${name}">${label}</option></t:list></select></form></div>
+</div>
+</div>
+</div>
+<div id="recent_news">
+<div class="container">
+<div class="headline">Recent News</div>
+<div id="recent_news_boxes">
+<t:if test="latest_news.length>0">
+<t:list id="latest_news">
+<a class="recent_news_item" href="${url}"> <img alt="${title}" border="0" src="${thumb.url}" />
+<div class="news_preview"><span>${title}</span></div>
+<!--/.news_preview-->
+<div class="news_expanded"><span>${title}</span>
+<t:if test="!isNull(description)"><p>${description}</p></t:if>
+<p><span class="link">Learn more</span></p>
+</div>
+</t:list>
+</t:if>
+<div class="clearfix"></div>
+</div>
+<!--/#recent_news_boxes-->
+<div id="recent_read_more"><a href="#">Read More News &rsaquo;</a></div>
+</div>
+<!--/.container--></div>
+<!--/#recent_news-->
+<div id="homepage_together">
+<div class="container">
+<div class="headline"><span>Together We Can</span> <span>Solve Hunger.</span></div>
+<p><span>Feeding America is committed to helping people in need,</span> <span>but we can't do it without you.</span></p>
+<p><span>If you believe that no one should go hungry in America,</span> <span>take the pledge to help solve hunger.</span></p>
+<form id="together_form"><input name="email" placeholder="Enter Email" type="email" /> <button type="submit">I'M IN!</button></form></div>
+<!--/.container--></div>
+<!--/#homepage_together-->
+<div id="homepage_fivesteps">
+<div class="container">
+<div class="headline">How We're Ending Hunger.</div>
+<div id="homepage_fivesteps_boxes">
+<div class="homepage_fivesteps_step">
+<div class="fivesteps_1"></div>
+<div class="fivesteps_text">
+<p><strong>Your gift is the critical first step</strong> in feeding millions of Americans at risk of hunger.</p>
+</div>
+</div>
+<!--/.homepage_fivesteps_step-->
+<div class="homepage_fivesteps_step">
+<div class="fivesteps_2"></div>
+<div class="fivesteps_text">
+<p><strong>We build partnerships with</strong></p>
+<ul>
+<li>Growers</li>
+<li>Processors</li>
+<li>Retailers</li>
+<li>Manufacturers</li>
+<li>Wholesalers</li>
+</ul>
+<p>and encourage them to donate groceries that might otherwise go to waste.</p>
+</div>
+</div>
+<!--/.homepage_fivesteps_step-->
+<div class="homepage_fivesteps_step">
+<div class="fivesteps_3"></div>
+<div class="fivesteps_text">
+<p><strong>Our network moves the food</strong> making sure donated food and groceries go where they are needed most.</p>
+</div>
+</div>
+<!--/.homepage_fivesteps_step-->
+<div class="homepage_fivesteps_step">
+<div class="fivesteps_4"></div>
+<div class="fivesteps_text">
+<p><strong>Network food banks</strong> ensure safe storage and distribute the groceries to local charities.</p>
+</div>
+</div>
+<!--/.homepage_fivesteps_step-->
+<div class="homepage_fivesteps_step">
+<div class="fivesteps_5"></div>
+<div class="fivesteps_text">
+<p><strong>Food reachers people facing hunger at</strong></p>
+<ul>
+<li>Food pantries</li>
+<li>Soup kitchens</li>
+<li>Senior centers</li>
+<li>Homeless shelters</li>
+<li>Youth programs</li>
+<li>After-school programs</li>
+</ul>
+</div>
+</div>
+<!--/.homepage_fivesteps_step--></div>
+<!--/#homepage_fivesteps_boxes-->
+<div id="homepage_fivesteps_buttons"><a href="#" id="homepage_fivesteps_find_out_more">Find Out More</a>
+<div id="homepage_fivesteps_share_this"><span class="link">Share This</span>
+<ul class="social_icons">
+<li class="fbk"><a href="https://www.facebook.com/FeedingAmerica" title="Facebook">facebook</a></li>
+<li class="twt"><a href="https://twitter.com/feedingamerica" title="Twitter">twitter</a></li>
+<li class="pin"><a href="http://www.pinterest.com/feedingamerica/" title="Pinterest">pinterest</a></li>
+<li class="more"><a href="#" title="More">more</a></li>
+</ul>
+</div>
+</div>
+</div>
+<!--/.container--></div>
+<!--/#homepage_fivesteps-->
+<div id="homepage_ourpartners_stayconnected">
+<div class="container">
+<div class="left">
+<div class="headline">Our Partners</div>
+<div class="partner_text">
+<p>Veggie ipsum es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.</p>
+<p><a href="#">Learn more about our Partners &rsaquo;</a></p>
+</div>
+<img alt="ConAgra Foods - Food you love" border="0" src="http://fa.pub30.convio.net/assets/images/partnerlogo.jpg" /></div>
+<div class="right">
+<div class="headline">Stay Connected</div>
+<div><iframe frameborder="0" scrolling="no" src="https://www.facebook.com/plugins/like.php?href=${url}&amp;width&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;share=true&amp;height=21&amp;appId=190401370980616" style="border: none; overflow: hidden; height: 21px; width: 161px; display: inline-block;"></iframe>
+<div id="twitter_follow"><a class="twitter-follow-button" href="https://twitter.com/feedingamerica" data-show-count="false" data-lang="en">Follow @feedingamerica</a>
+<script type="text/javascript">// <![CDATA[
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+// ]]></script>
+</div>
+</div>
+<div class="textalerts">
+<div>Get Text Alerts from Feeding America*</div>
+<form id="textalerts_form"><input name="phone_number" placeholder="Enter Phone Number" type="tel" /> <button type="submit">SUBSCRIBE</button></form>
+<div><em>*Message and data rates may apply</em></div>
+</div>
+</div>
+<div class="clearfix"></div>
+</div>
+<!--/.container--></div>
+<!--/#homepage_ourpartners_stayconnected-->
+<p></p>
+<!--
+<div class="container">
+<p>Veggie ipsum es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.</p>
+<p>Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.</p>
+<p>Turnip greens yarrow ricebean rutabaga endive cauliflower sea lettuce kohlrabi amaranth water spinach avocado daikon napa cabbage asparagus winter purslane kale. Celery potato scallion desert raisin horseradish spinach carrot soko. Lotus root water spinach fennel kombu maize bamboo shoot green bean swiss chard seakale pumpkin onion chickpea gram corn pea. Brussels sprout coriander water chestnut gourd swiss chard wakame kohlrabi beetroot carrot watercress. Corn amaranth salsify bunya nuts nori azuki bean chickweed potato bell pepper artichoke.</p>
+</div>
+-->
+<p><link href="http://help.feedingamerica.org/css/FunctionalStyles.css" rel="stylesheet" type="text/css" /></p>
+
+<script src="/assets/js/soap.js"></script>
+<script src="/assets/js/xml2json.js"></script>
+<script src="/assets/js/fa-soap.js"></script>
+<!--<script src="/assets/js/fa-homepage.js"></script>-->
+<script src="/assets/js/fa-homepage.js"></script>
