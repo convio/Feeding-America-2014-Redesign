@@ -7,7 +7,17 @@
       <t:if test="!isNull(description)"><div id="page-description">
         <p>${description}</p>
       </div></t:if><!--/#page-description-->
-      ${body}
+      <div id="body-content">
+        ${body}
+        <div class="templateComponent" id="commentlist-540352587"></div>
+        <h2>Leave a Comment</h2>
+        <t:if test="user.isanonymous">
+          <a href="http://help.feedingamerica.org/site/Login?NEXTURL=${url}">Please login to comment</a>
+        </t:if>
+        <t:else>
+          <div class="templateComponent" id="commentform-540352869"></div>
+        </t:else>
+      </div><!--/#body-content -->
 
     </div><!--/.column-1-->
     <div class="column-2">
@@ -17,11 +27,11 @@
         <li class="more"><a href="#" title="More">more</a></li>
       </ul><!--/.social_icons-->
       <div class="clearfix"></div>
-     
-      <!-- Section Navigation --> 
+
+      <!-- Section Navigation -->
       <div style="display: inline;" class="templateComponent" id="sectionNavigation-535274647"></div>
 
-      <!-- Search News --> 
+      <!-- Search News -->
       <t:include id="item-536428902"/>
       <!--/.sidebar-promo-box-->
       <div class="sidebar-promo-box">
@@ -42,7 +52,7 @@
               <button type="submit" class="purple">GO</button>
             </div>
             <div class="clearfix"></div>
-          </form><!--/#yourarea-sidebar-promo-form-->          
+          </form><!--/#yourarea-sidebar-promo-form-->
         </div><!--/#yourarea-sidebar-promo-->
       </div><!--/.sidebar-promo-box-->
 

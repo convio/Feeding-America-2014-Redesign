@@ -5,14 +5,19 @@
       <div class="list-item">
         <t:if test="thumb.length>0"><div class="list-item-thumbnail"><a href="${url}"><img border="0" alt="${thumb.alt_text}" src="${thumb.url}"></a></div></t:if>
           <div class="list-item-text">
-          <div class="list-item-title"><a href="${url}">${title}</a></div>
-          <t:if test="!isNull(news_date)"><div class="list-item-date"><t:value id="news_date" type="date" format="EEEE, MMM d yyyy"></t:value></div></t:if>
-          <t:if test="!isNull(description)"><div class="list-item-description">${description}</div></t:if>
-          <t:if test="primary_tags.length > 0">
-            <div class="list-item-tags">Tags: <t:list id="primary_tags"><a href="#">${label}</a><t:if test="index != length">,</t:if></t:list></div>
-          </t:if>
-          <t:if test="!isNull(author_name) || author_profile.length>0">
-            <div class="list-item-by">Posted by <t:if test="author_profile.length>0"><t:list id="author_profile"><a href="${url}">${title}</a></t:list></t:if><t:else><t:if test="!isNull(author_name)">${author_name}</t:if></t:else><t:if test="!isNull(news_date)"> on <t:value id="news_date" type="date" format="EEEE, MMM d yyyy"></t:value></t:if></div></t:if>
+            <div class="list-item-title"><a href="${url}">${title}</a></div>
+            <t:if test="!isNull(news_date)"><div class="list-item-date"><t:value id="news_date" type="date" format="EEEE, MMM d yyyy"></t:value></div></t:if>
+            <t:if test="!isNull(description)"><div class="list-item-description">${description}</div></t:if>
+            <t:if test="secondary_tags.length > 0">
+              <t:if test="state.length > 0"><t:list id="state" maxlength="1"><t:value id="relatedItems" value="concat('&amp;state=', name)" /></t:list></t:if>
+              <t:if test="food_bank.length > 0"><t:list id="food_bank" maxlength="1"><t:value id="relatedItems" value="concat(relatedItems, '&amp;food_bank=')" /><t:value id="relatedItems" value="concat(relatedItems, itemid)" />
+              </t:list></t:if>
+              <div class="list-item-tags">Tags: <t:list id="secondary_tags"><a href="/hunger-in-america/news-and-updates/our-perspective/?secondary_tags=${name}${relatedItems}">${label}</a><t:if test="index != length">, </t:if></t:list></div>
+            </t:if>
+            <t:if test="!isNull(author_name) || author_profile.length > 0">
+              <div class="list-item-by">Posted by <t:if test="author_profile.length>0"><t:list id="author_profile"><a href="${url}">${title}</a></t:list></t:if><t:else><t:if test="!isNull(author_name)">${author_name}</t:if></t:else><t:if test="!isNull(news_date)"> on <t:value id="news_date" type="date" format="EEEE, MMM d yyyy"></t:value></t:if></div>
+            </t:if>
+            <t:if test="totalcomments > 0"><div class="list-item-comments"><a href="${url}#comments">Comments (${totalcomments})</a></div></t:if>
           </div><!--/.list-item-text-->
         <div class="clearfix"></div>
       </div><!--/.list-item-->
