@@ -18,6 +18,17 @@
           <div class="templateComponent" id="commentform-540352869"></div>
         </t:else>
       </div><!--/#body-content -->
+      <t:if test="inline_promo.length > 0"><t:include id="item-540519669" /></t:if>
+      <t:else>
+        <div class="promos">
+          <!-- global -->
+          <div class="global-promos">
+          </div>
+          <!-- dynamic section based -->
+          <div class="section-promos">
+          </div>
+        </div>
+      </t:else>
 
     </div><!--/.column-1-->
     <div class="column-2">

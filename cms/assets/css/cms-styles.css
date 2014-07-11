@@ -1067,6 +1067,12 @@ vertical-align: top;
 #partner-news .story-text p:last-child {
   margin-bottom: 0px;
 }
+/* --------------------------
+  comments
+  ---------------------------------------*/
+.comment-form {
+  margin: 0 0 30px;
+}
 
 /* --------------------------------------------
   Sidebar elements
@@ -1628,7 +1634,7 @@ shortcut to end of desktop
 
 
 /* --------------------------------------------
-  
+
 -------------------------------------------- */
 
 
@@ -2183,16 +2189,16 @@ shortcut to end of desktop
     width: 86px;
     padding: 5px;
     line-height: 74px;
-  } 
+  }
 
-  
+
    /* overriding font-weight for smaller screens */
   #footer_promo_boxes .footer-promo input[type="text"], #footer_promo_boxes .footer-promo input[type="email"], #footer_promo_boxes .footer-promo div.half-width button, #footer_promo_boxes .footer-promo a.button, #section-boxes .section-img .section-img-hover span, #page-intro, #find-fb-search-form a, .sidebar-promo-box .sidebar-promo.form form div.half-width button, .sidebar-promo-box a.grainbutton {
     font-weight: 300;
   }
 
 
-  
+
 /* shortcut to end of tablet */
 
 
@@ -2796,12 +2802,12 @@ shortcut to end of desktop
     padding: 5px;
     line-height: 58px;
   }
-  
-  
+
+
  /* overriding font-weight for smaller screens */
   #footer_promo_boxes .footer-promo input[type="text"], #footer_promo_boxes .footer-promo input[type="email"], #footer_promo_boxes .footer-promo div.half-width button, #footer_promo_boxes .footer-promo a.button, #section-boxes .section-img .section-img-hover span, #page-intro, #find-fb-search-form a, .sidebar-promo-box .sidebar-promo.form form div.half-width button, .sidebar-promo-box a.grainbutton {
     font-weight: 300;
-  } 
+  }
 
 
   /* --------------------------------------------

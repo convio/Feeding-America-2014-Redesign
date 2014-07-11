@@ -85,10 +85,10 @@
 </t:if>
 
 <t:if test="path == '/' || itemID == '520109360' || itemID == '524633950'">
-  <t:set id="bodyClass" value="concat(bodyClass, 'is-homepage')" />
+  <t:set id="bodyClass" value="concat(bodyClass, ' is-homepage')" />
 </t:if>
 <t:else>
-  <t:set id="bodyClass" value="concat(bodyClass, 'not-homepage')" />
+  <t:set id="bodyClass" value="concat(bodyClass, ' not-homepage')" />
 </t:else>
 <t:if test="itemID == '526817126'">
   <t:set id="expandnews" value="'expand-news'" />

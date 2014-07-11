@@ -1,4 +1,6 @@
 $(document).ready(function() {
+    promosLogic();
+
     $('#badges .badge img').click(function() {
         if ($(window).width() < 992) {
             $('.hover-text').hide();
@@ -76,3 +78,29 @@ $(document).ready(function() {
         }
     }
 });
+
+/**
+ * Hides the section promos if global promos are present. Relies on the following html markup
+ * <div class="promos">
+ *     <div class="global-promos">
+ *         <div class="promo"></div>
+ *     </div>
+ *     <div class="section-promos">
+ *         <div class="promo"></div>
+ *     </div>
+ * </div>
+ *
+ */
+function promosLogic() {
+    var $promosBlock = $('.promos');
+    $promosBlock.each(function() {
+        var $globalPromos = $(this).find('.global-promos');
+        var $sectionPromos = $(this).find('.section-promos');
+        if($globalPromos.children('.promo').length > 0) {
+            $sectionPromos.hide();
+        } else {
+            $globalPromos.hide();
+        }
+    });
+
+}

@@ -8,6 +8,7 @@
             <div class="list-item-title"><a href="${url}">${title}</a></div>
             <t:if test="!isNull(news_date)"><div class="list-item-date"><t:value id="news_date" type="date" format="EEEE, MMM d yyyy"></t:value></div></t:if>
             <t:if test="!isNull(description)"><div class="list-item-description">${description}</div></t:if>
+            <t:if test="isNull(description)"><t:value id="strippedBody" value="truncate(toText(body, 'a,strong,em'), 350)" /><div class="list-item-description">${strippedBody}</div></t:if>
             <t:if test="secondary_tags.length > 0">
               <t:if test="state.length > 0"><t:list id="state" maxlength="1"><t:value id="relatedItems" value="concat('&amp;state=', name)" /></t:list></t:if>
               <t:if test="food_bank.length > 0"><t:list id="food_bank" maxlength="1"><t:value id="relatedItems" value="concat(relatedItems, '&amp;food_bank=')" /><t:value id="relatedItems" value="concat(relatedItems, itemid)" />
@@ -21,6 +22,7 @@
           </div><!--/.list-item-text-->
         <div class="clearfix"></div>
       </div><!--/.list-item-->
+      <t:if test="index == 4"><!-- inline promo --><t:include  id="templatelist-540491199" /></t:if>
     </t:list>
     </div>
   </div>

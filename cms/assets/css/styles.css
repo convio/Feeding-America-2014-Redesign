@@ -589,7 +589,7 @@ html.gecko.ff select {
   opacity: 1;
 }
 
-:-ms-input-placeholder, input:-ms-input-placeholder, select:-ms-input-placeholder {  
+:-ms-input-placeholder, input:-ms-input-placeholder, select:-ms-input-placeholder {
   color: #777777;
   opacity: 1;
 }
@@ -822,6 +822,7 @@ table.paginator td.pg-next {
   line-height: 26px;
   text-transform: uppercase;
 }
+
 .column-1 .inline-promo {
   -webkit-border-top-left-radius: 10px;
   -webkit-border-bottom-right-radius: 10px;
@@ -839,6 +840,16 @@ table.paginator td.pg-next {
   padding: 15px 25px;
 }
 
+.list-items .inline-promo {
+  margin: 0 0 30px;
+}
+
+.list-items .inline-promo .inline-promo-text {
+  padding: 10px 15px;
+}
+#body-content .inline-promo a {
+  text-decoration: none;
+}
 
 /* --------------------------------------------
   header elements
@@ -3480,6 +3491,9 @@ html.ff #homepage_ending_select {
   Mobile Only: ~320px - 767px
 -------------------------------------------------------------- */
 @media only screen and (max-width: 767px) {
+  .hidden-phone {
+    display: none;
+  }
   .two-column > .container {
     padding: 0px 20px;
   }
