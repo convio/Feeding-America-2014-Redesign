@@ -8,10 +8,11 @@
   <t:value id="meta.keywords">meta.keywords</t:value>
   <t:value id="meta.description">meta.description</t:value>
   <title>Feeding America</title>
+  <t:set value="flushCache" id="0" />
   <link rel="stylesheet" type="text/css" href="//cloud.typography.com/6244492/752884/css/fonts.css" />
   <link rel="stylesheet" type="text/css" href="/assets/webfonts/176374/c0ac71de07afe1eb1.css" />
-  <link rel="stylesheet" href="/assets/css/style.css" type="text/css">
-  <link rel="stylesheet" href="/assets/css/cms-styles.css" type="text/css">
+  <link rel="stylesheet" href="/assets/css/style.css?t=${flushCache}" type="text/css">
+  <link rel="stylesheet" href="/assets/css/cms-styles.css?t=${flushCache}" type="text/css">
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -96,14 +97,31 @@
 <body class="${pathclasses} ${templatename} ${bodyClass} ${expandnews}">
 
 <t:if test="user.isanonymous == false">
-<input type="hidden" id="cms_cons_zip" name="cms_cons_zip" value="crm('[[S1:home_zip]]" />
-<input type="hidden" id="cms_cons_state" name="cms_cons_state" value="crm('[[S1:home_stateprov]]')" />
+  <t:set id="cms_cons_zip" value="crm('[[S1:home_zip]]')" />
+  <t:set id="cms_cons_state" value="crm('[[S1:home_stateprov]]')" />
+  <input type="hidden" id="cms_cons_zip" name="cms_cons_zip" value="${cms_cons_zip}" />
+  <input type="hidden" id="cms_cons_state" name="cms_cons_state" value="${cms_cons_state}" />
 </t:if>
 
   <!-- reus_wrpr_header -->
     <t:include id="convio-content-520108847" />
   <!-- /reus_wrpr_header -->
+  <t:if test="type == 'Promo' || title == 'Search Results'">
+    <div class="two-column">
+      <div class="container">
+        <t:if test="templateid == 'Sidebar Promo'">
+          <div class="column-1"></div>
+          <div class="column-2">
+        </t:if>
+  </t:if>
   <div class="templateComponent" id="body"></div>
+  <t:if test="type == 'Promo' || title == 'Search Results'">
+        <t:if test="templateid == 'Sidebar Promo'">
+          </div>
+        </t:if>
+      </div><!-- /.container -->
+    </div><!-- /.two-column -->
+  </t:if>
   <!-- reus_wrpr_footer -->
     <t:include id="convio-content-520190361" />
   <!-- /reus_wrpr_footer -->
@@ -111,7 +129,7 @@
 
   <script src="/assets/js/selector.js"></script>
   <script src="/assets/js/jquery-equalheights-min.js"></script>
-  <script src="/assets/js/scripts.js?v1.6"></script>
+  <script src="/assets/js/scripts.js?v1.6?t=${flushCache}"></script>
 
 
   <t:if test="param.cms_static == true">

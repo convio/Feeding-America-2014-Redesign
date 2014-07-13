@@ -80,12 +80,15 @@ $(document).ready(function() {
 });
 
 /**
- * Hides the section promos if global promos are present. Relies on the following html markup
+ * Hides the secondary promos if primary promos are present. (primary & secondary denote the order of importance.
+ *
+ * Relies on the following html markup:
+ *
  * <div class="promos">
- *     <div class="global-promos">
+ *     <div class="primary-promos">
  *         <div class="promo"></div>
  *     </div>
- *     <div class="section-promos">
+ *     <div class="secondary-promos">
  *         <div class="promo"></div>
  *     </div>
  * </div>
@@ -93,14 +96,20 @@ $(document).ready(function() {
  */
 function promosLogic() {
     var $promosBlock = $('.promos');
-    $promosBlock.each(function() {
-        var $globalPromos = $(this).find('.global-promos');
-        var $sectionPromos = $(this).find('.section-promos');
-        if($globalPromos.children('.promo').length > 0) {
-            $sectionPromos.hide();
-        } else {
-            $globalPromos.hide();
-        }
-    });
+    if($promosBlock.length > 0) {
+        $promosBlock.each(function() {
+            var $primaryPromos = $(this).find('.primary-promos');
+            var $secondaryPromos = $(this).find('.secondary-promos');
+            if($primaryPromos.length === 0 || $secondaryPromos.length === 0) {
+                console.debug('.primary-promos or .secondary-promos are not present in your DOM');
+            } else {
+                if($primaryPromos.children('.promo').length > 0) {
+                    $secondaryPromos.hide();
+                } else {
+                    $primaryPromos.hide();
+                }
+            }
+        });
+    }
 
 }

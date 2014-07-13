@@ -8,6 +8,7 @@
         <p>${description}</p>
       </div></t:if><!--/#page-description-->
       <div id="body-content">
+        <t:if test="thumb.length > 0"><t:list id="thumb"><img src="${url}" alt="${alt_text}" class="image-right" /></t:list></t:if>
         ${body}
         <div class="templateComponent" id="commentlist-540352587"></div>
         <h2>Leave a Comment</h2>
@@ -21,29 +22,59 @@
       <t:if test="inline_promo.length > 0"><t:include id="item-540519669" /></t:if>
       <t:else>
         <div class="promos">
-          <!-- global -->
-          <div class="global-promos">
-          </div>
+          <!-- global promos-->
+          <div class="primary-promos">
+            <t:include id="templatelist-541303840" />
+          </div><!--/.primary-promos -->
           <!-- dynamic section based -->
-          <div class="section-promos">
-          </div>
-        </div>
+          <div class="secondary-promos">
+            <t:include id="templatelist-541304220" />
+          </div><!-- /.secondary-promos -->
+        </div><!-- /.promos-->
       </t:else>
 
     </div><!--/.column-1-->
     <div class="column-2">
-      <ul class="social_icons">
-        <li class="fbk"><a href="https://www.facebook.com/FeedingAmerica" title="Facebook">facebook</a></li>
-        <li class="twt"><a href="https://twitter.com/feedingamerica" title="Twitter">twitter</a></li>
-        <li class="more"><a href="#" title="More">more</a></li>
-      </ul><!--/.social_icons-->
-      <div class="clearfix"></div>
-
-      <!-- Section Navigation -->
-      <div style="display: inline;" class="templateComponent" id="sectionNavigation-535274647"></div>
+      <!-- social share utilities -->
+      <t:include id="item-541309505" />
 
       <!-- Search News -->
       <t:include id="item-536428902"/>
+
+      <!-- Related content -->
+      <t:if test="related_content.length > 0">
+        <t:include id="templatelist-541315156" />
+      </t:if>
+      <t:else>
+        <!-- section based related content -->
+        <div class="promos">
+          <!-- news related to the page by news type & tags-->
+          <div class="primary-promos">
+            <t:include id="templatelist-541315370" />
+          </div><!-- /.primary-promos -->
+          <!-- general content -->
+          <div class="secondary-promos">
+            <t:include id="templatelist-541315508" />
+          </div><!-- /.secondary-promos -->
+        </div><!-- .promos -->
+      </t:else>
+
+      <!-- Contextual Sidebar Promo -->
+      <t:if test="sidebar_promos.length > 0">
+      </t:if>
+      <t:else>
+        <!-- dynamic contextual sidebar promos -->
+        <div class="promos">
+
+          <div class="primary-promos">
+          </div>
+
+          <div class="secondary-promos">
+          </div>
+
+        </div>
+      </t:else>
+
       <!--/.sidebar-promo-box-->
       <div class="sidebar-promo-box">
         <div id="ty-sidebar-promo" class="sidebar-promo icon blue">

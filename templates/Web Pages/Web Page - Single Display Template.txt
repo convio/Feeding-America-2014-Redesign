@@ -7,7 +7,10 @@
       <t:if test="!isNull(description)"><div id="page-description">
         <p>${description}</p>
       </div></t:if><!--/#page-description-->
-      ${body}
+      <div id="body-content">
+        <t:if test="thumb.length > 0"><t:list id="thumb"><img src="${url}" alt="${alt_text}" class="image-right" /></t:list></t:if>
+        ${body}
+        </div><!--/#body-content -->
 
     </div><!--/.column-1-->
     <div class="column-2">
@@ -17,9 +20,9 @@
         <li class="more"><a href="#" title="More">more</a></li>
       </ul><!--/.social_icons-->
       <div class="clearfix"></div>
-     
-      <!-- Section Navigation --> 
-      <div style="display: inline;" class="templateComponent" id="sectionNavigation-534789806"></div>
+
+      <!-- Section Navigation -->
+      <div class="templateComponent" id="sectionNavigation-534789806"></div>
 
     </div><!--/.column-2-->
     <div class="clearfix"></div>

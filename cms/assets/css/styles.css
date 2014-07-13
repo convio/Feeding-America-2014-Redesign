@@ -723,6 +723,9 @@ p.req {
   min-height: 16px;
 }
 
+img {
+  max-width: 100%;
+}
 .img-caption {
   width: 280px;
   text-align: center;
@@ -738,6 +741,14 @@ p.req {
 .lightbox-content {
   display: none;
   max-width: 500px;
+}
+.image-right {
+  float: right;
+  margin: 0px 0px 25px 25px;
+}
+.image-left {
+  float: left;
+  margin: 0 25px 25px 0;
 }
 table.paginator, table.paginator th, table.paginator td {
   border: none;
