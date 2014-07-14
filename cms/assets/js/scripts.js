@@ -1,5 +1,6 @@
 $(document).ready(function() {
     promosLogic();
+    assignLastClass();
 
     $('#badges .badge img').click(function() {
         if ($(window).width() < 992) {
@@ -112,4 +113,18 @@ function promosLogic() {
         });
     }
 
+}
+
+/**
+ * Assigns the class .last-child to the last promo that appears in the right column
+ *
+ */
+function assignLastClass() {
+    var $rightColumn = $('#column-2');
+    if($rightColumn.length > 0) {
+        $sidebarPromos = $rightColumn.find('.sidebar-promo-box');
+        if($sidebarPromos.length > 0) {
+            $secondaryPromos.last().addClass('.last-child');
+        }
+    }
 }
