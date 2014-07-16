@@ -10,10 +10,18 @@
       <div id="body-content">
         <t:if test="thumb.length > 0"><t:list id="thumb"><img src="${url}" alt="${alt_text}" class="image-right" /></t:list></t:if>
         ${body}
+
+        <t:if test="secondary_tags.length > 0">
+          <t:if test="state.length > 0"><t:list id="state" maxlength="1"><t:value id="relatedItems" value="concat('&amp;state=', name)" /></t:list></t:if>
+          <t:if test="food_bank.length > 0"><t:list id="food_bank" maxlength="1"><t:value id="relatedItems" value="concat(relatedItems, '&amp;food_bank=')" /><t:value id="relatedItems" value="concat(relatedItems, itemid)" />
+          </t:list></t:if>
+          <div class="list-item-tags">Tags: <t:list id="secondary_tags"><a href="http://fa.pub30.convio.net/hunger-in-america/news-and-updates/our-perspective/?secondary_tags=${name}${relatedItems}">${label}</a><t:if test="index != length">, </t:if></t:list></div>
+        </t:if>
+
         <div class="templateComponent" id="commentlist-540352587"></div>
         <h2>Leave a Comment</h2>
         <t:if test="user.isanonymous">
-          <a href="http://help.feedingamerica.org/site/Login?NEXTURL=${url}">Please login to comment</a>
+          <p><a href="http://help.feedingamerica.org/site/Login?NEXTURL=${url}">Please login to comment</a></p>
         </t:if>
         <t:else>
           <div class="templateComponent" id="commentform-540352869"></div>
@@ -63,40 +71,34 @@
       <t:if test="sidebar_promos.length > 0">
       </t:if>
       <t:else>
-        <!-- dynamic contextual sidebar promos -->
+        <!-- dynamic contextual sidebar promos & second sidebar promos -->
         <div class="promos">
-
+          <!-- contextual sidebar promos -->
           <div class="primary-promos">
+            <!-- advanced filtered by section -->
+            <t:include id="templatelist-541538772" />
           </div>
 
           <div class="secondary-promos">
+            <!-- global promos -->
+            <t:include id="templatelist-541539906" />
           </div>
 
-        </div>
-      </t:else>
+        </div><!-- /.promos -->
 
-      <!--/.sidebar-promo-box-->
-      <div class="sidebar-promo-box">
-        <div id="ty-sidebar-promo" class="sidebar-promo icon blue">
-          <img src="http://fa.pub30.convio.net/assets/images/heart-icon-white.png" alt="alttext" border="0">
-          <span class="small">You make our work possible.</span>
-          <span class="big">Thank you for your ongoing support.</span>
-        </div><!--/#ty-sidebar-promo-->
-      </div><!--/.sidebar-promo-box-->
-      <div class="sidebar-promo-box">
-        <div id="yourarea-sidebar-promo" class="sidebar-promo standard form gray">
-          <span class="big">Hunger in Your Area</span>
-          <span class="small">Use our map to learn about hunger in your community.</span>
-          <img src="http://fa.pub30.convio.net/assets/images/usa_smallgray.png" alt="alttext" border="0">
-          <form id="yourarea-sidebar-promo-form" action="#">
-            <input type="text" name="cons_zip_code" class="half-width" placeholder="Enter Zip" />
-            <div class="half-width">
-              <button type="submit" class="purple">GO</button>
-            </div>
-            <div class="clearfix"></div>
-          </form><!--/#yourarea-sidebar-promo-form-->
-        </div><!--/#yourarea-sidebar-promo-->
-      </div><!--/.sidebar-promo-box-->
+        <div class="promos">
+          <!-- second sidebar promos -->
+          <div class="primary-promos">
+            <!-- advanced filtered by section -->
+            <t:include id="templatelist-541720172" />
+          </div>
+
+          <div class="secondary-promos">
+            <!-- global promos -->
+            <t:include id="templatelist-541720519" />
+          </div>
+        </div><!-- /.promos -->
+      </t:else>
 
     </div><!--/.column-2-->
     <div class="clearfix"></div>
@@ -106,37 +108,42 @@
 <div id="footer_promos">
   <div class="container">
     <div class="headline">How You Can Help Feeding America Solve Hunger</div>
-    <div id="footer_promo_boxes">
-      <div class="footer-promo">
-        <img src="http://fa.pub30.convio.net/assets/images/learn-icon-white.png" alt="alttext" border="0">
-        <div class="promo-title">Learn</div>
-        <div class="promo-text">What does hunger look like in your state?<br />Find out.</div>
-        <div class="promo-action">
-          <form class="promo-learn" action="#">
-            <input type="text" name="cons_zip_code" class="half-width" placeholder="Enter Zip">
-            <div class="half-width">
-              <button type="submit" class="red">GO</button>
-            </div>
-            <div class="clearfix"></div>
-          </form><!--/.promo-learn-->
-        </div><!--/.promo-action-->
-      </div><!--/.footer-promo-->
-      <div class="footer-promo">
-        <img src="http://fa.pub30.convio.net/assets/images/act-icon-1-white.png" alt="alttext" border="0">
-        <div class="promo-title">Act</div>
-        <div class="promo-text">Tell your member of Congress to visit your local food bank.</div>
-        <div class="promo-action">
-          <a href="#" class="button purple">Act Now</a>
-        </div><!--/.promo-action-->
-      </div><!--/.footer-promo-->
-      <div class="footer-promo">
-        <img src="http://fa.pub30.convio.net/assets/images/give-icon-1-white.png" alt="alttext" border="0">
-        <div class="promo-title">Give</div>
-        <div class="promo-text">Give hope to children and families in need year round. Become a monthly donor.</div>
-        <div class="promo-action">
-          <a href="#" class="button blue">Donate</a>
-        </div><!--/.promo-action-->
-      </div><!--/.footer-promo-->
+      <div id="footer_promo_boxes">
+
+    <t:if test="footer_promos.length > 0">
+      <t:list id="footer_promos">
+        <t:set id="buttonClasses" value="'button'" />
+        <t:if test="action_button_color.length > 0 || action_button_style.length > 0">
+          <t:if test="action_button_style.length > 0">
+            <t:list id="action_button_style">
+              <t:set id="buttonClasses" value="name" />
+            </t:list>
+          </t:if>
+          <t:if test="action_button_color.length > 0">
+            <t:list id="action_button_color">
+              <t:set id="buttonClasses" value="concat(concat(buttonClasses, ' '), name)" />
+            </t:list>
+          </t:if>
+        </t:if>
+        <div class="footer-promo">
+          <t:if test="thumb.length > 0"><t:list id="thumb"><img src="${url}" alt="${alt_text}" /></t:list></t:if>
+          <div class="promo-title">${title}</div>
+          <t:if test="!isNull(description)"><div class="promo-text">${description}</div></t:if>
+
+          <t:if test="!isNull(action_button_label) && !isNull(action_button_url)"><div class="promo-action"><a class="${buttonClasses}" href="${action_button_url}">${action_button_label}</a></div></t:if>
+        </div>
+      </t:list>
+    </t:if>
+    <t:else>
+      <!-- dynamic footer promos -->
+      <!-- Learn -->
+      <t:include id="templatelist-541527765" />
+      <!-- Act -->
+      <t:include id="templatelist-541527691" />
+      <!-- Give -->
+      <t:include id="templatelist-541528010" />
+    </t:else>
+
       <div class="clearfix"></div>
     </div><!--/#footer_promo_boxes-->
   </div><!--/.container-->
