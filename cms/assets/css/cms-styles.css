@@ -1324,20 +1324,20 @@ vertical-align: top;
 #sidebar-filter-dates select:first-child {
   margin-right: 10px;
 }
-.sidebar-promo-box .sidebar-promo.form form {
+.sidebar-promo-box .sidebar-promo form {
   margin-top: 20px;
   padding: 0px 10px;
 }
-.sidebar-promo-box .sidebar-promo.form form .half-width {
+.sidebar-promo-box .sidebar-promo form .half-width {
   width: 50%;
   margin: 0px;
   display: inline-block;
   float: left;
 }
-.sidebar-promo-box .sidebar-promo.form form div.half-width {
+.sidebar-promo-box .sidebar-promo form div.half-width {
   padding-left: 10px;
 }
-.sidebar-promo-box .sidebar-promo.form form div.half-width button {
+.sidebar-promo-box .sidebar-promo form div.half-width button {
   display: inline-block;
   vertical-align: top;
   margin: 0px;
@@ -2110,10 +2110,10 @@ shortcut to end of desktop
   .sidebar-promo-box .sidebar-promo.standard span.big {
     font-size: 20px;
   }
-  .sidebar-promo-box .sidebar-promo.form form .half-width {
+  .sidebar-promo-box .sidebar-promo form .half-width {
     width: 100%;
   }
-  .sidebar-promo-box .sidebar-promo.form form div.half-width {
+  .sidebar-promo-box .sidebar-promo form div.half-width {
     padding-left: 0px;
     margin-top: 10px;
   }
@@ -2219,7 +2219,7 @@ shortcut to end of desktop
 
 
    /* overriding font-weight for smaller screens */
-  #footer_promo_boxes .footer-promo input[type="text"], #footer_promo_boxes .footer-promo input[type="email"], #footer_promo_boxes .footer-promo div.half-width button, #footer_promo_boxes .footer-promo a.button, #section-boxes .section-img .section-img-hover span, #page-intro, #find-fb-search-form a, .sidebar-promo-box .sidebar-promo.form form div.half-width button, .sidebar-promo-box a.grainbutton {
+  #footer_promo_boxes .footer-promo input[type="text"], #footer_promo_boxes .footer-promo input[type="email"], #footer_promo_boxes .footer-promo div.half-width button, #footer_promo_boxes .footer-promo a.button, #section-boxes .section-img .section-img-hover span, #page-intro, #find-fb-search-form a, .sidebar-promo-box .sidebar-promo form div.half-width button, .sidebar-promo-box a.grainbutton {
     font-weight: 300;
   }
 
@@ -2831,7 +2831,7 @@ shortcut to end of desktop
 
 
  /* overriding font-weight for smaller screens */
-  #footer_promo_boxes .footer-promo input[type="text"], #footer_promo_boxes .footer-promo input[type="email"], #footer_promo_boxes .footer-promo div.half-width button, #footer_promo_boxes .footer-promo a.button, #section-boxes .section-img .section-img-hover span, #page-intro, #find-fb-search-form a, .sidebar-promo-box .sidebar-promo.form form div.half-width button, .sidebar-promo-box a.grainbutton {
+  #footer_promo_boxes .footer-promo input[type="text"], #footer_promo_boxes .footer-promo input[type="email"], #footer_promo_boxes .footer-promo div.half-width button, #footer_promo_boxes .footer-promo a.button, #section-boxes .section-img .section-img-hover span, #page-intro, #find-fb-search-form a, .sidebar-promo-box .sidebar-promo form div.half-width button, .sidebar-promo-box a.grainbutton {
     font-weight: 300;
   }
 
