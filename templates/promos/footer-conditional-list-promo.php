@@ -183,19 +183,26 @@
           </t:list>
         </t:if>
       </t:if>
+
       <div class="footer-promo">
-        <t:if test="thumb.length > 0"><t:list id="thumb"><img src="${url}" alt="${alt_text}" /></t:list></t:if>
-        <t:if test="!isNull(headline)"><div class="promo-title">${headline}</div></t:if>
-        <t:if test="!isNull(description)"><div class="promo-text">${description}</div></t:if>
+        <t:if test="thumb.length > 0">
+          <t:if test="isNull(action_button_label) && !isNull(action_button_url)"><a href="${action_button_url}"></t:if>
+          <t:list id="thumb"><img src="${url}" alt="${alt_text}" /></t:list>
+          <t:if test="isNull(action_button_label) && !isNull(action_button_url)"></a></t:if>
+        </t:if>
+        <t:if test="!isNull(headline)"><div class="promo-title"><t:if test="isNull(action_button_label) && !isNull(action_button_url)"><a href="${action_button_url}"></t:if>${headline}<t:if test="isNull(action_button_label) && !isNull(action_button_url)"></a></t:if></div></t:if>
+        <t:if test="!isNull(description)"><div class="promo-text"><t:if test="isNull(action_button_label) && !isNull(action_button_url)"><a href="${action_button_url}"></t:if>${description}<t:if test="isNull(action_button_label) && !isNull(action_button_url)"></a></t:if></div></t:if>
         <t:if test="!isNull(body)"><div class="promo-action">${body}</div></t:if>
         <t:if test="!isNull(action_button_label) && !isNull(action_button_url)">
           <div class="promo-action">
-            <t:if test="cons.primary_address.zip != ''">
+            <t:if test="promoCategory == 'footer-join-learn' && joinConditionalCategory3 == 'zip-on-file'">
               <t:if test="matches('.*?.*', action_button_url)"><a class="${buttonClasses}" href="${action_button_url}&zip=${cons.primary_address.zip}"></t:if>
               <t:else><a class="${buttonClasses}" href="${action_button_url}?zip=${cons.primary_address.zip}"></t:else>
             </t:if>
-            <t:else><a class="${buttonClasses}" href="${action_button_url}"></t:else>${action_button_label}</a></div></t:if>
-      </div>
+            <t:else><a class="${buttonClasses}" href="${action_button_url}"></t:else>${action_button_label}</a>
+          </div><!-- /.promo-action-->
+        </t:if>
+      </div><!--/.footer-promo-->
 
       <t:if test="promoCategory == 'footer-join-learn'">
       <div class="debug" style="display:none;">Join: ${joinConditionalCategory1} ${joinConditionalCategory2} ${joinConditionalCategory3} - <t:value id="promo_conditional_logic" /></div></t:if>
