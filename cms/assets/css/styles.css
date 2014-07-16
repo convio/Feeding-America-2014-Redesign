@@ -634,26 +634,33 @@ p.req {
   width: 100%;
   display: block;
 }
-.list-item-text .list-item-title {
+/* made these generic styles, so it can be applied to laoyouts without thumbnail blocks */
+.list-item-title {
   font-size: 18px;
   line-height: 24px;
   font-weight: 500;
   margin: 0px 0px 15px 0px;
 }
-.list-item-text .list-item-title a, #body-content .list-item-text .list-item-title a {
+
+.list-item-title a, #body-content  .list-item-title a {
   text-decoration: none;
 }
-.list-item-text .list-item-date {
+.list-item-date {
   line-height: 14px;
   margin-bottom: 20px;
 }
-.list-item-text .list-item-description {
+.list-item-description {
   font-size: 14px;
   line-height: 20px;
+  margin-bottom: 10px;
 }
 .list-item-tags, .list-item-by, .list-item-comments {
   font-size: 14px;
   line-height: 18px;
+}
+/* setting generic styles so margins don't have to be set on per list basis */
+.list-item {
+  margin-bottom: 30px;
 }
 .related-content.list-items-container .list-item {
   display: block;
@@ -2469,7 +2476,7 @@ html.ff #homepage_ending_select {
     background-size: 156px 100px;
   }
 }
-#section-banner {
+.section-banner {
   margin-bottom: 10px;
   position: relative;
   color: #ffffff;
@@ -2482,118 +2489,131 @@ html.ff #homepage_ending_select {
   text-align: center;
   padding: 50px 0px;
 }
-#section-banner.green, .fullwidth-promo.green {
+.section-banner.green, .fullwidth-promo.green {
   background-color: #53682b;
 }
-#section-banner.orange, .fullwidth-promo.orange {
+.section-banner.orange, .fullwidth-promo.orange {
   background-color: #e98300;
 }
-#section-banner.small-photo {
+.section-banner.small-photo {
   background-image: url('../images/bannerstalks_large_optim.png');
   background-repeat: no-repeat;
   background-position: center bottom;
 }
-#section-banner.no-photo {
+.section-banner.no-photo {
   background-image: url('../images/bannerstalks_small_optim.png');
   background-repeat: no-repeat;
   background-position: center bottom;
 }
-#section-banner.big-photo .container {
+.section-banner.big-photo .container {
   max-width: 100%;
   padding: 0px;
 }
-#section-banner.big-photo img {
+.section-banner.big-photo img {
   width: 100%;
   display: block;
 }
-#section-banner.small-photo img {
+.section-banner.small-photo img {
   width: 50%;
   display: block;
   padding-right: 40px;
 }
-#section-banner.big-photo .container .headline-bar {
+.section-banner.big-photo .container .headline-bar {
   position: absolute;
   left: auto;
   bottom: 0px;
   width: 100%;
 }
-#section-banner.big-photo.no-text .container .headline-bar {
+.section-banner.big-photo.no-text .container .headline-bar {
   background-image: url('../images/transparent_gray.png');
   padding: 32px;
   text-align: center;
 }
-#section-banner.big-photo.with-text .container .headline-bar .container .headline-text {
+.section-banner.big-photo.with-text .container .headline-bar .container .headline-text {
   background-image: url('../images/transparent_gray.png');
   width: 50%;
   padding: 32px;
 }
-#section-banner.big-photo .container .headline-bar .container {
+.section-banner.big-photo .container .headline-bar .container {
   max-width: 960px;
 }
-#section-banner.small-photo .container {
+.section-banner.small-photo .container {
   padding: 0px;
   position: relative;
 }
-#section-banner.no-photo .container {
+.section-banner.no-photo .container {
   padding: 0px;
 }
-#section-banner.no-photo .container .headline-bar .container {
+.section-banner.no-photo .container .headline-bar .container {
   padding: 0px 20px;
 }
-#section-banner .headline-title {
+.section-banner .headline-title {
   font-size: 30px;
   line-height: 30px;
   display: block;
   margin-bottom: 15px;
 }
-#section-banner.big-photo .headline-title {
+.section-banner.big-photo .headline-title {
   font-weight: 500;
 }
-#section-banner.big-photo.with-text .headline-title {
+.section-banner.big-photo.with-text .headline-title {
   line-height: 36px;
 }
-#section-banner.big-photo.no-text .headline-title {
+.section-banner.big-photo.no-text .headline-title {
   margin-bottom: 0px;
 }
-#section-banner .headline-subhead {
+.section-banner .headline-subhead {
   display: block;
   font-weight: 200;
 }
-#section-banner .headline-subhead p {
+.section-banner .headline-subhead p {
   margin: 0px 0px 10px 0px;
 }
-#section-banner .headline-subhead p:last-child {
+.section-banner .headline-subhead p:last-child {
   margin-bottom: 0px;
 }
-#section-banner.big-photo .headline-subhead {
+.section-banner.big-photo .headline-subhead {
   font-size: 18px;
   line-height: 24px;
 }
-#section-banner.small-photo .headline-subhead {
+.section-banner.small-photo .headline-subhead {
   font-size: 16px;
   line-height: 24px;
 }
-#section-banner.no-photo .headline-subhead {
+.section-banner.no-photo .headline-subhead {
   font-size: 20px;
   line-height: 26px;
 }
-#section-banner.big-photo.no-text .headline-subhead {
+.section-banner.big-photo.no-text .headline-subhead {
   display: none;
 }
-#section-banner.small-photo .headline-bar {
+.section-banner.small-photo .headline-bar {
   position: absolute;
   top: 0px;
   right: 0px;
   width: 50%;
   padding: 40px 0px;
 }
-#section-banner.no-photo .headline-bar {
+.section-banner.no-photo .headline-bar {
   padding: 40px 0px;
 }
 
 
+/* --------------------------------------------
+  alert banner
+-------------------------------------------- */
+.alert-banner {
+  display: block;
+  width: 100%;
+  padding: 5px 0;
+}
 
-
+.alert-text {
+  text-align: center;
+  color: #fff;
+  font-size: 18px;
+  text-transform: uppercase;
+}
 
 
 
@@ -3390,32 +3410,32 @@ html.ff #homepage_ending_select {
   #title-and-share .container {
     padding: 0px 20px;
   }
-  #section-banner.small-photo {
+  .section-banner.small-photo {
     background-position: right bottom;
   }
-  #section-banner.no-photo {
+  .section-banner.no-photo {
     background-size: contain;
   }
-  #section-banner.big-photo.with-text .container .headline-bar .container .headline-text {
+  .section-banner.big-photo.with-text .container .headline-bar .container .headline-text {
     width: 60%;
     padding: 22px;
   }
-  #section-banner.big-photo img {
+  .section-banner.big-photo img {
     margin-left: -8%;
     width: 116% !important;
     max-width: none;
   }
-  #section-banner.small-photo img {
+  .section-banner.small-photo img {
     /*
     width: 60%;
     margin-left: -10%;
     */
     padding-right: 20px;
   }
-  #section-banner.small-photo .headline-bar {
+  .section-banner.small-photo .headline-bar {
     padding: 20px 20px 20px 0px;
   }
-  #section-banner.no-photo .headline-bar {
+  .section-banner.no-photo .headline-bar {
     padding: 20px 0px;
   }
 
@@ -3439,7 +3459,7 @@ html.ff #homepage_ending_select {
 
 
   /* overriding font-weight for smaller screens */
-  #page-description, a.button, a.grainbutton, button, input[type="text"], input[type="email"], textarea, select, #util_search_query, #util_search_button, #footer_text, #homepage_slideshow .headline-bar .headline-button a, #homepage_zip_search_form input, #homepage_zip_search_form button, #homepage_ending_select, #recent_news_boxes .recent_news_item .news_preview span, #recent_news_boxes .recent_news_item .news_expanded span, #homepage_together .headline span:last-child:after, #homepage_together p, #together_form input, #together_form button, #textalerts_form input, #textalerts_form button, #homepage_fivesteps_find_out_more, #homepage_fivesteps_share_this, #section-banner .headline-subhead, #recent_news_boxes .recent_news_item.one .news_expanded p, #recent_news_boxes .recent_news_item.two .news_expanded p, #recent_news_boxes .recent_news_item.one .news_expanded span.link, #recent_news_boxes .recent_news_item.one .news_expanded p, #recent_news_boxes .recent_news_item.morenews, .navbar-toggle:after, #footer_links, #homepage_ending .left p {
+  #page-description, a.button, a.grainbutton, button, input[type="text"], input[type="email"], textarea, select, #util_search_query, #util_search_button, #footer_text, #homepage_slideshow .headline-bar .headline-button a, #homepage_zip_search_form input, #homepage_zip_search_form button, #homepage_ending_select, #recent_news_boxes .recent_news_item .news_preview span, #recent_news_boxes .recent_news_item .news_expanded span, #homepage_together .headline span:last-child:after, #homepage_together p, #together_form input, #together_form button, #textalerts_form input, #textalerts_form button, #homepage_fivesteps_find_out_more, #homepage_fivesteps_share_this, .section-banner .headline-subhead, #recent_news_boxes .recent_news_item.one .news_expanded p, #recent_news_boxes .recent_news_item.two .news_expanded p, #recent_news_boxes .recent_news_item.one .news_expanded span.link, #recent_news_boxes .recent_news_item.one .news_expanded p, #recent_news_boxes .recent_news_item.morenews, .navbar-toggle:after, #footer_links, #homepage_ending .left p {
     font-weight: 300;
   }
 
@@ -3476,13 +3496,13 @@ html.ff #homepage_ending_select {
     special banner area styles
   -------------------------------------------- */
   @media only screen and (min-width: 768px) and (max-width: 855px) {
-    #section-banner.small-photo.green .headline-bar {
+    .section-banner.small-photo.green .headline-bar {
       background-color: #53682b;
     }
-    #section-banner.small-photo.orange .headline-bar {
+    .section-banner.small-photo.orange .headline-bar {
       background-color: #e98300;
     }
-    #section-banner.small-photo .headline-bar {
+    .section-banner.small-photo .headline-bar {
       width: auto;
       padding: 20px;
       height: 100%;
@@ -3491,7 +3511,7 @@ html.ff #homepage_ending_select {
       background-position: right bottom;
       background-repeat: no-repeat;
     }
-    #section-banner.small-photo img {
+    .section-banner.small-photo img {
       margin-left: -5%;
       padding-right: 0px;
     }
@@ -4331,35 +4351,35 @@ html.ff #homepage_ending_select {
   #title-and-share .social_icons {
     display: none;
   }
-  #section-banner.big-photo .container .headline-bar {
+  .section-banner.big-photo .container .headline-bar {
     position: initial;
     width: 100%;
   }
-  #section-banner.big-photo.no-text .container .headline-bar, #section-banner.big-photo.with-text .container .headline-bar .container .headline-text {
+  .section-banner.big-photo.no-text .container .headline-bar, .section-banner.big-photo.with-text .container .headline-bar .container .headline-text {
     width: 100%;
     background-image: none;
     background-color: #333333;
     padding: 25px 20px;
   }
-  #section-banner.big-photo img {
+  .section-banner.big-photo img {
     margin-left: -40%;
     width: 180% !important;
     max-width: none;
   }
-  #section-banner .headline-title {
+  .section-banner .headline-title {
     font-size: 24px;
     line-height: 28px;
     font-weight: 500;
   }
-  #section-banner.big-photo .headline-subhead, #section-banner.small-photo .headline-subhead, #section-banner.no-photo .headline-subhead {
+  .section-banner.big-photo .headline-subhead, .section-banner.small-photo .headline-subhead, .section-banner.no-photo .headline-subhead {
     font-size: 16px;
     line-height: 20px;
   }
-  #section-banner.small-photo img {
+  .section-banner.small-photo img {
     width: 100%;
     padding-right: 0px;
   }
-  #section-banner.small-photo .headline-bar {
+  .section-banner.small-photo .headline-bar {
     position: relative;
     top: auto;
     right: auto;
@@ -4370,13 +4390,13 @@ html.ff #homepage_ending_select {
     background-color: #333333;
     */
   }
-  #section-banner.green.small-photo .headline-bar {
+  .section-banner.green.small-photo .headline-bar {
     background-color: #53682b;
   }
-  #section-banner.orange.small-photo .headline-bar {
+  .section-banner.orange.small-photo .headline-bar {
     background-color: #e98300;
   }
-  #section-banner.green.small-photo, #section-banner.orange.small-photo {
+  .section-banner.green.small-photo, .section-banner.orange.small-photo {
     /*
     background-color: #333333;
     */
@@ -4413,7 +4433,7 @@ html.ff #homepage_ending_select {
 
 
   /* overriding font-weight for smaller screens */
-  #page-description, a.button, a.grainbutton, button, input[type="text"], input[type="email"], textarea, select, #util_search_query, #util_search_button, #footer_text, #homepage_slideshow .headline-bar .headline-button a, #homepage_zip_search_form input, #homepage_zip_search_form button, #homepage_ending_select, #recent_news_boxes .recent_news_item .news_preview span, #recent_news_boxes .recent_news_item .news_expanded span, #homepage_together .headline span:last-child:after, #homepage_together p, #together_form input, #together_form button, #textalerts_form input, #textalerts_form button, #homepage_fivesteps_find_out_more, #homepage_fivesteps_share_this, #section-banner .headline-subhead, #recent_news_boxes .recent_news_item.one .news_expanded p, #recent_news_boxes .recent_news_item.two .news_expanded p, #recent_news_boxes .recent_news_item.one .news_expanded span.link, #recent_news_boxes .recent_news_item.one .news_expanded p, #recent_news_boxes .recent_news_item.morenews, .navbar-toggle:after, #footer_links, #homepage_ending .left p {
+  #page-description, a.button, a.grainbutton, button, input[type="text"], input[type="email"], textarea, select, #util_search_query, #util_search_button, #footer_text, #homepage_slideshow .headline-bar .headline-button a, #homepage_zip_search_form input, #homepage_zip_search_form button, #homepage_ending_select, #recent_news_boxes .recent_news_item .news_preview span, #recent_news_boxes .recent_news_item .news_expanded span, #homepage_together .headline span:last-child:after, #homepage_together p, #together_form input, #together_form button, #textalerts_form input, #textalerts_form button, #homepage_fivesteps_find_out_more, #homepage_fivesteps_share_this, .section-banner .headline-subhead, #recent_news_boxes .recent_news_item.one .news_expanded p, #recent_news_boxes .recent_news_item.two .news_expanded p, #recent_news_boxes .recent_news_item.one .news_expanded span.link, #recent_news_boxes .recent_news_item.one .news_expanded p, #recent_news_boxes .recent_news_item.morenews, .navbar-toggle:after, #footer_links, #homepage_ending .left p {
     font-weight: 300;
   }
 
@@ -4451,17 +4471,17 @@ html.ff #homepage_ending_select {
     special banner area styles
   -------------------------------------------- */
   @media only screen and (min-width: 100px) and (max-width: 400px) {
-    #section-banner.big-photo img {
+    .section-banner.big-photo img {
       margin-left: -70%;
       width: 240% !important;
       max-width: none;
     }
-      #section-banner.small-photo .headline-bar {
+      .section-banner.small-photo .headline-bar {
       margin-top: 0px;
     }
   }
   @media only screen and (min-width: 600px) and (max-width: 767px) {
-    #section-banner.big-photo img {
+    .section-banner.big-photo img {
       margin-left: -15%;
       width: 130% !important;
       max-width: none;

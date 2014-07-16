@@ -6,6 +6,10 @@
 /* --------------------------------------------
   Global Elements
 -------------------------------------------- */
+/* global promos */
+.secondary-promos {
+  display: none;
+}
 
 /* Footer Promos */
 #footer_promos {
@@ -121,10 +125,12 @@
   font-size: 14px;
   font-weight: 200;
   padding: 0px 20px;
-  height: 40px;
   line-height: 40px;
   cursor: pointer;
   text-transform: uppercase;
+}
+#footer_promo_boxes .footer-promo a.grainbutton {
+  margin-top: 10px;
 }
 #footer_promo_boxes .footer-promo .promo-learn {
   padding-top: 10px;
@@ -1073,6 +1079,14 @@ vertical-align: top;
 .comment-form {
   margin: 0 0 30px;
 }
+.comment-list {
+  margin: 30px 0;
+}
+
+.comment-list .list-item {
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 30px;
+}
 
 /* --------------------------------------------
   Sidebar elements
@@ -1168,9 +1182,10 @@ vertical-align: top;
 .sidebar-promo-box {
   margin-bottom: 50px;
 }
-.sidebar-promo-box:last-child {
+.sidebar-promo-box.last-child {
   margin-bottom: 0px;
 }
+
 .sidebar-promo-box .sidebar-promo span.small {
   font-size: 18px;
   line-height: 22px;
@@ -1190,8 +1205,13 @@ vertical-align: top;
 .sidebar-promo-box .sidebar-promo.icon img {
   margin-bottom: 18px;
 }
-.sidebar-promo-box .sidebar-promo.icon span.small + span.big {
+.sidebar-promo-box .sidebar-promo.icon span.small + span.big,
+.sidebar-promo-box .sidebar-promo.icon span.small + .button,
+.sidebar-promo-box .sidebar-promo.icon span.big + .button {
   margin-top: 18px;
+}
+.sidebar-promo-box .sidebar-promo.icon .button {
+  margin-bottom: 10px;
 }
 .sidebar-promo-box .sidebar-promo.standard {
   padding: 30px 20px;
