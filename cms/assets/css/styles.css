@@ -806,9 +806,9 @@ table.paginator td.pg-next {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  margin: 0px auto;
+  margin: 30px auto;
   -webkit-border-top-left-radius: 20px;
-  -webkit-border-bottom-right-radius: 20px;
+  -webkit-bo2rder-bottom-right-radius: 20px;
   -moz-border-radius-topleft: 20px;
   -moz-border-radius-bottomright: 20px;
   border-top-left-radius: 20px;
@@ -858,9 +858,7 @@ table.paginator td.pg-next {
   padding: 15px 25px;
 }
 
-.list-items .inline-promo {
-  margin: 0 0 30px;
-}
+
 
 .list-items .inline-promo .inline-promo-text {
   padding: 10px 15px;
