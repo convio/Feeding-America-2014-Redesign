@@ -94,6 +94,7 @@ $(document).ready(function() {
  *     </div>
  * </div>
  *
+ * Assumes secondary Promos are hidden with css by default
  */
 function promosLogic() {
     var $promosBlock = $('.promos');
@@ -108,6 +109,7 @@ function promosLogic() {
                     $secondaryPromos.hide();
                 } else {
                     $primaryPromos.hide();
+                    $secondaryPromos.show();
                 }
             }
         });
@@ -120,11 +122,11 @@ function promosLogic() {
  *
  */
 function assignLastClass() {
-    var $rightColumn = $('#column-2');
+    var $rightColumn = $('.column-2');
     if($rightColumn.length > 0) {
-        $sidebarPromos = $rightColumn.find('.sidebar-promo-box');
+        $sidebarPromos = $rightColumn.find('.sidebar-promo-box:visible');
         if($sidebarPromos.length > 0) {
-            $secondaryPromos.last().addClass('.last-child');
+            $sidebarPromos.last().addClass('last-child');
         }
     }
 }
