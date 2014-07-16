@@ -53,6 +53,12 @@
   text-shadow: 0px 0px 8.1px rgba(5, 5, 6, .8);
   text-transform: uppercase;
 }
+#footer_promo_boxes .footer-promo .promo-title a,
+#footer_promo_boxes .footer-promo .promo-title a:hover,
+#footer_promo_boxes .footer-promo .promo-text a,
+#footer_promo_boxes .footer-promo .promo-text a:hover {
+  color: #fff;
+}
 #footer_promo_boxes .footer-promo .promo-text {
   display: block;
   margin: 0px auto;
