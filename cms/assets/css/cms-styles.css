@@ -1704,6 +1704,13 @@ vertical-align: top;
 /* --------------------------------------------
   Your Stories
 -------------------------------------------- */
+#page-description.your-stories {
+  padding-bottom: 0px;
+  border-bottom: none;
+}
+#page-description.your-stories .container {
+  padding: 0px;
+}
 /* sub-section description */
 .gray-full-width {
   background-color: #f8f8f8;
@@ -1728,13 +1735,37 @@ vertical-align: top;
   display: inline-block;
 }
 #your-stories-boxes {
-
+  margin-top: 15px;
+  margin-left: -2px;
 }
 #your-stories-boxes .story-box {
-  width: 213px;
+  width: 302px;
   border: 1px solid #dedede;
   background-color: #ffffff;
   padding: 10px;
+  margin-bottom: 28px;
+}
+#your-stories-boxes .story-box .story-thumbnail {
+  width: 280px;
+  position: relative;
+  margin-bottom: 10px;
+}
+#your-stories-boxes .story-box .story-thumbnail img {
+  width: 100%;
+}
+#your-stories-boxes .story-box .story-title, #your-stories-boxes .story-box .story-location, #your-stories-boxes .story-box .story-description {
+  margin-bottom: 10px;
+}
+#your-stories-boxes .story-box .read-more {
+  padding-top: 10px;
+  border-top: 1px solid #dedede;
+  text-align: center;
+}
+#your-stories-boxes .story-box .read-more a, #your-stories-boxes .story-box .read-more a:hover {
+  text-decoration: underline;
+}
+#your-stories-boxes .story-box .read-more a span, #your-stories-boxes .story-box .read-more a:hover span {
+  text-decoration: none;
 }
 
 /*

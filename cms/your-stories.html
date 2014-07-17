@@ -6,6 +6,7 @@ jQuery(document).ready(function ($) {
   // initialize
   $container.masonry({
     columnWidth: 302,
+    gutter: 28,
     itemSelector: '.story-box'
   });
 });
@@ -22,7 +23,7 @@ jQuery(document).ready(function ($) {
   </div><!--/.container-->
 </div><!--/#title-and-share-->
 
-<div id="page-intro">
+<div id="page-description" class="your-stories">
   <div class="container">
     <p><strong>Intro copy explaining the section</strong>
       <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat non proident. In voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
@@ -39,20 +40,30 @@ jQuery(document).ready(function ($) {
     </div><!--/#your-stories-menu-->
     <div id="your-stories-boxes">
       <div class="story-box">
-        <div class="story-thumbnail thumbnail-img"><img src="/assets/images/gabrielg.jpg" alt="alttext" border="0" /></div>
-        <a href="#" class="story-title">Gabriel G.</a>
+        <div class="story-thumbnail thumbnail-img"><a class="lightbox" href="#story-654654547"><img src="/assets/images/gabrielg.jpg" alt="alttext" border="0" /></a></div>
+        <a href="#story-654654547" class="story-title lightbox">Gabriel G.</a>
         <div class="story-location">Atlanta, GA</div>
         <div class="story-description">The first 100 characters of the story will appear in this space lorem ipsum dolor sit amet in denor...</div>
-        <div class="read-more"><a href="#">Read more<span> &rsaquo;</span></a></div>
+        <div class="read-more"><a class="lightbox" href="#story-654654547">Read more<span> &rsaquo;</span></a></div>
+        <div id="story-654654547" class="lightbox-content">
+          <h6>Gabriel G.</h6>
+          <p>any variety of media and content. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam. Suspendisse in orci enim.</p>
+          <p><a href="#">Link to Do More<span> &rsaquo;</span></a></p>
+        </div><!--/#story-654654547-->
       </div><!--/.story-box-->
       <div class="story-box">
-        <a href="#" class="story-title">Alex and Jane K.</a>
+        <a href="#story-12341234" class="story-title lightbox">Alex and Jane K.</a>
         <div class="story-location">Madison, WI</div>
         <div class="story-description">The first 100 characters of the story will appear in this space lorem ipsum dolor sit amet in denor...</div>
-        <div class="read-more"><a href="#">Read more<span> &rsaquo;</span></a></div>
+        <div class="read-more"><a class="lightbox" href="#story-12341234">Read more<span> &rsaquo;</span></a></div>
+        <div id="story-12341234" class="lightbox-content">
+          <h6>Alex and Jane K.</h6>
+          <p>any variety of media and content. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam. Suspendisse in orci enim.</p>
+          <p><a href="#">Link to Do More<span> &rsaquo;</span></a></p>
+        </div><!--/#story-12341234-->
       </div><!--/.story-box-->
       <div class="story-box">
-        <div class="story-thumbnail thumbnail-img"><img src="/assets/images/gabrielg.jpg" alt="alttext" border="0" /><</div>
+        <div class="story-thumbnail thumbnail-img"><img src="/assets/images/gabrielg.jpg" alt="alttext" border="0" /></div>
         <a href="#" class="story-title">Nikki and Bill</a>
         <div class="story-location">Atlanta, GA</div>
         <div class="story-description">The first 100 characters of the story will appear in this space lorem ipsum dolor sit amet in denor...</div>
@@ -107,6 +118,8 @@ jQuery(document).ready(function ($) {
         <div class="read-more"><a href="#">Read more<span> &rsaquo;</span></a></div>
       </div><!--/.story-box-->
     </div><!--/#your-stories-boxes-->
+    <div class="clearfix"></div>
+    <div class="read-more" id="your-stories-load-more"><a href="#">Read more Stories<span> &rsaquo;</span></a></div>
   </div><!--/.container-->
 </div><!--/.gray-full-width-->
 
