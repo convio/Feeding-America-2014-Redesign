@@ -1701,6 +1701,42 @@ vertical-align: top;
 }
 
 
+/* --------------------------------------------
+  Your Stories
+-------------------------------------------- */
+/* sub-section description */
+.gray-full-width {
+  background-color: #f8f8f8;
+  border-top: 1px solid #dedede;
+  padding: 15px 0px;
+}
+.gray-full-width .container {
+  padding: 0px;
+}
+#your-stories-share-your {
+  display: inline-block;
+}
+#your-stories-filter {
+  display: inline-block;
+  float: right;
+}
+#your-stories-filter-by-state, #your-stories-filter-by-type {
+  width: 213px;
+  margin-right: 20px;
+}
+#your-stories-filter button {
+  display: inline-block;
+}
+#your-stories-boxes {
+
+}
+#your-stories-boxes .story-box {
+  width: 213px;
+  border: 1px solid #dedede;
+  background-color: #ffffff;
+  padding: 10px;
+}
+
 /*
 shortcut to end of desktop
 */
