@@ -1310,7 +1310,7 @@ vertical-align: top;
 #sidebar-filter-dates input,
 .select-date-range input,
 #sidebar-filter-dates select {
-  width: 107px;
+  width: 106px;
 }
 #sidebar-filter-dates input, .select-date-range input {
 	cursor: pointer;
