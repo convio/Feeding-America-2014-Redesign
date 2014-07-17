@@ -23,12 +23,23 @@
     </t:if>
     <div class="sidebar-promo-box promo">
       <div class="sidebar-promo  ${classes}">
-        <t:if test="!isNull(action_button_url) && isNull(action_button_label)"><a href="${action_button_url}"></t:if>
-        <t:if test="thumb.length > 0"><t:list id="thumb"><img src="${url}" alt="${alt_text}" /></t:list></t:if>
-        <t:if test="!isNull(headline)"><span class="small">${headline}</span></t:if>
-        <t:if test="!isNull(description)"><span class="big">${description}</span></t:if>
+        <t:if test="thumb.length > 0">
+          <t:if test="!isNull(action_button_url) && isNull(action_button_label)"><a href="${action_button_url}"></t:if>
+          <t:list id="thumb"><img src="${url}" alt="${alt_text}" /></t:list>
+          <t:if test="!isNull(action_button_url) && isNull(action_button_label)"></a></t:if>
+        </t:if>
+        <t:if test="!isNull(headline)">
+          <t:if test="!isNull(action_button_url) && isNull(action_button_label)"><a href="${action_button_url}"></t:if>
+          <span class="small">${headline}</span>
+          <t:if test="!isNull(action_button_url) && isNull(action_button_label)"></a></t:if>
+        </t:if>
+        <t:if test="!isNull(description)">
+          <t:if test="!isNull(action_button_url) && isNull(action_button_label)"><a href="${action_button_url}"></t:if>
+          <span class="big">${description}</span>
+          <t:if test="!isNull(action_button_url) && isNull(action_button_label)"></a></t:if>
+        </t:if>
+        <t:if test="!isNull(body)">${body}</t:if>
         <t:if test="!isNull(action_button_label) && !isNull(action_button_url)"><a class="${buttonClasses}" href="${action_button_url}">${action_button_label}</a></t:if>
-        <t:if test="!isNull(action_button_url) && isNull(action_button_label)"></a></t:if>
       </div><!-- /.sidebar-promo -->
     </div><!-- /.sidebar-promo-box -->
   </t:list>

@@ -75,13 +75,13 @@
         <div class="promos">
           <!-- contextual sidebar promos -->
           <div class="primary-promos">
-            <!-- advanced filtered by section -->
-            <t:include id="templatelist-541538772" />
+            <!-- global promos -->
+            <t:include id="templatelist-541539906" />
           </div>
 
           <div class="secondary-promos">
-            <!-- global promos -->
-            <t:include id="templatelist-541539906" />
+            <!-- advanced filtered by section -->
+            <t:include id="templatelist-541538772" />
           </div>
 
         </div><!-- /.promos -->
@@ -89,13 +89,13 @@
         <div class="promos">
           <!-- second sidebar promos -->
           <div class="primary-promos">
-            <!-- advanced filtered by section -->
-            <t:include id="templatelist-541720172" />
+            <!-- global promos -->
+            <t:include id="templatelist-541720519" />
           </div>
 
           <div class="secondary-promos">
-            <!-- global promos -->
-            <t:include id="templatelist-541720519" />
+            <!-- advanced filtered by section -->
+            <t:include id="templatelist-541720172" />
           </div>
         </div><!-- /.promos -->
       </t:else>
