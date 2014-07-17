@@ -15,7 +15,7 @@
   <t:set id="giveConditionalCategory3" value="null" />
 
 
-  <t:if test="showComments"><!-- conditionals for Join/Learn --></t:if>
+  <t:if test="showComments"><!-- set conditionals for Join/Learn based on member record --></t:if>
   <t:if test="user.isanonymous == false && cons.email.accepts_email == true">
     <t:set id="joinConditionalCategory1" value="'logged-in'" />
     <t:set id="joinConditionalCategory2" value="'signed-up-for-email'" />
@@ -27,7 +27,7 @@
       </t:else>
   </t:if>
 
-  <t:if test="showComments"><!-- conditionals for Act/Share --></t:if>
+  <t:if test="showComments"><!-- set conditionals for Act/Share based on member record --></t:if>
   <t:if test="user.isanonymous == false">
     <t:set id="actConditionalCategory1" value="'logged-in'" />
       <t:set id="alertList" value="crm('[[S96:region:allalerts:numLinks:999999:issue:-1:desc:no:date:no:stats:statistics:tafLink:title:sortBy:action:listStyle:number]]')" />
@@ -40,7 +40,7 @@
       </t:else>
   </t:if>
 
-  <t:if test="showComments"><!-- conditionals for Give/Thanks --></t:if>
+  <t:if test="showComments"><!-- set conditionals for Give/Thanks based on member record--></t:if>
   <t:if test="user.isanonymous == false">
     <t:set id="giveConditionalCategory1" value="'logged-in'" />
 
@@ -209,7 +209,7 @@
       <t:if test="promoCategory == 'footer-act-share'">
       <div class="debug" style="display:none;">Act: ${actConditionalCategory1} ${actConditionalCategory2} ${actConditionalCategory3} - <t:value id="promo_conditional_logic" /></div></t:if>
       <t:if test="promoCategory == 'footer-give-thanks'">
-      <div class="debug" style="display:none;">Act: ${giveConditionalCategory1} ${giveConditionalCategory2} ${giveConditionalCategory3} - <t:value id="promo_conditional_logic" /></div></t:if>
+      <div class="debug" style="display:none;">Give: ${giveConditionalCategory1} ${giveConditionalCategory2} ${giveConditionalCategory3} - <t:value id="promo_conditional_logic" /></div></t:if>
     </t:if><!-- /displayItem && itemDisplayed -->
   </t:list>
 
@@ -222,7 +222,7 @@
     <t:set id="userStatus" value="isNull(cons.primary_address.zip)" />Primary Zip Null: ${userStatus}
     <t:set id="userStatus" value="!isNull(alertList)" />Action taken: ${userStatus}
     <t:set id="userStatus" value="crm('[[S1:external_lifetime_gift_amount]]')" />Lifetime Gift Amount: ${userStatus}
-    <t:set id="userStatus" value="isNull(crm('[[S1:external_lifetime_gift_amount]]'))" />Null Lifetime Gift Amount: ${userStatus}
+    <t:set id="userStatus" value="isNull(crm('[[S1:external_lifetime_gift_amount]]'))" />Null Lifetime Gift Amount/Not Donor: ${userStatus}
     <t:set id="userStatus" value="crm('[[S1:donor_status]]')" />Donor Status: ${userStatus}
     <t:set id="userStatus" value="crm('[[S1:sustained_status]]') == 'Current Sustaining Donor'" />Sustaining Donor: ${userStatus}
     <t:set id="userStatus" value="crm('[[S1:custom_boolean11]]') == true || crm('[[S1:custom_boolean12]]') == true || crm('[[S1:custom_boolean13]]') == true || crm('[[S1:custom_boolean24]]') == true || crm('[[S1:custom_boolean30]]') == true || crm('[[S1:custom_boolean35]]') == true" />Mid-level flag: ${userStatus}
