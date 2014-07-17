@@ -1879,6 +1879,10 @@ shortcut to end of desktop
     margin-bottom: 0px;
   }
 
+  #interrupter {
+    display: none;
+  }
+
 
   /* --------------------------------------------
     Section Landing Page elements
@@ -2367,6 +2371,9 @@ shortcut to end of desktop
     max-width: 280px;
     margin: 0px auto;
   }
+  #interrupter {
+    display: none;
+  }  
 
 
   /* --------------------------------------------
