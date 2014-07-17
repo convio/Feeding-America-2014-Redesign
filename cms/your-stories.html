@@ -41,6 +41,7 @@ jQuery(document).ready(function ($) {
     <div id="your-stories-boxes">
       <div class="story-box">
         <div class="story-thumbnail thumbnail-img"><a class="lightbox" href="#story-654654547"><img src="/assets/images/gabrielg.jpg" alt="alttext" border="0" /></a></div>
+        <!-- use the format "story-$ {itemID}"-->
         <a href="#story-654654547" class="story-title lightbox">Gabriel G.</a>
         <div class="story-location">Atlanta, GA</div>
         <div class="story-description">The first 100 characters of the story will appear in this space lorem ipsum dolor sit amet in denor...</div>
@@ -52,6 +53,7 @@ jQuery(document).ready(function ($) {
         </div><!--/#story-654654547-->
       </div><!--/.story-box-->
       <div class="story-box">
+        <div class="story-thumbnail thumbnail-img"><a class="lightbox" href="#story-12341234"><img src="/assets/images/alexandjanek.jpg" alt="alttext" border="0" /></a></div>
         <a href="#story-12341234" class="story-title lightbox">Alex and Jane K.</a>
         <div class="story-location">Madison, WI</div>
         <div class="story-description">The first 100 characters of the story will appear in this space lorem ipsum dolor sit amet in denor...</div>
@@ -63,11 +65,17 @@ jQuery(document).ready(function ($) {
         </div><!--/#story-12341234-->
       </div><!--/.story-box-->
       <div class="story-box">
-        <div class="story-thumbnail thumbnail-img"><img src="/assets/images/gabrielg.jpg" alt="alttext" border="0" /></div>
-        <a href="#" class="story-title">Nikki and Bill</a>
+        <div class="story-thumbnail thumbnail-video"><a class="lightbox" href="#story-987987"><img src="https://img.youtube.com/vi/OnTzzNDJnhU/maxresdefault.jpg" alt="alttext" border="0" /><img src="/assets/images/play_button.png" class="play-button" alt="alttext" border="0" /></a></div>
+        <a href="#story-987987" class="story-title lightbox">Nikki and Bill</a>
         <div class="story-location">Atlanta, GA</div>
         <div class="story-description">The first 100 characters of the story will appear in this space lorem ipsum dolor sit amet in denor...</div>
-        <div class="read-more"><a href="#">Read more<span> &rsaquo;</span></a></div>
+        <div class="read-more"><a class="lightbox" href="#story-987987">Read more<span> &rsaquo;</span></a></div>
+        <div id="story-987987" class="lightbox-content">
+          <div class="video-container"><iframe src="//www.youtube.com/embed/OnTzzNDJnhU?html5=1&amp;controls=0&amp;autohide=1&amp;showinfo=0" frameborder="0" allowfullscreen=""></iframe></div>
+          <h6>Alex and Jane K.</h6>
+          <p>any variety of media and content. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam. Suspendisse in orci enim.</p>
+          <p><a href="#">Link to Do More<span> &rsaquo;</span></a></p>
+        </div><!--/#story-987987-->
       </div><!--/.story-box-->
       <div class="story-box">
         <a href="#" class="story-title">Sammy and Jane P.</a>
@@ -76,46 +84,37 @@ jQuery(document).ready(function ($) {
         <div class="read-more"><a href="#">Read more<span> &rsaquo;</span></a></div>
       </div><!--/.story-box-->
       <div class="story-box">
-        <a href="#" class="story-title">Sammy and Jane P.</a>
-        <div class="story-location">Los Angeles, CA</div>
+        <a href="#" class="story-title">Samantha J.</a>
+        <div class="story-location">Miami, FL</div>
         <div class="story-description">The first 100 characters of the story will appear in this space lorem ipsum dolor sit amet in denor...</div>
         <div class="read-more"><a href="#">Read more<span> &rsaquo;</span></a></div>
       </div><!--/.story-box-->
       <div class="story-box">
-        <a href="#" class="story-title">Sammy and Jane P.</a>
-        <div class="story-location">Los Angeles, CA</div>
+        <div class="story-thumbnail thumbnail-img"><a href="#"><img src="/assets/images/martinezfamily.jpg" alt="alttext" border="0" /></a></div>
+        <a href="#" class="story-title">The Martinez Family</a>
+        <div class="story-location">Houston, TX</div>
         <div class="story-description">The first 100 characters of the story will appear in this space lorem ipsum dolor sit amet in denor...</div>
         <div class="read-more"><a href="#">Read more<span> &rsaquo;</span></a></div>
       </div><!--/.story-box-->
       <div class="story-box">
-        <a href="#" class="story-title">Sammy and Jane P.</a>
-        <div class="story-location">Los Angeles, CA</div>
+        <div class="story-thumbnail thumbnail-img"><a href="#"><img src="/assets/images/nikkibillfamily.jpg" alt="alttext" border="0" /></a></div>
+        <a href="#" class="story-title">Nikki, Bill, and Family</a>
+        <div class="story-location">Oklahoma City, OK</div>
         <div class="story-description">The first 100 characters of the story will appear in this space lorem ipsum dolor sit amet in denor...</div>
         <div class="read-more"><a href="#">Read more<span> &rsaquo;</span></a></div>
       </div><!--/.story-box-->
       <div class="story-box">
-        <a href="#" class="story-title">Sammy and Jane P.</a>
-        <div class="story-location">Los Angeles, CA</div>
+        <div class="story-thumbnail thumbnail-video"><a class="lightbox" href="#story-9999"><img src="/assets/images/katherinel.jpg" alt="alttext" border="0" /><img src="/assets/images/play_button.png" class="play-button" alt="alttext" border="0" /></a></div>
+        <a href="#9999" class="story-title lightbox">Katherine L.</a>
+        <div class="story-location">Chicago, IL</div>
         <div class="story-description">The first 100 characters of the story will appear in this space lorem ipsum dolor sit amet in denor...</div>
-        <div class="read-more"><a href="#">Read more<span> &rsaquo;</span></a></div>
-      </div><!--/.story-box-->
-      <div class="story-box">
-        <a href="#" class="story-title">Sammy and Jane P.</a>
-        <div class="story-location">Los Angeles, CA</div>
-        <div class="story-description">The first 100 characters of the story will appear in this space lorem ipsum dolor sit amet in denor...</div>
-        <div class="read-more"><a href="#">Read more<span> &rsaquo;</span></a></div>
-      </div><!--/.story-box-->
-      <div class="story-box">
-        <a href="#" class="story-title">Sammy and Jane P.</a>
-        <div class="story-location">Los Angeles, CA</div>
-        <div class="story-description">The first 100 characters of the story will appear in this space lorem ipsum dolor sit amet in denor...</div>
-        <div class="read-more"><a href="#">Read more<span> &rsaquo;</span></a></div>
-      </div><!--/.story-box-->
-      <div class="story-box">
-        <a href="#" class="story-title">Sammy and Jane P.</a>
-        <div class="story-location">Los Angeles, CA</div>
-        <div class="story-description">The first 100 characters of the story will appear in this space lorem ipsum dolor sit amet in denor...</div>
-        <div class="read-more"><a href="#">Read more<span> &rsaquo;</span></a></div>
+        <div class="read-more"><a class="lightbox" href="#story-9999">Read more<span> &rsaquo;</span></a></div>
+        <div id="story-9999" class="lightbox-content">
+          <div class="video-container"><iframe src="//www.youtube.com/embed/GnxOppKCuBU?html5=1&amp;controls=0&amp;autohide=1&amp;showinfo=0" frameborder="0" allowfullscreen=""></iframe></div>
+          <h6>Katherine L.</h6>
+          <p>any variety of media and content. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam. Suspendisse in orci enim.</p>
+          <p><a href="#">Link to Do More<span> &rsaquo;</span></a></p>
+        </div><!--/#story-9999-->
       </div><!--/.story-box-->
     </div><!--/#your-stories-boxes-->
     <div class="clearfix"></div>
