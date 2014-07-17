@@ -172,6 +172,63 @@
   color: #333333;
 }
 
+/* Interrupter promos */
+#interrupter {
+  position: fixed;
+  bottom: 50px;
+  right: 25px;
+  z-index: 99;
+  background-color: #000000;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+}
+#interrupter .int-buttons {
+  position: absolute;
+  top: -19px;
+  right: -19px;
+}
+#interrupter.closed .int-btn-close {
+  display: none;
+}
+#interrupter.open .int-btn-open {
+  display: none;
+}
+#interrupter.closed .int-left-img, #interrupter.closed .int-text {
+  display: none;
+}
+#interrupter .int-left-img, #interrupter .int-text, #interrupter .int-icon {
+  display: inline-block;
+  vertical-align: top;
+}
+#interrupter .int-text {
+  width: 350px;
+  padding: 10px 0px 10px 20px;
+}
+#interrupter .int-text h4 {
+  font-size: 24px;
+  line-height: 26px;
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
+#interrupter .int-text p {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 16px;
+  line-height: 20px;
+}
+#interrupter .int-text h4 + p {
+  margin-top: 10px;
+}
+#interrupter .int-text a {
+  text-decoration: underline;
+}
+#interrupter .int-text a:hover {
+  color: #cccccc;
+}
+#interrupter .int-icon {
+  margin: 18px 20px;
+}
+
 /* --------------------------------------------
   Section Landing Page elements
 -------------------------------------------- */
