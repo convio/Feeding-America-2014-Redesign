@@ -11,7 +11,7 @@
   <t:set value="flushCache" id="1" />
   <link rel="stylesheet" type="text/css" href="//cloud.typography.com/6244492/752884/css/fonts.css" />
   <link rel="stylesheet" type="text/css" href="/assets/webfonts/176374/c0ac71de07afe1eb1.css" />
-  <link rel="stylesheet" href="http://fa.pub30.convio.net/assets/css/style.css?t=${flushCache}" type="text/css">
+  <link rel="stylesheet" href="http://fa.pub30.convio.net/assets/css/styles.css?t=${flushCache}" type="text/css">
   <link rel="stylesheet" href="http://fa.pub30.convio.net/assets/css/cms-styles.css?t=${flushCache}" type="text/css">
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -59,8 +59,14 @@
   <script type="text/javascript">
     $(document).ready(function() {
       $(".lightbox").fancybox({
-        maxWidth : 800,
-        padding : 40
+        maxWidth : 680,
+        scrolling : 'visible',
+        padding : 20,
+        openEffect  : 'none',
+        closeEffect : 'none',
+        nextEffect  : 'none',
+        prevEffect  : 'none',
+        margin      : [20, 60, 20, 60]
       });
     });
   </script>
