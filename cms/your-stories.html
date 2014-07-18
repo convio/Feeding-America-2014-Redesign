@@ -40,48 +40,109 @@ jQuery(document).ready(function ($) {
     </div><!--/#your-stories-menu-->
     <div id="your-stories-boxes">
       <div class="story-box">
-        <div class="story-thumbnail thumbnail-img"><a class="lightbox" href="#story-654654547"><img src="/assets/images/gabrielg.jpg" alt="alttext" border="0" /></a></div>
+        <div class="story-thumbnail thumbnail-img"><a class="lightbox" href="#story-654654547" data-fancybox-group="thumbnail"><img src="/assets/images/gabrielg.jpg" alt="alttext" border="0" /></a></div>
         <!-- use the format "story-$ {itemID}"-->
-        <a href="#story-654654547" class="story-title lightbox">Gabriel G.</a>
+        <a href="#story-654654547" class="story-title lightbox" data-fancybox-group="title">Gabriel G.</a>
         <div class="story-location">Atlanta, GA</div>
         <div class="story-description">The first 100 characters of the story will appear in this space lorem ipsum dolor sit amet in denor...</div>
-        <div class="read-more"><a class="lightbox" href="#story-654654547">Read more<span> &rsaquo;</span></a></div>
-        <div id="story-654654547" class="lightbox-content">
-          <h6>Gabriel G.</h6>
+        <div class="read-more"><a class="lightbox" href="#story-654654547" data-fancybox-group="readmore">Read more<span> &rsaquo;</span></a></div>
+        <div id="story-654654547" class="lightbox-content story-overlay">
+          <img src="/assets/images/gabrielg.jpg" alt="alttext" border="0" class="story-img" />
+          <h5>Gabriel G.</h5>
+          <h6>Atlanta, GA</h6>
           <p>any variety of media and content. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam. Suspendisse in orci enim.</p>
-          <p><a href="#">Link to Do More<span> &rsaquo;</span></a></p>
-        </div><!--/#story-654654547-->
+          <div class="clearfix"></div>
+          <div class="story-overlay-footer">
+            <ul class="social_icons">
+              <li class="fbk"><a href="https://www.facebook.com/FeedingAmerica" title="Facebook">facebook</a></li>
+              <li class="twt"><a href="https://twitter.com/feedingamerica" title="Twitter">twitter</a></li>
+              <li class="more"><a href="#" title="More">more</a></li>
+            </ul><!--/.social_icons-->
+            <div class="story-overlay-buttons">
+              <a href="#" class="button red">Share Your Story</a>
+              <a href="#" class="button purple" onclick="event.preventDefault(); $.fancybox.close( true )">Back to All Stories</a>
+            </div>
+          </div><!--/.story-overlay-footer-->
+        </div><!--/#story-654654547.story-overlay-->
       </div><!--/.story-box-->
       <div class="story-box">
-        <div class="story-thumbnail thumbnail-img"><a class="lightbox" href="#story-12341234"><img src="/assets/images/alexandjanek.jpg" alt="alttext" border="0" /></a></div>
-        <a href="#story-12341234" class="story-title lightbox">Alex and Jane K.</a>
+        <div class="story-thumbnail thumbnail-img"><a class="lightbox" href="#story-12341234" data-fancybox-group="thumbnail"><img src="/assets/images/alexandjanek.jpg" alt="alttext" border="0" /></a></div>
+        <a href="#story-12341234" class="story-title lightbox" data-fancybox-group="title">Alex and Jane K.</a>
         <div class="story-location">Madison, WI</div>
         <div class="story-description">The first 100 characters of the story will appear in this space lorem ipsum dolor sit amet in denor...</div>
-        <div class="read-more"><a class="lightbox" href="#story-12341234">Read more<span> &rsaquo;</span></a></div>
-        <div id="story-12341234" class="lightbox-content">
-          <h6>Alex and Jane K.</h6>
+        <div class="read-more"><a class="lightbox" href="#story-12341234" data-fancybox-group="readmore">Read more<span> &rsaquo;</span></a></div>
+        <div id="story-12341234" class="lightbox-content story-overlay">
+          <img src="/assets/images/alexandjanek.jpg" alt="alttext" border="0" class="story-img" />
+          <h5>Alex and Jane K.</h5>
+          <h6>Madison, WI</h6>
           <p>any variety of media and content. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam. Suspendisse in orci enim.</p>
-          <p><a href="#">Link to Do More<span> &rsaquo;</span></a></p>
-        </div><!--/#story-12341234-->
+          <div class="clearfix"></div>
+          <div class="story-overlay-footer">
+            <ul class="social_icons">
+              <li class="fbk"><a href="https://www.facebook.com/FeedingAmerica" title="Facebook">facebook</a></li>
+              <li class="twt"><a href="https://twitter.com/feedingamerica" title="Twitter">twitter</a></li>
+              <li class="more"><a href="#" title="More">more</a></li>
+            </ul><!--/.social_icons-->
+            <div class="story-overlay-buttons">
+              <a href="#" class="button red">Share Your Story</a>
+              <a href="#" class="button purple" onclick="event.preventDefault(); $.fancybox.close( true )">Back to All Stories</a>
+            </div>
+          </div><!--/.story-overlay-footer-->
+        </div><!--/#story-12341234.story-overlay-->
       </div><!--/.story-box-->
       <div class="story-box">
-        <div class="story-thumbnail thumbnail-video"><a class="lightbox" href="#story-987987"><img src="https://img.youtube.com/vi/OnTzzNDJnhU/maxresdefault.jpg" alt="alttext" border="0" /><img src="/assets/images/play_button.png" class="play-button" alt="alttext" border="0" /></a></div>
-        <a href="#story-987987" class="story-title lightbox">Nikki and Bill</a>
+        <div class="story-thumbnail thumbnail-video"><a class="lightbox" href="#story-987987" data-fancybox-group="thumbnail"><img src="https://img.youtube.com/vi/OnTzzNDJnhU/maxresdefault.jpg" alt="alttext" border="0" /><img src="/assets/images/play_button.png" class="play-button" alt="alttext" border="0" /></a></div>
+        <a href="#story-987987" class="story-title lightbox" data-fancybox-group="title">Nikki and Bill</a>
         <div class="story-location">Atlanta, GA</div>
         <div class="story-description">The first 100 characters of the story will appear in this space lorem ipsum dolor sit amet in denor...</div>
-        <div class="read-more"><a class="lightbox" href="#story-987987">Read more<span> &rsaquo;</span></a></div>
-        <div id="story-987987" class="lightbox-content">
+        <div class="read-more"><a class="lightbox" href="#story-987987" data-fancybox-group="readmore">Read more<span> &rsaquo;</span></a></div>
+        <div id="story-987987" class="lightbox-content story-overlay">
           <div class="video-container"><iframe src="//www.youtube.com/embed/OnTzzNDJnhU?html5=1&controls=0&autohide=1&showinfo=0" frameborder="0" allowfullscreen=""></iframe></div>
-          <h6>Alex and Jane K.</h6>
-          <p>any variety of media and content. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam. Suspendisse in orci enim.</p>
-          <p><a href="#">Link to Do More<span> &rsaquo;</span></a></p>
-        </div><!--/#story-987987-->
+          <h5>Nikki and Bill</h5>
+          <h6>Atlanta, GA</h6>
+          <p>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accus antium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo.</p>
+          <p>Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit amet consectetur adipisci[ng] velit, sed quia non numquam [do] eius modi tempora inci[di]dunt, ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+          <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur?</p>
+          <div class="clearfix"></div>
+          <div class="story-overlay-footer">
+            <ul class="social_icons">
+              <li class="fbk"><a href="https://www.facebook.com/FeedingAmerica" title="Facebook">facebook</a></li>
+              <li class="twt"><a href="https://twitter.com/feedingamerica" title="Twitter">twitter</a></li>
+              <li class="more"><a href="#" title="More">more</a></li>
+            </ul><!--/.social_icons-->
+            <div class="story-overlay-buttons">
+              <a href="#" class="button red">Share Your Story</a>
+              <a href="#" class="button purple" onclick="event.preventDefault(); $.fancybox.close( true )">Back to All Stories</a>
+            </div>
+          </div><!--/.story-overlay-footer-->
+        </div><!--/#story-987987.story-overlay-->
       </div><!--/.story-box-->
       <div class="story-box">
-        <a href="#" class="story-title">Sammy and Jane P.</a>
+        <!-- 
+        If no thumbnail exists, still include an empty data-fancybox-group="thumbnail" link, otherwise this story will be skipped when using the next/prev buttons after clicking a thumbnail to open a story
+        -->
+        <a class="lightbox" href="#story-654321" data-fancybox-group="thumbnail" style="display: none;"></a>
+        <a href="#story-654321" class="story-title lightbox" data-fancybox-group="title">Sammy and Jane P.</a>
         <div class="story-location">Los Angeles, CA</div>
         <div class="story-description">The first 100 characters of the story will appear in this space lorem ipsum dolor sit amet in denor...</div>
-        <div class="read-more"><a href="#">Read more<span> &rsaquo;</span></a></div>
+        <div class="read-more"><a class="lightbox" href="#story-654321" data-fancybox-group="readmore">Read more<span> &rsaquo;</span></a></div>
+        <div id="story-654321" class="lightbox-content story-overlay">
+          <h5>Sammy and Jane P.</h5>
+          <h6>Los Angeles, CA</h6>
+          <p>any variety of media and content. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam. Suspendisse in orci enim.</p>
+          <div class="clearfix"></div>
+          <div class="story-overlay-footer">
+            <ul class="social_icons">
+              <li class="fbk"><a href="https://www.facebook.com/FeedingAmerica" title="Facebook">facebook</a></li>
+              <li class="twt"><a href="https://twitter.com/feedingamerica" title="Twitter">twitter</a></li>
+              <li class="more"><a href="#" title="More">more</a></li>
+            </ul><!--/.social_icons-->
+            <div class="story-overlay-buttons">
+              <a href="#" class="button red">Share Your Story</a>
+              <a href="#" class="button purple" onclick="event.preventDefault(); $.fancybox.close( true )">Back to All Stories</a>
+            </div>
+          </div><!--/.story-overlay-footer-->
+        </div><!--/#story-654321.story-overlay-->
       </div><!--/.story-box-->
       <div class="story-box">
         <a href="#" class="story-title">Samantha J.</a>
@@ -109,13 +170,13 @@ jQuery(document).ready(function ($) {
         <div class="story-location">Chicago, IL</div>
         <div class="story-description">The first 100 characters of the story will appear in this space lorem ipsum dolor sit amet in denor...</div>
         <div class="read-more"><a class="lightbox" href="#story-9999">Read more<span> &rsaquo;</span></a></div>
-        <div id="story-9999" class="lightbox-content">
+        <div id="story-9999" class="lightbox-content story-overlay">
           <div class="video-container"><iframe src="//www.youtube.com/embed/GnxOppKCuBU?html5=1&controls=0&autohide=1&showinfo=0" frameborder="0" allowfullscreen=""></iframe></div>
           <h6>Katherine L.</h6>
           <p>any variety of media and content. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam. Suspendisse in orci enim.</p>
-          <p><a href="#">Link to Do More<span> &rsaquo;</span></a></p>
         </div><!--/#story-9999-->
       </div><!--/.story-box-->
+      <div class="clearfix"></div>
     </div><!--/#your-stories-boxes-->
     <div class="clearfix"></div>
     <div class="read-more" id="your-stories-load-more"><a href="#">Read more Stories<span> &rsaquo;</span></a></div>

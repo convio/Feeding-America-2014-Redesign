@@ -1834,9 +1834,9 @@ vertical-align: top;
   font-size: 110px;
   line-height: 110px;
   color: #ffffff;
-  -moz-text-shadow: 0px 0px 13px rgba(5, 5, 6, 0.3);
-  -webkit-text-shadow: 0px 0px 13px rgba(5, 5, 6, 0.3);
-  text-shadow: 0px 0px 13px rgba(5, 5, 6, 0.3);
+  -moz-text-shadow: 0px 0px 25px rgba(0, 0, 0, 0.8);
+  -webkit-text-shadow: 0px 0px 25px rgba(0, 0, 0, 0.8);
+  text-shadow: 0px 0px 25px rgba(0, 0, 0, 0.8);
 }
 .fancybox-prev {
   left: -60px !important;
@@ -1851,14 +1851,88 @@ vertical-align: top;
   font-size: 110px;
   line-height: 110px;
   color: #ffffff;
-  -moz-text-shadow: 0px 0px 13px rgba(5, 5, 6, 0.3);
-  -webkit-text-shadow: 0px 0px 13px rgba(5, 5, 6, 0.3);
-  text-shadow: 0px 0px 13px rgba(5, 5, 6, 0.3);
+  -moz-text-shadow: 0px 0px 25px rgba(0, 0, 0, 0.8);
+  -webkit-text-shadow: 0px 0px 25px rgba(0, 0, 0, 0.8);
+  text-shadow: 0px 0px 25px rgba(0, 0, 0, 0.8);
 }
 .fancybox-next:hover:after, .fancybox-prev:hover:after {
   color: #cccccc;
 }
-
+.story-overlay h5 {
+  font-size: 18px;
+  line-height: 24px;
+  margin: 20px 0px 10px 0px;
+}
+.story-overlay h6 {
+  font-size: 16px;
+  line-height: 24px;
+  margin: 10px 0px 15px 0px;
+  font-weight: 400;
+}
+.story-overlay p {
+  font-size: 16px;
+  line-height: 20px;
+}
+.story-overlay .story-img {
+  float: right;
+  margin: 0px 0px 10px 10px;
+  display: block;
+  max-width: 50%;
+}
+.story-overlay-footer {
+  padding-top: 15px;
+  height: 59px;
+}
+.story-overlay-footer .social_icons {
+  vertical-align: middle;
+}
+.story-overlay-footer .social_icons li a {
+  background-image: url('../images/header_social_sprite.png');
+  width: 44px;
+  height: 44px;
+}
+@media only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+  .story-overlay-footer .social_icons li a {
+    background-image: url('../images/header_social_sprite2.png');
+    background-size: 156px 100px;
+  }
+}
+.story-overlay-footer .social_icons li.fbk a {
+  background-position: 0 0;
+}
+.story-overlay-footer .social_icons li.fbk a:hover {
+  background-position: 0 -49px;
+}
+.story-overlay-footer .social_icons li.twt a {
+  background-position: -56px 0;
+}
+.story-overlay-footer .social_icons li.twt a:hover {
+  background-position: -56px -49px;
+}
+.story-overlay-footer .social_icons li.more a {
+  background-position: -112px 0;
+}
+.story-overlay-footer .social_icons li.more a:hover {
+  background-position: -112px -49px;
+}
+.story-overlay-footer .social_icons li {
+  margin-left: 12px;
+}
+.story-overlay-footer .social_icons li:first-child {
+  margin-left: 0px;
+}
+.story-overlay-buttons {
+  display: inline-block;
+  vertical-align: middle;
+  float: right;
+  margin-top: 2px;
+}
+.story-overlay-buttons a {
+  margin-left: 19px;
+}
+.story-overlay-buttons a:first-child {
+  margin-left: 0px;
+}
 
 /*
 shortcut to end of desktop
