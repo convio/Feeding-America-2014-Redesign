@@ -2517,6 +2517,35 @@ shortcut to end of desktop
     font-weight: 300;
   }
 
+  /* --------------------------------------------
+    Your Stories
+  -------------------------------------------- */
+  #page-description.your-stories .container {
+    padding: 0px 20px;
+  }
+  #your-stories-menu {
+    text-align: center;
+  }
+  #your-stories-share-your {
+    margin: 10px auto 0px auto;
+  }
+  #your-stories-filter {
+    float: none;
+    margin: 20px auto 30px auto;
+    display: block;
+  }
+  #your-stories-boxes {
+    width: 632px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .fancybox-wrap {
+    /*
+    max-width: 648px !important;
+    */
+    max-width: auto !important;
+  }
+
 
 
 /* shortcut to end of tablet */
@@ -2551,6 +2580,9 @@ shortcut to end of desktop
   /* --------------------------------------------
     global elements
   -------------------------------------------- */
+  body.not-homepage header {
+    margin-bottom: 30px;
+  }
   .column-2 .section-nav {
     margin-right: -20px;
     margin-left: -20px;
@@ -3130,6 +3162,65 @@ shortcut to end of desktop
  /* overriding font-weight for smaller screens */
   #footer_promo_boxes .footer-promo input[type="text"], #footer_promo_boxes .footer-promo input[type="email"], #footer_promo_boxes .footer-promo div.half-width button, #footer_promo_boxes .footer-promo a.button, #section-boxes .section-img .section-img-hover span, #page-intro, #find-fb-search-form a, .sidebar-promo-box .sidebar-promo form div.half-width button, .sidebar-promo-box a.grainbutton {
     font-weight: 300;
+  }
+
+
+  /* --------------------------------------------
+    Your Stories
+  -------------------------------------------- */
+  #page-description.your-stories {
+    padding: 0px;
+    margin: 0px 0px 30px 0px;
+  }
+  #page-description.your-stories .container {
+    padding: 0px 20px;
+  }
+  #your-stories-menu {
+    width: 302px;
+    margin: 0px auto;
+  }
+  #your-stories-share-your {
+    margin: 10px auto 0px auto;
+  }
+  #your-stories-filter {
+    float: none;
+    margin: 25px auto 25px auto;
+    display: block;
+  }
+  #your-stories-filter-by-state {
+    display: block;
+    margin-bottom: 10px;
+  }
+  #your-stories-boxes {
+    width: 302px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .fancybox-wrap {
+    width: auto !important;
+    max-width: 100% !important;
+    left: 10px !important;
+    right: 10px !important;
+  }
+  .fancybox-close {
+    top: -10px !important;
+    right: -10px !important;
+  }
+  .fancybox-nav {
+    display: none !important;
+  }
+  .fancybox-inner {
+    width: 100% !important;
+  }
+  .story-overlay-footer {
+    height: auto;
+  }
+  .story-overlay-buttons {
+    display: block;
+    float: none;
+  }
+  .story-overlay-buttons a {
+    margin: 20px 10px 0px 0px;
   }
 
 
