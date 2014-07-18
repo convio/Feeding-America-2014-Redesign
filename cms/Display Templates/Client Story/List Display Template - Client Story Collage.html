@@ -6,7 +6,7 @@
         <t:list id="thumb">
           <img src="${url}" alt="${alt_text}" border="0" />
         </t:list>
-<t:if test="!isNull(video_url)"><img src="http://fa.pub30.convio.net/assets/images/play_button.png" class="play-button" alt="Play Video" border="0" /></t:if>
+        <t:if test="!isNull(video_url)"><img src="http://fa.pub30.convio.net/assets/images/play_button.png" class="play-button" alt="Play Video" border="0" /></t:if>
         </a></div>
   </t:if>
   <t:else>
@@ -14,6 +14,7 @@
       <t:set id="videoid" value="replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(video_url,'http://',''),'https://',''),'watch',''),'embed',''),'www.',''),'youtube.com',''),'youtu.be',''),'v=',''),'?',''),'&',''),'/','')" />
       <div class="story-thumbnail thumbnail-video"><a class="lightbox" href="#story-${itemID}" data-fancybox-group="thumbnail"><img src="https://img.youtube.com/vi/${videoid}/maxresdefault.jpg" alt="${title} - Video" border="0" /><img src="http://fa.pub30.convio.net/assets/images/play_button.png" class="play-button" alt="Play Video" border="0" /></a></div>
     </t:if>
+    <t:else><a class="lightbox" href="#story-${itemID}" data-fancybox-group="thumbnail" style="display: none;"></a></t:else>
   </t:else>
         <a href="#story-${itemID}" class="story-title lightbox" data-fancybox-group="title">${title}</a>
 <t:if test="!isNull(city) || !isNull(state)">
@@ -33,7 +34,7 @@
   <div class="video-container"><iframe src="//www.youtube.com/embed/${videoid}?html5=1&controls=0&autohide=1&showinfo=0" frameborder="0" allowfullscreen=""></iframe></div>
 </t:else>
           <h5>${title}</h5>
-          <h6>${city}, ${state}</h6>
+          <h6><t:if test="!isNull(city)">${city}<t:if test="!isNull(state)">, <t:list id="state">${name}</t:list></t:if></t:if><t:else><t:if test="!isNull(state)">${state}</t:if></t:else></h6>
           ${body}
           <div class="clearfix"></div>
           <div class="story-overlay-footer">
