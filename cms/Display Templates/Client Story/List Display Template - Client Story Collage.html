@@ -31,7 +31,7 @@
 </t:if>
 <t:else>
   <t:set id="videoid" value="replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(video_url,'http://',''),'https://',''),'watch',''),'embed',''),'www.',''),'youtube.com',''),'youtu.be',''),'v=',''),'?',''),'&',''),'/','')" />
-  <div class="video-container"><iframe src="//www.youtube.com/embed/${videoid}?html5=1&controls=0&autohide=1&showinfo=0" frameborder="0" allowfullscreen=""></iframe></div>
+  <div class="video-container"><iframe src="//www.youtube.com/embed/${videoid}?html5=1&controls=0&autohide=1&showinfo=0&enablejsapi=1" frameborder="0" allowfullscreen="" id="story-${itemID}-video"></iframe></div>
 </t:else>
           <h5>${title}</h5>
           <h6><t:if test="!isNull(city)">${city}<t:if test="!isNull(state)">, <t:list id="state">${name}</t:list></t:if></t:if><t:else><t:if test="!isNull(state)">${state}</t:if></t:else></h6>
