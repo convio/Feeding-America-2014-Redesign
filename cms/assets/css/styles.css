@@ -747,7 +747,9 @@ img {
 }
 .lightbox-content {
   display: none;
+  /*
   max-width: 500px;
+  */
 }
 .image-right {
   float: right;

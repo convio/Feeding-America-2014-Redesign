@@ -1801,9 +1801,64 @@ vertical-align: top;
   font-size: 14px;
   line-height: 14px;
 }
+.fancybox-wrap {
+  width: 100% !important;
+  max-width: 720px !important;
+}
 .fancybox-inner {
   height: auto !important;
 }
+
+.fancybox-nav {
+  width: 60px !important;       
+}
+.fancybox-nav span {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+.fancybox-nav:hover span {
+  opacity: 1 !important;
+}
+.fancybox-next span, .fancybox-prev span {
+  display: none;
+}
+.fancybox-next {
+  right: -60px !important;
+}
+.fancybox-next:after {
+  content: '\25b8';
+  position: absolute;
+  top: 50%;
+  left: 11px;
+  margin-top: -29px;
+  font-size: 110px;
+  line-height: 110px;
+  color: #ffffff;
+  -moz-text-shadow: 0px 0px 13px rgba(5, 5, 6, 0.3);
+  -webkit-text-shadow: 0px 0px 13px rgba(5, 5, 6, 0.3);
+  text-shadow: 0px 0px 13px rgba(5, 5, 6, 0.3);
+}
+.fancybox-prev {
+  left: -60px !important;
+}
+.fancybox-prev:after {
+  content: '\25b8';
+  transform: rotate(180deg);
+  position: absolute;
+  top: 50%;
+  right: 11px;
+  margin-top: -29px;
+  font-size: 110px;
+  line-height: 110px;
+  color: #ffffff;
+  -moz-text-shadow: 0px 0px 13px rgba(5, 5, 6, 0.3);
+  -webkit-text-shadow: 0px 0px 13px rgba(5, 5, 6, 0.3);
+  text-shadow: 0px 0px 13px rgba(5, 5, 6, 0.3);
+}
+.fancybox-next:hover:after, .fancybox-prev:hover:after {
+  color: #cccccc;
+}
+
 
 /*
 shortcut to end of desktop
