@@ -1,0 +1,53 @@
+<t:list>
+
+      <div class="story-box">
+  <t:if test="thumb.length>0">
+        <div class="story-thumbnail thumbnail-img"><a class="lightbox" href="#story-${itemID}" data-fancybox-group="thumbnail">
+        <t:list id="thumb">
+          <img src="${url}" alt="${alt_text}" border="0" />
+        </t:list>
+<t:if test="!isNull(video_url)"><img src="http://fa.pub30.convio.net/assets/images/play_button.png" class="play-button" alt="Play Video" border="0" /></t:if>
+        </a></div>
+  </t:if>
+  <t:else>
+    <t:if test="!isNull(video_url)">
+      <t:set id="videoid" value="replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(video_url,'http://',''),'https://',''),'watch',''),'embed',''),'www.',''),'youtube.com',''),'youtu.be',''),'v=',''),'?',''),'&',''),'/','')" />
+      <div class="story-thumbnail thumbnail-video"><a class="lightbox" href="#story-${itemID}" data-fancybox-group="thumbnail"><img src="https://img.youtube.com/vi/${videoid}/maxresdefault.jpg" alt="${title} - Video" border="0" /><img src="http://fa.pub30.convio.net/assets/images/play_button.png" class="play-button" alt="Play Video" border="0" /></a></div>
+    </t:if>
+  </t:else>
+        <a href="#story-${itemID}" class="story-title lightbox" data-fancybox-group="title">${title}</a>
+<t:if test="!isNull(city) || !isNull(state)">
+        <div class="story-location"><t:if test="!isNull(city)">${city}<t:if test="!isNull(state)">, <t:list id="state">${name}</t:list></t:if></t:if><t:else><t:if test="!isNull(state)">${state}</t:if></t:else></div>
+</t:if>
+        <t:set id="newdescription" value="truncate(description,103)" />
+        <div class="story-description">${newdescription}</div>
+        <div class="read-more"><a class="lightbox" href="#story-${itemID}" data-fancybox-group="readmore">Read more<span> &rsaquo;</span></a></div>
+        <div id="story-${itemID}" class="lightbox-content story-overlay">
+<t:if test="isNull(video_url)">
+  <t:if test="thumb.length>0">
+    <t:list id="thumb"><img src="${url}" alt="${alt_text}" border="0" class="story-img" /></a></t:list>
+  </t:if>
+</t:if>
+<t:else>
+  <t:set id="videoid" value="replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(video_url,'http://',''),'https://',''),'watch',''),'embed',''),'www.',''),'youtube.com',''),'youtu.be',''),'v=',''),'?',''),'&',''),'/','')" />
+  <div class="video-container"><iframe src="//www.youtube.com/embed/${videoid}?html5=1&controls=0&autohide=1&showinfo=0" frameborder="0" allowfullscreen=""></iframe></div>
+</t:else>
+          <h5>${title}</h5>
+          <h6>${city}, ${state}</h6>
+          ${body}
+          <div class="clearfix"></div>
+          <div class="story-overlay-footer">
+            <ul class="social_icons">
+              <li class="fbk"><a href="https://www.facebook.com/FeedingAmerica" title="Facebook">facebook</a></li>
+              <li class="twt"><a href="https://twitter.com/feedingamerica" title="Twitter">twitter</a></li>
+              <li class="more"><a href="#" title="More">more</a></li>
+            </ul><!--/.social_icons-->
+            <div class="story-overlay-buttons">
+              <a href="#" class="button red">Share Your Story</a>
+              <a href="#" class="button purple" onclick="event.preventDefault(); $.fancybox.close( true )">Back to All Stories</a>
+            </div>
+          </div><!--/.story-overlay-footer-->
+        </div><!--/#story-${itemID}.story-overlay-->
+      </div><!--/.story-box-->
+
+</t:list>

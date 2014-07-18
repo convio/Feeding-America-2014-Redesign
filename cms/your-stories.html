@@ -1,13 +1,16 @@
 <script src="http://fa.pub30.convio.net/assets/js/masonry-pkgd-min.js"></script>
+<script src="http://fa.pub30.convio.net/assets/js/imagesloaded-pkgd-min.js"></script>
 
 <script>
 jQuery(document).ready(function ($) {
   var $container = $('#your-stories-boxes');
   // initialize
-  $container.masonry({
-    columnWidth: 302,
-    gutter: 28,
-    itemSelector: '.story-box'
+  $container.imagesLoaded( function() {
+    $container.masonry({
+      columnWidth: 302,
+      gutter: 28,
+      itemSelector: '.story-box'
+    });
   });
 });
 </script>
