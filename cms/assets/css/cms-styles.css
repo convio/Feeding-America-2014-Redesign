@@ -228,6 +228,13 @@
 #interrupter .int-icon {
   margin: 18px 20px;
 }
+.img-caption {
+  width: 300px;
+  padding: 10px;
+}
+div[id*=image-] {
+  display: inline;
+}
 
 /* --------------------------------------------
   Section Landing Page elements
