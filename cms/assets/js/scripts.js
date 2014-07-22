@@ -1,6 +1,8 @@
 $(document).ready(function() {
     promosLogic();
     assignLastClass();
+    interrupterToggle();
+
 
     $('#badges .badge img').click(function() {
         if ($(window).width() < 992) {
@@ -128,5 +130,22 @@ function assignLastClass() {
         if($sidebarPromos.length > 0) {
             $sidebarPromos.last().addClass('last-child');
         }
+    }
+}
+
+function interrupterToggle() {
+    var $promos = $('.interrupter');
+    if($promos.length > 0) {
+        $promos.each(function() {
+            var $promo = $(this);
+            $promo.find('.int-btn-open').on('click', function(e){
+                event.preventDefault();
+                $promo.removeClass('closed'); $('#interrupter').addClass('open');
+            });
+            $promo.find('.int-btn-close').on('click', function(e){
+                event.preventDefault();
+                $promo.removeClass('open'); $('#interrupter').addClass('closed');
+            });
+        });
     }
 }

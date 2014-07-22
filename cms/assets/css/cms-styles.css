@@ -173,7 +173,7 @@
 }
 
 /* Interrupter promos */
-#interrupter {
+.interrupter {
   position: fixed;
   bottom: 50px;
   right: 25px;
@@ -182,50 +182,50 @@
   border: 1px solid #ffffff;
   color: #ffffff;
 }
-#interrupter .int-buttons {
+.interrupter .int-buttons {
   position: absolute;
   top: -19px;
   right: -19px;
 }
-#interrupter.closed .int-btn-close {
+.interrupter.closed .int-btn-close {
   display: none;
 }
-#interrupter.open .int-btn-open {
+.interrupter.open .int-btn-open {
   display: none;
 }
-#interrupter.closed .int-left-img, #interrupter.closed .int-text {
+.interrupter.closed .int-left-img, .interrupter.closed .int-text {
   display: none;
 }
-#interrupter .int-left-img, #interrupter .int-text, #interrupter .int-icon {
+.interrupter .int-left-img, .interrupter .int-text, .interrupter .int-icon {
   display: inline-block;
   vertical-align: top;
 }
-#interrupter .int-text {
+.interrupter .int-text {
   width: 350px;
   padding: 10px 0px 10px 20px;
 }
-#interrupter .int-text h4 {
+.interrupter .int-text h4 {
   font-size: 24px;
   line-height: 26px;
   margin-top: 5px;
   margin-bottom: 0px;
 }
-#interrupter .int-text p {
+.interrupter .int-text p {
   margin-top: 15px;
   margin-bottom: 15px;
   font-size: 16px;
   line-height: 20px;
 }
-#interrupter .int-text h4 + p {
+.interrupter .int-text h4 + p {
   margin-top: 10px;
 }
-#interrupter .int-text a {
+.interrupter .int-text a {
   text-decoration: underline;
 }
-#interrupter .int-text a:hover {
+.interrupter .int-text a:hover {
   color: #cccccc;
 }
-#interrupter .int-icon {
+.interrupter .int-icon {
   margin: 18px 20px;
 }
 .img-caption {
@@ -1817,7 +1817,7 @@ vertical-align: top;
 }
 
 .fancybox-nav {
-  width: 60px !important;       
+  width: 60px !important;
 }
 .fancybox-nav span {
   visibility: visible !important;
@@ -2119,7 +2119,7 @@ shortcut to end of desktop
     margin-bottom: 0px;
   }
 
-  #interrupter {
+  .interrupter {
     display: none;
   }
 
@@ -2643,9 +2643,9 @@ shortcut to end of desktop
     max-width: 280px;
     margin: 0px auto;
   }
-  #interrupter {
+  .interrupter {
     display: none;
-  }  
+  }
 
 
   /* --------------------------------------------
