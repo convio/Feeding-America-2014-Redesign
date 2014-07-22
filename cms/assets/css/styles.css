@@ -305,6 +305,10 @@ hr {
   margin: 1em 0px;
   padding-left: 10px;
 }
+#body-content ul.slides li {
+  margin: 0px;
+  padding-left: 0px;
+}
 #body-content ul ul, #body-content ul ol, #body-content ol ol, #body-content ol ul {
   padding-left: 20px;
 }
