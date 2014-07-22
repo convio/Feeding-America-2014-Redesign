@@ -35,7 +35,7 @@
     <h2>Food and Fund Partners</h2>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore.</p>
     <div id="food-and-fund" class="logo-boxes">
-      <t:include id="templatelist-543295161" />
+      <t:include id="templatelist-543464248" />
       <div class="clearfix"></div>
     </div><!--/#food-and-fund.logo-boxes-->
     <a href="/preview!fa.pub30.convio.net/our-response/about-us/partners/food-and-fund-partners/" class="learn-more"><span>Learn more about our Food and Fund Partners</span> &rsaquo;</a>
@@ -47,7 +47,7 @@
     <h2>Current Promotions</h2>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore.</p>
     <div id="current-promotions" class="logo-boxes">
-<t:include id="templatelist-543304335" />
+<t:include id="templatelist-543464249" />
       <div class="clearfix"></div>
     </div><!--/#current-promotions.logo-boxes-->
     <a href="/preview!fa.pub30.convio.net/our-response/about-us/our-partners/current-promotions/" class="learn-more"><span>Learn more about our Current Promotions</span> &rsaquo;</a>
@@ -61,25 +61,25 @@
         <h2>Media Partners</h2>
         <div class="item-text">
           <p>Adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore.</p>
-          <p><a href="/our-response/about-us/our-partners/media-partners/" class="learn-more"><span>Learn more</span> &rsaquo;</a>
+          <p><a href="/preview!fa.pub30.convio.net/our-response/about-us/our-partners/media-partners/" class="learn-more"><span>Learn more</span> &rsaquo;</a>
         </div><!--/.item-text-->
-        <t:include id="templatelist-543438739" />
+        <t:include id="templatelist-543464250" />
       </div><!--/.item-->
       <div class="item">
         <h2>Entertainment Council</h2>
         <div class="item-text">
           <p>Ut enim ad minim veniam, quis nostrud ullamco laboris nisi ut aliquip ex ea commodo.</p>
-          <p><a href="/our-response/about-us/our-partners/entertainment-council/" class="learn-more"><span>Learn more</span> &rsaquo;</a>
+          <p><a href="/preview!fa.pub30.convio.net/our-response/about-us/our-partners/entertainment-council/" class="learn-more"><span>Learn more</span> &rsaquo;</a>
         </div><!--/.item-text-->
-        <t:include id="templatelist-543441106" />
+        <t:include id="templatelist-543464251" />
       </div><!--/.item-->
       <div class="item">
         <h2>Disaster Partners</h2>
         <div class="item-text">
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
-          <p><a href="/our-response/about-us/our-partners/disaster-partners/" class="learn-more"><span>Learn more</span> &rsaquo;</a>
+          <p><a href="/preview!fa.pub30.convio.net/our-response/about-us/our-partners/disaster-partners/" class="learn-more"><span>Learn more</span> &rsaquo;</a>
         </div><!--/.item-text-->
-        <t:include id="templatelist-543441267" />
+        <t:include id="templatelist-543464252" />
       </div><!--/.item-->
       <div class="clearfix"></div>
     </div><!--/#media-entertainment-disaster.logo-boxes-->
@@ -90,40 +90,18 @@
   <div class="container">
     <div class="headline">Partner News</div>
     <div id="recent_news_boxes">
-      <a href="#" class="recent_news_item">
-        <img src="/preview!fa.pub30.convio.net/assets/images/news1.jpg" alt="news 1" border="0">
+      <t:list id="latest_news" maxlength="4">
+      <a href="${url}" class="recent_news_item">
+      <t:if test="large_image.length>0"><t:list id="large_image"><div class="thumbnail"><div class="aspect-ratio"></div><img src="${url}" alt="${alt_text}" border="0" /></div></t:list></t:if><t:else><t:if test="thumb.length>0"><t:list id="thumb"><div class="thumbnail"><div class="aspect-ratio"></div><img src="${url}" alt="${alt_text}" border="0"></div></t:list></t:if></t:else>
         <div class="news_expanded">
-          <span>Earn Your Wings</span>
-          <p>Veggie ipsum es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion.</p>
+          <span>${title}</span>
+          <p>${description}</p>
           <p><span class="link">Learn More &rsaquo;</span></p>
         </div><!--/.news_expanded-->
       </a><!--/.recent_news_item-->
-      <a href="#" class="recent_news_item">
-        <img src="/preview!fa.pub30.convio.net/assets/images/news2.jpg" alt="news 2" border="0">
-        <div class="news_expanded">
-          <span>It's National Nutrition Month</span>
-          <p>Welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.</p>
-          <p><span class="link">Learn More &rsaquo;</span></p>
-        </div><!--/.news_expanded-->
-      </a><!--/.recent_news_item-->
-      <a href="#" class="recent_news_item">
-        <img src="/preview!fa.pub30.convio.net/assets/images/news3.jpg" alt="news 3" border="0">
-        <div class="news_expanded">
-          <span>Congress Visit Food Bank</span>
-          <p>Tell your Member of Congress to visit their local food bank to learn about hunger.</p>
-          <p><span class="link">Learn More &rsaquo;</span></p>
-        </div><!--/.news_expanded-->
-      </a><!--/.recent_news_item-->
-      <a href="#" class="recent_news_item">
-        <img src="/preview!fa.pub30.convio.net/assets/images/news1.jpg" alt="news 4" border="0">
-        <div class="news_expanded">
-          <span>Headline of Item</span>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore aliquam quaerat volupta.</p>
-          <p><span class="link">Learn More &rsaquo;</span></p>
-        </div><!--/.news_expanded-->
-      </a><!--/.recent_news_item-->
+      </t:list>
       <div class="clearfix"></div>
     </div><!--/#recent_news_boxes-->
-    <div id="recent_read_more"><a href="#">Read More [Type] News &rsaquo;</a></div>
+    <div id="recent_read_more"><a href="/preview!fa.pub30.convio.net/hunger-in-america/news-and-updates/?secondary_tags=partners">Read More Partner News<span> &rsaquo;</span></a></div>
   </div><!--/.container-->
 </div>

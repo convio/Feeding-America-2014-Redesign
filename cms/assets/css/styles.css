@@ -1988,9 +1988,21 @@ html.ff #homepage_ending_select {
 #recent_news_boxes .recent_news_item.morenews {
   display: none;
 }
+#recent_news_boxes .recent_news_item div.thumbnail {
+  /*
+  height: 112px;
+  */
+  overflow: hidden;
+  position: relative;
+}
+#recent_news_boxes .recent_news_item div.thumbnail .aspect-ratio {
+  padding-top: 54%;
+}
 #recent_news_boxes .recent_news_item img {
   display: block;
   width: 100%;
+  margin-top: -54%;
+  position: absolute;
 }
 #recent_news_boxes .recent_news_item .news_preview {
   background-color: #e98300;
@@ -2726,6 +2738,17 @@ html.ff #homepage_ending_select {
  Desktop Only: >= 992px
 -------------------------------------------------------------- */
 @media only screen and (min-width: 992px) {
+  #recent_news_boxes .recent_news_item div.thumbnail {
+    height: 131px;
+    width: 100%;
+    overflow: hidden;
+  }
+  #recent_news_boxes .recent_news_item img {
+    display: block;
+    width: auto;
+    max-width: none;
+    height: 131px;
+  }
   #recent_news_boxes .recent_news_item.one {
     background-color: #e98300;
   }
