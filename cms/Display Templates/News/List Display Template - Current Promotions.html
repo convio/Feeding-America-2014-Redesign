@@ -1,0 +1,25 @@
+<t:set id="randomOne" value="random(length)" />
+<t:set id="randomTwo" value="random(length)" />
+<t:if test="randomTwo == randomOne"><t:if test="randomOne == length"><t:set id="randomTwo" value="randomOne - 1" /></t:if><t:else><t:set id="randomTwo" value="randomOne + 1" /></t:else></t:if>
+<t:set id="randomThree" value="random(length)" />
+<t:if test="randomThree == randomOne || randomThree == randomTwo"><t:if test="randomTwo  == length"><t:set id="randomThree" value="randomTwo - 1" /></t:if><t:else><t:set id="randomThree" value="randomTwo + 1" /></t:else></t:if>
+<t:set id="randomFour" value="random(length)" />
+<t:if test="randomFour == randomOne || randomFour == randomTwo || randomFour == randomThree"><t:if test="randomThree  == length"><t:set id="randomFour" value="randomThree - 1" /></t:if><t:else><t:set id="randomFour" value="randomThree + 1" /></t:else></t:if>
+
+<t:set id="displayedLength" value="0" />
+
+<t:list>
+<t:if test="displayedLength == 4"></t:if>
+<t:else>
+<t:if test="index == (randomOne+1) || index == (randomTwo+1) || index == (randomThree+1) || index == (randomFour+1)">
+<t:set id="displayedLength" value="displayedLength + 1" />
+      <div class="item">
+        <a href="${url}" class="logo-box"><img <t:list id="thumb">src="${url}"</t:list> alt="${title}" border="0" /></a>
+        <div class="item-text">
+          <p>${title}</p>
+          <p><a href="${url}" class="learn-more"><span>Learn more</span> &rsaquo;</a>
+        </div><!--/.item-text-->
+      </div><!--/.item-->
+</t:if>
+</t:else>
+</t:list>
