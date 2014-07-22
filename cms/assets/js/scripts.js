@@ -139,11 +139,11 @@ function interrupterToggle() {
         $promos.each(function() {
             var $promo = $(this);
             $promo.find('.int-btn-open').on('click', function(e){
-                event.preventDefault();
+                e.preventDefault();
                 $promo.removeClass('closed'); $('#interrupter').addClass('open');
             });
             $promo.find('.int-btn-close').on('click', function(e){
-                event.preventDefault();
+                e.preventDefault();
                 $promo.removeClass('open'); $('#interrupter').addClass('closed');
             });
         });
