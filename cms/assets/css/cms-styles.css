@@ -1209,11 +1209,11 @@ vertical-align: top;
   background-repeat: no-repeat;
   background-position: 27px 14px;
 }
-.column-2 .section-nav li.parentOfActive.expanded > a {
+.column-2 .section-nav li.parentOfActive.expanded > a, .column-2 .section-nav li.parentOfActive.subMenu > a {
   background-image: none;
 }
 .column-2 .section-nav li.current > a {
-  background-image: url('../images/grain_bulletpoint.png');
+  background-image: url('../images/grain_bulletpoint.png') !important;
   background-repeat: no-repeat;
   background-position: 27px 14px;
 }
