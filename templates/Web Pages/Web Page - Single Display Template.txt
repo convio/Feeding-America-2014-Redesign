@@ -4,9 +4,9 @@
       <div id="page-title">
         <h1 class="page-title">${title}</h1>
       </div><!--/#page-title-->
-      <t:if test="!isNull(description)"><div id="page-description">
+      <t:if test="!isNull(description) || !isNull(subtitle)"><div id="page-description">
         <t:if test="!isNull(subtitle)"><p><strong>${subtitle}</strong></p></t:if>
-        <p>${description}</p>
+        <t:if test="!isNull(description)"><p>${description}</p></t:if>
       </div><!--/#page-description--></t:if>
       <div id="body-content">
         <t:if test="thumb.length > 0"><t:list id="thumb"><img src="${url}" alt="${alt_text}" class="image-right" /></t:list></t:if>
