@@ -1,3 +1,4 @@
+<input type="hidden" value="${length}" class="your-stories-boxes-count"/>
 <t:list>
 
       <div class="story-box">
@@ -26,7 +27,7 @@
         <div id="story-${itemID}" class="lightbox-content story-overlay">
 <t:if test="isNull(video_url)">
   <t:if test="thumb.length>0">
-    <t:list id="thumb"><img src="${url}" alt="${alt_text}" border="0" class="story-img" /></a></t:list>
+    <t:list id="thumb"><img src="${url}" alt="${alt_text}" border="0" class="story-img" /><!--</a>--></t:list>
   </t:if>
 </t:if>
 <t:else>
