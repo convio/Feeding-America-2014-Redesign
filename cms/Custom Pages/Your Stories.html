@@ -1,0 +1,105 @@
+<script src="http://fa.pub30.convio.net/assets/js/masonry-pkgd-min.js"></script>
+<script src="http://fa.pub30.convio.net/assets/js/imagesloaded-pkgd-min.js"></script>
+
+<script>
+jQuery(document).ready(function ($) {
+  var $container = $('#your-stories-boxes');
+  // initialize
+  $container.imagesLoaded( function() {
+    $container.masonry({
+      columnWidth: 302,
+      gutter: 28,
+      itemSelector: '.story-box'
+    });
+  });
+});
+</script>
+
+<div id="title-and-share">
+  <div class="container">
+    <h1 class="page-title">${title}</h1>
+    <ul class="social_icons">
+      <li class="fbk"><a href="https://www.facebook.com/FeedingAmerica" title="Facebook">facebook</a></li>
+      <li class="twt"><a href="https://twitter.com/feedingamerica" title="Twitter">twitter</a></li>
+      <li class="more"><a href="#" title="More">more</a></li>
+    </ul><!--/.social_icons-->
+  </div><!--/.container-->
+</div><!--/#title-and-share-->
+
+<t:if test="!isNull(description) || !isNull(subtitle)"><div id="page-description" class="your-stories">
+  <div class="container">
+    <t:if test="!isNull(subtitle)"><p><strong>${subtitle}</strong></p></t:if>
+    <t:if test="!isNull(description)"><p>${description}</p></t:if>
+  </div><!--/.container-->
+</div><!--/#page-description--></t:if>
+
+<div class="gray-full-width">
+    <div class="container">
+    <div id="your-stories-menu">
+      <a href="#" id="your-stories-share-your" class="grainbutton red">Share Your Story</a>
+      <t:data name="stateList" class="categories" parent="/state" />
+      <t:data name="storyTypeList" class="categories" parent="/client-story-group" />
+      <form id="your-stories-filter" action="${url}">
+        <select name="state" id="your-stories-filter-by-state"><t:if test="isNull(param.state)"><option disabled="disabled" selected="selected" value=""></t:if><t:else><option disabled="disabled" value=""></t:else>Filter by State</option><option value="">All</option><t:list id="stateList"><t:if test="param.state == name"><option selected="selected" value="${name}"></t:if><t:else><option value="${name}"></t:else>${label}</option></t:list></select><!--/#your-stories-filter-by-state--><select name="story_type" id="your-stories-filter-by-type"><t:if test="isNull(param.story_type)"><option disabled="disabled" selected="selected" value=""></t:if><t:else><option disabled="disabled" value=""></t:else>Filter by Type</option><option value="">All</option><t:list id="storyTypeList"><t:if test="param.story_type == name"><option selected="selected" value="${name}"></t:if><t:else><option value="${name}"></t:else>${label}</option></t:list></select><!--/#your-stories-filter-by-type--><button type="submit" class="purple">GO</button>
+      </form><!--/#your-stories-filter-->
+    </div><!--/#your-stories-menu-->
+    <div id="your-stories-boxes">
+
+<t:include id="templatelist-543671426" />
+<t:include id="templatelist-543671427" />
+
+      <div class="clearfix"></div>
+    </div><!--/#your-stories-boxes-->
+    <div class="clearfix"></div>
+    <div class="read-more" id="your-stories-load-more"><a href="#" id="your-stories-load-more-bttn">Read more Stories<span> &rsaquo;</span></a></div>
+  </div><!--/.container-->
+</div><!--/.gray-full-width-->
+
+
+<div id="footer_promos">
+  <div class="container">
+    <div class="headline">How You Can Help Feeding America Solve Hunger</div>
+    <div id="footer_promo_boxes">
+      <div class="footer-promo">
+        <img src="/preview!fa.pub30.convio.net/assets/images/join-icon-white.png" alt="alttext" border="0" />
+        <div class="promo-title">Join</div>
+        <div class="promo-text">Get the latest news and learn how you can get involved.</div>
+        <div class="promo-action">
+          <form class="promo-join" action="survey">
+            <input type="text" name="cons_email" class="full-width" placeholder="Enter Email" />
+            <input type="text" name="cons_zip_code" class="half-width" placeholder="Enter Zip" />
+            <div class="half-width">
+              <button type="submit" class="red">Join Us</button>
+            </div>
+            <div class="clearfix"></div>
+          </form><!--/.promo-join-->
+        </div><!--/.promo-action-->
+      </div><!--/.footer-promo-->
+      <div class="footer-promo">
+        <img src="/preview!fa.pub30.convio.net/assets/images/act-icon-1-white.png" alt="alttext" border="0" />
+        <div class="promo-title">Act</div>
+        <div class="promo-text">Tell your member of Congress to visit your local food bank.</div>
+        <div class="promo-action">
+          <a href="#" class="button purple">Act Now</a>
+        </div><!--/.promo-action-->
+      </div><!--/.footer-promo-->
+      <div class="footer-promo">
+        <img src="/preview!fa.pub30.convio.net/assets/images/give-icon-1-white.png" alt="alttext" border="0" />
+        <div class="promo-title">Give</div>
+        <div class="promo-text">Give hope to children and families in need year round. Become a monthly donor.</div>
+        <div class="promo-action">
+          <a href="#" class="button blue">Donate</a>
+        </div><!--/.promo-action-->
+      </div><!--/.footer-promo-->
+      <div class="clearfix"></div>
+    </div><!--/#footer_promo_boxes-->
+  </div><!--/.container-->
+</div><!--/#footer_promos-->
+
+<script src="http://fa.pub30.convio.net/assets/js/story-paginator.js?v=1"></script>
+<script>
+(new FA.storyPaginator()).init({
+    url: 'http://fa.pub30.convio.net/z-testing/stories/do-not-delete-stories.html',
+    totalResults: parseInt($('input.your-stories-boxes-count:eq(1)').val())
+});
+</script>
