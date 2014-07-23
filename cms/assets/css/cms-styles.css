@@ -1230,6 +1230,12 @@ vertical-align: top;
 .column-2 .section-nav li.parentOfActive ul a {
   padding: 15px 5px 15px 48px;
 }
+.column-2 .section-nav li.subMenu ul {
+  display: none;
+}
+.column-2 .section-nav li.parentOfActive > ul {
+  display: initial;
+}
 .column-2 .section-nav ul,
 .column-2 .section-nav li.parentOfActive li.parentOfActive ul {
   padding: 0;
@@ -1941,6 +1947,130 @@ vertical-align: top;
   margin-left: 0px;
 }
 
+
+/* --------------------------------------------
+  Mission/Supporting/Disaster Partners Landing Page elements
+-------------------------------------------- */
+/* partners list */
+.partners-list-horizontal, #body-content .partners-list-horizontal {
+  list-style: none;
+  padding: 0px !important;
+  margin: 0px;
+}
+.partners-list-horizontal li, #body-content .partners-list-horizontal li {
+  display: inline-block;
+  margin: 0px 0px 20px 50px;
+  padding: 0px;
+  width: 160px;
+  text-align: center;
+  position: relative;
+}
+.partners-list-horizontal li.one, #body-content .partners-list-horizontal li.one {
+  margin-left: 0px;
+}
+.partners-list-horizontal li > a, #body-content .partners-list-horizontal li > a {
+  display: block;
+  margin: 0px;
+  padding: 10px;
+  height: 160px;
+  vertical-align: middle;
+  line-height: 138px;
+  text-align: center;
+  background-color: #ffffff;
+  border: 1px solid #dedede;
+}
+.partners-list-horizontal li img, #body-content .partners-list-horizontal li img {
+  max-height: 100%;
+  max-width: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+.partners-list-horizontal li .hover-text {
+  display: none;
+  width: 265px;
+  padding: 15px 60px 15px 15px;
+  border: 1px solid #999999;
+  font-size: 14px;
+  line-height: 20px;
+  position: absolute;
+  bottom: 155px;
+  left: 50%;
+  margin-left: -132.5px;
+  background-color: #ebebeb;
+  z-index: 2;
+  /*
+  -moz-box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.35);
+  -webkit-box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.35);
+  box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.35);
+  */
+}
+.partners-list-horizontal li .hover-text:before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 100%;
+  left: 50%;
+  right: auto;
+  border-top: 13px solid #999999;
+  border-right: 18px dotted rgba(255, 255, 255, 0);
+  border-bottom: 0px;
+  border-left: 18px dotted rgba(255, 255, 255, 0);
+  margin: 0 0 0 -18px;
+}
+.partners-list-horizontal li .hover-text:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 100%;
+  left: 50%;
+  right: auto;
+  border-top: 12px solid #ebebeb;
+  border-right: 16px dotted rgba(255, 255, 255, 0);
+  border-bottom: 0px;
+  border-left: 16px dotted rgba(255, 255, 255, 0);
+  margin: 0 0 0 -16px;
+}
+.partners-list-horizontal li.one .hover-text {
+  left: 0px;
+  margin-left: 0px;
+}
+.partners-list-horizontal li.one .hover-text:before, .partners-list-horizontal li.one .hover-text:after {
+  left: 80px;
+}
+.partners-list-horizontal li .hover-text .close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 16px;
+  line-height: 23px;
+  height: 23px;
+  width: 24px;
+  text-align: center;
+  border: 1px solid #999999;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+.partners-list-horizontal li:hover .hover-text {
+  display: block;
+}
+.partners-list-horizontal li .hover-text a, #body-content .partners-list-horizontal li .hover-text a {
+  display: none;
+  margin-top: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 /*
 shortcut to end of desktop
 */
@@ -2552,6 +2682,27 @@ shortcut to end of desktop
     */
     max-width: auto !important;
   }
+
+
+  /* --------------------------------------------
+    Mission/Supporting/Disaster Partners Landing Page elements
+  -------------------------------------------- */
+  /* partners list */
+  .partners-list-horizontal, #body-content .partners-list-horizontal {
+    max-width: 440px;
+  }
+  .partners-list-horizontal li, #body-content .partners-list-horizontal li {
+    margin: 0px 0px 20px 20px;
+    width: 133px;
+  }
+  .partners-list-horizontal li > a, #body-content .partners-list-horizontal li > a {
+    height: 133px;
+    line-height: 111px;
+  }
+  .partners-list-horizontal li .hover-text a, #body-content .partners-list-horizontal li .hover-text a {
+    display: block;
+  }
+
 
 
 
@@ -3228,6 +3379,40 @@ shortcut to end of desktop
   }
   .story-overlay-buttons a {
     margin: 20px 10px 0px 0px;
+  }
+
+
+
+  /* --------------------------------------------
+    Mission/Supporting/Disaster Partners Landing Page elements
+  -------------------------------------------- */
+  /* partners list */
+  .partners-list-horizontal, #body-content .partners-list-horizontal {
+    
+  }
+  .partners-list-horizontal li, #body-content .partners-list-horizontal li {
+    display: block;
+    margin: 0px auto 20px auto;
+    padding: 0px;
+    width: 160px;
+    text-align: center;
+    position: relative;
+  }
+  .partners-list-horizontal li.one, #body-content .partners-list-horizontal li.one {
+    margin-left: auto;
+  }
+  .partners-list-horizontal li .hover-text {
+    top: 100px;
+  }
+  .partners-list-horizontal li.one .hover-text {
+    left: 50%;
+    margin-left: -132.5px;
+  }
+  .partners-list-horizontal li.one .hover-text:before, .partners-list-horizontal li.one .hover-text:after {
+    left: 50%;
+  }
+  .partners-list-horizontal li .hover-text a, #body-content .partners-list-horizontal li .hover-text a {
+    display: block;
   }
 
 
