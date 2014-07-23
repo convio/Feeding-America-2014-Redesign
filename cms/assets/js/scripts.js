@@ -140,11 +140,11 @@ function interrupterToggle() {
             var $promo = $(this);
             $promo.find('.int-btn-open').on('click', function(e){
                 e.preventDefault();
-                $promo.removeClass('closed'); $('#interrupter').addClass('open');
+                $promo.removeClass('closed').addClass('open');
             });
             $promo.find('.int-btn-close').on('click', function(e){
                 e.preventDefault();
-                $promo.removeClass('open'); $('#interrupter').addClass('closed');
+                $promo.removeClass('open').addClass('closed');
             });
         });
     }
