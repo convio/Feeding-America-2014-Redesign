@@ -768,6 +768,14 @@ img {
   float: left;
   margin: 0 25px 25px 0;
 }
+.icon-left {
+  float: left;
+  margin: 0 25px 0 0;
+}
+.icon-right {
+  float: right;
+  margin: 0 0 0 25px;
+}
 table.paginator, table.paginator th, table.paginator td {
   border: none;
   font-size: 14px;

@@ -19,6 +19,7 @@
     </t:list>
   </t:if>
 </t:if>
+
 <div class="sidebar-promo-box promo">
   <div class="sidebar-promo  ${classes}">
 
