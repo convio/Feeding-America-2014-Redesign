@@ -2634,16 +2634,25 @@ html.ff #homepage_ending_select {
 .alert-banner {
   display: block;
   width: 100%;
-  padding: 5px 0;
+  padding: 10px 0;
+  text-align: center;
 }
 
+.alert-content {
+  display: inline-block;
+  width: auto;
+}
 .alert-text {
-  text-align: center;
   color: #fff;
+  display: inline-block;
   font-size: 18px;
   text-transform: uppercase;
+  padding: 10px 0 0;
 }
 
+.alert-text a {
+  text-decoration: underline;
+}
 
 
 
