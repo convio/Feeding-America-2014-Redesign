@@ -2005,17 +2005,21 @@ html.ff #homepage_ending_select {
 #recent_news_boxes .recent_news_item.morenews {
   display: none;
 }
-#recent_news_boxes .recent_news_item div.thumbnail {
+body.expand-news #recent_news_boxes .recent_news_item div.thumbnail {
   /*
   height: 112px;
   */
   overflow: hidden;
   position: relative;
 }
-#recent_news_boxes .recent_news_item div.thumbnail .aspect-ratio {
+body.expand-news #recent_news_boxes .recent_news_item div.thumbnail .aspect-ratio {
   padding-top: 54%;
 }
 #recent_news_boxes .recent_news_item img {
+  display: block;
+  width: 100%;
+}
+body.expand-news #recent_news_boxes .recent_news_item img {
   display: block;
   width: 100%;
   margin-top: -54%;
@@ -2764,12 +2768,12 @@ html.ff #homepage_ending_select {
  Desktop Only: >= 992px
 -------------------------------------------------------------- */
 @media only screen and (min-width: 992px) {
-  #recent_news_boxes .recent_news_item div.thumbnail {
+  body.expand-news #recent_news_boxes .recent_news_item div.thumbnail {
     height: 131px;
     width: 100%;
     overflow: hidden;
   }
-  #recent_news_boxes .recent_news_item img {
+  body.expand-news #recent_news_boxes .recent_news_item img {
     display: block;
     width: auto;
     max-width: none;
