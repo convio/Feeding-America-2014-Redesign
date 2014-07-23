@@ -2061,13 +2061,60 @@ vertical-align: top;
 }
 
 
+/* --------------------------------------------
+  Media Partners/Current Promotions/Entertainment Council Partners Landing Page elements
+-------------------------------------------- */
+/* list */
 
+.partners-list-vertical.blog-posts.list-items-container .list-item {
 
-
-
-
-
-
+}
+.partners-list-vertical.blog-posts.list-items-container .list-item:last-child {
+  margin-bottom: 0px;
+}
+.partners-list-vertical.blog-posts.list-items-container .list-item-thumbnail {
+  width: 100px;
+  text-align: center;
+  top: 0px;
+}
+.partners-list-vertical.blog-posts.list-items-container .list-item-thumbnail a {
+  display: block;
+  margin: 0px;
+  padding: 5px;
+  height: 100px;
+  vertical-align: middle;
+  line-height: 88px;
+  text-align: center;
+  background-color: #ffffff;
+  border: 1px solid #dedede;
+}
+.partners-list-vertical.blog-posts.list-items-container .list-item-thumbnail a img {
+  width: auto;
+  max-height: 100%;
+  max-width: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+.partners-list-vertical.blog-posts.list-items-container .list-item-thumbnail + .list-item-text {
+  min-height: 100px;
+}
+.partners-list-vertical.blog-posts.list-items-container .list-item-description a {
+  display: inline-block;
+}
+/*
+body.entertainment-council .partners-list-vertical.blog-posts.list-items-container .list-item-thumbnail a, body.current-promotions .partners-list-vertical.blog-posts.list-items-container .list-item-thumbnail a
+*/
+.partners-list-vertical.blog-posts.list-items-container .list-item-thumbnail a {
+  display: inline-block;
+  padding: 0px;
+  height: auto;
+  line-height: initial;
+  background-color: transparent;
+  border: none;
+}
+body.entertainment-council .partners-list-vertical.blog-posts.list-items-container .list-item-thumbnail + .list-item-text {
+  min-height: 150px;
+}
 
 
 
@@ -3402,7 +3449,7 @@ shortcut to end of desktop
     margin-left: auto;
   }
   .partners-list-horizontal li .hover-text {
-    top: 100px;
+    bottom: 100px;
   }
   .partners-list-horizontal li.one .hover-text {
     left: 50%;
