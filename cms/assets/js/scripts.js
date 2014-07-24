@@ -163,3 +163,20 @@ function interrupterToggle() {
         });
     }
 }
+
+/** Javascript function for loading related content into an element
+    ex: $promos.getRelatedContent('general', 'web');
+*/
+$.fn.extend({
+    getRelatedContent: function(category, content_type) {
+      var contentURL = '/assets/promos/wrpr/blended-list-for-related.html' + '?for=news&secondary_tags='+ content_type;
+      this.load(contentURL + ' .sidebar-promo-box', function() {
+        $(this).find('.list-item').each(function(index) {
+          if(index >= 3) {
+            $(this).remove();
+          }
+        });
+      });
+
+    }
+});
