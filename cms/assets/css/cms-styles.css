@@ -2108,6 +2108,7 @@ body.entertainment-council .partners-list-vertical.blog-posts.list-items-contain
   display: inline-block;
   padding: 0px;
   height: auto;
+  width: 100px;
   line-height: initial;
   background-color: transparent;
   border: none;
