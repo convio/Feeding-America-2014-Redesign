@@ -28,9 +28,12 @@ $(document).ready(function() {
                         if (counter > 2) { return; } // Display only first two results
 
                         var org = data[key];
+						var profileUrlName = org.FullName.replace(/ /g, '-').toLowerCase();
+						var profileUrl = '/find-your-local-foodbank/' + profileUrlName.replace(/[\.,]/g, '') + '.html';
+						
                         results.append([
                             '<div class="find_local_food_bank_result">',
-                            '<a href="#">', org.FullName, '</a> &nbsp;&bull;&nbsp; ', org.MailAddress.City, ', ', org.MailAddress.State,
+                            '<a href="', profileUrl, '">', org.FullName, '</a> &nbsp;&bull;&nbsp; ', org.MailAddress.City, ', ', org.MailAddress.State,
                             '</div>'
                         ].join(''));
                     }

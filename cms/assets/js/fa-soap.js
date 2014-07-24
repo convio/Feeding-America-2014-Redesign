@@ -4,6 +4,7 @@ if (typeof FA == 'undefined') { // Make sure FA namespace is initialized
 
 FA.webService = function() { // FA web service helper
     // Properties
+    //temp update http://ws2.feedingamerica.org/FAWebService.asmx will be http://ws.feedingamerica.org/FAWebService.asmx at go live
     this.options = {
         url:   'http://ws.feedingamerica.org/FAWebService.asmx',
         xmlns: 'http://feedingamerica.org/'
@@ -19,6 +20,7 @@ FA.webService = function() { // FA web service helper
 
     this.request = function(method, data, path, successCallback, errorCallback) {
         $.soap({
+			async: true,
             url: self.options.url,
             method: method,
             appendMethodToURL: false,
