@@ -169,14 +169,21 @@
   <!-- /reus_wrpr_footer -->
   <div class="templateComponent" id="poweredBy"></div>
 
+
   <t:if test="interrupter_promo.length > 0">
     <div class="hidden-phone">
       <t:include id="templatelist-541778258" />
     </div>
   </t:if>
   <t:else>
-    <div class="hidden-phone">
-      <t:include id="templatelist-541778726" />
+    <div class="promos hidden-phone">
+      <div class="primary-promos">
+      <!-- global --><t:include id="templatelist-543968626" />
+
+       </div>
+      <div class="secondary-promos">
+        <t:include id="templatelist-541778726" />
+      </div>
     </div>
   </t:else>
 
