@@ -4,7 +4,7 @@
 <t:if test="background_image.length > 0">
   <t:list id="background_image">
     <t:set id="promoBgImg" value="concat('background: url(', url)" />
-    <t:set id="promoBgImg" value="concat(promoBgImg, ') 50% 0 repeat-x;')" />
+    <t:set id="promoBgImg" value="concat(promoBgImg, ') 50% 0 repeat;')" />
   </t:list>
 </t:if>
 

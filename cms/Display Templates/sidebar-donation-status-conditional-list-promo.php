@@ -77,8 +77,16 @@
               </t:list>
             </t:if>
           </t:if>
+          <t:set id="promoBgImg" value="''" />
+          <t:if test="background_image.length > 0">
+            <t:list id="background_image">
+              <t:set id="promoBgImg" value="concat('background: url(', url)" />
+              <t:set id="promoBgImg" value="concat(promoBgImg, ') 50% 0 repeat;')" />
+            </t:list>
+          </t:if>
+
           <div class="sidebar-promo-box promo">
-            <div class="sidebar-promo  ${classes}">
+            <div class="sidebar-promo  ${classes}" style="${promoBgImg}">
               <t:if test="thumb.length > 0">
                 <t:if test="!isNull(action_button_url) && isNull(action_button_label)"><a href="${action_button_url}"></t:if>
                 <t:list id="thumb"><img src="${url}" alt="${alt_text}" /></t:list>
