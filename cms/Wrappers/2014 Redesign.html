@@ -78,7 +78,7 @@
 <t:set id="pathclasses" value="trim(replace(replace(path,'/',' '),'.html','DOThtml'))" />
 <t:set id="templatename" value="toLowerCase(trim(replace(replace(replace(templateID,' ','-'),':',''),'/','')))" />
 
-<t:set id="bodyClass" value="toLowerCase(trim(replace(replace(type,' ','-'),':','')))" />
+<t:set id="bodyClass" value="toLowerCase(trim(replace(replace(replace(type,' ','-'),':',''),'/','')))" />
 <t:if test="title == 'Search Results'">
   <!-- we on search results page -->
   <t:set id="bodyClass", value="concat(bodyClass, ' search')" />
@@ -98,7 +98,7 @@
 <t:else>
   <t:set id="bodyClass" value="concat(bodyClass, ' not-homepage')" />
 </t:else>
-<t:if test="itemID == '526817126'">
+<t:if test="itemID == '526817126' || itemID == '543463683'">
   <t:set id="expandnews" value="'expand-news'" />
 </t:if>
 <body class="${pathclasses} ${templatename} ${bodyClass} ${expandnews}">
@@ -169,14 +169,21 @@
   <!-- /reus_wrpr_footer -->
   <div class="templateComponent" id="poweredBy"></div>
 
+
   <t:if test="interrupter_promo.length > 0">
     <div class="hidden-phone">
       <t:include id="templatelist-541778258" />
     </div>
   </t:if>
   <t:else>
-    <div class="hidden-phone">
-      <t:include id="templatelist-541778726" />
+    <div class="promos hidden-phone">
+      <div class="primary-promos">
+      <!-- global --><t:include id="templatelist-543968626" />
+
+       </div>
+      <div class="secondary-promos">
+        <t:include id="templatelist-541778726" />
+      </div>
     </div>
   </t:else>
 
