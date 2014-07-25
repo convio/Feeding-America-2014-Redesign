@@ -51,6 +51,20 @@
           manualControls: ".homepage-slideshow-manual-control-nav li"
         });
       }, true);
+      $('#homepage-partners-carousel').waitUntilExists(function() {
+        $('#homepage-partners-carousel').flexslider({
+          animation: "slide",
+          smoothHeight: false,
+          slideshowSpeed: 9000,
+          animationSpeed: 600,
+          pauseOnAction: false,
+          pauseOnHover: false,
+          controlNav: false,
+          directionNav: false,
+          touch: false,
+          randomize: true
+        });
+      }, true);
     </script>
 </t:if>
 
