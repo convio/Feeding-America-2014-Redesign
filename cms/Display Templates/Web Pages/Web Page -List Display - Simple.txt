@@ -1,0 +1,8 @@
+<t:if test="length>0">
+<ul class="circles">
+<t:list>
+<li><a href="${url}">${title}</a></li>
+</t:list>
+</ul>
+<div style="display: inline;" class="templateComponent" id="pagination-544729353"></div>
+</t:if>

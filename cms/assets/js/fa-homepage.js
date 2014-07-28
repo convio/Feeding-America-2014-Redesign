@@ -20,7 +20,7 @@ $(document).ready(function() {
 			results.empty().hide(); // Clear the display
             
             if (zip != '') { // Do the request
-				results.append('<div class="loading"></div>').show(); // Loading...
+				results.append('<div class="loading-white"></div>').show(); // Loading...
                 setCookie('cms_cons_zip', zip, 365);
                 FA.soap.request('GetOrganizationsByZip', { zip: zip }, 'Body/GetOrganizationsByZipResponse/GetOrganizationsByZipResult/Organization', function(data) {
                     var counter = 0;

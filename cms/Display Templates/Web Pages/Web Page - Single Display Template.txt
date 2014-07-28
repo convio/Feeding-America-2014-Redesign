@@ -9,7 +9,6 @@
         <t:if test="!isNull(description)"><p>${description}</p></t:if>
       </div><!--/#page-description--></t:if>
       <div id="body-content">
-        <t:if test="thumb.length > 0"><t:list id="thumb"><img src="${url}" alt="${alt_text}" class="image-right" /></t:list></t:if>
         ${body}
         </div><!--/#body-content -->
 
@@ -26,7 +25,11 @@
           </div><!-- /.secondary-promos -->
         </div><!-- /.promos-->
       </t:else>
-
+      
+      <t:if test="related_content.length>0">
+            <t:include id="templatelist-544719480"/>
+      </t:if> 
+      <t:else>
           <h2>Related Content</h2>
           <div class="body-content-related-content">
           <t:list id="primary_tags">
@@ -46,7 +49,7 @@
 
             </script>
           </div><!-- /.related content-->
-
+      </t:else>
 
     </div><!--/.column-1-->
     <div class="column-2">
