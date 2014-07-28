@@ -695,6 +695,20 @@ p.req {
 .related-content.list-items-container .list-item-thumbnail {
   float: right;
   margin: 0px 0px 0px 30px;
+  min-height: 100px;
+}
+.related-content.list-items-container .list-item-thumbnail a {
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
+.related-content.list-items-container .list-item-thumbnail a img {
+  display: block;
+  max-height: 100px;
+  min-width: 100px;
+  max-width: none;
+  width: auto;
+  margin-left: -25%;
 }
 .related-content.list-items-container .list-item-text {
   margin: 0px 0px 0px 0px;
