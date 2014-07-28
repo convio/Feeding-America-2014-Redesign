@@ -2,7 +2,7 @@ $(document).ready(function() {
     promosLogic();
     assignLastClass();
     interrupterToggle();
-
+	renderRecentItemBoxes();
 
     $('#badges .badge img').click(function() {
         if ($(window).width() < 992) {
@@ -10,6 +10,7 @@ $(document).ready(function() {
             $(this).parent().find('.hover-text').show();
         }
     });
+	
     $('.hover-text .close').click(function() {
         $(this).parent().hide();
         var tempThis = $(this);
@@ -29,6 +30,7 @@ $(document).ready(function() {
 //            }
         }
     });
+	
     $('#util_search_expand').click(function() {
         if ($(window).width() < 768) {
             $('#util_search_form').animate({height: 'toggle'}, 300, function() {
@@ -43,6 +45,7 @@ $(document).ready(function() {
             });
         }
     });
+	
     $('#mainmenu button.navbar-toggle').click(function() {
         $('#nav1').animate({height: 'toggle'}, 400, function() {
             manageHeaderMenusOverlap($(this), 'menu');
@@ -91,9 +94,72 @@ $(document).ready(function() {
             if (item.is(':visible')) {
                 item.hide();
             }
-
         }
     }
+
+
+    /** Javascript function for loading related content into an element
+    ex: $promos.getRelatedContent('item-3242554', 'general', 'web');
+    */
+    $.fn.extend({
+        getRelatedContent: function(item_id, category, for_type, content_section) {
+			// Make sure the promo section is not hidden
+			if (!$(this).is(':visible')) {
+				return;
+			}
+		
+			// Init
+            var contentURL = '/assets/promos/wrpr/blended-list-for-related.html?for=' + for_type + '&secondary_tags=' + category; 
+
+            switch (content_section) {
+                case 'body-content' :
+                    contentURL += ' .related-content.list-items-container';
+                    break;
+                default :
+                    contentURL += ' .sidebar-promo-box';
+                    break;
+            }
+            
+			// Process ajax response
+            this.load(contentURL, function() {
+				var itemsCount = 3,
+					itemsShown = 0,
+					$content = $(this),
+					$items = $content.find('.list-items>.list-item');
+				
+                $items.tsort('span.date', {order: 'desc'});
+				
+                $items.each(function(index) {
+					var $item = $(this),
+					    removeItem = true;
+					
+					if (itemsShown < itemsCount) {
+						if (item_id != $item.attr('id')) {
+							removeItem = false;
+						}
+					}
+
+                    if (removeItem) {
+                        $item.remove();
+                    } else {
+						itemsShown++;
+						switch (content_section) {
+							case 'body-content' :
+								$item.find('.list-item-description').show();
+								break;
+						}
+					}
+                });
+				
+                switch (content_section) {
+                    case 'body-content' :
+                        $content.find('.sidebar-promo').removeClass('sidebar-promo');
+                        break;
+                }
+            });
+        }
+    });
+
 });
 
 /**
@@ -130,7 +196,6 @@ function promosLogic() {
             }
         });
     }
-
 }
 
 /**
@@ -164,19 +229,31 @@ function interrupterToggle() {
     }
 }
 
-/** Javascript function for loading related content into an element
-    ex: $promos.getRelatedContent('general', 'web');
-*/
-$.fn.extend({
-    getRelatedContent: function(category, content_type) {
-      var contentURL = '/assets/promos/wrpr/blended-list-for-related.html' + '?for=news&secondary_tags='+ content_type;
-      this.load(contentURL + ' .sidebar-promo-box', function() {
-        $(this).find('.list-item').each(function(index) {
-          if(index >= 3) {
-            $(this).remove();
-          }
-        });
-      });
-
-    }
-});
+function renderRecentItemBoxes() {
+    var lists = ['#recent_news_boxes>a.recent_news_item'];
+	var layout = [
+		['one'],
+		['two','two'],
+		['three','three','three'],
+		['four','four','four','four'],
+		['two','two','three','three','three'],
+		['three','three','three','three','three','three'],
+		['two','two','two','two','three','three','three'],
+		['four','four','four','four','four','four','four','four'],
+		['three','three','three','three','three','three','three','three','three'],
+		['two','two','four','four','four','four','four','four','four','four']
+	];
+	for (var i = 0 ; i < lists.length ; i++) {
+		var $list = $(lists[i]),
+			len = $list.length;
+		if (len > 0) {
+			$list.each(function(index) {
+				$(this).addClass(layout[len - 1][index]);
+			});
+			var $parent = $list.parent();
+			$parent.find('>.two').equalHeights();
+			$parent.find('>.three').equalHeights();
+			$parent.find('>.four').equalHeights();
+		}
+	}
+}

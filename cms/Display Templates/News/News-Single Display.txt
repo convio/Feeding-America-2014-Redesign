@@ -85,12 +85,11 @@
                 var $promos = $('.secondary-promos.related-content');
 
                 if($promos.length > 0){
-                  $promos.getRelatedContent(category, 'news');
+                  $promos.getRelatedContent('item-${itemid}', category, 'news');
                 }
               });
 
             </script>
-            <t:include id="templatelist-541315508" />
           </div><!-- /.secondary-promos -->
         </div><!-- .promos -->
       </t:else>

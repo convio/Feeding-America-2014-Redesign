@@ -17,12 +17,14 @@ $(document).ready(function() {
 
         function findYourLocalFoodBank(zip) {
             var results = $('#homepage_zip_search_results');
-            results.empty().hide(); // Clear the display
-
+			results.empty().hide(); // Clear the display
+            
             if (zip != '') { // Do the request
+				results.append('<div class="loading"></div>').show(); // Loading...
                 setCookie('cms_cons_zip', zip, 365);
                 FA.soap.request('GetOrganizationsByZip', { zip: zip }, 'Body/GetOrganizationsByZipResponse/GetOrganizationsByZipResult/Organization', function(data) {
                     var counter = 0;
+					results.empty();
                     for (var key in data) {
                         counter++;
                         if (counter > 2) { return; } // Display only first two results
@@ -40,10 +42,8 @@ $(document).ready(function() {
                     if (counter == 0) { // No results
                         results.append('The search did not produce any results');
                     }
-                    results.show();
                 }, function(response) { // Error
-                    results.append('There was an error processing your request');
-                    results.show();
+                    results.empty().append('There was an error processing your request');
                 });
             }
         }
