@@ -643,6 +643,15 @@ p.req {
   width: 100%;
   display: block;
 }
+.list-item-thumbnail img.play-button {
+  width: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -25%;
+  margin-top: -25%;
+  display: none;
+}
 /* made these generic styles, so it can be applied to laoyouts without thumbnail blocks */
 .list-item-title {
   font-size: 18px;
