@@ -704,11 +704,60 @@ p.req {
 }
 .related-content.list-items-container .list-item-thumbnail a img {
   display: block;
+  /*
   max-height: 100px;
   min-width: 100px;
   max-width: none;
   width: auto;
   margin-left: -25%;
+  */
+}
+body.our-videos .blog-posts.list-items-container .list-item-thumbnail a {
+  display: block;
+  max-height: 100px;
+  overflow: hidden;
+}
+/*
+body.our-videos .blog-posts.list-items-container .list-item-thumbnail a img.crop-Left, body.our-videos .blog-posts.list-items-container .list-item-thumbnail a img.crop-Center, body.our-videos .blog-posts.list-items-container .list-item-thumbnail a img.crop-Right {
+  max-height: 100px;
+  min-width: 100px;
+  min-height: 100px;
+  max-width: none;
+  width: auto;
+}
+body.our-videos .blog-posts.list-items-container .list-item-thumbnail a img.crop-Left {
+  margin-left: 0px;
+}
+body.our-videos .blog-posts.list-items-container .list-item-thumbnail a img.crop-Center {
+  margin-left: -25%;
+}
+body.our-videos .blog-posts.list-items-container .list-item-thumbnail a img.crop-Right {
+  margin-right: -25%;
+}
+*/
+.related-content.list-items-container .list-item-thumbnail a img.play-button {
+  display: none;
+}
+.sidebar-promo.list-items-container .list-item-thumbnail a {
+  display: block;
+  max-height: 40px;
+  overflow: hidden;
+}
+.sidebar-promo.list-items-container .list-item-thumbnail a img.crop-Left, .sidebar-promo.list-items-container .list-item-thumbnail a img.crop-Center, .sidebar-promo.list-items-container .list-item-thumbnail a img.crop-Right {
+  max-height: 40px;
+  min-width: 40px;
+  min-height: 40px;
+  max-width: none;
+  width: auto;
+}
+.sidebar-promo.list-items-container .list-item-thumbnail a img.crop-Left {
+  margin-left: 0px;
+}
+.sidebar-promo.list-items-container .list-item-thumbnail a img.crop-Center {
+  margin-left: -25%;
+}
+.sidebar-promo.list-items-container .list-item-thumbnail a img.crop-Right {
+  margin-right: -25%;
 }
 .related-content.list-items-container .list-item-text {
   margin: 0px 0px 0px 0px;
@@ -749,6 +798,7 @@ p.req {
 }
 .sidebar-promo.list-items-container .list-item .list-item-thumbnail, .sidebar-promo.related-content.list-items-container .list-item-thumbnail {
   width: 40px;
+  min-height: 40px;
 }
 .sidebar-promo.list-items-container .list-item .list-item-text .list-item-title {
   font-size: 14px;
