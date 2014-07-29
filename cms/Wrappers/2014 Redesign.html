@@ -96,7 +96,7 @@
 </head>
 
 <t:set id="pathclasses" value="trim(replace(replace(path,'/',' '),'.html','DOThtml'))" />
-<t:set id="templatename" value="toLowerCase(trim(replace(replace(replace(templateID,' ','-'),':',''),'/','')))" />
+<t:set id="templatename" value="concat(toLowerCase(trim(replace(replace(replace(templateID,' ','-'),':',''),'/',''))), '-template')" />
 
 <t:set id="bodyClass" value="toLowerCase(trim(replace(replace(replace(type,' ','-'),':',''),'/','')))" />
 <t:if test="title == 'Search Results'">
@@ -210,7 +210,7 @@
   <script src="http://fa.pub30.convio.net/assets/js/selector.js"></script>
 
   <!-- Go to www.addthis.com/dashboard to customize your tools -->
-  <!-- TEST ID - CHANGE TO FA ADDTHIS ID --> 
+  <!-- TEST ID - CHANGE TO FA ADDTHIS ID -->
   <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-502003626e29c24c"></script>
 
 
