@@ -1,0 +1,109 @@
+<script type="text/javascript">
+  jQuery(document).ready(function($) {
+
+    var $promoType = $('.promoType');
+    var $promoTypeSelect = $('#promo_type');
+    var $promoTitle = $('.promoTitle');
+    var $promoFilename = $('.promoFilename');
+    var $promoHeadline = $('.promoHeadline');
+    var $promoDescription = $('.promoDescription');
+    var $promoDate = $('.promoDate');
+    var $promoConditionalGroup = $('.promoConditionalGroup');
+    var $promoSection = $('.promoSection');
+    var $promoGlobal = $('.promoGlobal');
+    var $promoFeatured = $('.promoFeatured');
+    var $promoFullWidth = $('.promoFullWidth');
+    var $promoClientImage = $('.promoClientImage');
+    var $promoFoodBank = $('.promoFoodBank');
+    var $promoStructuredInstructions = $('.promoStructuredInstructions');
+    var $promoImage = $('.promoImage');
+    var $promoMobileImage = $('.promoMobileImage');
+    var $promoBannerStyle = $('.promoBannerStyle');
+    var $promoBackgroundImage = $('.promoBackgroundImage');
+    var $promoBackgroundColor = $('.promoBackgroundColor');
+    var $promoButtonColor = $('.promoButtonColor');
+    var $promoButtonStyle = $('.promoButtonStyle');
+    var $promoButtonLabel = $('.promoButtonLabel');
+    var $promoLink = $('.promoLink');
+    var $promoTemplate = $('.promoTemplate');
+    var $promoTemplateSelect = $('#form-template');
+    var $promoWrapper = $('.promoWrapper');
+
+    var hiddenDefaults = jQuery([$promoHeadline, $promoDescription, $promoConditionalGroup, $promoSection, $promoGlobal, $promoFeatured, $promoFullWidth, $promoClientImage, $promoFoodBank, $promoStructuredInstructions, $promoImage, $promoMobileImage, $promoBannerStyle, $promoBannerStyle, $promoBackgroundImage, $promoBackgroundColor, $promoButtonColor, $promoButtonStyle, $promoButtonLabel, $promoLink]);
+    if($promoTypeSelect.length > 0) {
+      hiddenDefaults.each(function() { $(this).hide() });
+
+      $promoTypeSelect.on('change', function() {
+        var selectedType = $(this).find('option:selected').text();
+
+        console.log(selectedType);
+
+        switch(selectedType) {
+          case 'Contextual Sidebar Promo':
+          case 'Second Sidebar Promo':
+            var visibleFields = jQuery([$promoHeadline, $promoDescription, $promoConditionalGroup, $promoSection, $promoGlobal, $promoStructuredInstructions, $promoImage, $promoBackgroundImage, $promoBackgroundColor, $promoButtonColor, $promoButtonStyle, $promoButtonLabel, $promoLink]);
+            visibleFields.each(function() { $(this).show(); });
+            $promoTemplateSelect.setTemplate('Sidebar Promo');
+            break;
+
+          case 'Footer - Act / Share':
+          case 'Footer - Give / Thanks':
+          case 'Footer - Join / Learn':
+            var visibleFields = jQuery([$promoHeadline, $promoDescription, $promoConditionalGroup, $promoSection, $promoGlobal, $promoStructuredInstructions, $promoImage, $promoBackgroundImage, $promoBackgroundColor, $promoButtonColor, $promoButtonStyle, $promoButtonLabel, $promoLink]);
+            visibleFields.each(function() { $(this).show(); });
+            $promoTemplateSelect.setTemplate('Footer Promo');
+            break;
+
+          case 'Homepage Email Sign Up':
+            var visibleFields = jQuery([$promoHeadline, $promoDescription, $promoStructuredInstructions, $promoBackgroundImage, $promoBackgroundColor]);
+            visibleFields.each(function() { $(this).show(); });
+            $promoTemplateSelect.setTemplate('Homepage Email Promo');
+            break;
+
+          case 'Homepage How We Work / Did You Know Factoid':
+            var visibleFields = jQuery([$promoHeadline, $promoDescription, $promoStructuredInstructions, $promoBackgroundImage, $promoBackgroundColor, $promoButtonColor, $promoButtonStyle, $promoButtonLabel, $promoLink]);
+            visibleFields.each(function() { $(this).show(); });
+            $promoTemplateSelect.setTemplate('Homepage Factoid Promo');
+            break;
+
+          case 'Inline Promo':
+            var visibleFields = jQuery([$promoHeadline, $promoDescription, $promoSection, $promoGlobal, $promoStructuredInstructions, $promoImage, $promoBackgroundImage, $promoBackgroundColor, $promoLink]);
+            visibleFields.each(function() { $(this).show(); });
+            $promoTemplateSelect.setTemplate('Inline Promo-');
+            break;
+
+          case 'Interrupter':
+            var visibleFields = jQuery([$promoHeadline, $promoDescription, $promoConditionalGroup, $promoSection, $promoGlobal, $promoStructuredInstructions, $promoImage, $promoBackgroundImage, $promoLink]);
+            visibleFields.each(function() { $(this).show(); });
+            $promoTemplateSelect.setTemplate('Interrupter Promo');
+            break;
+
+          case 'Top Urgent Alert Banner':
+            var visibleFields = jQuery([$promoHeadline, $promoDescription, $promoSection, $promoGlobal, $promoStructuredInstructions, $promoImage, $promoBackgroundColor, $promoBackgroundImage]);
+            visibleFields.each(function() { $(this).show(); });
+            $promoTemplateSelect.setTemplate('Alert Promo');
+            break;
+
+          case 'Section Landing Page Banner':
+            var visibleFields = jQuery([$promoHeadline, $promoDescription, $promoSection, $promoGlobal, $promoStructuredInstructions, $promoImage, $promoBackgroundColor, $promoBackgroundImage]);
+            visibleFields.each(function() { $(this).show(); });
+            $promoTemplateSelect.setTemplate('Section Landing Page Promo');
+            break;
+
+        }
+      });
+    }
+
+    $.fn.extend({
+      setTemplate: function(templateName) {
+        var $option = $(this).find('option').filter(function() {
+          if($(this).text() == templateName) {
+            return this;
+          }
+        });
+        $option.attr('selected', 'selected');
+      }
+    });
+
+  });
+</script>
