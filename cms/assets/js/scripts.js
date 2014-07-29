@@ -250,10 +250,10 @@ function renderRecentItemBoxes() {
 			$list.each(function(index) {
 				$(this).addClass(layout[len - 1][index]);
 			});
-			var $parent = $list.parent();
-			$parent.find('>.two').equalHeights();
-			$parent.find('>.three').equalHeights();
-			$parent.find('>.four').equalHeights();
+			//var $parent = $list.parent();
+			//$parent.find('>.two').equalHeights();
+			//$parent.find('>.three').equalHeights();
+			//$parent.find('>.four').equalHeights();
 		}
 	}
 }

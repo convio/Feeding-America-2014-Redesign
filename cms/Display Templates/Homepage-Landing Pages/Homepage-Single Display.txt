@@ -45,9 +45,9 @@
 <img id="howweareending_stat_img" alt="1 in 5" border="0" class="people" src="http://fa.pub30.convio.net/assets/images/howweareending_1in5.png" />
 <div class="below_img">struggles with hunger</div>
 <div class="bottom_row">
-<ul class="social_icons">
-<li class="fbk"><a href="https://www.facebook.com/FeedingAmerica" title="Facebook">facebook</a></li>
-<li class="twt"><a href="https://twitter.com/feedingamerica" title="Twitter">twitter</a></li>
+<ul id="howweareending_social_icons" class="social_icons addthis_toolbox" addthis:url="Hunger in US" addthis:title="http://fa.pub30.convio.net/hunger-in-america/hunger-in-your-community/hunger-in-us/">
+<li class="fbk"><a class="addthis_button_facebook" title="Facebook">facebook</a></li>
+<li class="twt"><a class="addthis_button_twitter" title="Twitter">twitter</a></li>
 </ul>
 <form id="homepage_ending_form"><!-- onchange="event.preventDefault(); window.location = '/states/' + $('#homepage_ending_select').val();" --> <select id="homepage_ending_select"> <option disabled="disabled" selected="selected" value="">Search Another State</option><t:data name="state" class="categories" parent="/state" /><t:list id="state"><option value="${name}">${label}</option></t:list></select></form></div>
 </div>
@@ -71,7 +71,7 @@
 <div class="clearfix"></div>
 </div>
 <!--/#recent_news_boxes-->
-<div id="recent_read_more"><a href="#">Read More News &rsaquo;</a></div>
+<div id="recent_read_more"><a href="http://fa.pub30.convio.net/hunger-in-america/news-and-updates/">Read More News &rsaquo;</a></div>
 </div>
 <!--/.container--></div>
 <!--/#recent_news-->
@@ -141,11 +141,11 @@
 <!--/#homepage_fivesteps_boxes-->
 <div id="homepage_fivesteps_buttons"><a href="#" id="homepage_fivesteps_find_out_more">Find Out More</a>
 <div id="homepage_fivesteps_share_this"><span class="link">Share This</span>
-<ul class="social_icons">
-<li class="fbk"><a href="https://www.facebook.com/FeedingAmerica" title="Facebook">facebook</a></li>
-<li class="twt"><a href="https://twitter.com/feedingamerica" title="Twitter">twitter</a></li>
-<li class="pin"><a href="http://www.pinterest.com/feedingamerica/" title="Pinterest">pinterest</a></li>
-<li class="more"><a href="#" title="More">more</a></li>
+<ul class="social_icons addthis_toolbox" addthis:url="THE URL" addthis:title="THE TITLE">
+<li class="fbk"><a class="addthis_button_facebook" title="Facebook">facebook</a></li>
+<li class="twt"><a class="addthis_button_twitter" title="Twitter">twitter</a></li>
+<li class="pin"><a class="addthis_button_pinterest" title="Pinterest">pinterest</a></li>
+<li class="more"><a class="addthis_button_compact" title="More">more</a></li>
 </ul>
 </div>
 </div>

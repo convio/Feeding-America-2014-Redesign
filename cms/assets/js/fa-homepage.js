@@ -66,11 +66,13 @@ $(document).ready(function() {
         // --- Hunger Meter ---
 
         function displayHungerMeterResults(loc, id, rate) {
+		    var link = 'http://fa.pub30.convio.net/hunger-in-america/hunger-in-your-community/hunger-in-';
             var count = Math.round(1 / rate); count = (count > 10) ? 10 : count;
             var msg = 'In ' + loc + ', 1 in ' + count.toString() + ' people';
             $('#howweareending_stat_msg').html(msg);
             $('#howweareending_stat_img').attr('src', (FA.howweareending.stat.img_src).replace('[count]', count)).attr('alt', msg);
             $('#howweareending_state_img').attr('src', (FA.howweareending.state.img_src).replace('[id]', id.toLowerCase())).attr('alt', loc);
+			$('#howweareending_social_icons').attr('addthis:url', link + id.toLowerCase() + '/').attr('addthis:title', 'Hunger in ' + id);
         }
 
         function stateHungerMeter(state) {

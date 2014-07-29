@@ -1,0 +1,7 @@
+      <ul class="social_icons addthis_toolbox" addthis:url="${page.url}" addthis:title="${page.title}">
+        <li class="fbk"><a class="addthis_button_facebook" title="Facebook">facebook</a></li>
+		<li class="twt"><a class="addthis_button_twitter" title="Twitter">twitter</a></li>
+		<li class="more"><a class="addthis_button_compact" title="More">more</a></li>
+      </ul><!--/.social_icons-->
+     <div class="clearfix"></div>
+	 
