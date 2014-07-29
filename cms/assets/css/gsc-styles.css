@@ -1,0 +1,134 @@
+  .basic_search_col {
+    padding-right: 0;
+}
+.cse .gsc-control-cse, .gsc-control-cse {
+    padding: 0;
+    width: auto;
+}
+.gsc-search-box, .gsc-control-cse, .gsc-control-wrapper-cse {
+    background-color: #ffffff;
+    border: medium none;
+}
+.gsc-input {
+    border: medium none !important;
+}
+.gsc-input-box {
+    height: 44px;
+}
+.gsc-control-cse table {
+    border: medium none;
+    border-spacing: 0;
+}
+.gsc-control-cse td {
+    background-color: #ffffff;
+    border: medium none;
+    height: auto;
+    padding: inherit;
+    vertical-align: top;
+}
+.gsc-control-cse td.gsib_a {
+    border: medium none !important;
+}
+.gsc-control-cse td.gsib_b {
+    display: none;
+}
+
+input.gsc-search-button {
+    background-image: url("http://fa.pub30.convio.net/assets/images/search-btn.png");
+    border: medium none;
+    border-radius: 0;
+    display: block;
+    height: 44px;
+    margin: 0;
+    padding: 0 0 0 98px;
+    width: 98px;
+}
+
+input.gcs-search-button, input.gsc-search-button:hover, input.gsc-search-button:focus {
+
+    background-image: url("http://fa.pub30.convio.net/assets/images/search-btn-hover.png");
+    border: medium none;
+    border-radius: 0;
+    display: block;
+    height: 44px;
+    margin: 0;
+    padding: 0 0 0 98px;
+    width: 98px;
+}
+
+input.gsc-input {
+    height: 40px !important;
+}
+div.gcsc-branding {
+}
+.gsc-webResult.gsc-result {
+    background-color: #ffffff;
+    border: medium none;
+    padding-top: 20px;
+}
+.gsc-webResult.gsc-result:hover {
+    background-color: #ffffff;
+    border: medium none;
+}
+.gsc-control-cse .gs-result .gs-title *, .gs-bidi-start-align.gs-snippet {
+    font-size: 18px;
+}
+.gs-bidi-start-align.gs-visibleUrl {
+    font-size: 14px;
+}
+
+.gsc-control-cse .gs-result .gs-title * {
+    color: #53682b !important;
+    font-family: Gotham,'Gotham Book',Gotham-Book,'Gotham A','Gotham B',Arial,sans-serif;
+}
+
+.gs-visibleUrl {
+    color: #e98300 !important;
+    font-family: Gotham,'Gotham Book',Gotham-Book,'Gotham A','Gotham B',Arial,sans-serif;
+}
+.gsc-url-top, .gsc-thumbnail-inside {
+    padding-bottom: 5px;
+    padding-left: 0;
+}
+.gsc-result .gs-title {
+    height: 1.5em;
+}
+.gsc-control-cse.gsc-control-cse-en {
+    margin-bottom: 30px;
+}
+.gs-webResult .gs-snippet, .gs-imageResult .gs-snippet, .gs-fileFormatType {
+    background-color: #ffffff;
+    color: #333333;
+    font-family: Gotham,'Gotham Book',Gotham-Book,'Gotham A','Gotham B',Arial,sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+}
+.gsc-webResult.gsc-result, .gsc-results .gsc-imageResult {
+    background-color: #ffffff;
+    border-color: #ffffff;
+}
+.gsc-table-result, .gsc-thumbnail-inside, .gsc-url-top {
+    padding-left: 0;
+}
+.gsc-control-cse, .gsc-control-cse .gsc-table-result {
+    font-family: Gotham,'Gotham Book',Gotham-Book,'Gotham A','Gotham B',Arial,sans-serif;
+    font-size: 16px;
+}
+.gsc-results .gsc-cursor-box .gsc-cursor-page {
+    background-color: #ffffff;
+    border-color: #ffffff;
+    color: #e98300;
+}
+
+.gsc-selected-option-container {
+    width:100% !important;
+}
+
+@media only screen and (max-width: 480px) {
+.gsc-control-cse td {
+    width: 15%;
+}
+.gsc-control-cse td {
+    width: 15%;
+}
+}

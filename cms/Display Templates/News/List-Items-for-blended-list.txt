@@ -1,0 +1,13 @@
+<t:if test="length > 0">
+  <t:list>
+  <div class="list-item"  id="item-${itemid}" >
+    <t:if test="thumb.length > 0"><div class="list-item-thumbnail"><a href="${url}"><img src="${thumb.url}" alt="${thumb.alt_text}" border="0" /></a></div></t:if>
+    <div class="list-item-text">
+      <div class="list-item-title"><a href="${url}">${title}</a></div>
+      <t:if test="!isNull(description)"><div class="list-item-description" style="display:none;">${description}</div></t:if>
+    </div><!--/.list-item-text-->
+    <span class="date" style="display: none"><t:value id="lastpublicationdate" type="date" format="yyyyMMdd" /></span>
+    <div class="clearfix"></div>
+  </div><!--/.list-item-->
+  </t:list>
+</t:if>

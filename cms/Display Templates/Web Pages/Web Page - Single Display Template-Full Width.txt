@@ -1,0 +1,86 @@
+<div class="two-column">
+  <div class="container">
+   <div id="title-and-share">
+     <div class="container">
+     <h1 class="page-title">${title}</h1>
+     <t:include id="item-544734211"/>
+      </div><!--/.container-->
+   </div>
+
+      <t:if test="!isNull(description) || !isNull(subtitle)"><div id="page-description">
+        <t:if test="!isNull(subtitle)"><p><strong>${subtitle}</strong></p></t:if>
+        <t:if test="!isNull(description)"><p>${description}</p></t:if>
+      </div><!--/#page-description--></t:if>
+      <div id="body-content">
+        <t:if test="thumb.length > 0"><t:list id="thumb"><img src="${url}" alt="${alt_text}" class="image-right" /></t:list></t:if>
+        ${body}
+        </div><!--/#body-content -->
+
+      <t:if test="inline_promo.length > 0"><t:include id="item-540519669" /></t:if>
+      <t:else>
+        <div class="promos">
+          <!-- global promos-->
+          <div class="primary-promos">
+            <t:include id="templatelist-541303840" />
+          </div><!--/.primary-promos -->
+          <!-- dynamic section based -->
+          <div class="secondary-promos">
+            <t:include id="templatelist-541304220" />
+          </div><!-- /.secondary-promos -->
+        </div><!-- /.promos-->
+      </t:else>
+      
+  </div><!--/.container-->
+</div><!--/.two-column-->
+
+
+<t:set id="footerBgImg" value="''" />
+<t:if test="footer_bg.length > 0">
+  <t:list id="footer_bg">
+    <t:set id="footerBgImg" value="concat('background: url(', url)" />
+    <t:set id="footerBgImg" value="concat(footerBgImg, ') 50% 0 repeat;')" />
+  </t:list>
+</t:if>
+<div id="footer_promos" style="${footerBgImg}">
+  <div class="container">
+    <div class="headline">How You Can Help Feeding America Solve Hunger</div>
+      <div id="footer_promo_boxes">
+
+    <t:if test="footer_promos.length > 0">
+      <t:list id="footer_promos">
+        <t:set id="buttonClasses" value="'button'" />
+        <t:if test="action_button_color.length > 0 || action_button_style.length > 0">
+          <t:if test="action_button_style.length > 0">
+            <t:list id="action_button_style">
+              <t:set id="buttonClasses" value="name" />
+            </t:list>
+          </t:if>
+          <t:if test="action_button_color.length > 0">
+            <t:list id="action_button_color">
+              <t:set id="buttonClasses" value="concat(concat(buttonClasses, ' '), name)" />
+            </t:list>
+          </t:if>
+        </t:if>
+        <div class="footer-promo">
+          <t:if test="thumb.length > 0"><t:list id="thumb"><img src="${url}" alt="${alt_text}" /></t:list></t:if>
+          <div class="promo-title">${title}</div>
+          <t:if test="!isNull(description)"><div class="promo-text">${description}</div></t:if>
+
+          <t:if test="!isNull(action_button_label) && !isNull(action_button_url)"><div class="promo-action"><a class="${buttonClasses}" href="${action_button_url}">${action_button_label}</a></div></t:if>
+        </div>
+      </t:list>
+    </t:if>
+    <t:else>
+      <!-- dynamic footer promos -->
+      <!-- Learn -->
+      <t:include id="templatelist-541527765" />
+      <!-- Act -->
+      <t:include id="templatelist-541527691" />
+      <!-- Give -->
+      <t:include id="templatelist-541528010" />
+    </t:else>
+
+      <div class="clearfix"></div>
+    </div><!--/#footer_promo_boxes-->
+  </div><!--/.container-->
+</div><!--/#footer_promos-->

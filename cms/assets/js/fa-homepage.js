@@ -17,12 +17,14 @@ $(document).ready(function() {
 
         function findYourLocalFoodBank(zip) {
             var results = $('#homepage_zip_search_results');
-            results.empty().hide(); // Clear the display
-
+			results.empty().hide(); // Clear the display
+            
             if (zip != '') { // Do the request
+				results.append('<div class="loading-white"></div>').show(); // Loading...
                 setCookie('cms_cons_zip', zip, 365);
                 FA.soap.request('GetOrganizationsByZip', { zip: zip }, 'Body/GetOrganizationsByZipResponse/GetOrganizationsByZipResult/Organization', function(data) {
                     var counter = 0;
+					results.empty();
                     for (var key in data) {
                         counter++;
                         if (counter > 2) { return; } // Display only first two results
@@ -40,10 +42,8 @@ $(document).ready(function() {
                     if (counter == 0) { // No results
                         results.append('The search did not produce any results');
                     }
-                    results.show();
                 }, function(response) { // Error
-                    results.append('There was an error processing your request');
-                    results.show();
+                    results.empty().append('There was an error processing your request');
                 });
             }
         }
@@ -66,11 +66,13 @@ $(document).ready(function() {
         // --- Hunger Meter ---
 
         function displayHungerMeterResults(loc, id, rate) {
+		    var link = 'http://fa.pub30.convio.net/hunger-in-america/hunger-in-your-community/hunger-in-';
             var count = Math.round(1 / rate); count = (count > 10) ? 10 : count;
             var msg = 'In ' + loc + ', 1 in ' + count.toString() + ' people';
             $('#howweareending_stat_msg').html(msg);
             $('#howweareending_stat_img').attr('src', (FA.howweareending.stat.img_src).replace('[count]', count)).attr('alt', msg);
             $('#howweareending_state_img').attr('src', (FA.howweareending.state.img_src).replace('[id]', id.toLowerCase())).attr('alt', loc);
+			$('#howweareending_social_icons').attr('addthis:url', link + id.toLowerCase() + '/').attr('addthis:title', 'Hunger in ' + id);
         }
 
         function stateHungerMeter(state) {

@@ -85,7 +85,7 @@
                 var $promos = $('.secondary-promos.related-content');
 
                 if($promos.length > 0){
-                  $promos.getRelatedContent(category, 'news');
+                  $promos.getRelatedContent('item-${itemid}', category, 'news');
                 }
               });
 

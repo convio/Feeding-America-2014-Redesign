@@ -7,6 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <t:value id="meta.keywords">meta.keywords</t:value>
   <t:value id="meta.description">meta.description</t:value>
+  <meta property="og:title" content="${title}" />
+  <meta property="og:site_name" content="Feeding America"/>
+  <meta property="og:url" content="${url}" />
+  <meta property="og:description" content="${description}" />
+  <t:if test="thumb.length>0"><meta property="og:image" content="${thumb.url}" /></t:if>
   <title>Feeding America</title>
   <t:set value="flushCache" id="1" />
   <link rel="stylesheet" type="text/css" href="//cloud.typography.com/6244492/752884/css/fonts.css" />
@@ -51,6 +56,20 @@
           manualControls: ".homepage-slideshow-manual-control-nav li"
         });
       }, true);
+      $('#homepage-partners-carousel').waitUntilExists(function() {
+        $('#homepage-partners-carousel').flexslider({
+          animation: "slide",
+          smoothHeight: false,
+          slideshowSpeed: 9000,
+          animationSpeed: 600,
+          pauseOnAction: false,
+          pauseOnHover: false,
+          controlNav: false,
+          directionNav: false,
+          touch: false,
+          randomize: true
+        });
+      }, true);
     </script>
 </t:if>
 
@@ -70,15 +89,16 @@
       });
     });
   </script>
-
-  <script src="http://fa.pub30.convio.net/assets/js/scripts.js?v1.6?t=${flushCache}"></script>
+  <script src="http://fa.pub30.convio.net/assets/js/jquery-tinysort.js"></script>
+  <script src="http://fa.pub30.convio.net/assets/js/jquery-equalheights-min.js"></script>
+  <script src="http://fa.pub30.convio.net/assets/js/scripts.js?t=${flushCache}"></script>
 
 </head>
 
 <t:set id="pathclasses" value="trim(replace(replace(path,'/',' '),'.html','DOThtml'))" />
 <t:set id="templatename" value="toLowerCase(trim(replace(replace(replace(templateID,' ','-'),':',''),'/','')))" />
 
-<t:set id="bodyClass" value="toLowerCase(trim(replace(replace(type,' ','-'),':','')))" />
+<t:set id="bodyClass" value="toLowerCase(trim(replace(replace(replace(type,' ','-'),':',''),'/','')))" />
 <t:if test="title == 'Search Results'">
   <!-- we on search results page -->
   <t:set id="bodyClass", value="concat(bodyClass, ' search')" />
@@ -98,7 +118,7 @@
 <t:else>
   <t:set id="bodyClass" value="concat(bodyClass, ' not-homepage')" />
 </t:else>
-<t:if test="itemID == '526817126'">
+<t:if test="itemID == '526817126' || itemID == '543463683'">
   <t:set id="expandnews" value="'expand-news'" />
 </t:if>
 <body class="${pathclasses} ${templatename} ${bodyClass} ${expandnews}">
@@ -188,7 +208,11 @@
   </t:else>
 
   <script src="http://fa.pub30.convio.net/assets/js/selector.js"></script>
-  <script src="http://fa.pub30.convio.net/assets/js/jquery-equalheights-min.js"></script>
+
+  <!-- Go to www.addthis.com/dashboard to customize your tools -->
+  <!-- TEST ID - CHANGE TO FA ADDTHIS ID --> 
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-502003626e29c24c"></script>
+
 
   <t:if test="param.cms_static == true">
     <script>
