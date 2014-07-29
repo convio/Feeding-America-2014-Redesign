@@ -3238,7 +3238,7 @@ shortcut to end of desktop
     min-height: 0px;
   }
   /* partner footer promos */
-  body.individual-corp-partnerDOThtml #footer_promos, body.Partner #footer_promos {
+  body.individual-corp-partnerDOThtml #footer_promos, body.individual-corp-partner-html #footer_promos, body.Partner #footer_promos {
     /*
     In production, this will need to be based off body.content-type, or body.template
     */
