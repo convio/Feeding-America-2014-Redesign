@@ -95,7 +95,7 @@
 
 </head>
 
-<t:set id="pathclasses" value="trim(replace(replace(path,'/',' '),'.html','DOThtml'))" />
+<t:set id="pathclasses" value="trim(replace(replace(path,'/',' '),'.html','-html'))" />
 <t:set id="templatename" value="concat(toLowerCase(trim(replace(replace(replace(templateID,' ','-'),':',''),'/',''))), '-template')" />
 
 <t:set id="bodyClass" value="toLowerCase(trim(replace(replace(replace(type,' ','-'),':',''),'/','')))" />
