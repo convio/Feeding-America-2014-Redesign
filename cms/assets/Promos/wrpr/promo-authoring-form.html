@@ -1,0 +1,264 @@
+<style>
+table.authoringForm {
+  border-collapse: collapse;
+  margin: 2em auto;
+  width: 96%;
+}
+table.authoringForm p {
+  margin-top: 0;
+}
+table.authoringForm tr {
+  border-bottom: 1px solid #ccc;
+}
+table.authoringForm td {
+  padding: 7px 5px;
+  vertical-align: middle;
+}
+table.authoringForm td.formWidgetLabelCell {
+  width: 40%;
+}
+</style>
+<table class="authoringForm">
+  <tbody>
+    <tr class="formWidgetRow promoType">
+      <td class="formWidgetLabelCell">
+      <strong>Promo Type</strong><br />Select the type of Promo. This determines the position and behavior of the Promo within the page and shows the applicable fields.
+      </td>
+      <td class="formWidgetCell"><select id="promo_type" model="categories;categoryID=530004402" name="promo_type" title="Promo Type" uniqueid="530007936" validation="type:string">loading...</select></td>
+    </tr>
+
+    <tr class="formWidgetRow promoTitle" id="row-form-title">
+      <td class="formWidgetLabelCell" style="width: 50%;">
+      <strong>Title</strong><br />
+        Naming convention: [promo-section] [conditional-groups] for ease of finding and maintaining promos<br>
+        Administrative use only
+      </td>
+      <td class="formWidgetCell"><input id="form-title" name="title" size="60" title="" type="text" value="" validation="type:text;required:true;baseProperty:true" /></td>
+    </tr>
+
+    <tr class="formWidgetRow promoFilename" id="row-form-filename">
+      <td class="formWidgetLabelCell">
+      <strong>File Name</strong><br />This field determines the URL. It is pre-populated based on Title, but may be edited.
+      <br /> Use lowercase, hyphenated, with keywords. No need to include the ".html."
+      </td>
+      <td class="formWidgetCell"><input id="form-filename" name="filename" title="" type="text" value="" validation="type:filename;baseProperty:true" size="60" />.html</td>
+    </tr>
+
+    <tr class="formWidgetRow promoHeadline">
+      <td class="formWidgetLabelCell"><strong>Headline<br /></strong>Enter a short Headline of the Promo.
+
+        <div class="footerPromoInstructions">
+          Ex.: Learn, Act, Give, Share, Thank You
+        </div>
+        <div class="bannerPromoInstructions">
+          <strong>Length:</strong> 55 char. Ex: Hunger in America exists for over 50 million people.
+        </div>
+        <div class="sidebarPromoInstructions">
+          <strong>Length:</strong> 25 - 75 chars.<br />
+          <strong>Note:</strong> The headline text will appear in small font <em>class="small"</em>.<br>
+          If you desire first row of text to be large enter headline into subtitle & then enter small text in a body & assign <em>class="small"</em> to the HTML element containing text.
+        </div>
+        <div class="inlinePromoInstructions">
+          <strong>Length:</strong> 85 chars.
+        </div>
+      </td>
+      <td class="formWidgetCell"><textarea cols="60" id="headline" name="headline" rows="1" title="Headline" uniqueid="541764625" validation="type:text"></textarea></td>
+    </tr>
+
+    <tr class="formWidgetRow promoDescription" id="row-form-description">
+    <td class="formWidgetLabelCell">
+      <strong>Subtitle </strong><br />Enter a short Subtitle or Intro text for the Promo.
+      <div class="footerPromoInstructions">
+        <strong>Length:</strong> 78 chars. max. Ex. Give hope to children and families in need year round. Become a monthly donor
+      </div>
+      <div class="bannerPromoInstructions">
+        <strong>Length:</strong> 110 char. - 270 char.
+      </div>
+      <div class="sidebarPromoInstructions">
+        Note: The subtitle text will appear in big font size <em>class="big"</em>.<br>
+      </div>
+    </td>
+    <td class="formWidgetCell">
+      <textarea cols="60" id="form-description" name="description" rows="4" title="" validation="type:text;baseProperty:true"></textarea>
+    </td>
+    </tr>
+    <tr class="formWidgetRow promoDate">
+      <td class="formWidgetLabelCell">
+        <strong>Promo Date</strong><br />Select the date of the Promo, to be used in determining the most recent Promo for each Promo type.&nbsp;</td>
+    <td class="formWidgetCell"><input id="promo_date" name="promo_date" size="20" title="Promo Date" type="text" uniqueid="540214919" value="" validation="type:date;showChooser:true" /></td>
+    </tr>
+
+    <tr class="formWidgetRow promoConditionalGroup">
+      <td class="formWidgetLabelCell">
+      <strong>Promo Conditional Group</strong><br />Select the constituent group(s) or audience for the Promo, as a basis for conditional content.<br>
+      <strong>Note:</strong> The promos will only appear if the selected categories match categories defined in the promo matrix
+      </td>
+      <td class="formWidgetCell"><select id="promo_conditional_logic" model="categories;categoryID=530004937" multiple="multiple" name="promo_conditional_logic" size="10" title="Promo Conditional Logic Group" uniqueid="530009467" validation="type:stringarray;multiple:true">loading...</select></td>
+    </tr>
+
+    <tr class="formWidgetRow promoSection">
+    <td class="formWidgetLabelCell">
+      <strong>Promo Section</strong><br />Select the Section/Topic of the site to determine the Sections where the Promo should appear. This is the default dynamic behavior site-wide. There are 2 ways to override the dynamic display of Promos by Section: <br />
+      1. Select "Global".&nbsp; This will push the Promo out site-wide to its designated position (based on Promo Type).&nbsp; <br />
+      2. You can also select Promos manually in the Page properties for the individual Page, which overrides both Global and Section settings.
+      <span style="display: none;">Conditionals within the Promo itself also determine contents.&nbsp; See promo matrix for details.</span>
+    </td>
+    <td class="formWidgetCell"><select id="promo_section" model="categories;categoryID=530003980" name="promo_section" title="Promo Section" uniqueid="530009468" validation="type:string">loading...</select></td>
+    </tr>
+
+    <tr class="formWidgetRow promoGlobal">
+    <td class="formWidgetLabelCell">
+    <strong>Global?</strong><br />Select <strong>yes</strong> if the Promo should appear globally at a given time. Change to <strong>no</strong> if the Promo should no longer display globally. This will override the Promo Section.
+    </td>
+    <td class="formWidgetCell"><select id="global" model="categories;categoryID=530006234" name="global" title="Global" uniqueid="530009469" validation="type:string">loading...</select></td>
+    </tr>
+    <tr class="formWidgetRow promoFeatured">
+    <td class="formWidgetLabelCell">
+    <strong>Featured Promo</strong><br />Select whether the Promo should be promoted as featured at a given time.
+    </td>
+    <td class="formWidgetCell"><select id="featured" model="categories;categoryID=530006234" name="featured" title="Featured" uniqueid="530009470" validation="type:string">loading...</select></td>
+    </tr>
+
+    <tr class="formWidgetRow promoFullWidth">
+    <td class="formWidgetLabelCell">
+      <strong>Full-width Promo</strong><br />Select "yes" if this Promo should display as full-width.
+    </td>
+    <td class="formWidgetCell"><select id="full_width_promo" model="categories;categoryID=530006234" name="full_width_promo" title="Full width promo" uniqueid="530011350" validation="type:string">loading...</select></td>
+    </tr>
+
+    <tr class="formWidgetRow promoClientImage">
+      <td class="formWidgetLabelCell">
+        <strong>Client Image</strong><br />Select "yes" if the Promo contains a Client Image.
+      </td>
+      <td class="formWidgetCell"><select id="client_image" model="categories;categoryID=530006234" name="client_image" title="Client Image" uniqueid="530011351" validation="type:string">loading...</select></td>
+    </tr>
+
+    <tr class="formWidgetRow promoFoodBank">
+    <td class="formWidgetLabelCell">
+      <strong>Food Bank</strong><br />Select a related Food Bank for the promo, if applicable.
+      </td>
+      <td class="formWidgetCell">
+      <div class="related-item-chooser"><select id="food_bank" model="items;filterID=531464104" multiple="multiple" name="food_bank" title="Food Bank" uniqueid="531464188" validation="type:stringarray;multiple:true">loading...</select></div>
+      </td>
+    </tr>
+    <tr class="formWidgetRow promoStructuredInstructions">
+    <td class="formWidgetLabelCell" colspan="2"><strong>STRUCTURED TEMPLATES:</strong> <br />Use the following fields (along with Headline and Subtitle above) to support a more automated Promo layout. If a Promo has a button, be sure to complete all of the button-related fields.</td>
+    </tr>
+
+    <tr class="formWidgetRow promoImage">
+    <td class="formWidgetLabelCell">
+    <strong>Image / Icon</strong><br />Select an icon or image for the promo. Dimensions vary:<br />
+      <div class="sidebarPromoInstructions"><strong>Icon size:</strong> 81px. x 80px.</div>
+      <div class="sidebarPromoInstructions"><strong>Thumbnail size:</strong> should fit within promo width of 260px.</div>
+      <div class="bannerPromoInstructions"><srtong>Medium size:</strong> 459px x 316px.<br />
+      </div>
+      <div class="inlinePromoInstructions"><strong>Image size:</strong> 462 x 150 px. </div>
+      <div class="interrupterPromoInstructions urgentBannerPromoInstructions"><strong>Icon size:</strong> 44 x 44px</div>
+    </td>
+    <td class="formWidgetCell">
+    <div class="image-chooser"><select id="thumb" model="items;filterID=526195665" name="thumb" title="Thumbnail" uniqueid="530012869" validation="type:string">loading...</select></div>
+    </td>
+    </tr>
+
+    <tr class="formWidgetRow promoMobileImage">
+    <td class="formWidgetLabelCell"><strong>Mobile-only Image</strong></td>
+    <td class="formWidgetCell">
+    <div class="image-chooser"><select id="mobile_only_image" model="items;filterID=526195665" name="mobile_only_image" title="Mobile-only Image" uniqueid="540217962" validation="type:string">loading...</select></div>
+    </td>
+    </tr>
+    <tr class="formWidgetRow promoBannerStyle">
+    <td class="formWidgetLabelCell"><strong>Full Width Banner Style</strong><br />
+      Select an appropriate layout for the wide banner promos
+    </td>
+    <td class="formWidgetCell"><select id="slp_banner_style" model="categories;categoryID=532246482" name="slp_banner_style" title="SLP Banner Style" uniqueid="540229340" validation="type:string">loading...</select></td>
+    </tr>
+
+    <tr class="formWidgetRow promoBackgroundImage">
+    <td class="formWidgetLabelCell"><strong>Promo Background Image<br /></strong>
+      <div class="sidebarPromoInstructions inlinePromoInstructions bannerPromoInstructions">Select a background image for the Promo</div>
+      <div class="bannerPromoInstructions">Full-width image: 1,360px x 347px</div>
+      <div class="urgentBannerPromoInstructions"></div>
+      <div class="interrupterPromoInstructions">Select an image that will be used as a side image to the left of the text.</div><br />
+    </td>
+    <td class="formWidgetCell">
+    <div class="related-item-chooser"><select id="background_image" model="items;filterID=542484917" name="background_image" title="Background Image" uniqueid="542484963" validation="type:string">loading...</select></div>
+    </td>
+    </tr>
+
+    <tr class="formWidgetRow promoBackgroundColor">
+    <td class="formWidgetLabelCell">
+      <strong>Promo Background Color</strong><br />
+        Select the background color of the Promo:&nbsp; <br />
+        - red: class="red" <span style="background-color: #b22d3a;">#b22d3a</span><br />
+        - dark green: class="green" <span style="background-color: #53682b;">#53682b</span><br />
+        - blue:&nbsp; class="blue" <span style="background-color: #006b9d;">#006b9d</span><br />
+        - purple: class="purple" <span style="background-color: #5a2559;">#5a2559</span><br />
+        - orange: class="orange" <span style="background-color: #e98300;">#e98300</span><br />
+        - grey: class="light-gray" <span style="background-color: #fafafa;">#fafafa</span><br />
+        - white: transparent, or class="white" #ffffff <br />
+        <div class="bannerPromoInstructions">
+          For Section Landing pages only:
+          <br />- orange with wheatstalks<br />
+          - green with wheatstalks
+        </div>
+        If no color is selected transparent will be used
+    </td>
+    <td class="formWidgetCell"><select id="promo_background_color" model="categories;categoryID=531415517" name="promo_background_color" title="Promo Background Color" uniqueid="531464685" validation="type:string">loading...</select></td>
+    </tr>
+
+
+    <tr class="formWidgetRow promoButtonColor">
+    <td class="formWidgetLabelCell">
+    <strong>Action Button Color</strong><br />
+      Select the color for the button.<br />
+      - red: class="button red" <span style="background-color: #b22d3a;">#b22d3a</span><br />
+      - dark green: class=" button green" <span style="background-color: #53682b;">#53682b</span><br />
+      - blue: class=" button blue" <span style="background-color: #006b9d;">#006b9d</span><br />
+      - purple:&nbsp;&nbsp;&nbsp; class=" button purple" <span style="background-color: #5a2559;">#5a2559</span><br />
+      - orange: class=" button orange" <span style="background-color: #e98300;">#e98300</span><br /><br />
+      If no color is selected orange will be used
+    </td>
+    <td class="formWidgetCell"><select id="action_button_color" model="categories;categoryID=531415559" name="action_button_color" title="Action Button Color" uniqueid="531464686" validation="type:string">loading...</select></td>
+    </tr>
+    <tr class="formWidgetRow promoButtonStyle">
+    <td class="formWidgetLabelCell">
+    <strong>Action Button Style</strong><br />Select the shape of the button: square without border, or seed with white border.<br />If no style is selected, square will be used.
+    </td>
+    <td class="formWidgetCell">
+    <select id="action_button_style" model="categories;categoryID=531415607" name="action_button_style" title="Action Button Style" uniqueid="531464687" validation="type:string">loading...</select>
+    </td>
+    </tr>
+
+
+    <tr class="formWidgetRow promoButtonLabel">
+    <td class="formWidgetLabelCell">
+    <strong>Action button Label</strong><br />Enter the text that should appear in the Call to Action button, such as "Take Action," "Learn More," or "Donate Now," etc.</p>
+    </td>
+    <td class="formWidgetCell"><input id="action_button_label" name="action_button_label" size="20" title="Action Button Label" type="text" uniqueid="530013221" value="" validation="type:text" /></td>
+    </tr>
+    <tr class="formWidgetRow promoLink">
+    <td class="formWidgetLabelCell">
+    <strong>Promo / Action button URL</strong><br />Enter the URL that the entire Promo should link to, if not included within the body
+    </td>
+    <td class="formWidgetCell"><input id="action_button_url" name="action_button_url" size="60" title="Action Button URL" type="text" uniqueid="530013222" value="" validation="type:text" /></td>
+    </tr>
+
+    <tr>
+      <td colspan="2">
+        <div class="sidebarPromoInstructions"><strong>Additional content:</strong><br /> If you have additional content or want to enter content of the promo in a more flexible format, enter it in the next <em>Enter body content</em> step</div>
+      </td>
+    </tr>
+
+
+    <tr class="formWidgetRow promoTemplate" id="row-form-template">
+    <td class="formWidgetLabelCell"><strong>Template</strong></td>
+    <td class="formWidgetCell"><select id="form-template" model="templates" name="template" title="Template" validation="type:integer;baseProperty:true"> </select></td>
+    </tr>
+    <tr class="formWidgetRow promoWrapper" id="row-form-page_wrapper">
+    <td class="formWidgetLabelCell"><strong>Page Wrapper</strong></td>
+    <td class="formWidgetCell"><select id="form-page_wrapper" model="wrappers" name="page_wrapper" title="Page Wrapper" validation="type:integer;baseProperty:true"> </select></td>
+    </tr>
+
+  </tbody>
+</table>
+<div class="templateComponent" id="item-545039100"></div>
