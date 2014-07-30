@@ -29,14 +29,27 @@
     var $promoTemplateSelect = $('#form-template');
     var $promoWrapper = $('.promoWrapper');
 
-    var hiddenDefaults = jQuery([$promoHeadline, $promoDescription, $promoConditionalGroup, $promoSection, $promoGlobal, $promoFeatured, $promoFullWidth, $promoClientImage, $promoFoodBank, $promoStructuredInstructions, $promoImage, $promoMobileImage, $promoBannerStyle, $promoBannerStyle, $promoBackgroundImage, $promoBackgroundColor, $promoButtonColor, $promoButtonStyle, $promoButtonLabel, $promoLink]);
+    $.fn.extend({
+      setTemplate: function(templateName) {
+        var $option = $(this).find('option').filter(function() {
+          if($(this).text() == templateName) {
+            return this;
+          }
+        });
+        $option.attr('selected', 'selected');
+      }
+    });
+
+
+    var hiddenDefaults = jQuery([$promoHeadline, $promoDescription, $promoConditionalGroup, $promoSection, $promoGlobal, $promoFeatured, $promoFullWidth, $promoClientImage, $promoFoodBank, $promoStructuredInstructions, $promoImage, $promoMobileImage, $promoBannerStyle, $promoBackgroundImage, $promoBackgroundColor, $promoButtonColor, $promoButtonStyle, $promoButtonLabel, $promoLink]);
+
+
+
     if($promoTypeSelect.length > 0) {
       hiddenDefaults.each(function() { $(this).hide() });
 
       $promoTypeSelect.on('change', function() {
         var selectedType = $(this).find('option:selected').text();
-
-        console.log(selectedType);
 
         switch(selectedType) {
           case 'Contextual Sidebar Promo':
@@ -85,25 +98,18 @@
             break;
 
           case 'Section Landing Page Banner':
-            var visibleFields = jQuery([$promoHeadline, $promoDescription, $promoSection, $promoGlobal, $promoStructuredInstructions, $promoImage, $promoBackgroundColor, $promoBackgroundImage]);
+            var visibleFields = jQuery([$promoHeadline, $promoDescription, $promoSection, $promoGlobal, $promoStructuredInstructions, $promoImage, $promoBannerStyle, $promoBackgroundColor, $promoBackgroundImage]);
             visibleFields.each(function() { $(this).show(); });
             $promoTemplateSelect.setTemplate('Section Landing Page Promo');
             break;
 
         }
       });
+
+      $promoTypeSelect.trigger('change');
     }
 
-    $.fn.extend({
-      setTemplate: function(templateName) {
-        var $option = $(this).find('option').filter(function() {
-          if($(this).text() == templateName) {
-            return this;
-          }
-        });
-        $option.attr('selected', 'selected');
-      }
-    });
+
 
   });
 </script>
