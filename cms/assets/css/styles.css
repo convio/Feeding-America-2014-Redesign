@@ -1549,10 +1549,10 @@ footer .social_icons {
   width: 50px;
   height: 50px;
 }
-.social_icons > li > a > span { 
-  position: absolute; 
-  bottom: 0; 
-  visibility: hidden; 
+.social_icons > li > a > span {
+  position: absolute;
+  bottom: 0;
+  visibility: hidden;
 }
 .social_icons li.fbk a {
   background-position: -1055px 0;
@@ -2162,34 +2162,34 @@ body.expand-news #recent_news_boxes .recent_news_item img {
 }
 
 /* "Together We Can Solve Hunger" */
-#homepage_together {
+.homepage_email {
   background-color: #e98300;
   color: #ffffff;
   text-align: center;
   padding: 40px 0px;
   margin-bottom: 40px;
 }
-#homepage_together .container {
+.homepage_email .container {
   padding: 0px;
 }
-#homepage_together .headline {
+.homepage_email .headline {
   font-size: 40px;
   font-weight: 500;
   margin-bottom: 15px;
   display: inline-block;
   position: relative;
 }
-#homepage_together .headline span:last-child {
+.homepage_email .headline span:last-child {
   position: relative;
 }
-#homepage_together .headline span:last-child:after {
+.homepage_email .headline span:last-child:after {
   content: '\2122';
   font-weight: 200;
   position: absolute;
   left: 100%;
   top: 0px;
 }
-#homepage_together p {
+.homepage_email p {
   margin: 0px 0px 10px 0px;
   font-weight: 200;
   font-size: 18px;
@@ -3385,18 +3385,18 @@ body.expand-news #recent_news_boxes .recent_news_item img {
   }
 
   /* "Together We Can Solve Hunger" */
-  #homepage_together {
+  .homepage_email {
     padding: 30px 0px;
     margin-bottom: 0px;
   }
-  #homepage_together .headline {
+  .homepage_email .headline {
     font-size: 36px;
   }
-  #homepage_together p {
+  .homepage_email p {
     font-size: 16px;
     line-height: 20px;
   }
-  #homepage_together p span {
+  .homepage_email p span {
     display: block;
   }
 
@@ -3615,7 +3615,7 @@ body.expand-news #recent_news_boxes .recent_news_item img {
 
 
   /* overriding font-weight for smaller screens */
-  #page-description, a.button, a.grainbutton, button, input[type="text"], input[type="email"], textarea, select, #util_search_query, #util_search_button, #footer_text, #homepage_slideshow .headline-bar .headline-button a, #homepage_zip_search_form input, #homepage_zip_search_form button, #homepage_ending_select, #recent_news_boxes .recent_news_item .news_preview span, #recent_news_boxes .recent_news_item .news_expanded span, #homepage_together .headline span:last-child:after, #homepage_together p, #together_form input, #together_form button, #textalerts_form input, #textalerts_form button, #homepage_fivesteps_find_out_more, #homepage_fivesteps_share_this, .section-banner .headline-subhead, #recent_news_boxes .recent_news_item.one .news_expanded p, #recent_news_boxes .recent_news_item.two .news_expanded p, #recent_news_boxes .recent_news_item.one .news_expanded span.link, #recent_news_boxes .recent_news_item.one .news_expanded p, #recent_news_boxes .recent_news_item.morenews, .navbar-toggle:after, #footer_links, #homepage_ending .left p {
+  #page-description, a.button, a.grainbutton, button, input[type="text"], input[type="email"], textarea, select, #util_search_query, #util_search_button, #footer_text, #homepage_slideshow .headline-bar .headline-button a, #homepage_zip_search_form input, #homepage_zip_search_form button, #homepage_ending_select, #recent_news_boxes .recent_news_item .news_preview span, #recent_news_boxes .recent_news_item .news_expanded span, .homepage_email .headline span:last-child:after, .homepage_email p, #together_form input, #together_form button, #textalerts_form input, #textalerts_form button, #homepage_fivesteps_find_out_more, #homepage_fivesteps_share_this, .section-banner .headline-subhead, #recent_news_boxes .recent_news_item.one .news_expanded p, #recent_news_boxes .recent_news_item.two .news_expanded p, #recent_news_boxes .recent_news_item.one .news_expanded span.link, #recent_news_boxes .recent_news_item.one .news_expanded p, #recent_news_boxes .recent_news_item.morenews, .navbar-toggle:after, #footer_links, #homepage_ending .left p {
     font-weight: 300;
   }
 
@@ -4283,23 +4283,23 @@ body.expand-news #recent_news_boxes .recent_news_item img {
   }
 
   /* "Together We Can Solve Hunger" */
-  #homepage_together {
+  .homepage_email {
     padding: 30px 0px;
     margin-bottom: 0px;
   }
-  #homepage_together .container {
+  .homepage_email .container {
     padding: 0px 20px;
   }
-  #homepage_together .headline {
+  .homepage_email .headline {
     font-size: 30px;
   }
-  #homepage_together .headline span:first-child {
+  .homepage_email .headline span:first-child {
     display: block;
   }
-  #homepage_together .headline span:last-child {
+  .homepage_email .headline span:last-child {
     display: inline-block;
   }
-  #homepage_together p {
+  .homepage_email p {
     font-size: 14px;
     line-height: 18px;
   }
@@ -4589,7 +4589,7 @@ body.expand-news #recent_news_boxes .recent_news_item img {
 
 
   /* overriding font-weight for smaller screens */
-  #page-description, a.button, a.grainbutton, button, input[type="text"], input[type="email"], textarea, select, #util_search_query, #util_search_button, #footer_text, #homepage_slideshow .headline-bar .headline-button a, #homepage_zip_search_form input, #homepage_zip_search_form button, #homepage_ending_select, #recent_news_boxes .recent_news_item .news_preview span, #recent_news_boxes .recent_news_item .news_expanded span, #homepage_together .headline span:last-child:after, #homepage_together p, #together_form input, #together_form button, #textalerts_form input, #textalerts_form button, #homepage_fivesteps_find_out_more, #homepage_fivesteps_share_this, .section-banner .headline-subhead, #recent_news_boxes .recent_news_item.one .news_expanded p, #recent_news_boxes .recent_news_item.two .news_expanded p, #recent_news_boxes .recent_news_item.one .news_expanded span.link, #recent_news_boxes .recent_news_item.one .news_expanded p, #recent_news_boxes .recent_news_item.morenews, .navbar-toggle:after, #footer_links, #homepage_ending .left p {
+  #page-description, a.button, a.grainbutton, button, input[type="text"], input[type="email"], textarea, select, #util_search_query, #util_search_button, #footer_text, #homepage_slideshow .headline-bar .headline-button a, #homepage_zip_search_form input, #homepage_zip_search_form button, #homepage_ending_select, #recent_news_boxes .recent_news_item .news_preview span, #recent_news_boxes .recent_news_item .news_expanded span, .homepage_email .headline span:last-child:after, .homepage_email p, #together_form input, #together_form button, #textalerts_form input, #textalerts_form button, #homepage_fivesteps_find_out_more, #homepage_fivesteps_share_this, .section-banner .headline-subhead, #recent_news_boxes .recent_news_item.one .news_expanded p, #recent_news_boxes .recent_news_item.two .news_expanded p, #recent_news_boxes .recent_news_item.one .news_expanded span.link, #recent_news_boxes .recent_news_item.one .news_expanded p, #recent_news_boxes .recent_news_item.morenews, .navbar-toggle:after, #footer_links, #homepage_ending .left p {
     font-weight: 300;
   }
 
