@@ -1,0 +1,158 @@
+<div id="title-and-share">
+  <div class="container">
+    <h1 class="page-title">${title}</h1>
+    <t:include id="item-545217462"/>
+  </div><!--/.container-->
+</div>
+
+<!-- Banner-->
+<t:if test="section_landing_page_banner.length>0">
+<style>
+  .no-wheatstalk {background-image:none !important;}
+</style>
+
+<t:set id="promoBgImg" value="''" />
+<t:set id="promoText" value="'with-text'" />
+
+<t:list id="section_landing_page_banner">
+
+<t:if test="promo_background_color.length>0">
+   <t:list id="promo_background_color">
+   <t:if test="name=='orange'"><t:set id="promoBgColor" value="'orange no-wheatstalk'" /></t:if>
+   <t:if test="name=='orange-wheatstalk'"><t:set id="promoBgColor" value="'orange'" /></t:if>
+   <t:if test="name=='green'"><t:set id="promoBgColor" value="'green no-wheatstalk'" /></t:if>
+   <t:if test="name=='green-wheatstalks'"><t:set id="promoBgColor" value="'green'" /></t:if>
+    </t:list>
+</t:if>
+<t:else>
+<t:set id="promoBgColor" value="''" />
+</t:else>
+
+<t:if test="slp_banner_style.length>0">
+<t:list id="slp_banner_style">
+<t:if test="name =='box-overlay'">
+   <t:set id ="promoBgImg" value = "'big-photo'"/>
+</t:if>
+<t:if test="name =='horizontal-overlay'">
+   <t:set id ="promoBgImg" value = "'big-photo'"/>
+   <t:set id="promoText" value="'no-text'" />
+</t:if>
+<t:if test="name =='no-overlay'">
+   <t:if test ="background_image.length>0"><t:set id ="promoBgImg" value = "'small-photo'"/></t:if><t:else><t:set id ="promoBgImg" value = "'no-photo'"/></t:else>
+</t:if>
+</t:list>
+</t:if>
+
+<div class="section-banner ${promoBgImg} ${promoText} ${promoBgColor}">
+  <div class="container">
+    <t:if test="background_image.length>0"><img border="0" alt="alt_text" src="${background_image.url}"></t:if>
+      <div class="headline-bar">
+        <div class="container">
+          <div class="headline-text">
+            <span class="headline-title">${title}</span>
+            <span class="headline-subhead">${description}</span>
+          </div><!--/.headline-text-->
+        </div><!--/.container-->
+      </div><!--/.headline-bar-->
+  </div><!--/.container-->
+</div>
+</t:list>
+<!-- End Banner --> 
+</t:if>
+<div class="container">
+   ${body}
+</div>
+
+<!-- Boxes -->
+<t:if test="section_landing_page_boxes.length>0">
+<t:set id="align" value="'left'"/><div id="section-boxes">
+<t:list id="section_landing_page_boxes"><t:list id="full_width"><t:if test="name == 'yes'"><div class="container"><!-- .container --></t:if><t:else><t:if test="align == 'left'"><div class="container"><!-- .container --></t:if></t:else><t:if test="name == 'yes'"><div class="section-box full-width"></t:if><t:else><div class="section-box ${align}"></t:else><div class="section-title">${title}</div><div class="section-img"><img border="0" alt="${image.alt_text}" src="${image.url}">${hover_content}</div><!--/.section-img--><div class="section-text">${description}<a href="${learn_more}">Learn More<span> ›</span></a></div><!--/.section-text--></div><t:if test="name == 'yes'"></div><!-- /.container --></t:if><t:else><t:set id="flag" value="0"/><t:if test="align == 'left'"><t:set id="flag" value="1"/></t:if><t:if test="flag == 1"><t:set id="align" value="'right'"/></t:if><t:if test="flag == 0"><t:set id="align" value="'left'"/></div><!-- /.container --></t:if></t:else></t:list></t:list></div>
+</t:if>  
+
+<!-- Related News -->
+<div id="recent_news">
+  <div class="container">
+    <div class="headline">Recent News</div> 
+<div id="recent_news_boxes">
+      <a class="recent_news_item three" href="#">
+        <img border="0" alt="news 1" src="http://fa.pub30.convio.net/assets/images/news1.jpg">
+        <div class="news_preview"><span>3 Earn Your Wings</span></div><!--/.news_preview-->
+        <div class="news_expanded">
+          <span>3 Earn Your Wings</span>
+          <p>Veggie ipsum es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion.</p>
+          <p><span class="link">Daikon amaranth tatsoi ›</span></p>
+        </div><!--/.news_expanded-->
+      </a><!--/.recent_news_item.three-->
+      <a class="recent_news_item three" href="#">
+        <img border="0" alt="news 2" src="http://fa.pub30.convio.net/assets/images/news2.jpg">
+        <div class="news_preview"><span>3 It's National Nutrition Month</span></div><!--/.news_preview-->
+        <div class="news_expanded">
+          <span>3 It's National Nutrition Month</span>
+          <p>Welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.</p>
+          <p><span class="link">Gumbo beet greens corn ›</span></p>
+        </div><!--/.news_expanded-->
+      </a><!--/.recent_news_item.three-->
+      <a class="recent_news_item three" href="#">
+        <img border="0" alt="news 3" src="http://fa.pub30.convio.net/assets/images/news3.jpg">
+        <div class="news_preview"><span>3 Congress Visit Food Bank</span></div><!--/.news_preview-->
+        <div class="news_expanded">
+          <span>3 Congress Visit Food Bank</span>
+          <p>Tell your Member of Congress to visit their local food bank to learn about hunger.</p>
+          <p><span class="link">Tell them to visit ›</span></p>
+        </div><!--/.news_expanded-->
+      </a><!--/.recent_news_item.three-->
+      <div class="clearfix"></div>
+</div>
+</div><!-- container -->
+</div><!-- recent_news -->
+
+<t:set id="footerBgImg" value="''" />
+<t:if test="footer_bg.length > 0">
+  <t:list id="footer_bg">
+    <t:set id="footerBgImg" value="concat('background: url(', url)" />
+    <t:set id="footerBgImg" value="concat(footerBgImg, ') 50% 0 repeat;')" />
+  </t:list>
+</t:if>
+<div id="footer_promos" style="${footerBgImg}">
+  <div class="container">
+    <div class="headline">How You Can Help Feeding America Solve Hunger</div>
+      <div id="footer_promo_boxes">
+
+    <t:if test="footer_promos.length > 0">
+      <t:list id="footer_promos">
+        <t:set id="buttonClasses" value="'button'" />
+        <t:if test="action_button_color.length > 0 || action_button_style.length > 0">
+          <t:if test="action_button_style.length > 0">
+            <t:list id="action_button_style">
+              <t:set id="buttonClasses" value="name" />
+            </t:list>
+          </t:if>
+          <t:if test="action_button_color.length > 0">
+            <t:list id="action_button_color">
+              <t:set id="buttonClasses" value="concat(concat(buttonClasses, ' '), name)" />
+            </t:list>
+          </t:if>
+        </t:if>
+        <div class="footer-promo">
+          <t:if test="thumb.length > 0"><t:list id="thumb"><img src="${url}" alt="${alt_text}" /></t:list></t:if>
+          <div class="promo-title">${title}</div>
+          <t:if test="!isNull(description)"><div class="promo-text">${description}</div></t:if>
+
+          <t:if test="!isNull(action_button_label) && !isNull(action_button_url)"><div class="promo-action"><a class="${buttonClasses}" href="${action_button_url}">${action_button_label}</a></div></t:if>
+        </div>
+      </t:list>
+    </t:if>
+    <t:else>
+      <!-- dynamic footer promos -->
+      <!-- Learn -->
+      <t:include id="templatelist-541527765" />
+      <!-- Act -->
+      <t:include id="templatelist-541527691" />
+      <!-- Give -->
+      <t:include id="templatelist-541528010" />
+    </t:else>
+
+      <div class="clearfix"></div>
+    </div><!--/#footer_promo_boxes-->
+  </div><!--/.container-->
+</div><!--/#footer_promos-->
