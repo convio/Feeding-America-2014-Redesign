@@ -76,14 +76,9 @@
 </div>
 <!--/.container--></div>
 <!--/#recent_news-->
-<div id="homepage_together">
-<div class="container">
-<div class="headline"><span>Together We Can</span> <span>Solve Hunger.</span></div>
-<p><span>Feeding America is committed to helping people in need,</span> <span>but we can't do it without you.</span></p>
-<p><span>If you believe that no one should go hungry in America,</span> <span>take the pledge to help solve hunger.</span></p>
-<form id="together_form"><input name="email" placeholder="Enter Email" type="email" /> <button type="submit">I'M IN!</button></form></div>
-<!--/.container--></div>
-<!--/#homepage_together-->
+
+<!-- Homepage Email Promos -->
+<t:include id="item-545524792" />
 
 <div id="homepage_fivesteps">
 <div class="container">

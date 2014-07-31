@@ -22,4 +22,4 @@
     <t:if test="!isNull(description)"><p>${description}</p></t:if>
     ${body}
   </div><!--/.container-->
-</div><!--/#homepage_together-->
+</div><!--/.homepage_email-->
