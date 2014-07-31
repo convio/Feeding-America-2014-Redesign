@@ -357,8 +357,16 @@ ul.grains li, #body-content ul.grains li {
   background-color: #e98300;
   color: #ffffff;
 }
+.orange-wheatstalks {
+  background: #e98300 url("../images/bannerstalks_large_optim.png") center 0 no-repeat;
+  color: #ffffff;
+}
 .green {
   background-color: #53682b;
+  color: #ffffff;
+}
+.green-wheatstalks {
+  background: #53682b url("../images/bannerstalks_large_optim.png") center 0 no-repeat;
   color: #ffffff;
 }
 .red {
@@ -2163,8 +2171,7 @@ body.expand-news #recent_news_boxes .recent_news_item img {
 
 /* "Together We Can Solve Hunger" */
 .homepage_email {
-  background-color: #e98300;
-  color: #ffffff;
+  color: #333;
   text-align: center;
   padding: 40px 0px;
   margin-bottom: 40px;
