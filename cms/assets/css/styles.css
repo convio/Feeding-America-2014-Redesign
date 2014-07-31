@@ -2638,6 +2638,9 @@ body.expand-news #recent_news_boxes .recent_news_item img {
   background-repeat: no-repeat;
   background-position: center bottom;
 }
+.no-wheatstalk {
+  background-image:none !important;
+}
 .section-banner.big-photo .container {
   max-width: 100%;
   padding: 0px;

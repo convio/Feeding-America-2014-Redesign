@@ -1,0 +1,44 @@
+<t:set id="promoBgImg" value="''" />
+<t:set id="promoText" value="'with-text'" />
+
+<t:if test="promo_background_color.length>0">
+   <t:list id="promo_background_color">
+   <t:if test="name=='orange'"><t:set id="promoBgColor" value="'orange no-wheatstalk'" /></t:if>
+   <t:if test="name=='orange-wheatstalk'"><t:set id="promoBgColor" value="'orange'" /></t:if>
+   <t:if test="name=='green'"><t:set id="promoBgColor" value="'green no-wheatstalk'" /></t:if>
+   <t:if test="name=='green-wheatstalks'"><t:set id="promoBgColor" value="'green'" /></t:if>
+    </t:list>
+</t:if>
+<t:else>
+<t:set id="promoBgColor" value="''" />
+</t:else>
+
+<t:if test="slp_banner_style.length>0">
+<t:list id="slp_banner_style">
+<t:if test="name =='box-overlay'">
+   <t:set id ="promoBgImg" value = "'big-photo'"/>
+</t:if>
+<t:if test="name =='horizontal-overlay'">
+   <t:set id ="promoBgImg" value = "'big-photo'"/>
+   <t:set id="promoText" value="'no-text'" />
+</t:if>
+<t:if test="name =='no-overlay'">
+   <t:if test ="background_image.length>0"><t:set id ="promoBgImg" value = "'small-photo'"/></t:if><t:else><t:set id ="promoBgImg" value = "'no-photo'"/></t:else>
+</t:if>
+</t:list>
+</t:if>
+
+<div class="section-banner ${promoBgImg} ${promoText} ${promoBgColor}">
+  <div class="container">
+    <t:if test="background_image.length>0"><img border="0" alt="alt_text" src="${background_image.url}"></t:if>
+      <div class="headline-bar">
+        <div class="container">
+          <div class="headline-text">
+            <span class="headline-title">${title}</span>
+            <span class="headline-subhead">${description}</span>
+          </div><!--/.headline-text-->
+        </div><!--/.container-->
+      </div><!--/.headline-bar-->
+  </div><!--/.container-->
+</div>
+

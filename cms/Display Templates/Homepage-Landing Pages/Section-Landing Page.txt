@@ -7,9 +7,6 @@
 
 <!-- Banner-->
 <t:if test="section_landing_page_banner.length>0">
-<style>
-  .no-wheatstalk {background-image:none !important;}
-</style>
 
 <t:set id="promoBgImg" value="''" />
 <t:set id="promoText" value="'with-text'" />
@@ -63,49 +60,45 @@
    ${body}
 </div>
 
-<!-- Boxes -->
+<!-- Boxes - Note: do not beautify the code in this section, it will stop working. -->
 <t:if test="section_landing_page_boxes.length>0">
 <t:set id="align" value="'left'"/><div id="section-boxes">
-<t:list id="section_landing_page_boxes"><t:list id="full_width"><t:if test="name == 'yes'"><div class="container"><!-- .container --></t:if><t:else><t:if test="align == 'left'"><div class="container"><!-- .container --></t:if></t:else><t:if test="name == 'yes'"><div class="section-box full-width"></t:if><t:else><div class="section-box ${align}"></t:else><div class="section-title">${title}</div><div class="section-img"><img border="0" alt="${image.alt_text}" src="${image.url}">${hover_content}</div><!--/.section-img--><div class="section-text">${description}<a href="${learn_more}">Learn More<span> ›</span></a></div><!--/.section-text--></div><t:if test="name == 'yes'"></div><!-- /.container --></t:if><t:else><t:set id="flag" value="0"/><t:if test="align == 'left'"><t:set id="flag" value="1"/></t:if><t:if test="flag == 1"><t:set id="align" value="'right'"/></t:if><t:if test="flag == 0"><t:set id="align" value="'left'"/></div><!-- /.container --></t:if></t:else></t:list></t:list></div>
+<t:list id="section_landing_page_boxes"><t:list id="full_width"><t:if test="name == 'yes'"><div class="container"><!-- .container --></t:if><t:else><t:if test="align == 'left'"><div class="container"><!-- .container --></t:if></t:else><t:if test="name == 'yes'"><div class="section-box full-width"></t:if><t:else><div class="section-box ${align}"></t:else><div class="section-title">${title}</div><div class="section-img"><t:if test="image.length>0"><img border="0" alt="${image.alt_text}" src="${image.url}"></t:if><t:list id="include_hover"><t:if test="name=='yes'">${hover_content}</t:if></t:list></div><!--/.section-img--><t:if test="!isNull(description)"><div class="section-text">${description} </t:if><a href="${learn_more}">Learn More<span> ›</span></a></div><!--/.section-text--></div><t:if test="name == 'yes'"></div><!-- /.container --></t:if><t:else><t:set id="flag" value="0"/><t:if test="align == 'left'"><t:set id="flag" value="1"/></t:if><t:if test="flag == 1"><t:set id="align" value="'right'"/></t:if><t:if test="flag == 0"><t:set id="align" value="'left'"/></div><!-- /.container --></t:if></t:else></t:list></t:list></div>
 </t:if>  
 
-<!-- Related News -->
+<!-- Recent News --> 
+<t:if test="latest_news.length>0">
 <div id="recent_news">
   <div class="container">
-    <div class="headline">Recent News</div> 
-<div id="recent_news_boxes">
-      <a class="recent_news_item three" href="#">
-        <img border="0" alt="news 1" src="http://fa.pub30.convio.net/assets/images/news1.jpg">
-        <div class="news_preview"><span>3 Earn Your Wings</span></div><!--/.news_preview-->
+    <div class="headline">Recent News</div>
+    <div id="recent_news_boxes">
+    <t:list id="latest_news">
+      <a href="${url}" class="recent_news_item three">
+        <img src="${thumb.url}" alt="${thumb.alt_text}" border="0" />
+        <div class="news_preview"><span>${title}</span></div><!--/.news_preview-->
         <div class="news_expanded">
-          <span>3 Earn Your Wings</span>
-          <p>Veggie ipsum es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion.</p>
-          <p><span class="link">Daikon amaranth tatsoi ›</span></p>
+          <span>${title}</span>
+          <p>${description}</p>
+          <p><span class="link"><t:if test="!isNull(learn_more_text)">${learn_more_text}</t:if><t:else>Learn More</t:else> &rsaquo;</span></p>
         </div><!--/.news_expanded-->
       </a><!--/.recent_news_item.three-->
-      <a class="recent_news_item three" href="#">
-        <img border="0" alt="news 2" src="http://fa.pub30.convio.net/assets/images/news2.jpg">
-        <div class="news_preview"><span>3 It's National Nutrition Month</span></div><!--/.news_preview-->
-        <div class="news_expanded">
-          <span>3 It's National Nutrition Month</span>
-          <p>Welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.</p>
-          <p><span class="link">Gumbo beet greens corn ›</span></p>
-        </div><!--/.news_expanded-->
-      </a><!--/.recent_news_item.three-->
-      <a class="recent_news_item three" href="#">
-        <img border="0" alt="news 3" src="http://fa.pub30.convio.net/assets/images/news3.jpg">
-        <div class="news_preview"><span>3 Congress Visit Food Bank</span></div><!--/.news_preview-->
-        <div class="news_expanded">
-          <span>3 Congress Visit Food Bank</span>
-          <p>Tell your Member of Congress to visit their local food bank to learn about hunger.</p>
-          <p><span class="link">Tell them to visit ›</span></p>
-        </div><!--/.news_expanded-->
-      </a><!--/.recent_news_item.three-->
+    </t:list>
       <div class="clearfix"></div>
-</div>
-</div><!-- container -->
-</div><!-- recent_news -->
+    </div><!--/#recent_news_boxes-->
+    <div id="recent_read_more"><a href="http://fa.pub30.convio.net/hunger-in-america/news-and-updates/">Read More News<span> &rsaquo;</span></a></div>
+  </div><!--/.container-->
+</div><!--/#recent_news-->
+</t:if>
+<t:else>
+<t:if test="matches(path,'.*/hunger-in-america/') && title=='Hunger in America'">
+<t:include id="templatelist-545438047"/>
+</t:if>
+<t:else>
+<t:include id="templatelist-545439131"/>
+</t:else>
+</t:else>
 
+<!-- Footer -->
 <t:set id="footerBgImg" value="''" />
 <t:if test="footer_bg.length > 0">
   <t:list id="footer_bg">
