@@ -349,6 +349,9 @@ ul.grains li, #body-content ul.grains li {
   line-height: 50px;
 }
 /* color boxes */
+.transparent {
+  color: #333;
+}
 .light-gray {
   background-color: #fafafa;
   color: #333333;
@@ -357,18 +360,11 @@ ul.grains li, #body-content ul.grains li {
   background-color: #e98300;
   color: #ffffff;
 }
-.orange-wheatstalks {
-  background: #e98300 url("../images/bannerstalks_large_optim.png") center 0 no-repeat;
-  color: #ffffff;
-}
 .green {
   background-color: #53682b;
   color: #ffffff;
 }
-.green-wheatstalks {
-  background: #53682b url("../images/bannerstalks_large_optim.png") center 0 no-repeat;
-  color: #ffffff;
-}
+
 .red {
   background-color: #b22d3a;
   color: #ffffff;
@@ -388,6 +384,26 @@ ul.grains li, #body-content ul.grains li {
 .lime {
   background-color: #bfd730;
   color: #333333;
+}
+/*wheatstalk styles */
+.wheatstalks,
+.homepage_email.wheatstalks {
+  background-image: url("../images/bannerstalks_small_optim.png");
+  background-position:  center 100%;
+  background-repeat: no-repeat;
+}
+
+.inline-promo.wheatstalks,
+.sidebar-promo.wheatstalks {
+  background-image: url('../images/inline-promo-bg-1.png');
+  background-position: right bottom;
+  background-repeat: no-repeat;
+}
+
+.column-1 .inline-promo.wheatstalks {
+  background-image: url('../images/inline-promo-bg-2.png');
+  background-position: right bottom;
+  background-repeat: no-repeat;
 }
 
 /* text links */
@@ -924,9 +940,6 @@ table.paginator td.pg-next {
   -webkit-box-shadow: 0px 0px 6.72px 0.28px rgba(6, 6, 6, 0.5);
   box-shadow: 0px 0px 6.72px 0.28px rgba(6, 6, 6, 0.5);
   overflow: hidden;
-  background-image: url('../images/inline-promo-bg-1.png');
-  background-position: right bottom;
-  background-repeat: no-repeat;
 }
 .inline-promo .inline-promo-image {
   display: inline-block;
@@ -955,9 +968,6 @@ table.paginator td.pg-next {
   -moz-border-radius-bottomright: 10px;
   border-top-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  background-image: url('../images/inline-promo-bg-2.png');
-  background-position: right bottom;
-  background-repeat: no-repeat;
 }
 .column-1 .inline-promo .inline-promo-text {
   font-size: 15px;
@@ -2171,7 +2181,6 @@ body.expand-news #recent_news_boxes .recent_news_item img {
 
 /* "Together We Can Solve Hunger" */
 .homepage_email {
-  color: #333;
   text-align: center;
   padding: 40px 0px;
   margin-bottom: 40px;
@@ -3057,6 +3066,11 @@ body.expand-news #recent_news_boxes .recent_news_item img {
     -moz-border-radius-bottomright: 10px;
     border-top-left-radius: 10px;
     border-bottom-right-radius: 10px;
+
+  }
+  .inline-promo.wheatstalks,
+  .column-1 .inline-promo.wheatstalks,
+  .sidebar-promo.wheatstalks {
     background-image: url('../images/inline-promo-bg-2.png');
   }
   .inline-promo .inline-promo-text {
@@ -3071,7 +3085,6 @@ body.expand-news #recent_news_boxes .recent_news_item img {
     -moz-border-radius-bottomright: 20px;
     border-top-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    background-image: url('../images/inline-promo-bg-2.png');
   }
   .column-1 .inline-promo .inline-promo-image {
     display: block;
@@ -3743,9 +3756,10 @@ body.expand-news #recent_news_boxes .recent_news_item img {
     -moz-border-radius-bottomright: 10px;
     border-top-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    /*
-    background-image: url('../images/inline-promo-bg-2.png');
-    */
+  }
+  .inline-promo.wheatstalks,
+  .column-1 .inline-promo.wheatstalks,
+  .sidebar-promo.wheatstalks {
     background-image: none;
   }
   .inline-promo .inline-promo-image {

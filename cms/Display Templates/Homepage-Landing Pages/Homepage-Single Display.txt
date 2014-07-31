@@ -1,31 +1,32 @@
 <div id="homepage_slideshow">
-<!-- Feature slides --> 
-<ul class="slides">
-<t:if test="feature_slides.length>0">
-<t:list id="feature_slides">
-<t:if test="index==1"><div></div></t:if>
-<li><img border="0" src="${url}" />
-<div class="headline-bar">
-<div class="container">
-<div class="headline-text"><span class="headline-title">${title}</span><t:if test="!isNull(subtitle)"><span class="headline-subhead">${subtitle}</span></t:if></span></div>
-<t:if test="!isNull(call_to_action_button)"><div class="headline-button"><a href="${action_button_url}">${call_to_action_button}</a></div></t:if>
+  <!-- Feature slides -->
+  <ul class="slides">
+    <t:if test="feature_slides.length>0">
+    <t:list id="feature_slides">
+    <t:if test="index==1"><div></div></t:if>
+    <li><img border="0" src="${url}" />
+    <div class="headline-bar">
+    <div class="container">
+    <div class="headline-text"><span class="headline-title">${title}</span><t:if test="!isNull(subtitle)"><span class="headline-subhead">${subtitle}</span></t:if></span></div>
+    <t:if test="!isNull(call_to_action_button)"><div class="headline-button"><a href="${action_button_url}">${call_to_action_button}</a></div></t:if>
+    </div>
+    </div>
+    </li>
+    </t:list>
+    </t:if>
+    </ul>
+    <div class="container homepage-slideshow-controls">
+    <ul class="homepage-slideshow-manual-control-nav">
+    <t:if test="feature_slides.length>0">
+    <t:list id="feature_slides">
+    <li>${title}</li>
+    </t:list>
+    </t:if>
+  </ul>
+  </div>
 </div>
-</div>
-</li>
-</t:list>
-</t:if>
-</ul>
-<div class="container homepage-slideshow-controls">
-<ul class="homepage-slideshow-manual-control-nav">
-<t:if test="feature_slides.length>0">
-<t:list id="feature_slides">
-<li>${title}</li>
-</t:list>
-</t:if>
-</ul>
-</div>
-</div>
-<!-- Zip search --> 
+
+<!-- Zip search -->
 <div id="homepage_zip_search">
 <div class="container"><form id="homepage_zip_search_form" onsubmit="event.preventDefault();"><span>Find Your</span> <span>Local Food Bank</span><input name="zip" placeholder="Zip Code" type="text" /><button type="submit">GO</button></form>
 <div id="homepage_zip_search_results">
@@ -37,7 +38,7 @@
 <div id="homepage_ending">
 <div class="container">
 <div class="left">
-<!-- How We Are Ending Hunger --> 
+<!-- How We Are Ending Hunger -->
 <t:include id="item-532519955"/>
 </div>
 <div class="right"><img id="howweareending_state_img" alt="Illinois" border="0" class="state" src="http://fa.pub30.convio.net/assets/images/howweareending_state.png" />
@@ -83,6 +84,7 @@
 <form id="together_form"><input name="email" placeholder="Enter Email" type="email" /> <button type="submit">I'M IN!</button></form></div>
 <!--/.container--></div>
 <!--/#homepage_together-->
+
 <div id="homepage_fivesteps">
 <div class="container">
 <div class="headline">How We're Ending Hunger.</div>
