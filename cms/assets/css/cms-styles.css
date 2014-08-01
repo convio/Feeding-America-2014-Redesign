@@ -2121,6 +2121,21 @@ body.entertainment-council .partners-list-vertical.blog-posts.list-items-contain
 }
 
 
+/* --------------------------------------------
+  job opportunities pages elements
+-------------------------------------------- */
+table ul, table ol, #body-content table ul, #body-content table ol {
+  font-size: 18px;
+  line-height: normal;
+}
+table ul li, #body-content table ul li {
+  padding-left: 0px;
+}
+table ul.grains li, #body-content table ul.grains li {
+  padding-left: 30px;
+  background-position: 0px 2px;
+}
+
 
 /*
 shortcut to end of desktop
