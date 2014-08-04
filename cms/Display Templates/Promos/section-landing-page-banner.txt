@@ -4,7 +4,7 @@
 <t:if test="promo_background_color.length>0">
    <t:list id="promo_background_color">
    <t:if test="name=='orange'"><t:set id="promoBgColor" value="'orange no-wheatstalk'" /></t:if>
-   <t:if test="name=='orange-wheatstalk'"><t:set id="promoBgColor" value="'orange'" /></t:if>
+   <t:if test="name=='orange-wheatstalks'"><t:set id="promoBgColor" value="'orange'" /></t:if>
    <t:if test="name=='green'"><t:set id="promoBgColor" value="'green no-wheatstalk'" /></t:if>
    <t:if test="name=='green-wheatstalks'"><t:set id="promoBgColor" value="'green'" /></t:if>
     </t:list>
