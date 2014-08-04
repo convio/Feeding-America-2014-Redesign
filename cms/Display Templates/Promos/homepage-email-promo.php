@@ -16,10 +16,25 @@
   </t:list>
 </t:if>
 
+<t:set id="buttonClasses" value="'button'" />
+<t:if test="action_button_color.length > 0 || action_button_style.length > 0">
+  <t:if test="action_button_style.length > 0">
+    <t:list id="action_button_style">
+      <t:set id="buttonClasses" value="name" />
+    </t:list>
+  </t:if>
+  <t:if test="action_button_color.length > 0">
+    <t:list id="action_button_color">
+      <t:set id="buttonClasses" value="concat(concat(buttonClasses, ' '), name)" />
+    </t:list>
+  </t:if>
+</t:if>
+
 <div class="homepage_email ${classes}" style="${promoBgImg}">
   <div class="container">
     <t:if test="!isNull(headline)"><div class="headline">${headline}</div></t:if>
     <t:if test="!isNull(description)"><p>${description}</p></t:if>
     ${body}
+    <t:if test="!isNull(action_button_label) && !isNull(action_button_url)"><a class="${buttonClasses}" href="${action_button_url}">${action_button_label}</a></t:if>
   </div><!--/.container-->
 </div><!--/.homepage_email-->
