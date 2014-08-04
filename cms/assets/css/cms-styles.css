@@ -1982,6 +1982,10 @@ vertical-align: top;
   background-color: #ffffff;
   border: 1px solid #dedede;
 }
+.partners-list-horizontal li > a span, #body-content .partners-list-horizontal li > a span {
+  line-height: normal;
+  vertical-align: middle;
+}
 .partners-list-horizontal li img, #body-content .partners-list-horizontal li img {
   max-height: 100%;
   max-width: 100%;
