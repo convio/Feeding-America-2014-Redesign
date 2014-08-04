@@ -128,7 +128,7 @@
         </t:if>
         <div class="footer-promo">
           <t:if test="thumb.length > 0"><t:list id="thumb"><img src="${url}" alt="${alt_text}" /></t:list></t:if>
-          <div class="promo-title">${title}</div>
+          <t:if test="!isNull(headline)"><div class="promo-title">${headline}</div></t:if>
           <t:if test="!isNull(description)"><div class="promo-text">${description}</div></t:if>
 
           <t:if test="!isNull(action_button_label) && !isNull(action_button_url)"><div class="promo-action"><a class="${buttonClasses}" href="${action_button_url}">${action_button_label}</a></div></t:if>
