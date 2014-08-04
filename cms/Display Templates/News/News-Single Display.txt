@@ -58,8 +58,12 @@
       <!-- social share utilities -->
       <t:include id="item-541309505" />
 
-      <!-- Search News -->
+      <!-- Search News - Blogs Only -->
+     <t:list id="news_type">
+     <t:if test="name =='our-perspective-post'">
       <t:include id="item-536428902"/>
+      </t:if>
+      </t:list>
 
       <!-- Related content -->
       <t:if test="related_content.length > 0">

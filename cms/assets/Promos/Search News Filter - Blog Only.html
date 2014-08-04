@@ -1,0 +1,51 @@
+<link rel="stylesheet" href="/assets/js/pickadate/lib/themes/default.css">
+<link rel="stylesheet" href="/assets/js/pickadate/lib/themes/default-date.css">
+<link rel="stylesheet" href="/assets/js/pickadate/lib/themes/default-fa.css">
+
+<div class="sidebar-promo-box">
+	<div id="sidebarpromosearch" class="sidebar-promo search lightgray border">
+	  <div class="by-keyword">
+		<span class="big">Search News</span>		
+		<form class="keyword-search-form" action="/search/search.jsp" method="get">
+        <input type="hidden" name="typeID" value="530509890">
+		  <div><input type="text" name="query" placeholder="by Keyword" /></div>
+		  <button type="submit" class="red">GO</button>
+		</form><!--/.keyword-search-form-->
+	  </div><!--/.by-keyword-->
+	  <div class="filter-by">
+		<span class="big">or Filter by</span>
+		<form class="filter-search-form" action="/hunger-in-america/news-and-updates/new-list.html" method="get">
+		  <label for="sidebar-filter-all-topics">
+			<input type="checkbox" name="secondary_tags" value="" id="sidebar-filter-all-topics" checked="checked" />
+			<span>All Topics</span>
+		  </label>
+          <t:data name="blog_topics" class="categories" parent="/blog-topic" /> 
+		  <t:list id="blog_topics">
+		  <label for="sidebar-filter-${name}">
+			<input type="checkbox" name="blog_topics" value="${name}" id="sidebar-filter-${name}" />
+			<span>${label}</span>
+		  </label>
+          </t:list>
+
+		  <div id="sidebar-filter-dates">
+                        <input type="hidden" value="news_date" name="dateType">
+			<input type="text" id="sidebar-filter-date-from" name="startDate" class="js__datepicker" placeholder="From" />
+			<input type="text" id="sidebar-sidebar-filter-date-to-date-from" name="endDate" class="js__datepicker" placeholder="To" />
+		  </div><!--/#sidebar-filter-dates-->
+		  <button type="submit" class="red">GO</button>
+		</form><!--/.filter-search-form-->
+	  </div><!--/.filter-by-->                  
+	</div><!--/#sidebarpromosearch.sidebar-promo-->
+ </div>
+  
+<script src="/assets/js/pickadate/lib/picker.js"></script>
+<script src="/assets/js/pickadate/lib/picker-date.js"></script>
+
+<script>
+$( '.js__datepicker' ).pickadate({
+    // Work-around for some mobile browsers clipping off the picker.
+    onOpen: function() { $('pre').css('overflow', 'hidden') },
+    onClose: function() { $('pre').css('overflow', '') },
+    format: 'mm/dd/yyyy'
+})
+</script>
