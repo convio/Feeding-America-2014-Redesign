@@ -165,7 +165,7 @@
     <t:set id="footerBgImg" value="concat(footerBgImg, ') 50% 0 repeat;')" />
   </t:list>
 </t:if>
-<div id="footer_promos" style="${footerBgImg}">
+<div id="footer_promos" class="hidden-phone" style="${footerBgImg}">
   <div class="container">
     <div class="headline">How You Can Help Feeding America Solve Hunger</div>
       <div id="footer_promo_boxes">

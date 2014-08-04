@@ -1,5 +1,7 @@
+<t:if test="title != 'Search Results'">
 <div class="two-column">
   <div class="container">
+</t:if>
     <div class="column-1">
       <div id="page-title">
         <h1 class="page-title">${title}</h1>
@@ -9,6 +11,7 @@
         <t:if test="!isNull(description)"><p>${description}</p></t:if>
       </div><!--/#page-description--></t:if>
       <div id="body-content">
+        <t:if test="thumb.length > 0"><t:list id="thumb"><img src="${url}" alt="${alt_text}" class="image-right" /></t:list></t:if>
         ${body}
         </div><!--/#body-content -->
 
@@ -25,16 +28,17 @@
           </div><!-- /.secondary-promos -->
         </div><!-- /.promos-->
       </t:else>
-      
+
       <t:if test="related_content.length>0">
             <t:include id="templatelist-544719480"/>
-      </t:if> 
+      </t:if>
       <t:else>
+      <t:if test="title != 'Search Results'">
           <h2>Related Content</h2>
           <div class="body-content-related-content">
           <t:list id="primary_tags">
               <t:set id="primaryTag"  value="name" />
-           </t:list>  
+           </t:list>
             <script type="text/javascript">
               //go to /assets/promos/wrpr/blended-list-for-related.html & get a top 3 sorted items.
 
@@ -49,11 +53,10 @@
 
             </script>
           </div><!-- /.related content-->
+      </t:if>
       </t:else>
-
     </div><!--/.column-1-->
     <div class="column-2">
-
       <!-- social share utilities -->
       <t:include id="item-541309505" />
 
@@ -152,7 +155,7 @@
     <t:set id="footerBgImg" value="concat(footerBgImg, ') 50% 0 repeat;')" />
   </t:list>
 </t:if>
-<div id="footer_promos" style="${footerBgImg}">
+<div id="footer_promos" class="hidden-phone" style="${footerBgImg}">
   <div class="container">
     <div class="headline">How You Can Help Feeding America Solve Hunger</div>
       <div id="footer_promo_boxes">
