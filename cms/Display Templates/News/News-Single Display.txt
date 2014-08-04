@@ -101,9 +101,18 @@
           <t:if test="thumb.length > 0">
             <t:set id="classes" value="'icon'" />
           </t:if>
+
+          <t:set id="colorClass" value="'transparent'" />
           <t:if test="promo_background_color.length > 0"><t:list id="promo_background_color">
-            <t:set id="classes" value="concat(concat(classes, ' '), name)" />
+            <t:if test="matches(name, '.*wheatstalk.*')">
+              <t:set id="colorClass" value="replace(name, '-', ' ')" />
+            </t:if>
+            <t:else>
+              <t:set id="colorClass" value="name" />
+            </t:else>
           </t:list></t:if>
+
+          <t:set id="classes" value="concat(concat(classes, ' '), colorClass)" />
 
           <t:set id="buttonClasses" value="'button'" />
           <t:if test="action_button_color.length > 0 || action_button_style.length > 0">

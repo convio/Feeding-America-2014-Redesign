@@ -10,7 +10,7 @@
       <div id="body-content">
         <t:if test="thumb.length > 0"><t:list id="thumb"><img src="${url}" alt="${alt_text}" class="image-right" /></t:list></t:if>
         <div class="date"><t:value id="news_date" format="5" /></div>
-        ${body} 
+        ${body}
         <t:if test="display_fa_pr_footer_text.length>0"><t:list id="display_fa_pr_footer_text"><t:if test="name == 'yes'"><t:include id="item-545040006"/></t:if></t:list></t:if>
         <t:if test="!isNull(press_release_partner_footer)">${press_release_partner_footer}</t:if>
           <t:if test="author_profile.length > 0 || !isNull(author_name)">
@@ -20,7 +20,7 @@
 
        <t:if test="related_content.length>0">
        <t:include id="templatelist-545042884"/>
-       </t:if> 
+       </t:if>
       <t:else>
          <div class="promos">
           <!-- news related to the page by news type & tags-->
@@ -75,10 +75,18 @@
           <t:if test="thumb.length > 0">
             <t:set id="classes" value="'icon'" />
           </t:if>
+
+          <t:set id="colorClass" value="'transparent'" />
           <t:if test="promo_background_color.length > 0"><t:list id="promo_background_color">
-            <t:set id="classes" value="concat(concat(classes, ' '), name)" />
+            <t:if test="matches(name, '.*wheatstalk.*')">
+              <t:set id="colorClass" value="replace(name, '-', ' ')" />
+            </t:if>
+            <t:else>
+              <t:set id="colorClass" value="name" />
+            </t:else>
           </t:list></t:if>
 
+          <t:set id="classes" value="concat(concat(classes, ' '), colorClass)" />
           <t:set id="buttonClasses" value="'button'" />
           <t:if test="action_button_color.length > 0 || action_button_style.length > 0">
             <t:if test="action_button_style.length > 0">
