@@ -2411,7 +2411,6 @@ body.expand-news #recent_news_boxes .recent_news_item img {
 
 /* Five Steps extra area */
 #homepage_fivesteps {
-  background-color: #53682b;
   text-align: center;
   padding: 50px 0px;
 }
@@ -2419,7 +2418,6 @@ body.expand-news #recent_news_boxes .recent_news_item img {
   padding: 0px;
 }
 #homepage_fivesteps .headline {
-  color: #ffffff;
   font-weight: 500;
   font-size: 40px;
   margin-bottom: 40px;
@@ -2435,7 +2433,6 @@ body.expand-news #recent_news_boxes .recent_news_item img {
   border-right: 1px solid #758655;
   padding: 0px 20px;
   line-height: 20px;
-  color: #ffffff;
   font-weight: lighter
 }
 #homepage_fivesteps_boxes .homepage_fivesteps_step:first-child {

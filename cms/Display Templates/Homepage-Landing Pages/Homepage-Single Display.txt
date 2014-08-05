@@ -54,101 +54,38 @@
 </div>
 </div>
 </div>
+
 <div id="recent_news">
-<div class="container">
-<div class="headline">Recent News</div>
-<div id="recent_news_boxes">
-<t:if test="latest_news.length>0">
-<t:list id="latest_news">
-<a class="recent_news_item" href="${url}"> <img alt="${title}" border="0" src="${thumb.url}" />
-<div class="news_preview"><span>${title}</span></div>
-<!--/.news_preview-->
-<div class="news_expanded"><span>${title}</span>
-<t:if test="!isNull(description)"><p>${description}</p></t:if>
-<p><span class="link">Learn more</span></p>
-</div>
-</t:list>
-</t:if>
-<div class="clearfix"></div>
-</div>
-<!--/#recent_news_boxes-->
-<div id="recent_read_more"><a href="http://fa.pub30.convio.net/hunger-in-america/news-and-updates/">Read More News &rsaquo;</a></div>
-</div>
-<!--/.container--></div>
-<!--/#recent_news-->
+    <div class="container">
+        <div class="headline">Recent News</div>
+        <div id="recent_news_boxes">
+            <t:if test="latest_news.length>0">
+                <t:list id="latest_news">
+                    <a class="recent_news_item" href="${url}">
+                        <img alt="${title}" border="0" src="${thumb.url}" />
+                        <div class="news_preview"><span>${title}</span></div>
+                        <!--/.news_preview-->
+                        <div class="news_expanded"><span>${title}</span>
+                            <t:if test="!isNull(description)"><p>${description}</p></t:if>
+                            <p><span class="link">Learn more</span></p>
+                        </div>
+                    </a>
+                </t:list>
+            </t:if>
+        <div class="clearfix"></div>
+        </div>
+        <!--/#recent_news_boxes-->
+        <div id="recent_read_more"><a href="http://fa.pub30.convio.net/hunger-in-america/news-and-updates/">Read More News &rsaquo;</a></div>
+    </div><!--/.container-->
+</div><!--/#recent_news-->
 
 <!-- Homepage Email Promos -->
 <t:include id="item-545524792" />
 
-<div id="homepage_fivesteps">
-<div class="container">
-<div class="headline">How We're Ending Hunger.</div>
-<div id="homepage_fivesteps_boxes">
-<div class="homepage_fivesteps_step">
-<div class="fivesteps_1"></div>
-<div class="fivesteps_text">
-<p><strong>Your gift is the critical first step</strong> in feeding millions of Americans at risk of hunger.</p>
-</div>
-</div>
-<!--/.homepage_fivesteps_step-->
-<div class="homepage_fivesteps_step">
-<div class="fivesteps_2"></div>
-<div class="fivesteps_text">
-<p><strong>We build partnerships with</strong></p>
-<ul>
-<li>Growers</li>
-<li>Processors</li>
-<li>Retailers</li>
-<li>Manufacturers</li>
-<li>Wholesalers</li>
-</ul>
-<p>and encourage them to donate groceries that might otherwise go to waste.</p>
-</div>
-</div>
-<!--/.homepage_fivesteps_step-->
-<div class="homepage_fivesteps_step">
-<div class="fivesteps_3"></div>
-<div class="fivesteps_text">
-<p><strong>Our network moves the food</strong> making sure donated food and groceries go where they are needed most.</p>
-</div>
-</div>
-<!--/.homepage_fivesteps_step-->
-<div class="homepage_fivesteps_step">
-<div class="fivesteps_4"></div>
-<div class="fivesteps_text">
-<p><strong>Network food banks</strong> ensure safe storage and distribute the groceries to local charities.</p>
-</div>
-</div>
-<!--/.homepage_fivesteps_step-->
-<div class="homepage_fivesteps_step">
-<div class="fivesteps_5"></div>
-<div class="fivesteps_text">
-<p><strong>Food reachers people facing hunger at</strong></p>
-<ul>
-<li>Food pantries</li>
-<li>Soup kitchens</li>
-<li>Senior centers</li>
-<li>Homeless shelters</li>
-<li>Youth programs</li>
-<li>After-school programs</li>
-</ul>
-</div>
-</div>
-<!--/.homepage_fivesteps_step--></div>
-<!--/#homepage_fivesteps_boxes-->
-<div id="homepage_fivesteps_buttons"><a href="#" id="homepage_fivesteps_find_out_more">Find Out More</a>
-<div id="homepage_fivesteps_share_this"><span class="link">Share This</span>
-<ul class="social_icons addthis_toolbox" addthis:url="THE URL" addthis:title="THE TITLE">
-<li class="fbk"><a class="addthis_button_facebook" title="Facebook">facebook</a></li>
-<li class="twt"><a class="addthis_button_twitter" title="Twitter">twitter</a></li>
-<li class="pin"><a class="addthis_button_pinterest" title="Pinterest">pinterest</a></li>
-<li class="more"><a class="addthis_button_compact" title="More">more</a></li>
-</ul>
-</div>
-</div>
-</div>
-<!--/.container--></div>
-<!--/#homepage_fivesteps-->
+<!-- Homepage How we are ending hunger -->
+<t:include id="item-546406708" />
+
+
 <div id="homepage_ourpartners_stayconnected">
 <div class="container">
 <div class="left">

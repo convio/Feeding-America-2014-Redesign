@@ -28,16 +28,22 @@
   </t:if>
 
   <t:if test="showComments"><!-- set conditionals for Act/Share based on member record --></t:if>
-  <t:if test="user.isanonymous == false">
-    <t:set id="actConditionalCategory1" value="'logged-in'" />
-      <t:set id="alertList" value="crm('[[S96:region:allalerts:numLinks:999999:issue:-1:desc:no:date:no:stats:statistics:tafLink:title:sortBy:action:listStyle:number]]')" />
-      <t:set id="alertList" value="trim(toText(alertList, 'a'))" />
-      <t:if test="!isNull(alertList)">
-        <t:set id="actConditionalCategory2" value="'took-action'" />
-      </t:if>
-      <t:else>
-        <t:set id="actConditionalCategory2" value="'did-not-take-action'" />
-      </t:else>
+  <t:if test="user.isanonymous == false && cons.email.accepts_email == true">
+    <t:set id="actConditionalCategory1" value="'signed-up-for-email'" />
+
+    <t:if test="isGroupMember('96601')">
+      <t:set id="actConditionalCategory2" value="'in-group-96601-pledge'" />
+    </t:if>
+    <t:else>
+      <t:set id="actConditionalCategory2" value="'not-in-group-96601-pledge'" />
+    </t:else>
+
+    <t:if test="isGroupMember('80921')">
+      <t:set id="actConditionalCategory3" value="'in-group-80921-action'" />
+    </t:if>
+    <t:else>
+      <t:set id="actConditionalCategory3" value="'not-in-group-80921-action'" />
+    </t:else>
   </t:if>
 
   <t:if test="showComments"><!-- set conditionals for Give/Thanks based on member record--></t:if>

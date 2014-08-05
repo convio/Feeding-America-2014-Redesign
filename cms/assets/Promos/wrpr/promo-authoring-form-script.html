@@ -39,15 +39,16 @@
 
     $.fn.extend({
       setTemplate: function(templateName) {
-        var $option = $(this).find('option').filter(function() {
+        var $options = $(this).find('option');
+        var $option = $options.filter(function() {
           if($(this).text() == templateName) {
             return this;
           }
         });
+        $options.removeAttr('selected');
         $option.attr('selected', 'selected');
       }
     });
-
 
     var hiddenDefaults = jQuery([$promoHeadline, $promoDescription, $promoConditionalGroup, $promoSection, $promoGlobal, $promoStructuredInstructions, $promoImage, $promoMobileImage, $promoBannerStyle, $promoBackgroundImage, $promoBackgroundColor, $promoButtonColor, $promoButtonStyle, $promoButtonLabel, $promoLink, $promoBodyInstructions, $footerPromoInstructions, $sidebarPromosInstructions, $bannerPromoInstructions, $inlinePromoInstructions, $interrupterPromoInstructions, $urgentBannerPromoInstructions, $homeEmailPromoInstructions, $homeFactoidsPromoInstructions]);
 
