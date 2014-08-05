@@ -16,17 +16,17 @@
         </t:if></t:else>
         <t:if test="thumb.length > 0"><t:list id="thumb"><img src="${url}" alt="${alt_text}" class="image-right" /></t:list></t:if>
 
-<t:if test="!isNull(date)">
-<t:set id="skipdate" value="false" />
-<t:list id="news_type">
-<t:if test="name == 'current_partner_promotion'">
-<t:set id="skipdate" value="true" />
-</t:if>
-</t:list>
-<t:if test="skipdate == 'false'">
-        <div class="date"><t:value id="news_date" format="5" /></div>
-</t:if>
-</t:if>
+        <t:if test="!isNull(date)">
+          <t:set id="skipdate" value="false" />
+        <t:list id="news_type">
+          <t:if test="name == 'current_partner_promotion'">
+            <t:set id="skipdate" value="true" />
+          </t:if>
+        </t:list>
+        <t:if test="skipdate == 'false'">
+          <div class="date"><t:value id="news_date" format="5" /></div>
+        </t:if>
+        </t:if>
 
         <t:if test="author_profile.length > 0 || !isNull(author_name)">
           <t:if test="author_profile.length > 0"><div class="author"><t:list id="author_profile">${title}</t:list></div></t:if>
@@ -70,12 +70,65 @@
       <!-- social share utilities -->
       <t:include id="item-541309505" />
 
-      <!-- Search News - Blogs Only -->
+<!-- Search Box --> 
+<link rel="stylesheet" href="/assets/js/pickadate/lib/themes/default.css">
+<link rel="stylesheet" href="/assets/js/pickadate/lib/themes/default-date.css">
+<link rel="stylesheet" href="/assets/js/pickadate/lib/themes/default-fa.css">
+
+<div class="sidebar-promo-box">
+	<div id="sidebarpromosearch" class="sidebar-promo search lightgray border">
+	  <div class="by-keyword">
+		<span class="big">Search News</span>		
+		<form class="keyword-search-form" action="/search/search.jsp" method="get">
+        <input type="hidden" name="typeID" value="530509890">
+		  <div><input type="text" name="query" placeholder="by Keyword" /></div>
+		  <button type="submit" class="red">GO</button>
+		</form><!--/.keyword-search-form-->
+	  </div><!--/.by-keyword-->
+	  <div class="filter-by">
+		<span class="big">or Filter by</span>
+		<form class="filter-search-form" action="/hunger-in-america/news-and-updates/" method="get">
      <t:list id="news_type">
+                <input type="hidden" name="mlnews_type" value="${name}"/>
      <t:if test="name =='our-perspective-post'">
-      <t:include id="item-536428902"/>
-      </t:if>
-      </t:list>
+		  <label for="sidebar-filter-all-topics">
+			<input type="checkbox" name="mlblog_topics" value="" id="sidebar-filter-all-topics" checked="checked" />
+			<span>All Topics</span>
+		  </label>
+          <t:data name="blog_topics" class="categories" parent="/blog-topic" /> 
+		  <t:list id="blog_topics">
+		  <label for="sidebar-filter-${name}">
+			<input type="checkbox" name="mlblog_topics" value="${name}" id="sidebar-filter-${name}" />
+			<span>${label}</span>
+		  </label>
+          </t:list>
+     </t:if>
+     </t:list>
+
+		  <div id="sidebar-filter-dates">
+                        <input type="hidden" value="news_date" name="mldateType">
+			<input type="text" id="sidebar-filter-date-from" name="mlstartDate" class="js__datepicker" placeholder="From" />
+			<input type="text" id="sidebar-sidebar-filter-date-to-date-from" name="mlendDate" class="js__datepicker" placeholder="To" />
+		  </div><!--/#sidebar-filter-dates-->
+		  <button type="submit" class="red">GO</button>
+		</form><!--/.filter-search-form-->
+	  </div><!--/.filter-by-->                  
+	</div><!--/#sidebarpromosearch.sidebar-promo-->
+ </div>
+  
+<script src="/assets/js/pickadate/lib/picker.js"></script>
+<script src="/assets/js/pickadate/lib/picker-date.js"></script>
+
+<script>
+$( '.js__datepicker' ).pickadate({
+    // Work-around for some mobile browsers clipping off the picker.
+    onOpen: function() { $('pre').css('overflow', 'hidden') },
+    onClose: function() { $('pre').css('overflow', '') },
+    format: 'mm/dd/yyyy'
+})
+</script>
+
+<!-- end Search box --> 
 
       <!-- Related content -->
       <t:if test="related_content.length > 0">
@@ -113,65 +166,58 @@
       <!-- Contextual Sidebar Promo -->
       <t:if test="sidebar_promos.length > 0">
         <t:list id="sidebar_promos">
-          <t:set id="classes" value="'standard'" />
-          <t:if test="thumb.length > 0">
-            <t:set id="classes" value="'icon'" />
-          </t:if>
-
-          <t:set id="colorClass" value="'transparent'" />
-          <t:if test="promo_background_color.length > 0"><t:list id="promo_background_color">
-            <t:if test="matches(name, '.*wheatstalk.*')">
-              <t:set id="colorClass" value="replace(name, '-', ' ')" />
+          <t:if test="filename != 'blank.html'">
+            <t:set id="classes" value="'standard'" />
+            <t:if test="thumb.length > 0">
+              <t:set id="classes" value="'icon'" />
             </t:if>
-            <t:else>
-              <t:set id="colorClass" value="name" />
-            </t:else>
-          </t:list></t:if>
+            <t:if test="promo_background_color.length > 0"><t:list id="promo_background_color">
+              <t:set id="classes" value="concat(concat(classes, ' '), name)" />
+            </t:list></t:if>
 
-          <t:set id="classes" value="concat(concat(classes, ' '), colorClass)" />
-
-          <t:set id="buttonClasses" value="'button'" />
-          <t:if test="action_button_color.length > 0 || action_button_style.length > 0">
-            <t:if test="action_button_style.length > 0">
-              <t:list id="action_button_style">
-                <t:set id="buttonClasses" value="name" />
+            <t:set id="buttonClasses" value="'button'" />
+            <t:if test="action_button_color.length > 0 || action_button_style.length > 0">
+              <t:if test="action_button_style.length > 0">
+                <t:list id="action_button_style">
+                  <t:set id="buttonClasses" value="name" />
+                </t:list>
+              </t:if>
+              <t:if test="action_button_color.length > 0">
+                <t:list id="action_button_color">
+                  <t:set id="buttonClasses" value="concat(concat(buttonClasses, ' '), name)" />
+                </t:list>
+              </t:if>
+            </t:if>
+            <t:set id="promoBgImg" value="''" />
+            <t:if test="background_image.length > 0">
+              <t:list id="background_image">
+                <t:set id="promoBgImg" value="concat('background: url(', url)" />
+                <t:set id="promoBgImg" value="concat(promoBgImg, ') 50% 0 repeat;')" />
               </t:list>
             </t:if>
-            <t:if test="action_button_color.length > 0">
-              <t:list id="action_button_color">
-                <t:set id="buttonClasses" value="concat(concat(buttonClasses, ' '), name)" />
-              </t:list>
-            </t:if>
-          </t:if>
-          <t:set id="promoBgImg" value="''" />
-          <t:if test="background_image.length > 0">
-            <t:list id="background_image">
-              <t:set id="promoBgImg" value="concat('background: url(', url)" />
-              <t:set id="promoBgImg" value="concat(promoBgImg, ') 50% 0 repeat;')" />
-            </t:list>
-          </t:if>
 
-          <div class="sidebar-promo-box promo">
-            <div class="sidebar-promo  ${classes}" style="${promoBgImg}">
-              <t:if test="thumb.length > 0">
-                <t:if test="!isNull(action_button_url) && isNull(action_button_label)"><a href="${action_button_url}"></t:if>
-                <t:list id="thumb"><img src="${url}" alt="${alt_text}" /></t:list>
-                <t:if test="!isNull(action_button_url) && isNull(action_button_label)"></a></t:if>
-              </t:if>
-              <t:if test="!isNull(headline)">
-                <t:if test="!isNull(action_button_url) && isNull(action_button_label)"><a href="${action_button_url}"></t:if>
-                <span class="small">${headline}</span>
-                <t:if test="!isNull(action_button_url) && isNull(action_button_label)"></a></t:if>
-              </t:if>
-              <t:if test="!isNull(description)">
-                <t:if test="!isNull(action_button_url) && isNull(action_button_label)"><a href="${action_button_url}"></t:if>
-                <span class="big">${description}</span>
-                <t:if test="!isNull(action_button_url) && isNull(action_button_label)"></a></t:if>
-              </t:if>
-              <t:if test="!isNull(body)">${body}</t:if>
-              <t:if test="!isNull(action_button_label) && !isNull(action_button_url)"><a class="${buttonClasses}" href="${action_button_url}">${action_button_label}</a></t:if>
-            </div><!-- /.sidebar-promo -->
-          </div><!-- /.sidebar-promo-box -->
+            <div class="sidebar-promo-box promo">
+              <div class="sidebar-promo  ${classes}" style="${promoBgImg}">
+                <t:if test="thumb.length > 0">
+                  <t:if test="!isNull(action_button_url) && isNull(action_button_label)"><a href="${action_button_url}"></t:if>
+                  <t:list id="thumb"><img src="${url}" alt="${alt_text}" /></t:list>
+                  <t:if test="!isNull(action_button_url) && isNull(action_button_label)"></a></t:if>
+                </t:if>
+                <t:if test="!isNull(headline)">
+                  <t:if test="!isNull(action_button_url) && isNull(action_button_label)"><a href="${action_button_url}"></t:if>
+                  <span class="small">${headline}</span>
+                  <t:if test="!isNull(action_button_url) && isNull(action_button_label)"></a></t:if>
+                </t:if>
+                <t:if test="!isNull(description)">
+                  <t:if test="!isNull(action_button_url) && isNull(action_button_label)"><a href="${action_button_url}"></t:if>
+                  <span class="big">${description}</span>
+                  <t:if test="!isNull(action_button_url) && isNull(action_button_label)"></a></t:if>
+                </t:if>
+                <t:if test="!isNull(body)">${body}</t:if>
+                <t:if test="!isNull(action_button_label) && !isNull(action_button_url)"><a class="${buttonClasses}" href="${action_button_url}">${action_button_label}</a></t:if>
+              </div><!-- /.sidebar-promo -->
+            </div><!-- /.sidebar-promo-box -->
+          </t:if>
         </t:list>
       </t:if>
       <t:else>
