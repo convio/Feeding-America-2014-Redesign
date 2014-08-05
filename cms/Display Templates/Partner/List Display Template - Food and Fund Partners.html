@@ -73,7 +73,7 @@
 <t:else>
 <t:if test="index == (randomOne) || index == (randomTwo) || index == (randomThree) || index == (randomFour)">
 <t:set id="displayedLength" value="displayedlength" />
-<a href="http://fa.pub30.convio.net/our-response/about-us/partners/food-and-fund-partners/" class="logo-box"><img <t:list id="thumb">src="${url}"</t:list> alt="${title}" border="0" /></a>
+<a href="http://fa.pub30.convio.net/our-response/about-us/partners/food-and-fund-partners/" class="logo-box"><t:if test="thumb.length > 0"><img <t:list id="thumb">src="${url}"</t:list> alt="${title}" border="0" /></t:if><t:else><span>${title}</span></t:else></a>
 </t:if>
 </t:else>
 </t:list>
