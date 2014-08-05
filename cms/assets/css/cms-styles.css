@@ -1980,7 +1980,7 @@ vertical-align: top;
 .partners-list-horizontal li.one, #body-content .partners-list-horizontal li.one {
   margin-left: 0px;
 }
-.partners-list-horizontal li > a, #body-content .partners-list-horizontal li > a {
+.partners-list-horizontal li > a, #body-content .partners-list-horizontal li > a, .partners-list-horizontal li > div.mission-supporting-logo-box, #body-content .partners-list-horizontal li > div.mission-supporting-logo-box {
   display: block;
   margin: 0px;
   padding: 10px;
@@ -1991,9 +1991,10 @@ vertical-align: top;
   background-color: #ffffff;
   border: 1px solid #dedede;
 }
-.partners-list-horizontal li > a span, #body-content .partners-list-horizontal li > a span {
+.partners-list-horizontal li > a span, #body-content .partners-list-horizontal li > a span, .partners-list-horizontal li > div.mission-supporting-logo-box span, #body-content .partners-list-horizontal li > div.mission-supporting-logo-box span {
   line-height: normal;
   vertical-align: middle;
+  display: inline-block;
 }
 .partners-list-horizontal li img, #body-content .partners-list-horizontal li img {
   max-height: 100%;
