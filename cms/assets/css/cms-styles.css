@@ -1515,6 +1515,15 @@ vertical-align: top;
   border: 1px solid #ffffff;
   background-color: #ffffff;
   overflow: hidden;
+  color: #e98300;
+}
+.logo-boxes a.logo-box:hover {
+  color: #333333;
+}
+.logo-boxes a.logo-box span {
+  line-height: normal;
+  display: inline-block;
+  vertical-align: middle;
 }
 .logo-boxes a.logo-box:first-child {
   margin-left: 0px;
