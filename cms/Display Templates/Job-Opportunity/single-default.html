@@ -1,72 +1,75 @@
+<t:if test="title != 'Search Results'">
 <div class="two-column">
   <div class="container">
+</t:if>
     <div class="column-1">
       <div id="page-title">
-        <h1 class="page-title">${title}</h1>
+        <h1 class="page-title">Job Details</h1>
       </div><!--/#page-title-->
-      <t:if test="!isNull(subtitle)"><div id="page-description">
-        <p>${subtitle}</p>
-      </div></t:if><!--/#page-description-->
+      <t:if test="!isNull(description)"> <!-- <div id="page-description"><p>${description}</p></div> --> <!--/#page-description--></t:if>
       <div id="body-content">
-        <t:if test="thumb.length > 0"><t:list id="thumb"><img src="${url}" alt="${alt_text}" class="image-right" /></t:list></t:if>
-        <div class="date"><t:value id="news_date" format="5" /></div>
+<table>
+<tbody>
+<tr>
+<td><strong>Food Bank Name</strong></td>
+<td><a href="${food_bank.url}" target="_blank">${food_bank.title}</a><br />${city}, <t:list id="state">${name}</t:list></td>
+</tr>
+<tr>
+<td><strong>Post Date</strong></td>
+<td><t:value id="post_date" format="5" /></td>
+</tr>
+<tr>
+<td><strong>Job Title</strong></td>
+<td>${title}</td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>${description}</td>
+</tr>
+<tr>
+<td><strong>Opportunity Type</strong></td>
+<td>${opportunity_type}</td>
+</tr>
+<tr>
+<td><strong>Job Responsibilities</strong></td>
+<td>${job_responsibilities}</td>
+</tr>
+<tr>
+<td><strong>Application Qualifications</strong></td>
+<td>${application_qualifications}</td>
+</tr>
+<tr>
+<td><strong>Deadline</strong></td>
+<td><t:value id="deadline" format="5" /></td>
+</tr>
+<tr>
+<td><strong>How to Apply</strong></td>
+<td>${how_to_apply}</td>
+</tr>
+<tr>
+<td><strong>About the Organization</strong></td>
+<td>${about_the_organization}</td>
+</tr>
+<tr>
+<td><strong>Additional Information</strong></td>
+<td>${additional_information}</td>
+</tr>
+</tbody>
+</table>
+
         ${body}
-        <t:if test="display_fa_pr_footer_text.length>0"><t:list id="display_fa_pr_footer_text"><t:if test="name == 'yes'"><t:include id="item-545040006"/></t:if></t:list></t:if>
-        <t:if test="!isNull(press_release_partner_footer)">${press_release_partner_footer}</t:if>
-          <t:if test="author_profile.length > 0 || !isNull(author_name)">
-          <t:if test="author_profile.length > 0"><div class="author"><t:list id="author_profile">${title}<t:if test="!isNull(phone)">, ${phone}</t:if></t:list></div></t:if>
-          <t:else><t:if test="!isNull(author_name)"><div class="author">${author_name}</div></t:if></t:else>
-        </t:if>
+        </div><!--/#body-content -->
 
-       <t:if test="related_content.length>0">
-       <t:include id="templatelist-545042884"/>
-       </t:if>
-      <t:else>
-         <div class="promos">
-          <!-- news related to the page by news type & tags-->
-          <div class="primary-promos">
-            <t:include id="templatelist-541315370" />
-          </div><!-- /.primary-promos -->
-          <!-- general content -->
-          <div class="secondary-promos related-content">
-            <t:list id="primary_tags">
-              <t:set id="primaryTag"  value="name" />
-            </t:list>
-            <script type="text/javascript">
-              //go to /assets/promos/wrpr/blended-list-for-related.html & get a top 3 sorted items.
 
-              $(document).ready(function() {
-                var category = '${primaryTag}';
-                var $promos = $('.secondary-promos.related-content');
-
-                if($promos.length > 0){
-                  $promos.getRelatedContent('item-${itemid}', category, 'news', 'body-content');
-                }
-              });
-
-            </script>
-          </div><!-- /.secondary-promos -->
-        </div><!-- .promos -->
-     </t:else>
-      </div><!--/#body-content -->
-      <t:if test="inline_promo.length > 0"><t:include id="item-540519669" /></t:if>
-      <t:else>
-        <div class="promos">
-          <!-- global promos-->
-          <div class="primary-promos">
-            <t:include id="templatelist-541303840" />
-          </div><!--/.primary-promos -->
-          <!-- dynamic section based -->
-          <div class="secondary-promos">
-            <t:include id="templatelist-541304220" />
-          </div><!-- /.secondary-promos -->
-        </div><!-- /.promos-->
-      </t:else>
 
     </div><!--/.column-1-->
     <div class="column-2">
       <!-- social share utilities -->
       <t:include id="item-541309505" />
+
+      <!-- Section Navigation -->
+      <div class="templateComponent" id="sectionNavigation-534789806"></div>
+
 
       <!-- Contextual Sidebar Promo -->
       <t:if test="sidebar_promos.length > 0">
@@ -145,12 +148,14 @@
         <!-- second sidebar promos item is at /assets/promos/wrpr/ -->
         <t:include id="item-542536092" />
 
-      </t:else>
 
     </div><!--/.column-2-->
     <div class="clearfix"></div>
   </div><!--/.container-->
 </div><!--/.two-column-->
+
+
+
 
 <t:set id="footerBgImg" value="''" />
 <t:if test="footer_bg.length > 0">
@@ -159,7 +164,7 @@
     <t:set id="footerBgImg" value="concat(footerBgImg, ') 50% 0 repeat;')" />
   </t:list>
 </t:if>
-<div id="footer_promos" class="hidden-phone" style="${footerBgImg}">
+<div id="footer_promos" style="${footerBgImg}">
   <div class="container">
     <div class="headline">How You Can Help Feeding America Solve Hunger</div>
       <div id="footer_promo_boxes">
@@ -181,7 +186,7 @@
         </t:if>
         <div class="footer-promo">
           <t:if test="thumb.length > 0"><t:list id="thumb"><img src="${url}" alt="${alt_text}" /></t:list></t:if>
-          <t:if test="!isNull(headline)"><div class="promo-title">${headline}</div></t:if>
+          <div class="promo-title">${title}</div>
           <t:if test="!isNull(description)"><div class="promo-text">${description}</div></t:if>
 
           <t:if test="!isNull(action_button_label) && !isNull(action_button_url)"><div class="promo-action"><a class="${buttonClasses}" href="${action_button_url}">${action_button_label}</a></div></t:if>

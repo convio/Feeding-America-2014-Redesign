@@ -4,25 +4,73 @@
       <div id="page-title">
         <h1 class="page-title">${title}</h1>
       </div><!--/#page-title-->
-      <t:if test="!isNull(subtitle)"><div id="page-description">
-        <p>${subtitle}</p>
-      </div></t:if><!--/#page-description-->
-      <div id="body-content">
-        <t:if test="thumb.length > 0"><t:list id="thumb"><img src="${url}" alt="${alt_text}" class="image-right" /></t:list></t:if>
-        <div class="date"><t:value id="news_date" format="5" /></div>
-        ${body}
-        <t:if test="display_fa_pr_footer_text.length>0"><t:list id="display_fa_pr_footer_text"><t:if test="name == 'yes'"><t:include id="item-545040006"/></t:if></t:list></t:if>
-        <t:if test="!isNull(press_release_partner_footer)">${press_release_partner_footer}</t:if>
-          <t:if test="author_profile.length > 0 || !isNull(author_name)">
-          <t:if test="author_profile.length > 0"><div class="author"><t:list id="author_profile">${title}<t:if test="!isNull(phone)">, ${phone}</t:if></t:list></div></t:if>
-          <t:else><t:if test="!isNull(author_name)"><div class="author">${author_name}</div></t:if></t:else>
-        </t:if>
 
-       <t:if test="related_content.length>0">
-       <t:include id="templatelist-545042884"/>
-       </t:if>
+      <t:if test="!isNull(description) || !isNull(subtitle)"><div id="page-description">
+        <t:if test="!isNull(subtitle)"><p><strong>${subtitle}</strong></p></t:if>
+        <t:if test="!isNull(description)"><p>${description}</p></t:if>
+      </div><!--/#page-description--></t:if>
+
+      <div id="body-content">
+        <t:set id="videoid" value="replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(video_url,'http://',''),'https://',''),'watch',''),'embed',''),'www.',''),'youtube.com',''),'youtu.be',''),'v=',''),'?',''),'&',''),'/','')" />
+        <div class="video-container"><iframe src="//www.youtube.com/embed/${videoid}?html5=1&controls=0&autohide=1&showinfo=0&enablejsapi=1" frameborder="0" allowfullscreen="" id="story-${itemID}-video"></iframe></div>
+        ${body}
+        </div><!--/#body-content -->
+
+      <t:if test="inline_promo.length > 0"><t:include id="item-540519669" /></t:if>
       <t:else>
-         <div class="promos">
+        <div class="promos">
+          <!-- global promos-->
+          <div class="primary-promos">
+            <t:include id="templatelist-541303840" />
+          </div><!--/.primary-promos -->
+          <!-- dynamic section based -->
+          <div class="secondary-promos">
+            <t:include id="templatelist-541304220" />
+          </div><!-- /.secondary-promos -->
+        </div><!-- /.promos-->
+      </t:else>
+
+    </div><!--/.column-1-->
+    <div class="column-2">
+
+      <!-- social share utilities -->
+      <t:include id="item-541309505" />
+
+      <!-- Search Videos -->
+      <t:include id="item-544967022"/>
+
+      <!-- Related content -->
+      <t:if test="related_content.length > 0">
+        <div class="secondary-promos related-content" style="display: block;"><div class="sidebar-promo-box promo">
+          <div class="sidebar-promo related-content list-items-container">
+            <h6>Related Content</h6>
+            <div class="list-items"><t:list id="related_content"><div class="list-item" id="item-${itemID}">
+
+            <t:if test="thumb.length > 0"><div class="list-item-thumbnail"><a href="${url}"><t:list id="thumb"><t:if test="crop_focus.length>0"><img border="0" alt="${alt_text}" src="${url}" class="crop-${crop_focus}" /></t:if><t:else><img border="0" alt="${alt_text}" src="${url}" /></t:else></t:list><t:if test="type == 'Video'"><t:if test="!isNull(video_url)"><img src="http://fa.pub30.convio.net/assets/images/play_button.png" class="play-button" alt="Play Video" border="0" /></t:if></t:if></a></div></t:if>
+            <t:else>
+              <t:if test="type == 'Video' || type == 'Client Story'">
+                <t:if test="!isNull(video_url)">
+                  <t:set id="videoid" value="replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(video_url,'http://',''),'https://',''),'watch',''),'embed',''),'www.',''),'youtube.com',''),'youtu.be',''),'v=',''),'?',''),'&',''),'/','')" />
+                  <div class="list-item-thumbnail"><a href="${url}"><img src="https://img.youtube.com/vi/${videoid}/mqdefault.jpg" alt="${title} - Video" border="0" class="crop-Left" /><img src="http://fa.pub30.convio.net/assets/images/play_button.png" class="play-button" alt="Play Video" border="0" /></a></div>
+                </t:if>
+              </t:if>
+            </t:else>
+
+
+
+            <div class="list-item-text">
+              <div class="list-item-title"><a href="${url}">${title}</a></div>
+              <div class="list-item-description" style="display:none;">${description}</div>
+            </div><!--/.list-item-text-->
+            <span class="date" style="display: none"><t:if test="type == 'Video'"><t:value id="video_date" type="date" format="yyyyMMdd" /></t:if><t:else><t:if test="type == 'News'"><t:value id="news_date" type="date" format="yyyyMMdd" /></t:if><t:else><t:value id="lastpublicationdate" type="date" format="yyyyMMdd" /></t:else></t:else></span>
+            <div class="clearfix"></div>
+          </div><!--/.list-item--></t:list></div>
+          </div>
+        </div></div>
+      </t:if>
+      <t:else>
+        <!-- section based related content -->
+        <div class="promos">
           <!-- news related to the page by news type & tags-->
           <div class="primary-promos">
             <t:include id="templatelist-541315370" />
@@ -40,33 +88,15 @@
                 var $promos = $('.secondary-promos.related-content');
 
                 if($promos.length > 0){
-                  $promos.getRelatedContent('item-${itemid}', category, 'news', 'body-content');
+                  $promos.getRelatedContent('item-${itemid}', category, 'news');
                 }
               });
 
             </script>
           </div><!-- /.secondary-promos -->
         </div><!-- .promos -->
-     </t:else>
-      </div><!--/#body-content -->
-      <t:if test="inline_promo.length > 0"><t:include id="item-540519669" /></t:if>
-      <t:else>
-        <div class="promos">
-          <!-- global promos-->
-          <div class="primary-promos">
-            <t:include id="templatelist-541303840" />
-          </div><!--/.primary-promos -->
-          <!-- dynamic section based -->
-          <div class="secondary-promos">
-            <t:include id="templatelist-541304220" />
-          </div><!-- /.secondary-promos -->
-        </div><!-- /.promos-->
       </t:else>
 
-    </div><!--/.column-1-->
-    <div class="column-2">
-      <!-- social share utilities -->
-      <t:include id="item-541309505" />
 
       <!-- Contextual Sidebar Promo -->
       <t:if test="sidebar_promos.length > 0">
@@ -141,16 +171,17 @@
 
         </div><!-- /.promos -->
 
-
         <!-- second sidebar promos item is at /assets/promos/wrpr/ -->
         <t:include id="item-542536092" />
 
-      </t:else>
 
     </div><!--/.column-2-->
     <div class="clearfix"></div>
   </div><!--/.container-->
 </div><!--/.two-column-->
+
+
+
 
 <t:set id="footerBgImg" value="''" />
 <t:if test="footer_bg.length > 0">
@@ -159,7 +190,7 @@
     <t:set id="footerBgImg" value="concat(footerBgImg, ') 50% 0 repeat;')" />
   </t:list>
 </t:if>
-<div id="footer_promos" class="hidden-phone" style="${footerBgImg}">
+<div id="footer_promos" style="${footerBgImg}">
   <div class="container">
     <div class="headline">How You Can Help Feeding America Solve Hunger</div>
       <div id="footer_promo_boxes">
@@ -181,7 +212,7 @@
         </t:if>
         <div class="footer-promo">
           <t:if test="thumb.length > 0"><t:list id="thumb"><img src="${url}" alt="${alt_text}" /></t:list></t:if>
-          <t:if test="!isNull(headline)"><div class="promo-title">${headline}</div></t:if>
+          <div class="promo-title">${title}</div>
           <t:if test="!isNull(description)"><div class="promo-text">${description}</div></t:if>
 
           <t:if test="!isNull(action_button_label) && !isNull(action_button_url)"><div class="promo-action"><a class="${buttonClasses}" href="${action_button_url}">${action_button_label}</a></div></t:if>

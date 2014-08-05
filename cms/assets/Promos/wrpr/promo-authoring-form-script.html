@@ -1,3 +1,4 @@
+<script src="https://raw.githubusercontent.com/ractoon/jQuery-Text-Counter/master/textcounter.min.js"></script>
 <script type="text/javascript">
   jQuery(document).ready(function($) {
 
@@ -36,6 +37,13 @@
     var $homeEmailPromoInstructions = $('.homeEmailPromoInstructions');
     var $homeFactoidsPromoInstructions = $('.homeFactoidsPromoInstructions');
     var $promoBodyInstructions = $('.promoBodyInstructions');
+
+    var $headline = $('#headline');
+    var $subtitle = $('#form-description');
+    var $buttonLabel = $('#action_button_label');
+
+    var $countedInputs = $([$headline, $subtitle, $buttonLabel]);
+    $countedInputs.textcounter({ type: 'character', 'counterText' : 'Characters Entered: ', });
 
     $.fn.extend({
       setTemplate: function(templateName) {

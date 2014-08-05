@@ -1,72 +1,95 @@
 <div class="two-column">
   <div class="container">
     <div class="column-1">
-      <div id="page-title">
-        <h1 class="page-title">${title}</h1>
+      <div id="page-title" class="partner">
+        <div class="profile-logo">
+          <t:if test="thumb.length > 0"><img <t:list id="thumb">src="${url}"</t:list> alt="${title}" border="0" /></t:if><t:else><h1 class="page-title">${title}</h1></t:else>
+        </div><!--/.profile-logo-->
+        <t:if test="matches(path,'.*/leadership-partners/.*')"><h1 class="page-title">Leadership Partner</h1></t:if><t:if test="matches(path,'.*/visionary-partners/.*')"><h1 class="page-title">Visionary Partner</h1></t:if><t:if test="matches(path,'.*/entertainment-council/.*')"><h1 class="page-title">${title}</h1></t:if>
       </div><!--/#page-title-->
-      <t:if test="!isNull(subtitle)"><div id="page-description">
-        <p>${subtitle}</p>
-      </div></t:if><!--/#page-description-->
+      <t:if test="!isNull(description)"><div id="page-description">
+        <p>${description}</p>
+      </div><!--/#page-description--></t:if>
+
+<t:if test="participation_type.length>0">
+      <div id="how-partner-helps">
+        <h2>How ${title} is Helping Us Solve Hunger</h2>
+        <div id="badges">
+<t:list id="participation_type">
+          <t:if test="name == 'philanthropy'"><div id="badge-philanthropy" class="badge">
+            <img src="http://fa.pub30.convio.net/assets/images/badge_philanthropy.png" alt="alttext" border="0" />
+            <div class="hover-text">Provides financial support to help solve hunger in America.<div class="close">X</div></div><!--/.hover-text-->
+          </div><!--/#badge-philanthropy.badge--></t:if><t:if test="name == 'cause-marketing'"><div id="badge-causemarketing" class="badge">
+            <img src="http://fa.pub30.convio.net/assets/images/badge_causemarketing.png" alt="alttext" border="0" />
+            <div class="hover-text">Provides marketing and financial support to engage the public in hunger-relief.<div class="close">X</div></div><!--/.hover-text-->
+          </div><!--/#badge-causemarketing.badge--></t:if><t:if test="name == 'in-kind-contributions'"><div id="badge-inkind" class="badge">
+            <img src="http://fa.pub30.convio.net/assets/images/badge_inkind.png" alt="alttext" border="0" />
+            <div class="hover-text">Donates valuable products or services in support of hunger-relief.<div class="close">X</div></div><!--/.hover-text-->
+          </div><!--/#badge-inkind.badge--></t:if><t:if test="name == 'employee-engagement'"><div id="badge-employeeengagement" class="badge">
+            <img src="http://fa.pub30.convio.net/assets/images/badge_employeeengagement.png" alt="alttext" border="0" />
+            <div class="hover-text">Employees volunteer or donate across the Feeding America nationwide network.<div class="close">X</div></div><!--/.hover-text-->
+          </div><!--/#badge-employeeengagement.badge--></t:if><t:if test="name == 'product-donations'"><div id="badge-productdonations" class="badge">
+            <img src="http://fa.pub30.convio.net/assets/images/badge_productdonations.png" alt="alttext" border="0" />
+            <div class="hover-text">Provides food and groceries or personal care items to people in need.<div class="close">X</div></div><!--/.hover-text-->
+          </div><!--/#badge-productdonations.badge--></t:if><t:if test="name == 'disaster-support'"><div id="badge-disastersupport" class="badge">
+            <img src="http://fa.pub30.convio.net/assets/images/badge_disastersupport.png" alt="alttext" border="0" />
+            <div class="hover-text">Provides food, funds or supplies to disaster-relief.<div class="close">X</div></div><!--/.hover-text-->
+          </div><!--/#badge-disastersupport.badge--></t:if>
+</t:list>
+          <div class="clearfix"></div>
+        </div><!--/#badges-->
+      </div><!--/#how-partner-helps-->
+</t:if>
+
+<t:if test="large_photos.length > 0 || video.length > 0">
+  <div id="photo-video">
+    <t:if test="large_photos.length > 0">
+      <t:list id="large_photos">
+        <img src="${url}" alt="${alt_text}" border="0" />
+      </t:list>
+    </t:if>
+    <t:if test="video.length > 0">
+      <t:list id="video">
+        <t:set id="videoid" value="replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(video_url,'http://',''),'https://',''),'watch',''),'embed',''),'www.',''),'youtube.com',''),'youtu.be',''),'v=',''),'?',''),'&',''),'/','')" />
+        <div class="video-container"><iframe src="//www.youtube.com/embed/${videoid}?html5=1&controls=0&autohide=1&showinfo=0&enablejsapi=1" frameborder="0" allowfullscreen="" id="story-${itemID}-video"></iframe></div>
+      </t:list>
+    </t:if>
+  </div><!--/#photo-video-->
+</t:if>
+
+<t:if test="matches(path,'.*/visionary-partners/.*')">
+<!-- FPO, populate from web services -->
+      <div class="quote" style="display: none;">
+        <div class="left">
+          <div class="quote-text">“We are committed to leveraging our leadership in food and agriculture to tackle the complex challenge of feeding the world with our domestic partner, Feeding America.”</div>
+          <div class="quote-by">&mdash; Greg Page | Chairman of the Board and Chief Executive Officer, Cargill</div>
+        </div><!--/.left--><div class="right">
+          <img src="http://fa.pub30.convio.net/assets/images/jeff_bexos.jpg" alt="alttext" border="0">
+        </div><!--/.right-->
+        <div class="clearfix"></div>
+      </div><!--/.quote-->
+</t:if>
+
+<t:include id="templatelist-543730613" />
+
+
       <div id="body-content">
-        <t:if test="thumb.length > 0"><t:list id="thumb"><img src="${url}" alt="${alt_text}" class="image-right" /></t:list></t:if>
-        <div class="date"><t:value id="news_date" format="5" /></div>
         ${body}
-        <t:if test="display_fa_pr_footer_text.length>0"><t:list id="display_fa_pr_footer_text"><t:if test="name == 'yes'"><t:include id="item-545040006"/></t:if></t:list></t:if>
-        <t:if test="!isNull(press_release_partner_footer)">${press_release_partner_footer}</t:if>
-          <t:if test="author_profile.length > 0 || !isNull(author_name)">
-          <t:if test="author_profile.length > 0"><div class="author"><t:list id="author_profile">${title}<t:if test="!isNull(phone)">, ${phone}</t:if></t:list></div></t:if>
-          <t:else><t:if test="!isNull(author_name)"><div class="author">${author_name}</div></t:if></t:else>
-        </t:if>
-
-       <t:if test="related_content.length>0">
-       <t:include id="templatelist-545042884"/>
-       </t:if>
-      <t:else>
-         <div class="promos">
-          <!-- news related to the page by news type & tags-->
-          <div class="primary-promos">
-            <t:include id="templatelist-541315370" />
-          </div><!-- /.primary-promos -->
-          <!-- general content -->
-          <div class="secondary-promos related-content">
-            <t:list id="primary_tags">
-              <t:set id="primaryTag"  value="name" />
-            </t:list>
-            <script type="text/javascript">
-              //go to /assets/promos/wrpr/blended-list-for-related.html & get a top 3 sorted items.
-
-              $(document).ready(function() {
-                var category = '${primaryTag}';
-                var $promos = $('.secondary-promos.related-content');
-
-                if($promos.length > 0){
-                  $promos.getRelatedContent('item-${itemid}', category, 'news', 'body-content');
-                }
-              });
-
-            </script>
-          </div><!-- /.secondary-promos -->
-        </div><!-- .promos -->
-     </t:else>
-      </div><!--/#body-content -->
-      <t:if test="inline_promo.length > 0"><t:include id="item-540519669" /></t:if>
-      <t:else>
-        <div class="promos">
-          <!-- global promos-->
-          <div class="primary-promos">
-            <t:include id="templatelist-541303840" />
-          </div><!--/.primary-promos -->
-          <!-- dynamic section based -->
-          <div class="secondary-promos">
-            <t:include id="templatelist-541304220" />
-          </div><!-- /.secondary-promos -->
-        </div><!-- /.promos-->
-      </t:else>
+        </div><!--/#body-content -->
 
     </div><!--/.column-1-->
     <div class="column-2">
+
       <!-- social share utilities -->
       <t:include id="item-541309505" />
+
+      <!-- Section Navigation -->
+      <div class="templateComponent" id="sectionNavigation-534789806"></div>
+
+
+
+
+
 
       <!-- Contextual Sidebar Promo -->
       <t:if test="sidebar_promos.length > 0">
@@ -145,7 +168,12 @@
         <!-- second sidebar promos item is at /assets/promos/wrpr/ -->
         <t:include id="item-542536092" />
 
-      </t:else>
+
+
+
+
+
+
 
     </div><!--/.column-2-->
     <div class="clearfix"></div>
@@ -159,7 +187,7 @@
     <t:set id="footerBgImg" value="concat(footerBgImg, ') 50% 0 repeat;')" />
   </t:list>
 </t:if>
-<div id="footer_promos" class="hidden-phone" style="${footerBgImg}">
+<div id="footer_promos" style="${footerBgImg}">
   <div class="container">
     <div class="headline">How You Can Help Feeding America Solve Hunger</div>
       <div id="footer_promo_boxes">
@@ -181,7 +209,7 @@
         </t:if>
         <div class="footer-promo">
           <t:if test="thumb.length > 0"><t:list id="thumb"><img src="${url}" alt="${alt_text}" /></t:list></t:if>
-          <t:if test="!isNull(headline)"><div class="promo-title">${headline}</div></t:if>
+          <div class="promo-title">${title}</div>
           <t:if test="!isNull(description)"><div class="promo-text">${description}</div></t:if>
 
           <t:if test="!isNull(action_button_label) && !isNull(action_button_url)"><div class="promo-action"><a class="${buttonClasses}" href="${action_button_url}">${action_button_label}</a></div></t:if>

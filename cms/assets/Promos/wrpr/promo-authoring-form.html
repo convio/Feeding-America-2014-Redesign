@@ -1,33 +1,40 @@
 <style>
-table.authoringForm {
-  border-collapse: collapse;
-  margin: 2em auto;
-  width: 96%;
-}
-table.authoringForm p {
-  margin-top: 0;
-}
-table.authoringForm tr {
-  border-bottom: 1px solid #ccc;
-}
-table.authoringForm td {
-  padding: 7px 5px;
-  vertical-align: middle;
-}
-table.authoringForm td.formWidgetLabelCell {
-  width: 40%;
-}
-table.authoringForm .fieldLabel {
-  font-size: 14px;
-  line-height: 25px;
-  color: #111;
-}
+  table.authoringForm {
+    border-collapse: collapse;
+    margin: 2em auto;
+    width: 96%;
+  }
+  table.authoringForm p {
+    margin-top: 0;
+  }
+  table.authoringForm tr {
+    border-bottom: 1px solid #ccc;
+  }
+  table.authoringForm td {
+    padding: 7px 5px;
+    vertical-align: middle;
+  }
+  table.authoringForm td.formWidgetLabelCell {
+    width: 40%;
+  }
+  table.authoringForm .fieldLabel {
+    font-size: 14px;
+    line-height: 25px;
+    color: #111;
+  }
 </style>
 <table class="authoringForm">
   <tbody>
+    <tr>
+      <td colspan="2">
+        The Promos content type is used to create and manage blocks of reusable and/or embedded content, for several types of promos. Feeding America can configure new Promos on an ongoing basis, using the following categories, and they will display automatically throughout the site.<br /><br />
+        For additional guidance, please refer to the <a href="http://fa.pub30.convio.net/assets/promos/promo-boxes-matrix.docx">Promo matrix</a> for sample content and business rules, the <a href="http://fa.pub30.convio.net/z-testing/style-guide.html">Style Guide</a>, <a href="http://fa.pub30.convio.net/z-testing/color-palette-exploration.html">Color Palette</a>, and <a href="http://fa.pub30.convio.net/assets/promos/promos-additional-instructions.html">additional instructions</a>.
+      </td>
+    </tr>
+
     <tr class="formWidgetRow promoType">
       <td class="formWidgetLabelCell">
-      <strong class="fieldLabel">Promo Type</strong><br />Select the type of Promo. This determines the position and behavior of the Promo within the page and shows the applicable fields.
+      <strong class="fieldLabel">Promo Type</strong><br />Select the type of Promo. This determines the position and behavior of the Promo within the page such as Top Urgent Alert Banner, or Footer Promo, and shows the applicable fields.
       </td>
       <td class="formWidgetCell"><select id="promo_type" model="categories;categoryID=530004402" name="promo_type" title="Promo Type" uniqueid="530007936" validation="type:string">loading...</select></td>
     </tr>
@@ -80,7 +87,7 @@ table.authoringForm .fieldLabel {
         <strong>Length:</strong> 110 char. - 270 char.
       </div>
       <div class="sidebarPromoInstructions">
-        Note: The subtitle text will appear in big font size <em>class="big"</em>.<br>
+        <strong>Note:</strong> The subtitle text will appear in big font size <em>class="big"</em>.<br>
       </div>
     </td>
     <td class="formWidgetCell">
@@ -95,7 +102,7 @@ table.authoringForm .fieldLabel {
 
     <tr class="formWidgetRow promoConditionalGroup">
       <td class="formWidgetLabelCell">
-      <strong class="fieldLabel">Promo Conditional Group</strong><br />Select the constituent group(s) or audience for the Promo, as a basis for conditional content.<br>
+      <strong class="fieldLabel">Promo Conditional Group</strong><br />Select the constituent group(s) or audience for the Promo, as a basis for conditional content. Determines the conditional group for which a given Promo displays, based on member attributes.<br>
       <strong>Note:</strong> The promos will only appear if the selected categories match categories defined in the promo matrix.<br /> If this promo applies to two different buckets, you may select all the applicable categories for those buckets to have the same promo appear under those conditions. Ex: If you want the same promo to appear for anonymous users and for users who are logged in but not donors select <em>Default, Logged In, Not a Donor<em>.
       </td>
       <td class="formWidgetCell"><select id="promo_conditional_logic" model="categories;categoryID=530004937" multiple="multiple" name="promo_conditional_logic" size="10" title="Promo Conditional Logic Group" uniqueid="530009467" validation="type:stringarray;multiple:true">loading...</select></td>
@@ -124,7 +131,7 @@ table.authoringForm .fieldLabel {
 
     <tr class="formWidgetRow promoImage">
     <td class="formWidgetLabelCell">
-    <strong class="fieldLabel">Image / Icon</strong><br />Select an icon or image for the promo.<br />
+    <strong class="fieldLabel">Image / Icon</strong><br />Select an icon or image for the promo from the <strong>/assets/images/</strong> folder <br />
       <div class="sidebarPromoInstructions footerPromoInstructions"><strong>Icon size:</strong> 81px x 80px</div>
       <div class="sidebarPromoInstructions"><strong>Thumbnail size:</strong> should fit within promo width of 260px</div>
       <div class="bannerPromoInstructions"><srtong>Medium size:</strong> 459px x 316px<br />
@@ -152,7 +159,7 @@ table.authoringForm .fieldLabel {
 
     <tr class="formWidgetRow promoBackgroundImage">
     <td class="formWidgetLabelCell"><strong class="fieldLabel">Promo Background Image<br /></strong>
-      <div class="sidebarPromoInstructions inlinePromoInstructions bannerPromoInstructions">Select a background image for the Promo.</div>
+      <div class="sidebarPromoInstructions inlinePromoInstructions bannerPromoInstructions">Select a background image for the Promo from <strong>/assets/images/background/</strong> folder</div>
       <div class="sidebarPromoInstructions inlinePromoInstructions bannerPromoInstructions homeEmailPromoInstructions">Also select the background color that matches closely to the image background to ensure that promo text appears in a correct color.</a>
       <div class="bannerPromoInstructions homeEmailPromoInstructions homeFactoidsPromoInstructions"><strong>Full-width size:</strong> 1,360px x 347px</div>
       <div class="urgentBannerPromoInstructions"><strong>Size:</strong> 1,360px x 72px or wider</div>
@@ -166,7 +173,7 @@ table.authoringForm .fieldLabel {
     <tr class="formWidgetRow promoBackgroundColor">
     <td class="formWidgetLabelCell">
       <strong class="fieldLabel">Promo Background Color</strong><br />
-        Select the background color of the Promo:&nbsp; <br />
+        Select the background color of the Promo: <br />
         - red: class="red" <span style="background-color: #b22d3a;">#b22d3a</span><br />
         - dark green: class="green" <span style="background-color: #53682b;">#53682b</span><br />
         - blue:&nbsp; class="blue" <span style="background-color: #006b9d;">#006b9d</span><br />
