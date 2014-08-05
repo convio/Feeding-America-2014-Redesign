@@ -1302,7 +1302,7 @@ header.has-horizontal-nav .active .dropdown-menu {
   padding: 24px 0px 0px 0px;
 }
 header.has-horizontal-nav .nav > li.active {
-  position: initial;
+  position: static;
 }
 header.has-horizontal-nav .navbar .dropdown.active .dropdown-menu, header.has-horizontal-nav .navbar .dropdown.active:hover .dropdown-menu {
   display: block;
