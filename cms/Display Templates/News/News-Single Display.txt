@@ -8,18 +8,30 @@
         <p>${description}</p>
       </div></t:if><!--/#page-description-->
       <div id="body-content">
-        <t:if test="thumb.length > 0"><t:list id="thumb"><img src="${url}" alt="${alt_text}" class="image-right" /></t:list></t:if>
-        <div class="date"><t:value id="news_date" format="5" /></div>
-        <t:if test="author_profile.length > 0 || !isNull(author_name)">
-          <t:if test="author_profile.length > 0"><div class="author"><t:list id="author_profile">${title}</t:list></div></t:if>
-          <t:else><t:if test="!isNull(author_name)"><div class="author">${author_name}</div></t:if></t:else>
-        </t:if>
         <t:if test="related_video.length > 0"><div class="clearfix"></div><t:include id="templatelist-543941322" /></t:if>
         <t:else><t:if test="!isNull(video_url)">
           <div class="clearfix"></div>
           <t:set id="videoid" value="replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(video_url,'http://',''),'https://',''),'watch',''),'embed',''),'www.',''),'youtube.com',''),'youtu.be',''),'v=',''),'?',''),'&',''),'/','')" />
           <div class="video-container"><iframe src="//www.youtube.com/embed/${videoid}?html5=1&controls=0&autohide=1&showinfo=0&enablejsapi=1" frameborder="0" allowfullscreen="" id="story-${itemID}-video"></iframe></div>
         </t:if></t:else>
+        <t:if test="thumb.length > 0"><t:list id="thumb"><img src="${url}" alt="${alt_text}" class="image-right" /></t:list></t:if>
+
+<t:if test="!isNull(date)">
+<t:set id="skipdate" value="false" />
+<t:list id="news_type">
+<t:if test="name == 'current_partner_promotion'">
+<t:set id="skipdate" value="true" />
+</t:if>
+</t:list>
+<t:if test="skipdate == 'false'">
+        <div class="date"><t:value id="news_date" format="5" /></div>
+</t:if>
+</t:if>
+
+        <t:if test="author_profile.length > 0 || !isNull(author_name)">
+          <t:if test="author_profile.length > 0"><div class="author"><t:list id="author_profile">${title}</t:list></div></t:if>
+          <t:else><t:if test="!isNull(author_name)"><div class="author">${author_name}</div></t:if></t:else>
+        </t:if>
 
         ${body}
 
