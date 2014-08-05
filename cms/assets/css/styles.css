@@ -339,11 +339,14 @@ ul.grains, #body-content ul.grains {
   list-style-type: none;
   padding-left: 0px;
 }
-ul.grains li, #body-content ul.grains li {
+ul.grains > li, #body-content ul.grains > li {
   padding-left: 40px;
   background-image: url('../images/grain_bulletpoint.png');
   background-repeat: no-repeat;
   background-position: 13px 2px;
+}
+.grains ul, .grains ol, #body-content .grains ul, #body-content .grains ol {
+  margin-left: 30px;
 }
 .colors-test .half-width p {
   line-height: 50px;

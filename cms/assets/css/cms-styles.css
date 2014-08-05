@@ -2145,11 +2145,17 @@ table ul, table ol, #body-content table ul, #body-content table ol {
 table ul li, #body-content table ul li {
   padding-left: 0px;
 }
-table ul.grains li, #body-content table ul.grains li {
+table ul.grains > li, #body-content table ul.grains > li {
   padding-left: 30px;
   background-position: 0px 2px;
 }
 
+/* --------------------------------------------
+  planned giving iframe fixes
+-------------------------------------------- */
+body.ways-to-give.planned-giving iframe {
+    width: 100% !important;
+}
 
 /*
 shortcut to end of desktop
