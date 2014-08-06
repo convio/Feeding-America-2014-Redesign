@@ -35,12 +35,18 @@
 
         ${body}
 
-        <t:if test="secondary_tags.length > 0">
-          <t:if test="state.length > 0"><t:list id="state" maxlength="1"><t:value id="relatedItems" value="concat('&amp;state=', name)" /></t:list></t:if>
-          <t:if test="food_bank.length > 0"><t:list id="food_bank" maxlength="1"><t:value id="relatedItems" value="concat(relatedItems, '&amp;food_bank=')" /><t:value id="relatedItems" value="concat(relatedItems, itemid)" />
-          </t:list></t:if>
-          <div class="list-item-tags">Tags: <t:list id="secondary_tags"><a href="http://fa.pub30.convio.net/hunger-in-america/news-and-updates/our-perspective/?secondary_tags=${name}${relatedItems}">${label}</a><t:if test="index != length">, </t:if></t:list></div>
-        </t:if>
+     <t:list id="news_type"><t:if test="name=='our-perspective-post' || name=='hunger-in-the-news'">
+     <t:if test="name=='our-perspective-post'"><t:set id="folderlink" value ="'our-perspective'"</t:if>
+      <t:if test="name=='hunger-in-the-news'"><t:set id="folderlink" value ="'hunger-in-the-news'"</t:if>
+<t:set id="comma" value="''" />
+<t:if test="blog_topics.length > 0 || primary_tags.length > 0 || state.length > 0 || food_bank.length > 0 || partner.length > 0">Tags: 
+</t:if>
+<t:if test="blog_topics.length > 0"><t:list id ="blog_topics">${comma}<t:set id="comma" value="', '" /><a href="http://fa.pub30.convio.net/hunger-in-america/news-and-updates/${folderlink}/?mlblog_topics=${name}">${label}</a></t:list></t:if>
+<t:if test="primary_tags.length > 0"><t:list id ="primary_tags">${comma}<t:set id="comma" value="', '" /><a href="http://fa.pub30.convio.net/hunger-in-america/news-and-updates/${folderlink}/?mlsecondary_tags=${name}">${label}</a></t:list></t:if>
+<t:if test="state.length > 0"><t:list id ="state">${comma}<t:set id="comma" value="', '" /><a href="http://fa.pub30.convio.net/hunger-in-america/news-and-updates/${folderlink}/?mlstate=${name}">${label}</a></t:list></t:if>
+<t:if test="food_bank.length > 0"><t:list id ="food_bank">${comma}<t:set id="comma" value="', '" /><a href="http://fa.pub30.convio.net/hunger-in-america/news-and-updates/${folderlink}/?mlfood_bank=${itemid}">${title}</a></t:list></t:if>
+<t:if test="partner.length > 0"><t:list id ="partner">${comma}<t:set id="comma" value="', '" /><a href="http://fa.pub30.convio.net/hunger-in-america/news-and-updates/${folderlink}/?mlpartner=${itemid}">${title}</a></t:list></t:if>
+     </t:if></t:list>
 
         <div class="templateComponent" id="commentlist-540352587"></div>
         <h2>Leave a Comment</h2>
@@ -70,66 +76,30 @@
       <!-- social share utilities -->
       <t:include id="item-541309505" />
 
-<!-- Search Box --> 
-<link rel="stylesheet" href="/assets/js/pickadate/lib/themes/default.css">
-<link rel="stylesheet" href="/assets/js/pickadate/lib/themes/default-date.css">
-<link rel="stylesheet" href="/assets/js/pickadate/lib/themes/default-fa.css">
-
-<div class="sidebar-promo-box">
-	<div id="sidebarpromosearch" class="sidebar-promo search lightgray border">
-	  <div class="by-keyword">
-		<span class="big">Search News</span>		
-		<form class="keyword-search-form" action="/search/search.jsp" method="get">
-        <input type="hidden" name="typeID" value="530509890">
-		  <div><input type="text" name="query" placeholder="by Keyword" /></div>
-		  <button type="submit" class="red">GO</button>
-		</form><!--/.keyword-search-form-->
-	  </div><!--/.by-keyword-->
-	  <div class="filter-by">
-		<span class="big">or Filter by</span>
-		<form class="filter-search-form" action="/hunger-in-america/news-and-updates/" method="get">
-     <t:list id="news_type">
-                <input type="hidden" name="mlnews_type" value="${name}"/>
-     <t:if test="name =='our-perspective-post'">
-		  <label for="sidebar-filter-all-topics">
-			<input type="checkbox" name="mlblog_topics" value="" id="sidebar-filter-all-topics" checked="checked" />
-			<span>All Topics</span>
-		  </label>
-          <t:data name="blog_topics" class="categories" parent="/blog-topic" /> 
-		  <t:list id="blog_topics">
-		  <label for="sidebar-filter-${name}">
-			<input type="checkbox" name="mlblog_topics" value="${name}" id="sidebar-filter-${name}" />
-			<span>${label}</span>
-		  </label>
-          </t:list>
-     </t:if>
-     </t:list>
-
-		  <div id="sidebar-filter-dates">
-                        <input type="hidden" value="news_date" name="mldateType">
-			<input type="text" id="sidebar-filter-date-from" name="mlstartDate" class="js__datepicker" placeholder="From" />
-			<input type="text" id="sidebar-sidebar-filter-date-to-date-from" name="mlendDate" class="js__datepicker" placeholder="To" />
-		  </div><!--/#sidebar-filter-dates-->
-		  <button type="submit" class="red">GO</button>
-		</form><!--/.filter-search-form-->
-	  </div><!--/.filter-by-->                  
-	</div><!--/#sidebarpromosearch.sidebar-promo-->
- </div>
-  
-<script src="/assets/js/pickadate/lib/picker.js"></script>
-<script src="/assets/js/pickadate/lib/picker-date.js"></script>
-
-<script>
-$( '.js__datepicker' ).pickadate({
-    // Work-around for some mobile browsers clipping off the picker.
-    onOpen: function() { $('pre').css('overflow', 'hidden') },
-    onClose: function() { $('pre').css('overflow', '') },
-    format: 'mm/dd/yyyy'
-})
-</script>
-
-<!-- end Search box --> 
-
+<!-- Search Box -->
+<t:list id="news_type"> 
+<t:if test="name =='our-perspective-post'">
+<t:include id="item-546600086"/>
+</t:if>
+<t:else>
+<t:if test="name=='hunger-in-the-news'">
+<t:include id="item-546604832"/>
+</t:if>
+<t:else>
+<t:if test="name=='current-partner-promotions'">
+<t:include id="item-546661796"/>
+</t:if>
+<t:else>
+<t:if test="name=='partner-news'">
+<t:include id="item-546663730"/>
+</t:if>
+<t:else>
+<t:include id="item-546600189"/>
+</t:else>
+</t:else>
+</t:else>
+</t:else>
+</t:list>
       <!-- Related content -->
       <t:if test="related_content.length > 0">
         <t:include id="templatelist-541315156" />
