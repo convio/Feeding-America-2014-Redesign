@@ -46,7 +46,7 @@
       <div class="headline-bar">
         <div class="container">
           <div class="headline-text">
-            <span class="headline-title">${title}</span>
+            <t:if test="!isNull(headline)"><span class="headline-title">${headline}</span></t:if>
             <span class="headline-subhead">${description}</span>
           </div><!--/.headline-text-->
         </div><!--/.container-->
