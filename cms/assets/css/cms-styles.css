@@ -1211,6 +1211,7 @@ vertical-align: top;
   background-image: url('../images/grain_bulletpoint.png');
   background-repeat: no-repeat;
   background-position: 27px 14px;
+  padding: 15px 5px 15px 48px;
 }
 .column-2 .section-nav li.parentOfActive.expanded > a, .column-2 .section-nav li.parentOfActive.subMenu > a {
   background-image: none;
@@ -2178,6 +2179,7 @@ body.single-display-template-take-action-template .section-banner.no-photo .head
 .take-action-banner-body form div.half-width button {
   padding: 0px 10px;
 }
+<<<<<<< HEAD
 body.single-display-template-take-action-template #section-boxes .section-box.full-width .section-text div {
   /*
   margin-top: 15px;
@@ -2209,6 +2211,9 @@ body.single-display-template-take-action-template #section-boxes .container:nth-
 #take-action-inline-promo .inline-promo {
   margin: 0px;
 }
+=======
+
+>>>>>>> FETCH_HEAD
 
 /*
 shortcut to end of desktop
