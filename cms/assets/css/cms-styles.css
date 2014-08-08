@@ -352,6 +352,9 @@ div[id*=image-] {
   margin-left: 40px;
 }
 /* "Latest News" */
+body.expand-news #recent_news_boxes .recent_news_item .news_preview {
+  display: none;
+}
 body.expand-news #recent_news_boxes .recent_news_item .news_expanded {
   display: block;
   position: initial;
@@ -2157,6 +2160,56 @@ body.ways-to-give.planned-giving iframe {
     width: 100% !important;
 }
 
+
+/* --------------------------------------------
+  Take Action landing page
+-------------------------------------------- */
+body.single-display-template-take-action-template .section-banner.no-photo .container .headline-bar .container {
+  padding: 0px;
+}
+body.single-display-template-take-action-template .section-banner .headline-title {
+  margin-bottom: 30px;
+}
+body.single-display-template-take-action-template .section-banner.no-photo .headline-subhead, body.single-display-template-take-action-template .section-banner.no-photo .take-action-banner-body p {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+}
+.take-action-banner-body form div.half-width button {
+  padding: 0px 10px;
+}
+body.single-display-template-take-action-template #section-boxes .section-box.full-width .section-text div {
+  /*
+  margin-top: 15px;
+  */
+}
+body.single-display-template-take-action-template #section-boxes .section-box.full-width .section-text div a {
+  margin-top: 10px;
+  line-height: 18px;
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: underline;
+}
+body.single-display-template-take-action-template #section-boxes .section-box.full-width .section-text div a span {
+  display: inline-block;
+  text-decoration: none;
+  margin-left: 5px;
+}
+body.single-display-template-take-action-template #section-boxes .container:nth-child(2) {
+  border-bottom: none;
+}
+#take-action-inline-promo {
+  background-color: #dedede;
+  padding: 40px 0px;
+}
+#take-action-inline-promo .container {
+  max-width: 960px;
+}
+#take-action-inline-promo .inline-promo {
+  margin: 0px;
+}
+
 /*
 shortcut to end of desktop
 */
@@ -2289,6 +2342,30 @@ shortcut to end of desktop
  Desktop Only: >= 992px
 -------------------------------------------------------------- */
 @media only screen and (min-width: 992px) {
+
+  /* --------------------------------------------
+    Take Action landing page
+  -------------------------------------------- */
+  body.single-display-template-take-action-template .section-banner.no-photo .take-action-banner-body p {
+    margin-bottom: 25px;
+  }
+  .take-action-banner-body form input.full-width {
+    width: 194px;
+    display: inline-block;
+    float: left;
+    margin-right: 10px;
+  }
+  .take-action-banner-body form input.half-width {
+    width: 125px;
+    display: inline-block;
+    float: left;
+    margin-right: 10px;
+  }
+  .take-action-banner-body form div.half-width {
+    width: auto;
+    display: inline-block;
+    float: left;
+  }
 
 }
 /* --------------------------------------------
@@ -2789,6 +2866,49 @@ shortcut to end of desktop
     display: block;
   }
 
+
+  /* --------------------------------------------
+    Take Action landing page
+  -------------------------------------------- */
+  body.single-display-template-take-action-template .section-banner.no-photo .headline-bar {
+    padding: 30px 0px 40px 0px;
+  }
+  body.single-display-template-take-action-template .section-banner.no-photo .container .headline-bar .container {
+    padding: 0px 20px;
+  }
+  body.single-display-template-take-action-template .section-banner .headline-title {
+    margin-bottom: 20px;
+  }
+  body.single-display-template-take-action-template .section-banner.no-photo .headline-subhead, body.single-display-template-take-action-template .section-banner.no-photo .take-action-banner-body p {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    margin-bottom: 15px;
+  }
+  body.single-display-template-take-action-template .section-banner.no-photo .take-action-banner-body p {
+    margin-bottom: 20px;
+  }
+  .take-action-banner-body form input.full-width {
+    width: 195px;
+    display: inline-block;
+    float: left;
+    margin-right: 10px;
+  }
+  .take-action-banner-body form input.half-width, .two-boxes .take-action-banner-body .half-width:nth-child(2) {
+    width: 125px;
+    display: inline-block;
+    float: left;
+    margin-right: 10px;
+    padding: 0px 0px 0px 20px;
+  }
+  .take-action-banner-body form div.half-width {
+    width: auto;
+    display: inline-block;
+    float: left;
+  }
+  .take-action-banner-body form div.half-width button {
+    padding: 0px 10px;
+  }
 
 
 
@@ -3500,6 +3620,49 @@ shortcut to end of desktop
   .partners-list-horizontal li .hover-text a, #body-content .partners-list-horizontal li .hover-text a {
     display: block;
   }
+
+  /* --------------------------------------------
+    Take Action landing page
+  -------------------------------------------- */
+  body.single-display-template-take-action-template .section-banner.no-photo .headline-bar {
+    padding: 30px 0px 40px 0px;
+  }
+  body.single-display-template-take-action-template .section-banner.no-photo .container .headline-bar .container {
+    padding: 0px 20px;
+  }
+  body.single-display-template-take-action-template .section-banner .headline-title {
+    margin-bottom: 20px;
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 500;
+  }
+  body.single-display-template-take-action-template .section-banner.no-photo .headline-subhead, body.single-display-template-take-action-template .section-banner.no-photo .take-action-banner-body p {
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 200;
+    margin-bottom: 15px;
+  }
+  body.single-display-template-take-action-template .section-banner.no-photo .take-action-banner-body p {
+    margin-bottom: 20px;
+  }
+  body.single-display-template-take-action-template .take-action-banner-body form input.full-width {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .two-boxes .take-action-banner-body .half-width:nth-child(2) {
+    width: 50%;
+    padding: 0px 0px 0px 20px;
+    display: inline-block;
+    float: left;
+  }
+  .take-action-banner-body form div.half-width {
+    padding-left: 10px;
+  }
+  .take-action-banner-body form div.half-width button {
+    padding: 0px 10px;
+    width: 100%;
+  }
+
 
 
   /* --------------------------------------------
