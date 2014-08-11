@@ -1212,7 +1212,7 @@ vertical-align: top;
   background-repeat: no-repeat;
   background-position: 27px 14px;
 }
-.column-2 .section-nav li.parentOfActive.expanded > a, .column-2 .section-nav li.parentOfActive.subMenu > a {
+.column-2 .section-nav > li.parentOfActive.expanded > a, .column-2 .section-nav > li.parentOfActive.subMenu > a {
   background-image: none;
 }
 .column-2 .section-nav li.current > a {
@@ -1220,8 +1220,22 @@ vertical-align: top;
   background-repeat: no-repeat;
   background-position: 27px 14px;
 }
-.column-2 .section-nav li.parentOfActive.expanded li.parentOfActive li.current > a {
+.column-2 .section-nav li.parentOfActive.expanded li.parentOfActive li.current > a, .column-2 .section-nav li.parentOfActive.subMenu li.parentOfActive li.current > a {
   background-image: none;
+}
+.column-2 .section-nav > li.parentOfActive.current > a, .column-2 .section-nav > li.parentOfActive.current > a {
+  background-position: 10px 14px;
+  color: #333333;
+}
+.column-2 .section-nav > li.parentOfActive > li.parentOfActive > a {
+  color: #333333;
+}
+.column-2 .section-nav > li.parentOfActive.expanded > ul ul li.current a, .column-2 .section-nav > li.parentOfActive.subMenu > ul ul li.current a {
+  background-image: none !important;
+}
+.column-2 .section-nav li.parentOfActive.subMenu li.parentOfActive.subMenu li.parentOfActive a {
+  background-image: none !important;
+  color: #E98300;
 }
 .column-2 .section-nav li.subMenu ul,
 .column-2 .section-nav li.parentOfActive ul {
@@ -2418,6 +2432,20 @@ shortcut to end of desktop
 
 
   /* --------------------------------------------
+    Homepage elements
+  -------------------------------------------- */
+  /* feature slides */
+  #homepage_slideshow .slides li img.crop-Left {
+    margin-left: 0px;
+    margin-right: -5%;
+  }
+  #homepage_slideshow .slides li img.crop-Center {
+    margin-left: -2.5%;
+    margin-right: -2.5%;
+  }
+
+
+  /* --------------------------------------------
     Section Landing Page elements
   -------------------------------------------- */
   /* section boxes */
@@ -3004,6 +3032,21 @@ shortcut to end of desktop
   .interrupter {
     display: none;
   }
+
+
+  /* --------------------------------------------
+    Homepage elements
+  -------------------------------------------- */
+  /* feature slides */
+  #homepage_slideshow .slides li img.crop-Left {
+    margin-left: 0px;
+    margin-right: -40%;
+  }
+  #homepage_slideshow .slides li img.crop-Center {
+    margin-left: -20%;
+    margin-right: -20%;
+  }
+
 
 
   /* --------------------------------------------
