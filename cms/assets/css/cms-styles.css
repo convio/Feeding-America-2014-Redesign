@@ -1171,7 +1171,7 @@ vertical-align: top;
   list-style: none;
   text-transform: uppercase;
 }
-.column-2 .section-nav li.parentOfActive li.parentOfActive ul, .column-2 .section-nav li.parentOfActive li.current ul {
+.column-2 .section-nav li.subMenu li.subMenu ul, .column-2 .section-nav li.subMenu li.current ul {
   text-transform: none;
 }
 .column-2 .section-nav a {
@@ -1233,7 +1233,7 @@ vertical-align: top;
 .column-2 .section-nav > li.parentOfActive.expanded > ul ul li.current a, .column-2 .section-nav > li.parentOfActive.subMenu > ul ul li.current a {
   background-image: none !important;
 }
-.column-2 .section-nav li.parentOfActive.subMenu li.parentOfActive.subMenu li.parentOfActive a {
+.column-2 .section-nav li.parentOfActive.subMenu li.parentOfActive.subMenu li.parentOfActive a, .column-2 .section-nav li.subMenu li.parentOfActive.subMenu li.parentOfActive a {
   background-image: none !important;
   color: #E98300;
 }
@@ -1247,9 +1247,11 @@ vertical-align: top;
 .column-2 .section-nav li.parentOfActive ul a {
   padding: 15px 5px 15px 48px;
 }
+/*
 .column-2 .section-nav li.subMenu ul {
   display: none;
 }
+*/
 .column-2 .section-nav li.parentOfActive > ul {
   display: initial;
 }
@@ -2443,6 +2445,14 @@ shortcut to end of desktop
     margin-left: -2.5%;
     margin-right: -2.5%;
   }
+  #homepage-partners-carousel {
+    position: static;
+    top: auto;
+    right: auto;
+  }
+  #homepage_ourpartners_stayconnected .left img {
+    display: inline-block;
+  }
 
 
   /* --------------------------------------------
@@ -3045,6 +3055,14 @@ shortcut to end of desktop
   #homepage_slideshow .slides li img.crop-Center {
     margin-left: -20%;
     margin-right: -20%;
+  }
+  #homepage-partners-carousel {
+    position: static;
+    top: auto;
+    right: auto;
+  }
+  #homepage_ourpartners_stayconnected .left img {
+    display: inline-block;
   }
 
 
