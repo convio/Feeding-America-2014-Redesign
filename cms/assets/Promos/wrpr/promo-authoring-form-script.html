@@ -79,6 +79,7 @@
         switch(selectedType) {
           case 'Contextual Sidebar Promo':
           case 'Second Sidebar Promo':
+          case 'Partner Promo'
             var visibleFields = jQuery([$promoHeadline, $promoDescription, $promoConditionalGroup, $promoSection, $promoGlobal, $promoStructuredInstructions, $promoImage, $promoBackgroundImage, $promoBackgroundColor, $promoButtonColor, $promoButtonStyle, $promoButtonLabel, $promoLink, $promoBodyInstructions, $sidebarPromosInstructions]);
             visibleFields.each(function() { $(this).show(); });
             $promoTemplateSelect.setTemplate('Sidebar Promo');
