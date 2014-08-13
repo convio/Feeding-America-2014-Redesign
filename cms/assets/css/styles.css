@@ -4706,3 +4706,66 @@ body.expand-news #recent_news_boxes .recent_news_item img {
     }
   }
 
+
+/* --------------------------------------------
+  standard filter criteria 
+-------------------------------------------- */
+
+    td.filterSelector input[type='submit'] 
+    { background-color: #b22d3a;
+    border: medium none;
+    color: #ffffff;
+    cursor: pointer;
+    display: block;
+    font-family: Gotham,'Gotham Book',Gotham-Book,'Gotham A','Gotham B',Arial,sans-serif;
+    font-size: 14px;
+    font-weight: 200;
+    height: 40px;
+    line-height: 40px;
+    margin: 0;
+    outline: medium none;
+    padding: 0 20px;
+    text-transform: uppercase;
+    vertical-align: top;}
+  
+  td.filterSelector input[type='submit']:hover {
+    background-color:#bfd730;
+  }
+
+  table.filterCriteria {
+    width:100%;
+  }
+  table.filterCriteria td {
+    background-color:#fff;
+
+  }
+  
+  table.filterCriteria td.filterSelector {
+    width:70%;
+    padding-left:10px;
+    padding-top:10px;
+    padding-bottom:10px;
+
+  }
+  
+  table.filterCriteria td.filterLabel {
+    width:30%;
+    padding-left:0px;
+    padding-top:10px;
+    padding-bottom:10px;
+    padding-right:0px;
+  }
+
+  select[name="food_bank"] {width:100%;}
+  
+  #scr-search-criteria {
+	  float:left; 
+	  margin-top:20px;
+  }
+  #scr-btn-search {
+	  float:left; 
+	  padding-left:18px;
+  }
+  #scraped-filter{
+	  margin-bottom:20px;
+  }

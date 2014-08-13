@@ -108,6 +108,7 @@ function mapAllOrgs() {
         resultsWrapper.empty();
         FA.soap.request('GetAllOrganizations', {}, 'Body/GetAllOrganizationsResponse/GetAllOrganizationsResult/Organization', function(data) {
             returnFAResults(data, 'the United States');
+            setTimeout(function() { $('#find-fb-search-and-map-loading').hide(); }, 5000);
         }, function(response) {// Error
             resultsWrapper.append('There was an error processing your request');
             resultsWrapper.show();
@@ -119,7 +120,6 @@ function mapAllOrgs() {
             }
         }
     }
-
 }
 
 function centerOnSearch(data, searchString) {

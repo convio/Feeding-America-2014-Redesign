@@ -822,9 +822,9 @@ vertical-align: top;
   left: 50%;
   right: auto;
   border-top: 12px solid #e98300;
-  border-right: 16px dotted rgba(255, 255, 255, 0);
+  border-right: 16px solid rgba(255, 255, 255, 0);
   border-bottom: 0px;
-  border-left: 16px dotted rgba(255, 255, 255, 0);
+  border-left: 16px solid rgba(255, 255, 255, 0);
   margin: 0 0 0 -16px;
 }
 #find-fb-search-formbox .headline {
@@ -3724,8 +3724,6 @@ shortcut to end of desktop
     padding: 0px 10px;
     width: 100%;
   }
-
-
 
   /* --------------------------------------------
     section-name elements

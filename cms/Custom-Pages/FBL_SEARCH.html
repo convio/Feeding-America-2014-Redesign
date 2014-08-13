@@ -1,0 +1,283 @@
+<!--<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAoZxu1I0X9Tr_LoOYA6C-JqJmaunlrMF4"></script>-->
+<!-- temp - use above on feedingamerica.org site -->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQpaPmWkIRxYnrl1zPGEyuGnydaA9lkP4"></script>
+<div id="title-and-share">
+    <div class="container">
+        <h1 class="page-title"><span>Find Your Local</span><span>Food Bank</span></h1>
+        <ul class="social_icons">
+            <li class="fbk">
+                <a href="https://www.facebook.com/FeedingAmerica" title="Facebook">facebook</a>
+            </li>
+            <li class="twt">
+                <a href="https://twitter.com/feedingamerica" title="Twitter">twitter</a>
+            </li>
+            <li class="more">
+                <a href="#" title="More">more</a>
+            </li>
+        </ul><!--/.social_icons-->
+    </div><!--/.container-->
+</div><!--/#title-and-share-->
+
+<div id="page-intro">
+    <div class="container">
+        <p>
+            The Feeding America network of food banks secures and distributes more than 3 billion meals each year to communities throughout the United States. Contact your local food bank to find food or to help solve hunger in your community.
+        </p>
+    </div><!--/.container-->
+</div><!--/#page-intro-->
+
+<div id="find-fb-search-and-map-loading">
+  <div class="loading"></div>
+</div>
+
+
+<div id="find-fb-search-and-map">
+    <div class="container">
+        <div class="left" id="find-fb-search">
+            <div id="find-fb-search-formbox" class="has-results">
+                <div class="headline">
+                    <span>Search by</span><span>Zip Code or State</span>
+                </div>
+                <form id="find-fb-search-form" action="#">
+                    <div class="row">
+                        <input type="text" name="zip" id="find-fb-search-form-zip" placeholder="Zip Code" />
+                        <span>or</span>
+                        <div class="clearfix"></div>
+                    </div><!--/.row-->
+                    <div class="row">
+                        <select name="state" id="find-fb-search-form-state" placeholder="State">
+    <option value="" selected="selected" disabled="disabled">State</option>
+    <option value="AL">Alabama</option>
+    <option value="AK">Alaska</option>
+    <option value="AZ">Arizona</option>
+    <option value="AR">Arkansas</option>
+    <option value="CA">California</option>
+    <option value="CO">Colorado</option>
+    <option value="CT">Connecticut</option>
+    <option value="DE">Delaware</option>
+    <option value="DC">District of Columbia</option>
+    <option value="FL">Florida</option>
+    <option value="GA">Georgia</option>
+    <option value="HI">Hawaii</option>
+    <option value="ID">Idaho</option>
+    <option value="IL">Illinois</option>
+    <option value="IN">Indiana</option>
+    <option value="IA">Iowa</option>
+    <option value="KS">Kansas</option>
+    <option value="KY">Kentucky</option>
+    <option value="LA">Louisiana</option>
+    <option value="ME">Maine</option>
+    <option value="MD">Maryland</option>
+    <option value="MA">Massachusetts</option>
+    <option value="MI">Michigan</option>
+    <option value="MN">Minnesota</option>
+    <option value="MS">Mississippi</option>
+    <option value="MO">Missouri</option>
+    <option value="MT">Montana</option>
+    <option value="NE">Nebraska</option>
+    <option value="NV">Nevada</option>
+    <option value="NH">New Hampshire</option>
+    <option value="NJ">New Jersey</option>
+    <option value="NM">New Mexico</option>
+    <option value="NY">New York</option>
+    <option value="NC">North Carolina</option>
+    <option value="ND">North Dakota</option>
+    <option value="OH">Ohio</option>
+    <option value="OK">Oklahoma</option>
+    <option value="OR">Oregon</option>
+    <option value="PA">Pennsylvania</option>
+    <option value="RI">Rhode Island</option>
+    <option value="SC">South Carolina</option>
+    <option value="SD">South Dakota</option>
+    <option value="TN">Tennessee</option>
+    <option value="TX">Texas</option>
+    <option value="UT">Utah</option>
+    <option value="VT">Vermont</option>
+    <option value="VA">Virginia</option>
+    <option value="WA">Washington</option>
+    <option value="WV">West Virginia</option>
+    <option value="WI">Wisconsin</option>
+    <option value="WY">Wyoming</option>
+    <option value="PR">Puerto Rico</option>
+    <option value="AL">Alabama</option>
+    <option value="AK">Alaska</option>
+    <option value="AZ">Arizona</option>
+    <option value="AR">Arkansas</option>
+    <option value="CA">California</option>
+    <option value="CO">Colorado</option>
+    <option value="CT">Connecticut</option>
+    <option value="DE">Delaware</option>
+    <option value="DC">District of Columbia</option>
+    <option value="FL">Florida</option>
+    <option value="GA">Georgia</option>
+    <option value="HI">Hawaii</option>
+    <option value="ID">Idaho</option>
+    <option value="IL">Illinois</option>
+    <option value="IN">Indiana</option>
+    <option value="IA">Iowa</option>
+    <option value="KS">Kansas</option>
+    <option value="KY">Kentucky</option>
+    <option value="LA">Louisiana</option>
+    <option value="ME">Maine</option>
+    <option value="MD">Maryland</option>
+    <option value="MA">Massachusetts</option>
+    <option value="MI">Michigan</option>
+    <option value="MN">Minnesota</option>
+    <option value="MS">Mississippi</option>
+    <option value="MO">Missouri</option>
+    <option value="MT">Montana</option>
+    <option value="NE">Nebraska</option>
+    <option value="NV">Nevada</option>
+    <option value="NH">New Hampshire</option>
+    <option value="NJ">New Jersey</option>
+    <option value="NM">New Mexico</option>
+    <option value="NY">New York</option>
+    <option value="NC">North Carolina</option>
+    <option value="ND">North Dakota</option>
+    <option value="OH">Ohio</option>
+    <option value="OK">Oklahoma</option>
+    <option value="OR">Oregon</option>
+    <option value="PA">Pennsylvania</option>
+    <option value="RI">Rhode Island</option>
+    <option value="SC">South Carolina</option>
+    <option value="SD">South Dakota</option>
+    <option value="TN">Tennessee</option>
+    <option value="TX">Texas</option>
+    <option value="UT">Utah</option>
+    <option value="VT">Vermont</option>
+    <option value="VA">Virginia</option>
+    <option value="WA">Washington</option>
+    <option value="WV">West Virginia</option>
+    <option value="WI">Wisconsin</option>
+    <option value="WY">Wyoming</option>
+    <option value="PR">Puerto Rico</option>
+                        </select><!--/#find-fb-search-form-state-->
+                        <button type="submit" class="red">
+                            GO
+                        </button>
+                        <div class="clearfix"></div>
+                    </div><!--/.row-->
+                    <div class="clearfix"></div>
+                    <a href="#">View Feeding America&rsquo;s full Member Food Bank Network &rsaquo;</a>
+                </form><!--/#find-fb-search-form-->
+            </div><!--/#find-fb-search-formbox-->
+            <div id="find-fb-search-results">
+
+            </div><!--/#find-fb-search-results-->
+        </div><!--/#find-fb-search.left-->
+        <div class="right" id="find-fb-map">
+
+<div id="fb-map-wrapper">
+<div id="fb-map-wrapper-inner">
+
+</div>
+</div>
+        </div><!--/#find-fb-map.right-->
+    </div><!--/.container-->
+</div><!--/#find-fb-search-and-map-->
+
+<div id="footer_promos">
+    <div class="container">
+        <div class="headline">
+            How You Can Help Feeding America Solve Hunger
+        </div>
+        <div id="footer_promo_boxes">
+            <div class="footer-promo">
+                <img src="/preview!fa.pub30.convio.net/assets/images/join-icon-white.png" alt="alttext" border="0" />
+                <div class="promo-title">
+                    Join
+                </div>
+                <div class="promo-text">
+                    Get the latest news and learn how you can get involved.
+                </div>
+                <div class="promo-action">
+                    <form class="promo-join" action="survey">
+                        <input type="text" name="cons_email" class="full-width" placeholder="Enter Email" />
+                        <input type="text" name="cons_zip_code" class="half-width" placeholder="Enter Zip" />
+                        <div class="half-width">
+                            <button type="submit" class="red">
+                                Join Us
+                            </button>
+                        </div>
+                        <div class="clearfix"></div>
+                    </form><!--/.promo-join-->
+                </div><!--/.promo-action-->
+            </div><!--/.footer-promo-->
+            <div class="footer-promo">
+                <img src="/preview!fa.pub30.convio.net/assets/images/act-icon-1-white.png" alt="alttext" border="0" />
+                <div class="promo-title">
+                    Act
+                </div>
+                <div class="promo-text">
+                    Tell your member of Congress to visit your local food bank.
+                </div>
+                <div class="promo-action">
+                    <a href="#" class="button purple">Act Now</a>
+                </div><!--/.promo-action-->
+            </div><!--/.footer-promo-->
+            <div class="footer-promo">
+                <img src="/preview!fa.pub30.convio.net/assets/images/give-icon-1-white.png" alt="alttext" border="0" />
+                <div class="promo-title">
+                    Give
+                </div>
+                <div class="promo-text">
+                    Give hope to children and families in need year round. Become a monthly donor.
+                </div>
+                <div class="promo-action">
+                    <a href="#" class="button blue">Donate</a>
+                </div><!--/.promo-action-->
+            </div><!--/.footer-promo-->
+            <div class="clearfix"></div>
+        </div><!--/#footer_promo_boxes-->
+    </div><!--/.container-->
+</div><!--/#footer_promos-->
+
+<script src="http://fa.pub30.convio.net/assets/js/soap.js"></script>
+<script src="http://fa.pub30.convio.net/assets/js/xml2json.js"></script>
+<script src="http://fa.pub30.convio.net/assets/js/fa-soap.js"></script>
+<script type="text/javascript" src="https://dl.dropboxusercontent.com/u/208175/TempBBIS/FeedingAmerica/fa-locator.js"></script>
+<style>
+#find-fb-search-and-map .right.bottom {
+    position: relative;
+}
+.right #fb-map-wrapper, .right #fb-map-wrapper-inner {
+    height: 100%;
+    max-height: 535px;
+    max-width: 620px;
+    width: 100%;
+}
+.results-box img {
+   max-width: 115px;
+   max-height: 115px;
+}
+#infoBox {
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 14px;
+    line-height:1.35;
+    overflow:hidden;
+    white-space:nowrap;
+}
+#infoBox .firstHeading {
+    font-size: 1em;
+    font-weight: bold;
+}
+#infoBox .address {
+    font-size: 0.8em;
+}
+#fb-map-wrapper.bottom {
+    bottom: 50px;
+    position: absolute;
+    top: auto;
+}
+#fb-map-wrapper.fixed {
+    position: fixed;
+    top: 30px;
+}
+#fb-map-wrapper img {
+    max-width: none !important;
+}
+
+#find-fb-search-and-map-loading { 
+	margin-bottom: 40px;
+}
+</style>
