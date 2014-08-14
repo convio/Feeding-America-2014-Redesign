@@ -424,14 +424,14 @@ function buildProfilePageDisplay(data, orgId) {
         $('.right iframe').attr('src', mapString + '&key=AIzaSyBQpaPmWkIRxYnrl1zPGEyuGnydaA9lkP4');
 
         //logo and title
-        $('h1.page-title, #profile-pounds .name, #profile-counties .name, #profile-area-info .name').html(org.FullName);
+        $('h1.page-title, #profile-pounds .name, #profile-counties .name, #profile-area-info .name, #profile-area-info .state').html(org.FullName);
         $('.profile-logo img').attr({
             src: org.LogoUrls.SecureConvioMain,
             alt: org.FullName
         });
 
         //state name
-        $('#profile-area-info .state').html(stateName);
+        //$('#profile-area-info .state').html(stateName);
         //left column profile
         profileElements.append('<a class="profile-link" src="'+ org.URL+ '">' + org.URL + '</a>');
         profileElements.append('<p>' + addressString + org.MailAddress.City + ', ' + org.MailAddress.State + ' ' + org.MailAddress.Zip + '<br>' + org.Phone + '</p>');
