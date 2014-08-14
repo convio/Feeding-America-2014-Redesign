@@ -1011,6 +1011,15 @@ header.has-horizontal-nav {
 body.ways-to-give header.has-horizontal-nav {
   margin-bottom: 58px;
 }
+
+body.ways-to-give header.has-horizontal-nav .active .dropdown-menu li a { 
+  max-width: 120px;
+}
+  
+body.ways-to-give header.has-horizontal-nav .dropdown-menu li a { 
+  white-space: normal; 
+}
+
 header .container {
   padding: 0px;
 }
@@ -3249,6 +3258,7 @@ body.expand-news #recent_news_boxes .recent_news_item img {
   body.ways-to-give header.has-horizontal-nav .active .dropdown-menu li a span {
     display: inline;
   }
+  
 
   /* --------------------------------------------
     footer elements
