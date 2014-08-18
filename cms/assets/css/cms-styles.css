@@ -2226,6 +2226,69 @@ body.single-display-template-take-action-template #section-boxes .container:nth-
   margin: 0px;
 }
 
+/* --------------------------------------------
+  Ways to Give elements
+-------------------------------------------- */
+.wtg-impact-wide {
+  display: block;
+  margin: 0px auto;
+}
+.wtg-impact-narrow {
+  display: none;
+  margin: 0px auto;
+}
+.banner-donation-levels {
+  margin: 20px 0px;
+}
+.banner-donation-level-container {
+  display: inline-block;
+  vertical-align: middle;
+  height: 54px;
+  float: left;
+  margin-right: 10px;
+}
+.banner-donation-level-container:nth-child(4) {
+  margin-right: 0px;
+}
+.banner-donation-level {
+  display: none;
+}
+.banner-donation-level + label {
+  background-color: #53682b;
+  line-height: 54px;
+  height: 54px;
+  display: block;
+  margin: 0px;
+  padding: 0px 15px;
+  font-size: 30px;
+  font-weight: 400;
+  cursor: pointer;
+}
+.banner-donation-level + label:hover {
+  background-color: #b22d3a;
+}
+.banner-donation-level:checked + label {
+  background-color: #b22d3a;
+}
+#banner-donation-level-other-amount {
+  vertical-align: middle;
+  border: none;
+  background-color: transparent;
+  padding: 0px 0px 0px 5px;
+  color: #ffffff;
+  line-height: 54px;
+  height: 54px;
+  font-size: 30px;
+  font-weight: 400;
+  width: 100px;
+}
+.banner-donation-level ::-webkit-input-placeholder, #banner-donation-level-other-amount::-webkit-input-placeholder {
+  color: #ffffff;
+  opacity: .25;
+}
+
+
+
 /*
 shortcut to end of desktop
 */
@@ -3723,6 +3786,13 @@ shortcut to end of desktop
   .take-action-banner-body form div.half-width button {
     padding: 0px 10px;
     width: 100%;
+  }
+
+  .wtg-impact-wide {
+    display: none;
+  }
+  .wtg-impact-narrow {
+    display: block;
   }
 
   /* --------------------------------------------
