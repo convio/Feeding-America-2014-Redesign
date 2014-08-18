@@ -1974,6 +1974,34 @@ html.gecko #homepage_slideshow .homepage-slideshow-manual-control-nav li.flex-ac
   color: #333333;
 }
 
+/* FA State */
+#find-fb-search-and-map .right.bottom {
+  position: relative;
+}
+#find-fb-search-results.fb-state-org-results .result-box img {
+  max-width: 115px;
+}
+#fb-state-wrapper {
+  background-color: #53682b;
+  height: 100%;
+  max-height: 460px;
+  width: 100%;
+  max-width: 620px;
+}
+#fb-state-wrapper.fixed {
+  position: fixed;
+  top: 30px;
+}
+#fb-state-wrapper.bottom {
+  bottom: 50px;
+  position: absolute;
+  top: auto;
+}
+#fb-state-wrapper-inner {
+  text-align: center;
+  padding: 30px 0px 0px 0px;
+}
+
 /* "How We Are Ending Hunger" */
 #homepage_ending {
   margin: 10px 0px 0px 0px;
@@ -2031,7 +2059,10 @@ html.gecko #homepage_slideshow .homepage-slideshow-manual-control-nav li.flex-ac
   text-align: center;
   padding: 20px 0px 30px 0px;
 }
-#homepage_ending .right .above_img, #homepage_ending .right .below_img {
+#state_ending .above_img,
+#state_ending .below_img,
+#homepage_ending .right .above_img,
+#homepage_ending .right .below_img {
   font-size: 34px;
   font-weight: 500;
   color: #ffffff;
