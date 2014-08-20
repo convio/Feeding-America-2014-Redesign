@@ -2236,9 +2236,10 @@ body.single-display-template-take-action-template #section-boxes .container:nth-
 .wtg-impact-narrow {
   display: none;
   margin: 0px auto;
+  padding: 0px 20px;
 }
 .banner-donation-levels {
-  margin: 20px 0px;
+  margin: 20px 0px 10px 0px;
 }
 .banner-donation-level-container {
   display: inline-block;
@@ -2246,6 +2247,7 @@ body.single-display-template-take-action-template #section-boxes .container:nth-
   height: 54px;
   float: left;
   margin-right: 10px;
+  margin-bottom: 10px;
 }
 .banner-donation-level-container:nth-child(4) {
   margin-right: 0px;
@@ -2286,7 +2288,65 @@ body.single-display-template-take-action-template #section-boxes .container:nth-
   color: #ffffff;
   opacity: .25;
 }
-
+button.grainbutton {
+  display: inline-block;
+  padding: 0px 20px;
+  margin: 0px;
+  height: 50px;
+  line-height: 40px;
+  border: 5px solid #ffffff;
+  -webkit-border-top-left-radius: 20px;
+  -webkit-border-bottom-right-radius: 20px;
+  -moz-border-radius-topleft: 20px;
+  -moz-border-radius-bottomright: 20px;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-shadow: 0px 0px 1px 0px white;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 200;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  -moz-box-shadow: 0px 0px 6.72px 0.28px rgba(6, 6, 6, 0.2);
+  -webkit-box-shadow: 0px 0px 6.72px 0.28px rgba(6, 6, 6, 0.2);
+  box-shadow: 0px 0px 6.72px 0.28px rgba(6, 6, 6, 0.2);
+}
+.banner-donation-form button.grainbutton {
+  margin: 0px auto;
+  display: block;
+}
+.section-text a {
+  display: inline-block;
+}
+body.single-display-template-ways-to-give-template #section-boxes .section-box.full-width .section-title {
+  top: 0px;
+  left: 0px;
+  width: 375px;
+  margin-right: 0px;
+}
+body.single-display-template-ways-to-give-template #section-boxes .full-width .section-img {
+  display: none;
+}
+body.single-display-template-ways-to-give-template div.fullwidthbody {
+  margin: 40px 40px 25px 40px;
+  padding: 10px 0px 0px 375px;
+}
+body.single-display-template-ways-to-give-template div.fullwidthbody a {
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 500;
+  margin-bottom: 15px;
+  text-decoration: underline;
+  vertical-align: top;
+  display: inline-block;
+  width: 50%;
+}
+body.single-display-template-ways-to-give-template div.fullwidthbody a span {
+  text-decoration: none;
+  display: inline-block;
+  margin-left: 5px;
+}
 
 
 /*
@@ -3010,6 +3070,31 @@ shortcut to end of desktop
   }
   .take-action-banner-body form div.half-width button {
     padding: 0px 10px;
+  }
+
+  /* --------------------------------------------
+    Ways to Give elements
+  -------------------------------------------- */
+  .banner-donation-level-container {
+    height: 50px;
+  }
+  .banner-donation-level + label, #banner-donation-level-other-amount {
+    font-size: 24px;
+    height: 50px;
+    line-height: 50px;
+  }
+  #banner-donation-level-other-amount {
+    width: 80px;
+  }
+  .wtg-impact-wide {
+    padding: 0px 20px;
+  }
+  body.single-display-template-ways-to-give-template #section-boxes .section-box.full-width .section-title {
+    width: 250px;
+  }
+  body.single-display-template-ways-to-give-template div.fullwidthbody {
+    margin: 40px 20px 25px 20px;
+    padding: 5px 0px 0px 270px;
   }
 
 
@@ -3793,6 +3878,40 @@ shortcut to end of desktop
   }
   .wtg-impact-narrow {
     display: block;
+  }
+
+  .banner-donation-form button.grainbutton {
+    margin: 0px;
+    display: inline-block;
+  }
+  body.single-display-template-ways-to-give-template #section-boxes .section-box.full-width .section-title {
+    width: auto;
+    font-size: 24px;
+    line-height: 28px;
+    position: initial;
+    bottom: auto;
+    max-width: 280px;
+    margin: 0px auto 15px auto;
+  }
+  body.single-display-template-ways-to-give-template div.fullwidthbody {
+    padding: 0px;
+    max-width: 280px;
+    margin: 0px auto;
+  }
+  body.single-display-template-ways-to-give-template div.fullwidthbody a {
+    display: block;
+    width: 100%;
+  }
+  .banner-donation-level-container {
+    height: 50px;
+  }
+  .banner-donation-level + label, #banner-donation-level-other-amount {
+    font-size: 24px;
+    height: 50px;
+    line-height: 50px;
+  }
+  #banner-donation-level-other-amount {
+    width: 80px;
   }
 
   /* --------------------------------------------
