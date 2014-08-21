@@ -1650,7 +1650,7 @@ vertical-align: top;
 #fandf-visionary-partners-carousel .flex-direction-nav a {
   width: 18px;
   height: 32px;
-  opacity: initial;
+  opacity: 1;
   color: #dedede;;
 }
 #fandf-visionary-partners-carousel .flex-direction-nav a.flex-prev:before {
@@ -1702,7 +1702,7 @@ vertical-align: top;
 #fandf-leadership-partners-carousel .flex-direction-nav a {
   width: 18px;
   height: 32px;
-  opacity: initial;
+  opacity: 1;
   color: #dedede;;
 }
 #fandf-leadership-partners-carousel .flex-direction-nav a.flex-prev:before {
