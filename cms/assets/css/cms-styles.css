@@ -357,7 +357,7 @@ body.expand-news #recent_news_boxes .recent_news_item .news_preview {
 }
 body.expand-news #recent_news_boxes .recent_news_item .news_expanded {
   display: block;
-  position: initial;
+  position: static;
   bottom: auto;
   left: auto;
   background-image: none;
@@ -2679,7 +2679,7 @@ shortcut to end of desktop
   }
   #profile-pounds span.name {
     max-width: 440px;
-    position: initial;
+    position: static;
     padding-right: 0px;
     margin: 0px auto 15px auto;
   }
@@ -3238,7 +3238,7 @@ shortcut to end of desktop
     border-right: none;
   }
   #section-boxes .full-width {
-    position: initial;
+    position: static;
     padding: 30px 20px;
   }
   #section-boxes .left .section-img, #section-boxes .right .section-img {
@@ -3263,7 +3263,7 @@ shortcut to end of desktop
     margin: 0px auto;
   }
   #section-boxes .section-box.full-width .section-text {
-    position: initial;
+    position: static;
     top: auto;
     left: auto;
     right: auto;
@@ -3273,7 +3273,7 @@ shortcut to end of desktop
   #section-boxes .section-box .section-title {
     font-size: 24px;
     line-height: 28px;
-    position: initial;
+    position: static;
     bottom: auto;
     max-width: 280px;
     margin: 0px auto 15px auto;
@@ -3344,7 +3344,7 @@ shortcut to end of desktop
   #profile-pounds span.name {
     font-size: 24px;
     line-height: 26px;
-    position: initial;
+    position: static;
     padding-right: 0px;
     margin: 0px auto 15px auto;
   }
@@ -3427,7 +3427,7 @@ shortcut to end of desktop
     margin-bottom: 20px;
   }
   #profile-story-area .thumbnail {
-    position: initial;
+    position: static;
     top: auto;
     left: auto;
     margin-bottom: 25px;
@@ -3593,7 +3593,7 @@ shortcut to end of desktop
   #partner-news {
   }
   #partner-news .thumbnail {
-    position: initial;
+    position: static;
     top: auto;
     left: auto;
     margin-bottom: 30px;
@@ -3888,7 +3888,7 @@ shortcut to end of desktop
     width: auto;
     font-size: 24px;
     line-height: 28px;
-    position: initial;
+    position: static;
     bottom: auto;
     max-width: 280px;
     margin: 0px auto 15px auto;
