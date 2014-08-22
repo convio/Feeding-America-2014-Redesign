@@ -2959,6 +2959,10 @@ body.expand-news #recent_news_boxes .recent_news_item img {
     max-width: none;
     height: 131px;
   }
+  body.expand-news #recent_news_boxes .recent_news_item.three div.thumbnail, body.expand-news #recent_news_boxes .recent_news_item.three img {
+    width: 100%;
+    height: auto;
+  }
   #recent_news_boxes .recent_news_item.one {
     background-color: #e98300;
   }
