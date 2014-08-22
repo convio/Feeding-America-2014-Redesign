@@ -230,30 +230,34 @@ function interrupterToggle() {
 }
 
 function renderRecentItemBoxes() {
-    var lists = ['#recent_news_boxes>a.recent_news_item'];
-	var layout = [
-		['one'],
-		['two','two'],
-		['three','three','three'],
-		['four','four','four','four'],
-		['two','two','three','three','three'],
-		['three','three','three','three','three','three'],
-		['two','two','two','two','three','three','three'],
-		['four','four','four','four','four','four','four','four'],
-		['three','three','three','three','three','three','three','three','three'],
-		['two','two','four','four','four','four','four','four','four','four']
-	];
-	for (var i = 0 ; i < lists.length ; i++) {
-		var $list = $(lists[i]),
-			len = $list.length;
-		if (len > 0) {
-			$list.each(function(index) {
-				$(this).addClass(layout[len - 1][index]);
-			});
-			//var $parent = $list.parent();
-			//$parent.find('>.two').equalHeights();
-			//$parent.find('>.three').equalHeights();
-			//$parent.find('>.four').equalHeights();
-		}
-	}
+    if( $('body.expand-news').length ){
+        console.log('do not add classes');
+    } else {
+        var lists = ['#recent_news_boxes>a.recent_news_item'];
+    	var layout = [
+    		['one'],
+    		['two','two'],
+    		['three','three','three'],
+    		['four','four','four','four'],
+    		['two','two','three','three','three'],
+    		['three','three','three','three','three','three'],
+    		['two','two','two','two','three','three','three'],
+    		['four','four','four','four','four','four','four','four'],
+    		['three','three','three','three','three','three','three','three','three'],
+    		['two','two','four','four','four','four','four','four','four','four']
+    	];
+    	for (var i = 0 ; i < lists.length ; i++) {
+    		var $list = $(lists[i]),
+    			len = $list.length;
+    		if (len > 0) {
+    			$list.each(function(index) {
+    				$(this).addClass(layout[len - 1][index]);
+    			});
+    			//var $parent = $list.parent();
+    			//$parent.find('>.two').equalHeights();
+    			//$parent.find('>.three').equalHeights();
+    			//$parent.find('>.four').equalHeights();
+    		}
+    	}
+    }
 }
