@@ -10,6 +10,9 @@
 .secondary-promos {
   display: none;
 }
+.alert-banner img {
+  width: 44px;
+}
 
 /* Footer Promos */
 #footer_promos {
@@ -276,6 +279,13 @@ div[id*=image-] {
   font-size: 30px;
   line-height: 30px;
   font-weight: 500;
+}
+#section-boxes .section-box .section-title a {
+  color: #333333;
+  text-decoration: none;
+}
+#section-boxes .section-box .section-title a:hover {
+  color: #e98300;
 }
 #section-boxes .section-img {
   position: relative;
