@@ -13,6 +13,17 @@
 .alert-banner img {
   width: 44px;
 }
+.sidebar-donate-form {
+  position: relative;
+}
+.sidebar-donate-form:after {
+  content: '$';
+  display: block;
+  position: absolute;
+  top: 13px;
+  left: 15px;
+  color: #777777;
+}
 
 /* Footer Promos */
 #footer_promos {
@@ -2825,6 +2836,9 @@ shortcut to end of desktop
     padding-left: 295px;
     right: 20px;
   }
+  #find-fb-search-and-map .results-box .buttonWrapper a:first-child {
+    margin-bottom: 15px;
+  }
 
   /* --------------------------------------------
     Individual Corporate Partner page elements
@@ -3520,6 +3534,26 @@ shortcut to end of desktop
     width: 100%;
     max-width: 100%;
     height: 230px;
+  }
+  #fb-state-wrapper {
+    max-width: none;
+    max-height: none;
+  }
+  #fb-state-wrapper .bottom_row .social_icons {
+    margin-bottom: 20px;
+  }
+  #fb-state-wrapper-inner {
+    padding-bottom: 30px;
+  }
+  #find-fb-search-results .results-box {
+      text-align: center;
+  }
+  #find-fb-search-results .results-box img {
+    display: inline;
+    padding-bottom: 10px;
+  }
+  #find-fb-search-results .results-box .partner-orgs ul {
+    list-style-type: none;
   }
 
   /* --------------------------------------------

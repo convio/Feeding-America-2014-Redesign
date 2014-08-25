@@ -418,14 +418,21 @@ function initStickyMapWrapper(page) {
 
     function moveRightSide() {
         var bottomLoc = $('#find-fb-search-and-map').position().top + $('#find-fb-search-and-map').outerHeight(true) - $('#find-fb-search-and-map .right ' + wrprId).outerHeight(true);
-
-        if ($(window).width() > 991) {
+        var winWidth = $(window).width();
+        
+        $(wrprId).removeAttr('style');
+        if (winWidth > 991) {
             bottomLoc = bottomLoc - 131;
         } else {
             bottomLoc = bottomLoc - 91;
+            if (winWidth > 767) {
+                $(wrprId).css('width', (winWidth - (2 * 20) - 215 - 40 ).toString() + 'px');
+            } else {
+                $(wrprId).css('width', '100%');
+            }
         }
 
-        if ($(window).width() > 767) {
+        if (winWidth > 767) {
             if (topLoc >= $(window).scrollTop()) {
                 if ($(wrprId).hasClass('fixed')) {
                     $(wrprId + ', ' + sectionId).removeClass('fixed bottom');
@@ -443,15 +450,19 @@ function initStickyMapWrapper(page) {
                     }
                 }
             }
+        } else {
+            $(wrprId + ', ' + sectionId).removeClass('fixed bottom');
         }
     }
 
     $(window).scroll(function() {
         moveRightSide();
     });
-
     $(window).bind('touchmove', function(e) {
         var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
+        moveRightSide();
+    });
+    $(window).bind('orientationchange', function(e) {
         moveRightSide();
     });
 }
