@@ -1,10 +1,36 @@
+<!-- key metrics -->
+<t:set id="reus_testing" value="'testing these variables'" />
+<t:set id="reus_calculation" value="crm('[[S51:reus_calculation]]')" />
+<t:set id="reus_donations2_thankyou_autoresponder_mod_multiplier" value="crm('[[S51:reus_donations2_thankyou_autoresponder_mod_multiplier]]')" />
+<t:set id="reus_donations2_thankyou_mod_multiplier" value="crm('[[S51:reus_donations2_thankyou_mod_multiplier]]')" />
+<t:set id="reus_number_25_dollars_will_feed" value="crm('[[S51:reus_number_25_dollars_will_feed]]')" />
+<t:set id="reus_number_cents_back_into_programs" value="crm('[[S51:reus_number_cents_back_into_programs]]')" />
+<t:set id="reus_number_children_free_reduced_meals" value="crm('[[S51:reus_number_children_free_reduced_meals]]')" />
+<t:set id="reus_number_dollars_of_food_for_each_dollar" value="crm('[[S51:reus_number_dollars_of_food_for_each_dollar]]')" />
+<t:set id="reus_number_food_banks" value="crm('[[S51:reus_number_food_banks]]')" />
+<t:set id="reus_number_lbs_of_food" value="crm('[[S51:reus_number_lbs_of_food]]')" />
+<t:set id="reus_number_network_avg_meals" value="crm('[[S51:reus_number_network_avg_meals]]')" />
+<t:set id="reus_number_people_food_insecure" value="crm('[[S51:reus_number_people_food_insecure]]')" />
+<t:set id="reus_number_people_food_insecure_1inX" value="crm('[[S51:reus_number_people_food_insecure_1inX]]')" />
+<t:set id="reus_number_people_served" value="crm('[[S51:reus_number_people_served]]')" />
+<t:set id="reus_number_people_served_children" value="crm('[[S51:reus_number_people_served_children]]')" />
+<t:set id="reus_number_people_served_seniors" value="crm('[[S51:reus_number_people_served_seniors]]')" />
+<t:set id="reus_number_pounds_saved_from_landfills" value="crm('[[S51:reus_number_pounds_saved_from_landfills]]')" />
+<t:set id="reus_phone_number_donor_services" value="crm('[[S51:reus_phone_number_donor_services]]')" />
+<t:set id="reus_phone_number_general" value="crm('[[S51:reus_phone_number_general]]')" />
+
+
 <div id="homepage_slideshow">
   <!-- Feature slides -->
   <ul class="slides">
     <t:if test="feature_slides.length>0">
     <t:list id="feature_slides">
     <t:if test="index==1"><div></div></t:if>
+<t:if test="crop_focus.length>0">
+    <li><img border="0" src="${url}"  class="crop-${crop_focus}" />
+</t:if><t:else>
     <li><img border="0" src="${url}" />
+</t:else>
     <div class="headline-bar">
     <div class="container">
     <div class="headline-text"><span class="headline-title">${title}</span><t:if test="!isNull(subtitle)"><span class="headline-subhead">${subtitle}</span></t:if></span></div>
@@ -62,10 +88,21 @@
             <t:if test="latest_news.length>0">
                 <t:list id="latest_news">
                     <a class="recent_news_item" href="${url}">
-                        <img alt="${title}" border="0" src="${thumb.url}" />
-                        <div class="news_preview"><span>${title}</span></div>
+<t:if test="large_image.length>0"><t:list id="large_image"><img src="${url}" alt="${alt_text}" border="0" /></t:list></t:if>
+<t:else>
+<t:if test="thumb.length > 0">
+                        <img alt="${title}" alt="${alt_text}" border="0" src="${thumb.url}" />
+</t:if>
+<t:else>
+  <t:if test="!isNull(video_url)">
+    <t:set id="videoid" value="replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(video_url,'http://',''),'https://',''),'watch',''),'embed',''),'www.',''),'youtube.com',''),'youtu.be',''),'v=',''),'?',''),'&',''),'/','')" />
+    <img border="0" alt="${title} - Video" src="https://img.youtube.com/vi/${videoid}/mqdefault.jpg" class="crop-Left" />
+  </t:if>
+</t:else>
+</t:else>
+                        <div class="news_preview"><span><t:if test="!isNull(short_title)">${short_title}</t:if><t:else>${title}</t:else></span></div>
                         <!--/.news_preview-->
-                        <div class="news_expanded"><span>${title}</span>
+                        <div class="news_expanded"><span><t:if test="!isNull(short_title)">${short_title}</t:if><t:else>${title}</t:else></span>
                             <t:if test="!isNull(description)"><p>${description}</p></t:if>
                             <p><span class="link">Learn more</span></p>
                         </div>
@@ -132,5 +169,5 @@
 <script src="/assets/js/soap.js"></script>
 <script src="/assets/js/xml2json.js"></script>
 <script src="/assets/js/fa-soap.js"></script>
-<!--<script src="/assets/js/fa-homepage.js"></script>-->
+<script src="/assets/js/fa-hunger-meter.js"></script>
 <script src="/assets/js/fa-homepage.js"></script>
