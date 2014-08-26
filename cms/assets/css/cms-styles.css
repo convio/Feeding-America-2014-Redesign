@@ -25,6 +25,15 @@
   color: #777777;
 }
 
+.superscript {
+  vertical-align: super;
+  font-size: smaller;
+}
+.subscript {
+  vertical-align: sub;
+  font-size: smaller;
+}
+
 /* Footer Promos */
 #footer_promos {
   background-color: #53682b;
