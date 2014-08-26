@@ -39,7 +39,7 @@
       <t:if test="displayItem == 1 && itemDisplayed == 0">
         <t:set id="itemDisplayed" value="1" />
 
-        <div class="interrupter promo closed">
+        <div class="interrupter promo closed ${conditionalCategory}">
           <div class="int-buttons">
             <a href="#" class="int-btn-open"><img src="http://fa.pub30.convio.net/assets/images/int-btn-open.png" border="0" /></a>
             <a href="#" class="int-btn-close"><img src="http://fa.pub30.convio.net/assets/images/int-btn-close.png" border="0" /></a>
