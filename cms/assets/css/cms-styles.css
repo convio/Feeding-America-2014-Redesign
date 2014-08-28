@@ -1435,9 +1435,9 @@ vertical-align: top;
   width: 106px;
 }
 #sidebar-filter-dates input, .select-date-range input {
-	cursor: pointer;
+  cursor: pointer;
     padding-left: 5px;
-	background-image: url('../images/dropdown.png');
+  background-image: url('../images/dropdown.png');
     background-repeat: no-repeat;
     background-position: right center;
 }
@@ -1665,7 +1665,7 @@ vertical-align: top;
 }
 
 #body-content-related-content {
-	margin-top:40px;
+  margin-top:40px;
 }
 
 /* --------------------------------------------
@@ -2919,9 +2919,9 @@ shortcut to end of desktop
     font-size: 12px;
   }
   #sidebar-filter-dates input, .select-date-range input {
-	width: 80px;
-	padding-left: 5px;
-	font-size: 11px;
+  width: 80px;
+  padding-left: 5px;
+  font-size: 11px;
   }
 
   /* --------------------------------------------
