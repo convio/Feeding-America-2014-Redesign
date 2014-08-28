@@ -279,6 +279,7 @@ div[id*=image-] {
 }
 #section-boxes .section-box {
   height: 100%;
+  position: relative;
 }
 #section-boxes .section-box.left, #section-boxes .section-box.right {
   width: 50%;
