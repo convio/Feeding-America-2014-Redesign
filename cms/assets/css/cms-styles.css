@@ -2354,20 +2354,20 @@ button.grainbutton {
 .section-text a {
   display: inline-block;
 }
-body.single-display-template-ways-to-give-template #section-boxes .section-box.full-width .section-title {
+body.single-display-template-ways-to-give-template #section-boxes .section-box.full-width .section-title, #section-boxes .section-box.full-width.no-img .section-title {
   top: 0px;
   left: 0px;
   width: 375px;
   margin-right: 0px;
 }
-body.single-display-template-ways-to-give-template #section-boxes .full-width .section-img {
+body.single-display-template-ways-to-give-template #section-boxes .full-width .section-img, #section-boxes .full-width.no-img .section-img {
   display: none;
 }
-body.single-display-template-ways-to-give-template div.fullwidthbody {
+body.single-display-template-ways-to-give-template div.fullwidthbody, #section-boxes .section-box.full-width.no-img div.fullwidthbody {
   margin: 40px 40px 25px 40px;
   padding: 10px 0px 0px 375px;
 }
-body.single-display-template-ways-to-give-template div.fullwidthbody a {
+body.single-display-template-ways-to-give-template div.fullwidthbody a, #section-boxes .section-box.full-width.no-img div.fullwidthbody a {
   font-size: 16px;
   line-height: 16px;
   font-weight: 500;
@@ -2377,10 +2377,27 @@ body.single-display-template-ways-to-give-template div.fullwidthbody a {
   display: inline-block;
   width: 50%;
 }
-body.single-display-template-ways-to-give-template div.fullwidthbody a span {
+body.single-display-template-ways-to-give-template div.fullwidthbody a span, #section-boxes .section-box.full-width.no-img div.fullwidthbody a span {
   text-decoration: none;
   display: inline-block;
   margin-left: 5px;
+}
+.video-players .list-items .list-item-thumbnail {
+    width: 200px;
+}
+.blog-posts.list-items-container.video-players .list-items .list-item-text {
+    padding-left: 240px;
+}
+.blog-posts.list-items-container.video-players .list-items .list-item {
+    min-height: 163px;
+}
+#section-boxes .section-box.full-width.no-img div.fullwidthbody .social_icons a {
+  font-size: 0;
+  display: block;
+  width: 50px;
+}
+body.connect-with-us #section-boxes .section-box.full-width.no-img div.fullwidthbody {
+  padding-left: 275px;
 }
 
 
@@ -3316,7 +3333,7 @@ shortcut to end of desktop
     max-width: 280px;
     margin: 0px auto 15px auto;
   }
-  #section-boxes .section-box.full-width .section-title {
+  #section-boxes .section-box.full-width .section-title, #section-boxes .section-box.full-width.no-img .section-title {
     left: auto;
     right: auto;
     bottom: auto;
@@ -3951,7 +3968,7 @@ shortcut to end of desktop
     max-width: 280px;
     margin: 0px auto 15px auto;
   }
-  body.single-display-template-ways-to-give-template div.fullwidthbody {
+  body.single-display-template-ways-to-give-template div.fullwidthbody, body.connect-with-us #section-boxes .section-box.full-width.no-img div.fullwidthbody {
     padding: 0px;
     max-width: 280px;
     margin: 0px auto;
@@ -3970,6 +3987,19 @@ shortcut to end of desktop
   }
   #banner-donation-level-other-amount {
     width: 80px;
+  }
+  .blog-posts.list-items-container.video-players .list-items .list-item {
+    min-height: none;
+  }
+  .video-players .list-items .list-item-thumbnail {
+    position: static;
+    display: block;
+    width: auto;
+  }
+  .blog-posts.list-items-container.video-players .list-items .list-item-text {
+    padding-left: 0px;
+    display: block;
+    width: auto;
   }
 
   /* --------------------------------------------
