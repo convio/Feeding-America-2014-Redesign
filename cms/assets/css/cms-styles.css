@@ -1885,6 +1885,7 @@ vertical-align: top;
 }
 .fancybox-inner {
   height: auto !important;
+  width: auto !important;
 }
 
 .fancybox-nav {
