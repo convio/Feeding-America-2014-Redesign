@@ -30,7 +30,11 @@ FA.webService = function() { // FA web service helper
             },
             data: data,
             success: function (soapResponse) {
-                successCallback(digestResponse(path, soapResponse.toJSON()));
+                if (path == null) {
+                    successCallback(soapResponse.toXML());
+                } else {
+                    successCallback(digestResponse(path, soapResponse.toJSON()));
+                }
             },
             error: function (soapResponse) {
                 if (typeof(errorCallback) == 'function') {
