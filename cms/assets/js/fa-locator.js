@@ -68,47 +68,47 @@ var statesAbbrToFull = {
     "WY": "Wyoming"
 };
 var orgProperties = {
-	'OrganizationID': 1, 'FullName': 1, 'Phone': 1, 'URL': 1, 'AgencyURL': 1, 'VolunteerURL': 1, 
-	'MailAddress': { 'Latitude': 1, 'Longitude': 1, 'Address1': 1, 'Address2': 1, 'City': 1, 'State': 1, 'Zip': 1 }, 
-	'LogoUrls': { 'SecureConvioMain': 1 },
-	'ListPDOs': 'list_PDO',
-	'list_PDO': { 'Title': 1, 'Address': 1, 'City': 1, 'State': 1, 'ZipCode': 1, 'Phone': 1, 'Website': 1 }
+    'OrganizationID': 1, 'FullName': 1, 'Phone': 1, 'URL': 1, 'AgencyURL': 1, 'VolunteerURL': 1,
+    'MailAddress': { 'Latitude': 1, 'Longitude': 1, 'Address1': 1, 'Address2': 1, 'City': 1, 'State': 1, 'Zip': 1 },
+    'LogoUrls': { 'SecureConvioMain': 1 },
+    'ListPDOs': 'list_PDO',
+    'list_PDO': { 'Title': 1, 'Address': 1, 'City': 1, 'State': 1, 'ZipCode': 1, 'Phone': 1, 'Website': 1 }
 };
 
 var nodeValue = function(node) { 
-	var nv = '';
-	switch (node.nodeType) {
-		case 1 : // ELEMENT_NODE
-			nv = node.textContent || node.innerText;
-			break;
-	}
-	return nv;
+    var nv = '';
+    switch (node.nodeType) {
+        case 1 : // ELEMENT_NODE
+            nv = node.textContent || node.innerText;
+            break;
+    }
+    return nv;
 };
 
 function orgXmlListToJson(node, id) {
-	var list = new Array(), data = node.childNodes; attr = orgProperties[id];
-	for (var i = 0 ; i < data.length ; i++) {
-	    var node = data[i];
-		list.push(orgXmlToJson(node, attr));
-	}
-	return list;
+    var list = new Array(), data = node.childNodes; attr = orgProperties[id];
+    for (var i = 0 ; i < data.length ; i++) {
+        var node = data[i];
+        list.push(orgXmlToJson(node, attr));
+    }
+    return list;
 }
 
 function orgXmlToJson(node, attr) {
-	var item = {}, data = node.childNodes;
-	for (var i = 0 ; i < data.length ; i++) {
-		var node = data[i], nn = node.localName || node.nodeName, match = attr[nn];
-		if (match) {
-			if (match === 1) {
-				item[nn] = nodeValue(node);
-			} else if (typeof match == 'string' && match.substring(0, 5) == 'list_') {
-				item[nn] = orgXmlListToJson(node, match);
-			} else {
-				item[nn] = orgXmlToJson(node, match);
-			}
-		}
-	}
-	return item;
+    var item = {}, data = node.childNodes;
+    for (var i = 0 ; i < data.length ; i++) {
+        var node = data[i], nn = node.localName || node.nodeName, match = attr[nn];
+        if (match) {
+            if (match === 1) {
+                item[nn] = nodeValue(node);
+            } else if (typeof match == 'string' && match.substring(0, 5) == 'list_') {
+                item[nn] = orgXmlListToJson(node, match);
+            } else {
+                item[nn] = orgXmlToJson(node, match);
+            }
+        }
+    }
+    return item;
 }
 
 function searchByZip(zip) {
@@ -198,7 +198,7 @@ function centerOnSearch(data, searchString) {
         for (var key in data) {
             var org = data[key],
                 orgID = org.OrganizationID,
-				lat = Number(org.MailAddress.Latitude),
+                lat = Number(org.MailAddress.Latitude),
                 lng = Number(org.MailAddress.Longitude),
                 markerLatlng = new google.maps.LatLng(lat, lng),
                 /*
@@ -291,7 +291,72 @@ function returnFAResults(data, searchString, execSearch) {
         mapPoints = [], mapPointInfoBoxes = [];
 
     if (data !== null) {
-		for (var i = 0 ; i < data.length ; i++) {
+        // Because of IE issues with long running js script,
+        // we have to break it down into chunks of 25 records per batch
+        var processFAResults = function(current, cycles, total) {
+            var to = current + cycles; to = to > total ? total : to;
+
+            for (var i = current ; i < to ; i++) {
+                //build our HTML for each item
+                var org = orgXmlToJson(data[i], orgProperties),
+                    resultsBox = buildFAOrgResultBox(org),
+                    profileUrlName = org.FullName.replace(/ /g, '-').toLowerCase(),
+                    profileUrl = '/find-your-local-foodbank/' + (profileUrlName.replace(/[&]/g, 'and')).replace(/[\.,']/g, '') + '.html';
+
+                //save map ponts
+                mapPoints[org.OrganizationID] = [Number(org.MailAddress.Latitude),Number(org.MailAddress.Longitude)];
+
+                //save infobox data
+                mapPointInfoBoxes[org.OrganizationID] = {
+                    title: org.FullName,
+                    address: org.MailAddress.Address1,
+                    phone: org.Phone,
+                    url: org.URL,
+                    profileurl: profileUrl
+                };
+
+                resultsWrapper.append(resultsBox);
+            }
+
+            if (total > to) {
+                setTimeout(function() { processFAResults(i, cycles, total) }, 1);
+            } else {
+                finalizeFAResults();
+            }
+        };
+
+        var finalizeFAResults = function() {
+            //plot map points
+            plotPoints(mapPoints, mapPointInfoBoxes);
+
+            //check if we need to execute search
+            if (typeof(execSearch) == "function") {
+                execSearch();
+                return;
+            }
+
+            //create the summary box, handle plural/singular result
+            buildFAOrgsSummaryBox(data, resultsWrapper, searchString);
+        };
+
+        // Start the process
+        processFAResults(0, 25, data.length);
+
+    } else {// No results
+        resultsWrapper.append('The search did not produce any results');
+    }
+
+    resultsWrapper.show();
+}
+
+function returnFAResults1(data, searchString, execSearch) {
+    console.log(data); return;
+
+    var resultsWrapper = $('#find-fb-search-results'),
+        mapPoints = [], mapPointInfoBoxes = [];
+
+    if (data !== null) {
+        for (var i = 0 ; i < data.length ; i++) {
             //build our HTML for each item
             var org = orgXmlToJson(data[i], orgProperties),
                 resultsBox = buildFAOrgResultBox(org),
@@ -525,7 +590,7 @@ function buildProfilePageDisplay(data, orgId) {
             chiefExec = (org.ED.FullName.length !== 0)? '<strong>Chief Executive:</strong> <span>'+org.ED.FullName+'</span><br>': '',
             mediaContact = (org.MediaContact.FullName.length !== 0)? '<strong>Media Contact:</strong> <span>'+org.MediaContact.FullName+'</span><br>': '',
             mapString = 'https://www.google.com/maps/embed/v1/search?q=' + encodeURI((org.FullName).replace(/[&]/g, 'and') + ' ' + org.MailAddress.Address1 + ' ' + org.MailAddress.City + ' ' + org.MailAddress.State + ' ' + org.MailAddress.Zip),
-            orgAgencyButton = '', orgVolunteerURL = '', socialIcons = '', countyList = $('<span class="counties"/>'),
+            orgAgencyButton = '', orgDonateUrl = '', orgVolunteerURL = '', socialIcons = '', countyList = $('<span class="counties"/>'),
             foodInsecurityCount = (Math.round(1 / org.FI_AGGREGATE) > 10) ? 10 : Math.round(1 / org.FI_AGGREGATE),
             foodInsecurityStat = '1 in ' + foodInsecurityCount.toString() + ' people',
             childFoodCount = (Math.round(1 / org.CHILD_FI_PCT) > 10) ? 10 : Math.round(1 / org.CHILD_FI_PCT),
@@ -551,16 +616,17 @@ function buildProfilePageDisplay(data, orgId) {
         profileElements.append('<p>' + chiefExec + mediaContact + '</p>');
 
         //buttons
-        if (org.AgencyURL !== '') {
-            //TODO: temp style, put in CSS
-            orgAgencyButton = '<a href="'+org.AgencyURL+'" class="green button" style="padding: 11px 10px"> Find Food </a>&nbsp;&nbsp;';
+        if (org.SocialUrls && org.SocialUrls.DonateUrl && org.SocialUrls.DonateUrl != '') {
+            orgDonateUrl = '<a href="' + org.SocialUrls.DonateUrl + '" class="green button" style="padding: 11px 10px"> Give Locally </a>&nbsp;&nbsp;'
         }
-
+        if (org.AgencyURL !== '') {// TODO: temp style, put in CSS
+            orgAgencyButton = '<a href="' + org.AgencyURL + '" class="green button" style="padding: 11px 10px"> Find Food </a>&nbsp;&nbsp;';
+        }
         if (org.VolunteerURL !== '') {
-            orgVolunteerURL = '<a href="'+org.VolunteerURL+'" class="green button" style="padding: 11px 10px"> Volunteer </a>';
+            orgVolunteerURL = '<a href="' + org.VolunteerURL + '" class="green button" style="padding: 11px 10px"> Volunteer </a>';
         }
+        profileElements.append('<div class="profile-buttons">' + orgDonateUrl + orgAgencyButton + orgVolunteerURL + '</div>');
 
-        profileElements.append('<div class="profile-buttons"><a class="green button" style="padding: 11px 10px"> Give Locally </a>&nbsp;&nbsp;' + orgAgencyButton + orgVolunteerURL + '</div>');
         //social
         if (org.SocialUrls.Facebook !== '' || org.SocialUrls.Twitter !== '') {
             socialIconsWrapper = $('<div class="profile-social"/>'),
