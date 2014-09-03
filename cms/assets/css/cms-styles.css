@@ -33,6 +33,17 @@
   vertical-align: sub;
   font-size: smaller;
 }
+.small-table {
+  font-size: 12px;
+}
+.small-table table, table.small-table {
+  width: auto !important;
+  height: auto !important;
+  font-size: 12px;
+}
+.small-table td, table.small-table td, td.small-table, .small-table th, table.small-table th, th.small-table {
+  padding: 9px 11px;
+}
 
 /* Footer Promos */
 #footer_promos {
