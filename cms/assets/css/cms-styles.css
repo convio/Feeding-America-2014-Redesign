@@ -95,7 +95,7 @@
 #footer_promo_boxes .footer-promo input[type="text"], #footer_promo_boxes .footer-promo input[type="email"] {
   display: inline-block;
   vertical-align: top;
-  font-family: Gotham, 'Gotham Book', Gotham-Book, 'Gotham A', 'Gotham B', Arial, sans-serif;
+  font-family: 'Gotham A', 'Gotham B', Arial, sans-serif;
   color: #777777;
   font-size: 14px;
   font-weight: 200;
@@ -133,7 +133,7 @@
   -ms-appearance: none;
   appearance: none;
   color: #ffffff;
-  font-family: Gotham, 'Gotham Book', Gotham-Book, 'Gotham A', 'Gotham B', Arial, sans-serif;
+  font-family: 'Gotham A', 'Gotham B', Arial, sans-serif;
   font-size: 14px;
   font-weight: 200;
   padding: 0px 20px;
@@ -150,7 +150,7 @@
   border: none;
   outline: none;
   color: #ffffff;
-  font-family: Gotham, 'Gotham Book', Gotham-Book, 'Gotham A', 'Gotham B', Arial, sans-serif;
+  font-family: 'Gotham A', 'Gotham B', Arial, sans-serif;
   font-size: 14px;
   font-weight: 200;
   padding: 0px 20px;
@@ -1470,7 +1470,7 @@ vertical-align: top;
   -webkit-appearance: none;
   -ms-appearance: none;
   appearance: none;
-  font-family: Gotham, 'Gotham Book', Gotham-Book, 'Gotham A', 'Gotham B', Arial, sans-serif;
+  font-family: 'Gotham A', 'Gotham B', Arial, sans-serif;
   font-size: 14px;
   font-weight: 200;
   padding: 0px 20px;
@@ -1946,7 +1946,10 @@ vertical-align: top;
   font-size: 16px;
   line-height: 24px;
   margin: 10px 0px 15px 0px;
+  /*
   font-weight: 400;
+  */
+  font-weight: normal;
 }
 .story-overlay p {
   font-size: 16px;
@@ -2224,7 +2227,10 @@ body.single-display-template-take-action-template .section-banner .headline-titl
 body.single-display-template-take-action-template .section-banner.no-photo .headline-subhead, body.single-display-template-take-action-template .section-banner.no-photo .take-action-banner-body p {
   font-size: 16px;
   line-height: 24px;
+  /*
   font-weight: 400;
+  */
+  font-weight: normal;
 }
 .take-action-banner-body form div.half-width button {
   padding: 0px 10px;
@@ -2298,7 +2304,10 @@ body.single-display-template-take-action-template #section-boxes .container:nth-
   margin: 0px;
   padding: 0px 15px;
   font-size: 30px;
+  /*
   font-weight: 400;
+  */
+  font-weight: normal;
   cursor: pointer;
 }
 .banner-donation-level + label:hover {
@@ -2316,7 +2325,10 @@ body.single-display-template-take-action-template #section-boxes .container:nth-
   line-height: 54px;
   height: 54px;
   font-size: 30px;
+  /*
   font-weight: 400;
+  */
+  font-weight: normal;
   width: 100px;
 }
 .banner-donation-level ::-webkit-input-placeholder, #banner-donation-level-other-amount::-webkit-input-placeholder {
@@ -3099,7 +3111,10 @@ shortcut to end of desktop
   body.single-display-template-take-action-template .section-banner.no-photo .headline-subhead, body.single-display-template-take-action-template .section-banner.no-photo .take-action-banner-body p {
     font-size: 16px;
     line-height: 24px;
+    /*
     font-weight: 400;
+    */
+    font-weight: normal;
     margin-bottom: 15px;
   }
   body.single-display-template-take-action-template .section-banner.no-photo .take-action-banner-body p {

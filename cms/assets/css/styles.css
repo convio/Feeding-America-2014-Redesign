@@ -14,13 +14,13 @@
 }
 body {
   margin: 0px;
-  font-family: Gotham, 'Gotham Book', Gotham-Book, 'Gotham A', 'Gotham B', Arial, sans-serif;
+  font-family: 'Gotham A', 'Gotham B', Arial, sans-serif;
   font-size: 14px;
   position: relative;
   color: #333333;
 }
 p, li, ol, ul, table, tr, th, td, .Explicit {
-  font-family: Gotham, 'Gotham Book', Gotham-Book, 'Gotham A', 'Gotham B', Arial, sans-serif;
+  font-family: 'Gotham A', 'Gotham B', Arial, sans-serif;
   font-size: inherit;
   line-height: inherit;
 }
@@ -107,7 +107,10 @@ p:last-child {
   border-bottom: 1px solid #e5e5e5;
 }
 #page-description strong {
+  /*
   font-weight: 400;
+  */
+  font-weight: normal;
 }
 #page-description p {
   font-size: 18px;
@@ -443,7 +446,7 @@ a.button {
   border: none;
   outline: none;
   color: #ffffff;
-  font-family: Gotham, 'Gotham Book', Gotham-Book, 'Gotham A', 'Gotham B', Arial, sans-serif;
+  font-family: 'Gotham A', 'Gotham B', Arial, sans-serif;
   font-size: 14px;
   font-weight: 200;
   padding: 11px 20px;
@@ -491,7 +494,7 @@ button {
   -ms-appearance: none;
   appearance: none;
   color: #ffffff;
-  font-family: Gotham, 'Gotham Book', Gotham-Book, 'Gotham A', 'Gotham B', Arial, sans-serif;
+  font-family: 'Gotham A', 'Gotham B', Arial, sans-serif;
   font-size: 14px;
   font-weight: 200;
   padding: 0px 20px;
@@ -551,7 +554,7 @@ a.button.green:hover, a.grainbutton.green:hover, button.green:hover {
 input[type="text"], input[type="email"] {
   display: inline-block;
   vertical-align: top;
-  font-family: Gotham, 'Gotham Book', Gotham-Book, 'Gotham A', 'Gotham B', Arial, sans-serif;
+  font-family: 'Gotham A', 'Gotham B', Arial, sans-serif;
   color: #777777;
   font-size: 14px;
   font-weight: 200;
@@ -569,7 +572,7 @@ input[type="text"], input[type="email"] {
 textarea {
   display: inline-block;
   vertical-align: top;
-  font-family: Gotham, 'Gotham Book', Gotham-Book, 'Gotham A', 'Gotham B', Arial, sans-serif;
+  font-family: 'Gotham A', 'Gotham B', Arial, sans-serif;
   color: #777777;
   font-size: 14px;
   font-weight: 200;
@@ -586,7 +589,7 @@ select {
   display: inline-block;
   vertical-align: top;
   margin: 0px;
-  font-family: Gotham, 'Gotham Book', Gotham-Book, 'Gotham A', 'Gotham B', Arial, sans-serif;
+  font-family: 'Gotham A', 'Gotham B', Arial, sans-serif;
   color: #777777;
   font-size: 14px;
   font-weight: 200;
@@ -895,7 +898,10 @@ table.paginator, table.paginator th, table.paginator td {
   font-size: 14px;
   line-height: 20px;
   background-color: transparent;
+  /*
   font-weight: 400;
+  */
+  font-weight: normal;
 }
 table.paginator {
   border-top: 1px solid #dedede;
@@ -918,7 +924,10 @@ table.paginator td.pg-curr, table.paginator td a {
   font-weight: 500;
 }
 table.paginator td b {
+  /*
   font-weight: 400;
+  */
+  font-weight: normal;
 }
 table.paginator td.pg-prev {
   padding: 20px 10px 0px 10px;
@@ -1104,7 +1113,7 @@ header a, header a * {
 }
 #util_search_query {
   display: inline-block;
-  font-family: Gotham, 'Gotham Book', Gotham-Book, 'Gotham A', 'Gotham B', Arial, sans-serif;
+  font-family: 'Gotham A', 'Gotham B', Arial, sans-serif;
   font-size: 14px;
   color: #777777;
   font-weight: 200;
@@ -1132,7 +1141,7 @@ header a, header a * {
   appearance: none;
   background-color: #53682b;
   color: #ffffff;
-  font-family: Gotham, 'Gotham Book', Gotham-Book, 'Gotham A', 'Gotham B', Arial, sans-serif;
+  font-family: 'Gotham A', 'Gotham B', Arial, sans-serif;
   font-size: 14px;
   font-weight: 200;
   padding: 0px 10px;
@@ -1903,7 +1912,7 @@ html.gecko #homepage_slideshow .homepage-slideshow-manual-control-nav li.flex-ac
   display: inline-block;
   vertical-align: top;
   margin: 0px 9px 0px 24px;
-  font-family: Gotham, 'Gotham Book', Gotham-Book, 'Gotham A', 'Gotham B', Arial, sans-serif;
+  font-family: 'Gotham A', 'Gotham B', Arial, sans-serif;
   color: #777777;
   font-size: 14px;
   font-weight: 200;
@@ -1931,7 +1940,7 @@ html.gecko #homepage_slideshow .homepage-slideshow-manual-control-nav li.flex-ac
   appearance: none;
   background-color: #b22d3a;
   color: #ffffff;
-  font-family: Gotham, 'Gotham Book', Gotham-Book, 'Gotham A', 'Gotham B', Arial, sans-serif;
+  font-family: 'Gotham A', 'Gotham B', Arial, sans-serif;
   font-size: 14px;
   font-weight: 200;
   padding: 0px 20px;
@@ -2082,7 +2091,7 @@ html.gecko #homepage_slideshow .homepage-slideshow-manual-control-nav li.flex-ac
   display: inline-block;
   vertical-align: top;
   margin: 5px 0px 5px 35px;
-  font-family: Gotham, 'Gotham Book', Gotham-Book, 'Gotham A', 'Gotham B', Arial, sans-serif;
+  font-family: 'Gotham A', 'Gotham B', Arial, sans-serif;
   color: #777777;
   font-size: 14px;
   font-weight: 200;
@@ -2282,7 +2291,7 @@ body.expand-news #recent_news_boxes .recent_news_item img {
   display: inline-block;
   vertical-align: top;
   margin: 0px 9px 0px 0px;
-  font-family: Gotham, 'Gotham Book', Gotham-Book, 'Gotham A', 'Gotham B', Arial, sans-serif;
+  font-family: 'Gotham A', 'Gotham B', Arial, sans-serif;
   color: #777777;
   font-size: 14px;
   font-weight: 200;
@@ -2310,7 +2319,7 @@ body.expand-news #recent_news_boxes .recent_news_item img {
   appearance: none;
   background-color: #b22d3a;
   color: #ffffff;
-  font-family: Gotham, 'Gotham Book', Gotham-Book, 'Gotham A', 'Gotham B', Arial, sans-serif;
+  font-family: 'Gotham A', 'Gotham B', Arial, sans-serif;
   font-size: 14px;
   font-weight: 200;
   padding: 0px 20px;
@@ -2429,7 +2438,7 @@ body.expand-news #recent_news_boxes .recent_news_item img {
   display: inline-block;
   vertical-align: top;
   margin: 0px 9px 0px 0px;
-  font-family: Gotham, 'Gotham Book', Gotham-Book, 'Gotham A', 'Gotham B', Arial, sans-serif;
+  font-family: 'Gotham A', 'Gotham B', Arial, sans-serif;
   color: #777777;
   font-size: 14px;
   font-weight: 200;
@@ -2457,7 +2466,7 @@ body.expand-news #recent_news_boxes .recent_news_item img {
   appearance: none;
   background-color: #b22d3a;
   color: #ffffff;
-  font-family: Gotham, 'Gotham Book', Gotham-Book, 'Gotham A', 'Gotham B', Arial, sans-serif;
+  font-family: 'Gotham A', 'Gotham B', Arial, sans-serif;
   font-size: 14px;
   font-weight: 200;
   padding: 0px 20px;
@@ -2503,7 +2512,10 @@ body.expand-news #recent_news_boxes .recent_news_item img {
   border-left: 1px solid #758655;
 }
 #homepage_fivesteps_boxes .homepage_fivesteps_step strong {
+  /*
   font-weight: 400;
+  */
+  font-weight: normal;
 }
 #homepage_fivesteps_boxes .homepage_fivesteps_step p {
   margin: 0px;
@@ -4058,7 +4070,7 @@ body.expand-news #recent_news_boxes .recent_news_item img {
     border-right: 1px solid #ffffff;
     padding-right: 8px;
     cursor: pointer;
-    font-family: Gotham, 'Gotham Book', Gotham-Book, 'Gotham A', 'Gotham B', Arial, sans-serif;
+    font-family: 'Gotham A', 'Gotham B', Arial, sans-serif;
     font-size: 13px;
   }
   .navbar-collapse.collapse {
@@ -4762,7 +4774,7 @@ body.expand-news #recent_news_boxes .recent_news_item img {
     color: #ffffff;
     cursor: pointer;
     display: block;
-    font-family: Gotham,'Gotham Book',Gotham-Book,'Gotham A','Gotham B',Arial,sans-serif;
+    font-family: 'Gotham A','Gotham B',Arial,sans-serif;
     font-size: 14px;
     font-weight: 200;
     height: 40px;
