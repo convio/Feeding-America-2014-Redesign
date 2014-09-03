@@ -235,7 +235,7 @@ function centerOnSearch(data, searchString) {
 function buildFAOrgResultBox(org) {
     var resultsBox = $('<div class="results-box" data-orgid="'+org.OrganizationID+'">'),
         profileUrlName = org.FullName.replace(/ /g, '-').toLowerCase(),
-        profileUrl = '/find-your-local-foodbank/' + (profileUrlName.replace(/[&]/g, 'and')).replace(/[\.,']/g, '') + '.html',
+        profileUrl = '/find-your-local-foodbank/' + (profileUrlName.replace(/[&]/g, 'and')).replace(/[^a-zA-Z0-9-]/g, '') + '.html',
         orgImage = '<a href="' + profileUrl + '"><img border="0" alt="' + org.FullName + '" src="' + org.LogoUrls.SecureConvioMain + '"></a>',
         orgName = '<p class="name"><a href="' + profileUrl + '">' + org.FullName + '</a></p>',
         addressString = (org.MailAddress.Address2) ? org.MailAddress.Address1 + '<br>' + org.MailAddress.Address2 + '<br>' : org.MailAddress.Address1 + '<br>',
@@ -296,7 +296,7 @@ function returnFAResults(data, searchString, execSearch) {
             var org = orgXmlToJson(data[i], orgProperties),
                 resultsBox = buildFAOrgResultBox(org),
                 profileUrlName = org.FullName.replace(/ /g, '-').toLowerCase(),
-                profileUrl = '/find-your-local-foodbank/' + (profileUrlName.replace(/[&]/g, 'and')).replace(/[\.,']/g, '') + '.html';
+                profileUrl = '/find-your-local-foodbank/' + (profileUrlName.replace(/[&]/g, 'and')).replace(/[^a-zA-Z0-9-]/g, '') + '.html';
 
             //save map ponts
             mapPoints[org.OrganizationID] = [Number(org.MailAddress.Latitude),Number(org.MailAddress.Longitude)];
