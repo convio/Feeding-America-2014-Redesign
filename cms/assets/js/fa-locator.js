@@ -566,7 +566,7 @@ function buildProfilePageDisplay(data, orgId, resultsWrapper) {
             childFoodStat = '1 in ' + foodInsecurityCount.toString();
 
         //google map
-        $('.right iframe').attr('src', mapString + '&key=AIzaSyBQpaPmWkIRxYnrl1zPGEyuGnydaA9lkP4');
+        $('#embmap iframe').attr('src', mapString + '&key=AIzaSyBQpaPmWkIRxYnrl1zPGEyuGnydaA9lkP4');
 
         //logo and title
         $('h1.page-title, #profile-pounds .name, #profile-counties .name, #profile-area-info .name, #profile-area-info .state').html(org.FullName);
