@@ -560,9 +560,9 @@ function buildProfilePageDisplay(data, orgId, resultsWrapper) {
             mediaContact = (org.MediaContact.FullName.length !== 0)? '<strong>Media Contact:</strong> <span>'+org.MediaContact.FullName+'</span><br>': '',
             mapString = 'https://www.google.com/maps/embed/v1/search?q=' + encodeURI((org.FullName).replace(/[&]/g, 'and') + ' ' + org.MailAddress.Address1 + ' ' + org.MailAddress.City + ' ' + org.MailAddress.State + ' ' + org.MailAddress.Zip),
             orgAgencyButton = '', orgDonateUrl = '', orgVolunteerURL = '', socialIcons = '', countyList = $('<span class="counties"/>'),
-            foodInsecurityCount = (Math.round(1 / org.FI_AGGREGATE) > 10) ? 10 : Math.round(1 / org.FI_AGGREGATE),
+            foodInsecurityCount = (Math.round(100 / Math.round(org.FI_AGGREGATE * 100)) > 10) ? 10 : Math.round(100 / Math.round(org.FI_AGGREGATE * 100)),
             foodInsecurityStat = '1 in ' + foodInsecurityCount.toString() + ' people',
-            childFoodCount = (Math.round(1 / org.CHILD_FI_PCT) > 10) ? 10 : Math.round(1 / org.CHILD_FI_PCT),
+            childFoodCount = (Math.round(100 / Math.round(org.CHILD_FI_PCT * 100)) > 10) ? 10 : Math.round(100 / Math.round(org.CHILD_FI_PCT * 100)),
             childFoodStat = '1 in ' + foodInsecurityCount.toString();
 
         //google map

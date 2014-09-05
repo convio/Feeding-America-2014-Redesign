@@ -19,7 +19,7 @@ FA.howweareending = {
 // Hunger Meter
 function displayHungerMeterResults(loc, id, rate) {
     var link = FA.howweareending.state.link + id.toLowerCase();
-    var count = Math.round(1 / rate); count = (count > 10) ? 10 : count;
+    var count = Math.round(100 / Math.round(rate * 100)); count = (count > 10) ? 10 : count;
     var msg = 'In ' + loc + ', 1 in ' + count.toString() + ' people';
     var hungerImg = (FA.howweareending.stat.img_src).replace('[count]', count);
 
