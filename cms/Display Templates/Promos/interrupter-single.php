@@ -1,5 +1,9 @@
 <t:if test="filename != 'blank.html'">
-  <div class="interrupter promo closed">
+  <t:set id="conditionalCategory" value="null" />
+  <t:list id="promo_conditional_logic">
+    <t:set id="conditionalCategory" value="name" />
+  </t:list>
+  <div class="interrupter promo closed ${conditionalCategory}">
     <div class="int-buttons">
       <a href="#" class="int-btn-open"><img src="http://fa.pub30.convio.net/assets/images/int-btn-open.png" border="0" /></a>
       <a href="#" class="int-btn-close"><img src="http://fa.pub30.convio.net/assets/images/int-btn-close.png" border="0" /></a>

@@ -7,7 +7,8 @@
   Global Elements
 -------------------------------------------- */
 /* global promos */
-.secondary-promos {
+.secondary-promos,
+.interrupter {
   display: none;
 }
 .alert-banner img {
@@ -2715,7 +2716,7 @@ shortcut to end of desktop
   body.expand-news #recent_news .headline {
     font-size: 36px;
   }
-  
+
 
   /* --------------------------------------------
     Food Bank Profile elements
@@ -3905,7 +3906,7 @@ shortcut to end of desktop
   -------------------------------------------- */
   /* partners list */
   .partners-list-horizontal, #body-content .partners-list-horizontal {
-    
+
   }
   .partners-list-horizontal li, #body-content .partners-list-horizontal li {
     display: block;

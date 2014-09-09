@@ -2,6 +2,7 @@ $(document).ready(function() {
     promosLogic();
     assignLastClass();
     interrupterToggle();
+    interrupterShow();
 	renderRecentItemBoxes();
 
     $('#badges .badge img').click(function() {
@@ -10,7 +11,7 @@ $(document).ready(function() {
             $(this).parent().find('.hover-text').show();
         }
     });
-	
+
     $('.hover-text .close').click(function() {
         $(this).parent().hide();
         var tempThis = $(this);
@@ -30,7 +31,7 @@ $(document).ready(function() {
 //            }
         }
     });
-	
+
     $('#util_search_expand').click(function() {
         if ($(window).width() < 768) {
             $('#util_search_form').animate({height: 'toggle'}, 300, function() {
@@ -45,7 +46,7 @@ $(document).ready(function() {
             });
         }
     });
-	
+
     $('#mainmenu button.navbar-toggle').click(function() {
         $('#nav1').animate({height: 'toggle'}, 400, function() {
             manageHeaderMenusOverlap($(this), 'menu');
@@ -107,9 +108,9 @@ $(document).ready(function() {
 			if (!$(this).is(':visible')) {
 				return;
 			}
-		
+
 			// Init
-            var contentURL = '/assets/promos/wrpr/blended-list-for-related.html?for=' + for_type + '&secondary_tags=' + category; 
+            var contentURL = '/assets/promos/wrpr/blended-list-for-related.html?for=' + for_type + '&secondary_tags=' + category;
 
             switch (content_section) {
                 case 'body-content' :
@@ -119,20 +120,20 @@ $(document).ready(function() {
                     contentURL += ' .sidebar-promo-box';
                     break;
             }
-            
+
 			// Process ajax response
             this.load(contentURL, function() {
 				var itemsCount = 3,
 					itemsShown = 0,
 					$content = $(this),
 					$items = $content.find('.list-items>.list-item');
-				
+
                 $items.tsort('span.date', {order: 'desc'});
-				
+
                 $items.each(function(index) {
 					var $item = $(this),
 					    removeItem = true;
-					
+
 					if (itemsShown < itemsCount) {
 						if (item_id != $item.attr('id')) {
 							removeItem = false;
@@ -150,7 +151,7 @@ $(document).ready(function() {
 						}
 					}
                 });
-				
+
                 switch (content_section) {
                     case 'body-content' :
                         $content.find('.sidebar-promo').removeClass('sidebar-promo');
@@ -225,6 +226,33 @@ function interrupterToggle() {
                 e.preventDefault();
                 $promo.removeClass('open').addClass('closed');
             });
+        });
+    }
+}
+
+function interrupterShow() {
+    var $body = $('body');
+    var $promos = $body.find('.interrupter');
+
+    if($promos.length > 0) {
+        $promos.each(function(){
+            var $promo = $(this);
+            if($promo.hasClass('donated-media')) {
+                window.setTimeout(function() { $promo.show(); }, 5000);
+
+            } if($promo.hasClass('organic-search') || $promo.hasClass('referral') || $promo.hasClass('direct')) {
+                if($body.hasClass('is-homepage')) {
+                    window.setTimeout(function() { $promo.show(); }, 30000);
+                    $(window).scroll(function() {
+                       if($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
+                        $promo.show();
+                       }
+                    });
+
+                } else {
+                    window.setTimeout(function() { $promo.show(); }, 20000);
+                }
+            }
         });
     }
 }

@@ -116,16 +116,9 @@
             </div><!-- /.sidebar-promo -->
           </div><!-- /.sidebar-promo-box -->
 
-          <div class="debug" style="display:none;">Primary Tag on item: ${primary_tags}<br> Give: ${giveConditionalCategory1} ${giveConditionalCategory2} - <t:value id="promo_conditional_logic" /></div>
+
         </t:if>
 
     </t:list>
-      <div class="debug" style="display: none;">
-      Primary Tag: ${primary_tags}<br>
-      <t:set id="userStatus" value="user.isanonymous" />Anonymous: ${userStatus}<br>
-      <t:set id="userStatus" value="crm('[[S1:external_lifetime_gift_amount]]')" />Lifetime Gift Amount: ${userStatus}<br>
-      <t:set id="userStatus" value="isNull(crm('[[S1:external_lifetime_gift_amount]]'))" />Null Lifetime Gift Amount/Not Donor: ${userStatus}<br>
-      <t:set id="userStatus" value="crm('[[S1:sustained_status]]') == 'Current Sustaining Donor'" />Sustaining Donor: ${userStatus}<br>
-      <t:set id="userStatus" value="cons.custom.custom_boolean11 == true || cons.custom.custom_boolean12 == true || cons.custom.custom_boolean13 == true || cons.custom.custom_boolean24 == true || cons.custom.custom_boolean30 == true || cons.custom.custom_boolean35 == true" />CMS Mid-level flag: ${userStatus}<br>
-    </div>
+
   </t:if>
