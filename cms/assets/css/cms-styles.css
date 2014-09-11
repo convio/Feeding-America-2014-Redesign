@@ -971,6 +971,7 @@ vertical-align: top;
 }
 #find-fb-search-results .results-box .partner-orgs {
   margin-top: 40px;
+  font-size: 12px; 
 }
 #find-fb-search-results .results-box .partner-orgs span {
   font-weight: bold;
