@@ -183,7 +183,7 @@ function mapAllOrgs(execSearch) {
     }
 }
 
-function displayStateOrgs(state) {
+function displayStateOrgs(state, name) {
     var resultsWrapper = $('#find-fb-search-results');
     if (state !== '') {
         FA.soap.request('GetOrganizationsByState', { state : state }, 
@@ -194,7 +194,7 @@ function displayStateOrgs(state) {
                     var org = data[key];
                     resultsWrapper.append(buildFAOrgResultBox(org));
                 }
-                buildFAOrgsSummaryBox(data, resultsWrapper, '');
+                buildFAOrgsSummaryBox(data, resultsWrapper, name);
             }
         }, function(response) {// Error
             resultsWrapper.append('<p id="errorMessage">There was an error processing your request</p>');
@@ -733,19 +733,19 @@ function buildProfilePageDisplay(data, orgId, resultsWrapper) {
 }
 
 function initFBStatePage() {
-    var state = $('#fb-state-current').val();
+    var state = $('#fb-state-current').val(),
+        name = $('#fb-state-current-name').val();
+        
     if (state != '') {
-        displayStateOrgs(state);
+        displayStateOrgs(state, name);
         stateHungerMeter(state);
         $('#homepage_ending_select').val(state);
     }
-
     $('#homepage_ending_select').change(function(e) {
         e.preventDefault();
-        var state = $(this).val();
-        window.location = FA.howweareending.state.link + state.toLowerCase();
+        var name = $(this).find('option:selected').text();
+        window.location = FA.howweareending.state.link + name.replace(/ /g, '-').toLowerCase();
     });
-    
     initStickyMapWrapper('fb-state');
 }
 

@@ -12,13 +12,13 @@ FA.howweareending = {
     },
     state: { 
         img_src: 'http://fa.pub30.convio.net/assets/images/state-icons/howweareending_[id].png',
-        link: 'http://fa.pub30.convio.net/hunger-in-america/hunger-in-your-community/'
+        link: 'http://fa.pub30.convio.net/hunger-in-america/hunger-in-your-community/states/'
     }
 }
 
 // Hunger Meter
-function displayHungerMeterResults(loc, id, rate) {
-    var link = FA.howweareending.state.link + id.toLowerCase();
+function displayHungerMeterResults(loc, id, name, rate) {
+    var link = FA.howweareending.state.link + name.replace(/ /g, '-').toLowerCase();
     var count = Math.round(100 / Math.round(rate * 100)); count = (count > 10) ? 10 : count;
     var msg = 'In ' + loc + ', 1 in ' + count.toString() + ' people';
     var hungerImg = (FA.howweareending.stat.img_src).replace('[count]', count);
@@ -40,7 +40,7 @@ function stateHungerMeter(state) {
         FA.soap.request('GetStateStatisticsByState', { state: state }, 'Body/GetStateStatisticsByStateResponse/GetStateStatisticsByStateResult', function(data) {
             if (data && data.length == 1) {
                 data = data[0];
-                displayHungerMeterResults(data.Name, data.StateID, data.StateStats.FoodInsecurityRate);
+                displayHungerMeterResults(data.Name, data.StateID, data.Name, data.StateStats.FoodInsecurityRate);
                 return;
             }
             // No results
@@ -52,5 +52,5 @@ function stateHungerMeter(state) {
 }
 
 function nationHungerMeter() {
-    displayHungerMeterResults('The United States', 'US', FA.howweareending.nationwide.food_insecurity_rate);
+    displayHungerMeterResults('The United States', 'US', 'United States', FA.howweareending.nationwide.food_insecurity_rate);
 }

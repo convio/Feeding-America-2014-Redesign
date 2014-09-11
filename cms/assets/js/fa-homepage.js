@@ -53,7 +53,7 @@ $(document).ready(function() {
                 FA.soap.request('GetStateStatisticsByZip', { zip: zip }, 'Body/GetStateStatisticsByZipResponse/GetStateStatisticsByZipResult', function(data) {
                     if (data && data.length == 1) {
                         data = data[0];
-                        displayHungerMeterResults(data.Name, data.StateID, data.StateStats.FoodInsecurityRate);
+                        displayHungerMeterResults(data.Name, data.StateID, data.Name, data.StateStats.FoodInsecurityRate);
 
                         $('#homepage_ending_select').val(data.StateID);
                         setCookie('cms_cons_state', data.StateID, 365);
