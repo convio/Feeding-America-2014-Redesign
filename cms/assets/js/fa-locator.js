@@ -549,6 +549,53 @@ function initStickyMapWrapper(page) {
     });
 }
 
+function getRelatedStories(state) {
+    var box = $('#profile-featured-story'),
+        bank = {        
+            'id': box.data('bank_id'),
+            'state': state
+        },
+        contentURL = '/assets/promos/wrpr/blended-list-fbp.html'; 
+    
+    box.children().hide();
+    box.append('<div id="profile-featured-story-loader" class="loading" style="margin-top:100px;"></div>').show();
+
+    var loadRelatedStories = function(box, contentURL, type, bank, callback) {
+        var nextType = null, loadUrl = contentURL;
+        switch (type) {
+            case 'id' : 
+                nextType = 'state';
+                loadUrl += '?food_bank=' + bank[type];
+                break;
+            case 'state' :
+                loadUrl += '?state=' + bank[type];
+                break;
+            default :
+                box.find('#profile-featured-story-loader').remove();
+                box.children().show(); 
+                return;
+        }
+        $.ajax({
+            url: loadUrl, dataType: 'html', data: {},
+            success: function (data) {
+                var $items = $('<div>' + data + '</div>').find('.list-items>.list-item');
+                if ($items.length) {
+                    $items.tsort('span.date', {order: 'desc'});
+                    box.find('#profile-featured-story-loader').remove();
+                    box.html($($items[0]).children()).show();
+                    return;
+                } else {
+                    callback(box, contentURL, nextType, bank, callback);
+                }
+            },
+            error: function() {
+                callback(box, contentURL, nextType, bank, callback);
+            }
+        });
+    }
+    loadRelatedStories(box, contentURL, 'id', bank, loadRelatedStories);
+}
+
 function buildProfilePageDisplay(data, orgId, resultsWrapper) {
     if (data !== null) {
         //build our HTML
@@ -564,7 +611,7 @@ function buildProfilePageDisplay(data, orgId, resultsWrapper) {
             foodInsecurityStat = '1 in ' + foodInsecurityCount.toString() + ' people',
             childFoodCount = (Math.round(100 / Math.round(org.CHILD_FI_PCT * 100)) > 10) ? 10 : Math.round(100 / Math.round(org.CHILD_FI_PCT * 100)),
             childFoodStat = '1 in ' + foodInsecurityCount.toString();
-
+    
         //google map
         $('#embmap iframe').attr('src', mapString + '&key=AIzaSyBQpaPmWkIRxYnrl1zPGEyuGnydaA9lkP4');
 
@@ -636,6 +683,9 @@ function buildProfilePageDisplay(data, orgId, resultsWrapper) {
         $('#profile-area-info .children-stat .stat.green').html(childFoodStat);
         $('#profile-area-info .people-stat img').attr('src', ('/assets/images/profile_1in[count].png').replace('[count]', foodInsecurityCount)).attr('alt', foodInsecurityStat);
 
+        // related stories
+        getRelatedStories(org.MailAddress.State);
+        
         if (org.ListPDOs !== '') {
             if (org.ListPDOs.PDO.length !== undefined) {
                 $.each(org.ListPDOs.PDO, function(key, pdo) {
