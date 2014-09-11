@@ -366,6 +366,7 @@ div[id*=image-] {
   right: 0px;
   bottom: 0px;
   left: 0px;
+  pointer-events: none;
 }
 #section-boxes .full-width {
   position: relative;
