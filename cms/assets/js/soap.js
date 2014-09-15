@@ -439,10 +439,12 @@ https://github.com/doedje/jquery.soap/blob/1.3.1/README.md
 			return soapObject;
 		},
 		dom2string: function(dom) {
-			if (typeof XMLSerializer!=="undefined") {
-				return new window.XMLSerializer().serializeToString(dom);
+            if (typeof dom.xml != "undefined") {
+                return dom.xml;
+            } else if (typeof window.XMLSerializer !== "undefined") {
+				return (new window.XMLSerializer()).serializeToString(dom);
 			} else {
-				return dom.xml;
+				return '';
 			}
 		},
 		createWSS: function(wssValues) {

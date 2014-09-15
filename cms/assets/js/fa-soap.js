@@ -3,8 +3,11 @@ if (typeof FA == 'undefined') { // Make sure FA namespace is initialized
 }
 
 FA.webService = function() { // FA web service helper
-    // Properties
+    // Init
+    $.support.cors = true;
+    
     //temp update http://ws2.feedingamerica.org/FAWebService.asmx will be http://ws.feedingamerica.org/FAWebService.asmx at go live
+    //url:   'http://ws.feedingamerica.org/FAWebService.asmx',
     this.options = {
         url:   'http://ws.feedingamerica.org/FAWebService.asmx',
         xmlns: 'http://feedingamerica.org/'

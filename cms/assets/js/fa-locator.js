@@ -84,7 +84,7 @@ var nodeValue = function(node) {
     var nv = '';
     switch (node.nodeType) {
         case 1 : // ELEMENT_NODE
-            nv = node.textContent || node.innerText;
+            nv = node.textContent || node.innerText || node.text;
             break;
     }
     return nv;
@@ -161,7 +161,7 @@ function mapAllOrgs(execSearch) {
         resultsWrapper.empty();
         FA.soap.request('GetAllOrganizations', {}, null, 
         function(data) {
-            var xml = ((((data.childNodes[0]).childNodes[0]).childNodes[0]).childNodes[0]).childNodes;
+            var xml = ((((data.documentElement).firstChild).firstChild).firstChild).childNodes;
             returnFAResults(xml, 'the United States', execSearch);
             setTimeout(function() { 
                 $('#find-fb-search-and-map-loading').hide(); 
