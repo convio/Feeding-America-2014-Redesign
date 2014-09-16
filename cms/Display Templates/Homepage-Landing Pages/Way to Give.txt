@@ -1,0 +1,156 @@
+<div id="title-and-share">
+  <div class="container">
+    <h1 class="page-title">${title}</h1>
+    <t:include id="item-545217462"/>
+  </div><!--/.container-->
+</div>
+
+<!-- Banner-->
+<t:if test="section_landing_page_banner.length>0">
+
+<t:set id="promoBgImg" value="''" />
+<t:set id="promoText" value="'with-text'" />
+
+<t:list id="section_landing_page_banner">
+
+<t:if test="promo_background_color.length>0">
+   <t:list id="promo_background_color">
+   <t:if test="name=='orange'"><t:set id="promoBgColor" value="'orange no-wheatstalk'" /></t:if>
+   <t:if test="name=='orange-wheatstalks'"><t:set id="promoBgColor" value="'orange'" /></t:if>
+   <t:if test="name=='green'"><t:set id="promoBgColor" value="'green no-wheatstalk'" /></t:if>
+   <t:if test="name=='green-wheatstalks'"><t:set id="promoBgColor" value="'green'" /></t:if>
+    </t:list>
+</t:if>
+<t:else>
+<t:set id="promoBgColor" value="''" />
+</t:else>
+
+<t:if test="slp_banner_style.length>0">
+<t:list id="slp_banner_style">
+<t:if test="name =='box-overlay'">
+   <t:set id ="promoBgImg" value = "'big-photo'"/>
+</t:if>
+<t:if test="name =='horizontal-overlay'">
+   <t:set id ="promoBgImg" value = "'big-photo'"/>
+   <t:set id="promoText" value="'no-text'" />
+</t:if>
+<t:if test="name =='no-overlay'">
+   <t:if test ="background_image.length>0"><t:set id ="promoBgImg" value = "'small-photo'"/></t:if><t:else><t:set id ="promoBgImg" value = "'no-photo'"/></t:else>
+</t:if>
+</t:list>
+</t:if>
+
+<div class="section-banner ${promoBgImg} ${promoText} ${promoBgColor}">
+  <div class="container">
+    <t:if test="background_image.length>0"><img border="0" alt="alt_text" src="${background_image.url}"></t:if>
+      <div class="headline-bar">
+        <div class="container">
+          <div class="headline-text">
+            <span class="headline-title">${headline}</span>
+          </div><!--/.headline-text-->
+              <div><span class="headline-subhead">${description}</span></div>
+              <div class="take-action-banner-body">${body}</div>
+        </div><!--/.container-->
+      </div><!--/.headline-bar-->
+  </div><!--/.container-->
+</div>
+</t:list>
+<!-- End Banner -->
+</t:if>
+<div class="container">
+   ${body}
+</div>
+
+<!-- Boxes - Note: do not beautify the code in this section, it will stop working. -->
+<t:if test="section_landing_page_boxes.length>0">
+<t:set id="align" value="'left'"/><div id="section-boxes">
+<t:list id="section_landing_page_boxes"><t:if test="index<5"><t:list id="full_width"><t:if test="name == 'yes'"><div class="container"><!-- .container --></t:if><t:else><t:if test="align == 'left'"><div class="container"><!-- .container --></t:if></t:else><t:if test="name == 'yes'"><div class="section-box full-width"></t:if><t:else><div class="section-box ${align}"></t:else><div class="section-title"><t:if test="!isNull(learn_more)"><a href="${learn_more}"></t:if>${title}<t:if test="!isNull(learn_more)"></a></t:if></div><div class="section-img"><t:if test="image.length>0"><t:if test="!isNull(learn_more)"><a href="${learn_more}"></t:if><img border="0" alt="${image.alt_text}" src="${image.url}"><t:if test="!isNull(learn_more)"></a></t:if></t:if><t:list id="include_hover"><t:if test="name=='yes'">${hover_content}</t:if></t:list></div><!--/.section-img--><t:if test="!isNull(description)"><div class="section-text">${description} </t:if><t:list id="full_width"><t:if test="name == 'yes'"><t:set id="isfullwidth" value="'yes'" /></t:if><t:else><t:set id="isfullwidth" value="'no'" /></t:else></t:list><t:if test="isfullwidth == 'yes'"><div class="fullwidthbody">${body}</div></t:if><t:else><a href="${learn_more}">Learn More<span> &rsaquo;</span></a></t:else></div><!--/.section-text--></div><t:if test="name == 'yes'"></div><!-- /.container --></t:if><t:else><t:set id="flag" value="0"/><t:if test="align == 'left'"><t:set id="flag" value="1"/></t:if><t:if test="flag == 1"><t:set id="align" value="'right'"/></t:if><t:if test="flag == 0"><t:set id="align" value="'left'"/></div><!-- /.container --></t:if></t:else></t:list></t:if></t:list><div id="take-action-inline-promo">
+  <div class="container">
+      <img src="http://fa.pub30.convio.net/assets/images/impact-we-make-wide.png" alt="The Impact We Make on Hunger" border="0" class="wtg-impact-wide" />
+      <img src="http://fa.pub30.convio.net/assets/images/impact-we-make-narrow.png" alt="The Impact We Make on Hunger" border="0" class="wtg-impact-narrow" />
+  </div><!-- /.container -->
+</div><!--/#take-action-inline-promo--><t:list id="section_landing_page_boxes"><t:if test="index>4"><t:list id="full_width"><t:if test="name == 'yes'"><div class="container"><!-- .container --></t:if><t:else><t:if test="align == 'left'"><div class="container"><!-- .container --></t:if></t:else><t:if test="name == 'yes'"><div class="section-box full-width"></t:if><t:else><div class="section-box ${align}"></t:else><div class="section-title"><t:if test="!isNull(learn_more)"><a href="${learn_more}"></t:if>${title}<t:if test="!isNull(learn_more)"></a></t:if></div><div class="section-img"><t:if test="image.length>0"><t:if test="!isNull(learn_more)"><a href="${learn_more}"></t:if><img border="0" alt="${image.alt_text}" src="${image.url}"><t:if test="!isNull(learn_more)"></a></t:if></t:if><t:list id="include_hover"><t:if test="name=='yes'">${hover_content}</t:if></t:list></div><!--/.section-img--><t:if test="!isNull(description)"><div class="section-text">${description} </t:if><t:list id="full_width"><t:if test="name == 'yes'"><t:set id="isfullwidth" value="'yes'" /></t:if><t:else><t:set id="isfullwidth" value="'no'" /></t:else></t:list><t:if test="isfullwidth == 'yes'"><div class="fullwidthbody">${body}</div></t:if><t:else><a href="${learn_more}">Learn More<span> &rsaquo;</span></a></t:else></div><!--/.section-text--></div><t:if test="name == 'yes'"><!-- /.container --></t:if><t:else><t:set id="flag" value="0"/><t:if test="align == 'left'"><t:set id="flag" value="1"/></t:if><t:if test="flag == 1"><t:set id="align" value="'right'"/></t:if><t:if test="flag == 0"><t:set id="align" value="'left'"/></div><!-- /.container --></t:if></t:else></t:list></t:if></t:list></div>
+</t:if>
+
+<!-- Recent News -->
+<t:if test="latest_news.length>0">
+<div id="recent_news" class="take-action-lp">
+  <div class="container">
+    <div class="headline">Latest News</div>
+    <div id="recent_news_boxes">
+      <t:list id="latest_news" maxlength="4">
+      <a href="${url}" class="recent_news_item">
+      <t:if test="large_image.length>0"><t:list id="large_image"><div class="thumbnail"><div class="aspect-ratio"></div><img src="${url}" alt="${alt_text}" border="0" /></div></t:list></t:if><t:else><t:if test="thumb.length>0"><t:list id="thumb"><div class="thumbnail"><div class="aspect-ratio"></div><img src="${url}" alt="${alt_text}" border="0"></div></t:list></t:if><t:else><t:if test="!isNull(video_url)"><t:set id="videoid" value="replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(video_url,'http://',''),'https://',''),'watch',''),'embed',''),'www.',''),'youtube.com',''),'youtu.be',''),'v=',''),'?',''),'&',''),'/','')" /><img border="0" alt="${title} - Video" src="https://img.youtube.com/vi/${videoid}/mqdefault.jpg" class="crop-Left" /></t:if></t:else></t:else>
+        <div class="news_expanded">
+          <span>${title}</span>
+          <p>${description}</p>
+          <p><span class="link">Learn More &rsaquo;</span></p>
+        </div><!--/.news_expanded-->
+      </a><!--/.recent_news_item-->
+      </t:list>
+      <div class="clearfix"></div>
+    </div><!--/#recent_news_boxes-->
+    <div id="recent_read_more"><a href="http://fa.pub30.convio.net/hunger-in-america/news-and-updates/?secondary_tags=ways-to-give">Read More News<span> &rsaquo;</span></a></div>
+  </div><!--/.container-->
+</div><!--/#recent_news-->
+</t:if>
+<t:else>
+<t:if test="matches(path,'.*/hunger-in-america/') && title=='Hunger in America'">
+<t:include id="templatelist-545438047"/>
+</t:if>
+<t:else>
+<t:include id="templatelist-545439131"/>
+</t:else>
+</t:else>
+
+<!-- Footer -->
+<t:set id="footerBgImg" value="''" />
+<t:if test="footer_bg.length > 0">
+  <t:list id="footer_bg">
+    <t:set id="footerBgImg" value="concat('background: url(', url)" />
+    <t:set id="footerBgImg" value="concat(footerBgImg, ') 50% 0 repeat;')" />
+  </t:list>
+</t:if>
+<div id="footer_promos" class="hidden-phone" style="${footerBgImg}">
+  <div class="container">
+    <div class="headline">How You Can Help Feeding America Solve Hunger</div>
+      <div id="footer_promo_boxes">
+
+    <t:if test="footer_promos.length > 0">
+      <t:list id="footer_promos">
+        <t:set id="buttonClasses" value="'button'" />
+        <t:if test="action_button_color.length > 0 || action_button_style.length > 0">
+          <t:if test="action_button_style.length > 0">
+            <t:list id="action_button_style">
+              <t:set id="buttonClasses" value="name" />
+            </t:list>
+          </t:if>
+          <t:if test="action_button_color.length > 0">
+            <t:list id="action_button_color">
+              <t:set id="buttonClasses" value="concat(concat(buttonClasses, ' '), name)" />
+            </t:list>
+          </t:if>
+        </t:if>
+        <div class="footer-promo">
+          <t:if test="thumb.length > 0"><t:list id="thumb"><img src="${url}" alt="${alt_text}" /></t:list></t:if>
+          <t:if test="!isNull(headline)"><div class="promo-title">${headline}</div></t:if>
+          <t:if test="!isNull(description)"><div class="promo-text">${description}</div></t:if>
+
+          <t:if test="!isNull(action_button_label) && !isNull(action_button_url)"><div class="promo-action"><a class="${buttonClasses}" href="${action_button_url}">${action_button_label}</a></div></t:if>
+        </div>
+      </t:list>
+    </t:if>
+    <t:else>
+      <!-- dynamic footer promos -->
+      <!-- Learn -->
+      <t:include id="templatelist-541527765" />
+      <!-- Act -->
+      <t:include id="templatelist-541527691" />
+      <!-- Give -->
+      <t:include id="templatelist-541528010" />
+    </t:else>
+
+      <div class="clearfix"></div>
+    </div><!--/#footer_promo_boxes-->
+  </div><!--/.container-->
+</div><!--/#footer_promos-->
