@@ -610,7 +610,7 @@ function buildProfilePageDisplay(data, orgId, resultsWrapper) {
             foodInsecurityCount = (Math.round(100 / Math.round(org.FI_AGGREGATE * 100)) > 10) ? 10 : Math.round(100 / Math.round(org.FI_AGGREGATE * 100)),
             foodInsecurityStat = '1 in ' + foodInsecurityCount.toString() + ' people',
             childFoodCount = (Math.round(100 / Math.round(org.CHILD_FI_PCT * 100)) > 10) ? 10 : Math.round(100 / Math.round(org.CHILD_FI_PCT * 100)),
-            childFoodStat = '1 in ' + foodInsecurityCount.toString();
+            childFoodStat = '1 in ' + childFoodCount.toString();
     
         //google map
         $('#embmap iframe').attr('src', mapString + '&key=AIzaSyBQpaPmWkIRxYnrl1zPGEyuGnydaA9lkP4');
