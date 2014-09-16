@@ -1,6 +1,6 @@
 /*==========================
 jquery.soap.js  http://plugins.jquery.com/soap/ or https://github.com/doedje/jquery.soap
-version: 1.3.1
+version: 1.4.1
 
 jQuery plugin for communicating with a web service using SOAP.
 
@@ -31,7 +31,7 @@ For information about how to use jQuery.soap, authors, changelog, the latest ver
 Visit: https://github.com/doedje/jquery.soap
 
 Documentation about THIS version is found here:
-https://github.com/doedje/jquery.soap/blob/1.3.1/README.md
+https://github.com/doedje/jquery.soap/blob/1.4.1/README.md
 
 ======================*/
 
@@ -39,7 +39,7 @@ https://github.com/doedje/jquery.soap/blob/1.3.1/README.md
 	var enableLogging;
 	var globalConfig = { // this setup once, defaults go here
 		appendMethodToURL: true,
-		async: false,
+		async: true,
 		enableLogging: false,
 		noPrefix: false,
 		soap12: false
@@ -51,13 +51,15 @@ https://github.com/doedje/jquery.soap/blob/1.3.1/README.md
 		// a configuration call will not have 'data' specified ('params' is used for backwards compatibility)
 		if (options && !options.params && !options.data) {
 			$.extend(globalConfig, options); // update global config
-			enableLogging = true;
-			log('jQuery.soap: globalConfig updated:', globalConfig);
-			return;
+			enableLogging = options.enableLogging;
+			log('jQuery.soap - globalConfig updated:', globalConfig);
+			return globalConfig;
 		}
 		$.extend(config, globalConfig, options);
 		// function log will only work below this line!
 		enableLogging = config.enableLogging;
+
+		log('jquery.soap - config:', config);
 
 		// fallbacks for changed properties
 		SOAPTool.fallbackDeprecated(config);
@@ -100,7 +102,7 @@ https://github.com/doedje/jquery.soap/blob/1.3.1/README.md
 				beforeSend: config.beforeSend
 			}).done(function(data, textStatus, jqXHR) {
 				var response = new SOAPResponse(textStatus, jqXHR);
-				log('jquery.soap - receive:', $.parseXML(response.toString()).firstChild);
+				log('jquery.soap - receive:', response.toXML().firstChild);
 				if ($.isFunction(config.success)) {
 					config.success(response);
 				}
@@ -110,6 +112,13 @@ https://github.com/doedje/jquery.soap/blob/1.3.1/README.md
 					config.error(new SOAPResponse(textStatus, jqXHR));
 				}
 			});
+		} else {
+			if (!soapObject) {
+				warn('jquery.soap - no soapObject');
+			}
+			if (!config.url) {
+				warn('jquery.soap - no url');
+			}
 		}
 	};
 
@@ -118,7 +127,7 @@ https://github.com/doedje/jquery.soap/blob/1.3.1/README.md
 		this.typeOf = "SOAPEnvelope";
 		this.prefix = 'soap';
 		this.soapConfig = null;
-		this.attributes = [];
+		this.attributes = {};
 		this.headers = [];
 		this.bodies = [];
 		
@@ -142,18 +151,18 @@ https://github.com/doedje/jquery.soap/blob/1.3.1/README.md
 			// headers
 			header = soapObject.find(this.prefix + ':Header');
 			if (header && header.children) {
-				for (var j in header.children) {
+				for (var j = 0; j < header.children.length; j++) {
 					this.addHeader(header.children[j]);
 				}
 			}
 			// body
 			body = soapObject.find(this.prefix + ':Body');
 			if (body && body.children) {
-				for (var k in body.children) {
+				for (var k = 0; k < body.children.length; k++) {
 					this.addBody(body.children[k]);
 				}
 			} else {
-				for (var l in soapObject.children) {
+				for (var l = 0; l < soapObject.children.length; l++) {
 					this.addBody(soapObject.children[l]);
 				}
 			}
@@ -185,14 +194,14 @@ https://github.com/doedje/jquery.soap/blob/1.3.1/README.md
 			//Add Headers
 			if (this.headers.length > 0) {
 				var soapHeader = soapEnv.newChild(this.prefix + ':Header');
-				for (var i in this.headers) {
+				for (var i = 0; i < this.headers.length; i++) {
 					soapHeader.appendChild(this.headers[i]);
 				}
 			}
 			//Add Bodies
 			if (this.bodies.length > 0) {
 				var soapBody = soapEnv.newChild(this.prefix + ':Body');
-				for (var j in this.bodies) {
+				for (var j = 0; j < this.bodies.length; j++) {
 					soapBody.appendChild(this.bodies[j]);
 				}
 			}
@@ -200,9 +209,12 @@ https://github.com/doedje/jquery.soap/blob/1.3.1/README.md
 			if (!soapEnv.attr('xmlns:' + this.prefix)) {
 				soapEnv.addNamespace(this.prefix, this.soapConfig.namespaceURL);
 			}
-			return soapEnv.toString();
+			// maybe add xsi here?
+			// xsi="http://www.w3.org/2001/XMLSchema-instance
+			return '<?xml version="1.0" encoding="UTF-8"?>' + soapEnv.toString();
 		},
 		send: function(options) {
+			var self = this;
 			if (!this.soapConfig) {
 				this.soapConfig = (options.soap12) ? SOAPTool.SOAP12 : SOAPTool.SOAP11;
 			}
@@ -211,10 +223,6 @@ https://github.com/doedje/jquery.soap/blob/1.3.1/README.md
 				options.headers.SOAPAction = options.action;
 			}
 			log('jquery.soap - beforeSend:', $.parseXML(this.toString()).firstChild);
-			// function to preview the SOAPEnvelope before it is send to the server
-			if ($.isFunction(options.beforeSend)) {
-				options.beforeSend(this);
-			}
 			return $.ajax({
 				type: "POST",
 				url: options.url,
@@ -224,7 +232,21 @@ https://github.com/doedje/jquery.soap/blob/1.3.1/README.md
 				dataType: "xml",
 				processData: false,
 				data: this.toString(),
-				contentType: contentType + "; charset=UTF-8"
+				contentType: contentType + "; charset=UTF-8",
+				xhrFields: {
+				  onprogress: function(e) {
+				    if (e.lengthComputable) {
+				      log("jquery.soap - progress:", (e.loaded / e.total * 100));
+				    } else {
+				      log("jquery.soap - progress:","Length not computable.");
+				    }
+				  }
+				},
+				beforeSend: function() {
+					if ($.isFunction(options.beforeSend)) {
+						return options.beforeSend(self);
+					}
+				}
 			});
 		}
 	};
@@ -237,7 +259,7 @@ https://github.com/doedje/jquery.soap/blob/1.3.1/README.md
 		this.attributes = {};
 		this._parent = null;
 		this.children = [];
-		this.value = null;
+		this.value = undefined;
 
 		this.attr = function(name, value) {
 			if (!!name && !!value) {
@@ -250,10 +272,17 @@ https://github.com/doedje/jquery.soap/blob/1.3.1/README.md
 			}
 		};
 		this.val = function(value) {
-			if (!value) {
-				return this.value;
-			} else {
+			if (value === undefined) {
+				if (this.attr('nil') === 'true') {
+					return null;
+				} else {
+					return this.value;
+				}
+			} else if (value !== null) {
 				this.value = value;
+				return this;
+			} else {
+				this.attr("nil","true");
 				return this;
 			}
 		};
@@ -284,7 +313,7 @@ https://github.com/doedje/jquery.soap/blob/1.3.1/README.md
 			if (this.name === name) {
 				return this;
 			} else {
-				for (var i in this.children) {
+				for (var i = 0; i < this.children.length; i++) {
 					var result = this.children[i].find(name);
 					if (result) {
 						return result;
@@ -296,15 +325,25 @@ https://github.com/doedje/jquery.soap/blob/1.3.1/README.md
 			return this._parent;
 		};
 		this.toString = function() {
-			var out = [];
+			var out = [],
+			    xmlCharMap = {
+		            '<': '&lt;',
+    		        '>': '&gt;',
+    		        '&': '&amp;',
+    		        '"': '&quot;',
+    		        "'": '&apos;'
+		        },
+		        encodedValue;
 			out.push('<'+this.name);
 			//Namespaces
 			for (var name in this.ns) {
-					out.push(' xmlns:' + name + '="' + this.ns[name] + '"');
+				out.push(' xmlns:' + name + '="' + this.ns[name] + '"');
 			}
 			//Node Attributes
 			for (var attr in this.attributes) {
+				if (typeof(this.attributes[attr]) === 'string') {
 					out.push(' ' + attr + '="' + this.attributes[attr] + '"');
+				}
 			}
 			out.push('>');
 			//Node children
@@ -318,7 +357,10 @@ https://github.com/doedje/jquery.soap/blob/1.3.1/README.md
 			}
 			//Node Value
 			if (!!this.value) {
-				out.push(this.value);
+			    encodedValue = this.value.replace(/[<>&"']/g, function (ch) {
+			        return xmlCharMap[ch];
+			    });
+				out.push(encodedValue);
 			}
 			//Close Tag
 			out.push('</' + this.name + '>');
@@ -365,7 +407,7 @@ https://github.com/doedje/jquery.soap/blob/1.3.1/README.md
 		},
 		SOAP12: {
 			type: 'application/soap+xml',
-			namespaceURL: 'http://www.w3.org/2003/05/soap-envelope/'
+			namespaceURL: 'http://www.w3.org/2003/05/soap-envelope'
 		},
 		processData: function(options) {
 			var soapObject;
@@ -385,6 +427,9 @@ https://github.com/doedje/jquery.soap/blob/1.3.1/README.md
 					soapObject = SOAPTool.json2soap(options.name, options.data, options.prefix);
 					if (!!options.namespaceQualifier && !!options.namespaceURL) {
 						soapObject.addNamespace(options.namespaceQualifier, options.namespaceURL);
+					} 
+					else if (!!options.namespaceURL) {
+						soapObject.attr('xmlns', options.namespaceURL);
 					}
 				}
 			} else if ($.isFunction(options.data)) {
@@ -401,16 +446,22 @@ https://github.com/doedje/jquery.soap/blob/1.3.1/README.md
 				soapObject.attr('nil', true);
 			} else if (typeof params == 'object') {
 				// added by DT - check if object is in fact an Array and treat accordingly
-				if(params.constructor.toString().indexOf("Array") != -1) { // type is array
-					for(var x in params) {
-						childObject = this.json2soap(name, params[x], prefix, parentNode);
+				if(params.constructor.toString().indexOf("Array") > -1) { // type is array
+					for(var i = 0; i < params.length; i++) {
+						childObject = this.json2soap(name, params[i], prefix, parentNode);
 						parentNode.appendChild(childObject);
 					}
+				} else if (params.constructor.toString().indexOf("String") > -1) { // type is string
+					// handle String objects as string primitive value
+					soapObject = new SOAPObject(prefix+name);
+					soapObject.val(''+params); // the ''+ is added to fix issues with falsey values.
 				} else {
 					soapObject = new SOAPObject(prefix+name);
 					for(var y in params) {
 						childObject = this.json2soap(y, params[y], prefix, soapObject);
-						soapObject.appendChild(childObject);
+						if (childObject) {
+							soapObject.appendChild(childObject);
+						}
 					}
 				}
 			} else {
@@ -422,11 +473,11 @@ https://github.com/doedje/jquery.soap/blob/1.3.1/README.md
 		dom2soap: function (xmldom) {
 			var whitespace = /^\s+$/;
 			var soapObject = new SOAPObject(xmldom.nodeName);
-			for (var i in xmldom.attributes) {
+			for (var i = 0; i < xmldom.attributes.length; i++) {
 				var attribute = xmldom.attributes[i];
 				soapObject.attr(attribute.name, attribute.value);
 			}
-			for (var j in xmldom.childNodes) {
+			for (var j = 0; j < xmldom.childNodes.length; j++) {
 				var child = xmldom.childNodes[j];
 				if (child.nodeType === 1) {
 					var childObject = SOAPTool.dom2soap(child);
@@ -439,12 +490,10 @@ https://github.com/doedje/jquery.soap/blob/1.3.1/README.md
 			return soapObject;
 		},
 		dom2string: function(dom) {
-            if (typeof dom.xml != "undefined") {
-                return dom.xml;
-            } else if (typeof window.XMLSerializer !== "undefined") {
-				return (new window.XMLSerializer()).serializeToString(dom);
+			if (typeof XMLSerializer!=="undefined") {
+				return new window.XMLSerializer().serializeToString(dom);
 			} else {
-				return '';
+				return dom.xml;
 			}
 		},
 		createWSS: function(wssValues) {

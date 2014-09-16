@@ -206,7 +206,7 @@ function displayStateOrgs(state, name) {
 function centerOnSearch(data, searchString) {
     var mapBounds = new google.maps.LatLngBounds(),
         currentZoom = 0,
-        headlineString = ' Feeding America Food Banks that serve';
+        headlineString = ' Feeding America Food Bank[s] that serve';
         
     if (data !== null) {
         for (var key in data) {
@@ -234,9 +234,9 @@ function centerOnSearch(data, searchString) {
         }
         // create the summary box, handle plural/singular result
         if (data.length === 1) {
-            headlineString = '1' + headlineString + 's ';
+            headlineString = '1' + headlineString.replace('[s]', '') + 's ';
         } else {
-            headlineString = data.length.toString() + headlineString + ' ';
+            headlineString = data.length.toString() + headlineString.replace('[s]', 's') + ' ';
         }
         $('#fbSearchSummary').html('<div class="headline">' + headlineString + searchString.toString() + '</div>' +
             '<!--<p class="countstring"></p>-->' +
@@ -284,12 +284,12 @@ function buildFAOrgResultBox(org) {
 }
 
 function buildFAOrgsSummaryBox(data, resultsWrapper, searchString) {
-    var headlineString = ' Feeding America Food Banks that serve';
+    var headlineString = ' Feeding America Food Bank[s] that serve';
 
     if (data.length === 1) {
-        headlineString = '1' + headlineString + 's ';
+        headlineString = '1' + headlineString.replace('[s]', '') + 's ';
     } else {
-        headlineString = data.length.toString() + headlineString + ' ';
+        headlineString = data.length.toString() + headlineString.replace('[s]', 's') + ' ';
     }
     resultsWrapper.prepend(
         '<div class="results-box" id="fbSearchSummary">' +

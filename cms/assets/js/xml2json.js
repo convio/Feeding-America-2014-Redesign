@@ -1,16 +1,5 @@
 /*
- ### jQuery XML to JSON Plugin v1.3 - 2013-02-18 ###
- * http://www.fyneworks.com/ - diego@fyneworks.com
-	* Licensed under http://en.wikipedia.org/wiki/MIT_License
- ###
- Website: http://www.fyneworks.com/jquery/xml-to-json/
-*//*
- # INSPIRED BY: http://www.terracoder.com/
-           AND: http://www.thomasfrank.se/xml_to_json.html
-											AND: http://www.kawa.net/works/js/xml/objtree-e.html
-*//*
- This simple script converts XML (document of code) into a JSON object. It is the combination of 2
- 'xml to json' great parsers (see below) which allows for both 'simple' and 'extended' parsing modes.
+Modified version of: http://www.fyneworks.com/jquery/xml-to-json/
 */
 // Avoid collisions
 ;if(window.jQuery) (function($){
@@ -32,8 +21,12 @@
     /*DBG*/ //if(window.console) console.log(['x2j',nn,nt,nv.length+' bytes']);
     if(node.childNodes){
      if(node.childNodes.length>0){
+      var children = node.childNodes;
+      if (children.length==1) {
+       children = [node.firstChild];
+      }
       /*DBG*/ //if(window.console) console.log(['x2j',nn,'CHILDREN',node.childNodes]);
-      $.each(node.childNodes, function(n,cn){
+      $.each(children, function(n,cn){
        var cnt = cn.nodeType, cnn = jsVar(cn.localName || cn.nodeName);
        var cnv = cn.text || cn.nodeValue || '';
        /*DBG*/ //if(window.console) console.log(['x2j',nn,'node>a',cnn,cnt,cnv]);

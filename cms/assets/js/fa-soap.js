@@ -51,8 +51,12 @@ FA.webService = function() { // FA web service helper
     function digestResponse(path, data) {
         var path = path.split('/');
         for (var i = 0; i < path.length; i++) {
-            if (data[path[i]]) {
-                data = data[path[i]];
+            var key = path[i];
+            if (!data[key] && key == 'Body') {
+                key = 'soap:Body';
+            }
+            if (data[key]) {
+                data = data[key];
             } else {
                 return null;
             }
