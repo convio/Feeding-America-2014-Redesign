@@ -744,6 +744,7 @@ function initFBStatePage() {
     $('#homepage_ending_select').change(function(e) {
         e.preventDefault();
         var name = $(this).find('option:selected').text();
+        name = (name == 'The United States') ? '' : name;
         window.location = FA.howweareending.state.link + name.replace(/ /g, '-').toLowerCase();
     });
     initStickyMapWrapper('fb-state');
