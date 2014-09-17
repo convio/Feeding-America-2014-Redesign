@@ -252,6 +252,8 @@ function interrupterShow() {
                 } else {
                     window.setTimeout(function() { $promo.show(); }, 20000);
                 }
+            } else {
+                window.setTimeout(function() { $promo.show(); }, 20000);
             }
         });
     }
