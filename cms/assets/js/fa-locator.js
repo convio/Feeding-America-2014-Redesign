@@ -274,7 +274,7 @@ function buildFAOrgResultBox(org) {
         pdoWrapper.append('Partner Distribution Organizations:');   
         for (var i = 0 ; i < listPDOs.length ; i++) {
             var pdo = listPDOs[i];
-            pdoListWrapper.append('<li>' + pdo.Title + '<br>' + pdo.Address + '<br>' + pdo.City + ', ' + pdo.State + ' ' + (pdo.ZipCode ? pdo.ZipCode : '') + '<br>' + pdo.Phone + '<br>' + (pdo.Website ? ('<a href="//' + pdo.Website + '">' + pdo.Website + '</a>') : ''));
+            pdoListWrapper.append('<li>' + pdo.Title + '<br>' + pdo.Address + '<br>' + pdo.City + ', ' + pdo.State + ' ' + (pdo.ZipCode ? pdo.ZipCode : '') + '<br>' + pdo.Phone + '<br>' + (pdo.Website ? ('<a href="' + pdo.Website + '">' + pdo.Website + '</a>') : ''));
         }
         pdoWrapper.append(pdoListWrapper);
         resultsBox.append(pdoWrapper);
@@ -670,6 +670,9 @@ function buildProfilePageDisplay(data, orgId, resultsWrapper) {
             $('#profile-pounds .right .number').html(commaSeparateNumber(org.PoundageStats.TotalPoundage));
         }
         if (org.ListFipsCounty !== '') {
+            if (org.ListFipsCounty.LocalFindings.length === undefined) {
+                org.ListFipsCounty.LocalFindings = [org.ListFipsCounty.LocalFindings];
+            }
             $.each(org.ListFipsCounty.LocalFindings, function(key, county) {
                 countyList.append(county.CountyName.toLowerCase() + ' ' + county.State);
                 if (key !== org.ListFipsCounty.LocalFindings.length-1) {
@@ -687,45 +690,34 @@ function buildProfilePageDisplay(data, orgId, resultsWrapper) {
         getRelatedStories(org.MailAddress.State);
         
         if (org.ListPDOs !== '') {
-            if (org.ListPDOs.PDO.length !== undefined) {
-                $.each(org.ListPDOs.PDO, function(key, pdo) {
-                    var pdoWrapper = $('<div class="partner-org"/>');
-                    var countyWrapper = $('<span />');
-                    pdoWrapper.append('<span class="name">' + pdo.Title + '</span>');
-                    pdoWrapper.append('<span>'+pdo.Address+'</span>');
-                    pdoWrapper.append('<span>'+ pdo.City + ', ' + pdo.State + ' ' + pdo.ZipCode + '</span>');
-                    pdoWrapper.append('<span>'+pdo.Phone+'</span>');
-                    pdoWrapper.append('<span><a href="//' + pdo.Website + '">' + pdo.Website + '</a></span>');
-
-                    if (pdo.counties.length !== 0) {
-                        var endCap = false;
-                        $.each(pdo.counties, function(index, county) {
-                            if (endCap) {
-                                countyWrapper.prepend(county.CountyName + ', ');
-                            } else {
-                                endCap = true;
-                                countyWrapper.prepend(county.CountyName);
-                            }
-                        });
-                        countyWrapper.prepend('Counties Served: ');
-                        pdoWrapper.append(countyWrapper);
-                    }
-
-                    $('#partner-orgs-boxes').prepend(pdoWrapper);
-                });
-            } else {
-                var pdoWrapper = $('<div class="partner-org"/>');
-                pdoWrapper.append('<span class="name">' + org.ListPDOs.PDO.Title + '</span>');
-                pdoWrapper.append('<span>'+org.ListPDOs.PDO.Address+'</span>');
-                pdoWrapper.append('<span>'+ org.ListPDOs.PDO.City + ', ' + org.ListPDOs.PDO.State + ' ' + org.ListPDOs.PDO.Zip + '</span>');
-                pdoWrapper.append('<span>'+org.ListPDOs.PDO.Phone+'</span>');
-                pdoWrapper.append('<span><a href="//' + org.ListPDOs.PDO.Website + '">' + org.ListPDOs.PDO.Website + '</a></span>');
-                if (org.ListPDOs.PDO.counties.length !== 0) {
-                    pdoWrapper.append('<span>Counties Served: Bibb, Fayette, Greene, Hale, Lamar, Marion, Pickens, Sumter, Tuscaloosa, List May Get Longer</span>');
-                }
-                $('#partner-orgs-boxes').prepend(pdoWrapper);
+            if (org.ListPDOs.PDO.length === undefined) {
+                org.ListPDOs.PDO = [org.ListPDOs.PDO];
             }
+            $.each(org.ListPDOs.PDO, function(key, pdo) {
+                var pdoWrapper = $('<div class="partner-org"/>');
+                var countyWrapper = $('<span />');
+                pdoWrapper.append('<span class="name">' + pdo.Title + '</span>');
+                pdoWrapper.append('<span>'+pdo.Address+'</span>');
+                pdoWrapper.append('<span>'+ pdo.City + ', ' + pdo.State + ' ' + pdo.ZipCode + '</span>');
+                pdoWrapper.append('<span>'+pdo.Phone+'</span>');
+                pdoWrapper.append('<span><a href="' + pdo.Website + '">' + pdo.Website + '</a></span>');
 
+                if (pdo.counties.length !== 0) {
+                    var endCap = false;
+                    $.each(pdo.counties, function(index, county) {
+                        if (endCap) {
+                            countyWrapper.prepend(county.CountyName + ', ');
+                        } else {
+                            endCap = true;
+                            countyWrapper.prepend(county.CountyName);
+                        }
+                    });
+                    countyWrapper.prepend('Counties Served: ');
+                    pdoWrapper.append(countyWrapper);
+                }
+
+                $('#partner-orgs-boxes').prepend(pdoWrapper);
+            });
         } else {
             $('#partner-distribution-orgs').hide();
         }
