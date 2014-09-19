@@ -5,7 +5,7 @@ if (typeof FA == 'undefined') { // Make sure FA namespace is initialized
 FA.httpWebService = function() { // FA web service helper
     // Init
     this.options = {
-        url:   'http://ws2-qa.feedingamerica.org/fawebservice.asmx',
+        url:   'http://ws.feedingamerica.org/FAWebService.asmx',
         xmlns: 'http://feedingamerica.org/'
     };
 
