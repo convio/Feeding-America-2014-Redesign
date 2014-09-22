@@ -346,6 +346,7 @@ div[id*=image-] {
   font-size: 14px;
   line-height: 18px;
   background-image: url('../images/transparent_gray70.png');
+  pointer-events: none;
 }
 #section-boxes .section-img .section-img-hover span {
   display: inline-block;
