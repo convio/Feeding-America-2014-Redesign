@@ -9,6 +9,7 @@ FA.fbmap = {
 
 //globals
 var FBMap;
+var FBMapPoints = [];
 var FBMapMarkers = [];
 var currentSearch = '';
 var statesAbbrToFull = {
@@ -91,7 +92,7 @@ var nodeValue = function(node) {
 };
 
 function orgXmlListToJson(node, id) {
-    var list = new Array(), data = node.children ? node.children : node.childNodes; attr = orgProperties[id];
+    var list = new Array(), data = FA.ws.getArrayOfChildren(node); attr = orgProperties[id];
     for (var i = 0 ; i < data.length ; i++) {
         var node = data[i];
         list.push(orgXmlToJson(node, attr));
@@ -100,7 +101,7 @@ function orgXmlListToJson(node, id) {
 }
 
 function orgXmlToJson(node, attr) {
-    var item = {}, data = node.children ? node.children : node.childNodes;
+    var item = {}, data = FA.ws.getArrayOfChildren(node);
     for (var i = 0 ; i < data.length ; i++) {
         var node = data[i], nn = node.localName || node.nodeName, match = attr[nn];
         if (match) {
@@ -125,6 +126,7 @@ function searchByZip(zip) {
         'Organization', 
         function(data) {
             FA.fbmap.rendered = false;
+            hideResultBoxes();
             centerOnSearch(data, zip);
             setTimeout(function() { FA.fbmap.rendered = true; }, 3000);
         }, 
@@ -145,6 +147,7 @@ function searchByState(state) {
         'Organization', 
         function(data) {
             FA.fbmap.rendered = false;
+            hideResultBoxes();
             centerOnSearch(data, fullStateName);
             setTimeout(function() { FA.fbmap.rendered = true; }, 3000);
         }, 
@@ -157,12 +160,11 @@ function searchByState(state) {
 
 function mapAllOrgs(execSearch) {
     var xml, resultsWrapper = $('#find-fb-search-results');
-    if (FBMapMarkers.length === 0) {
+    if (FBMapPoints.length === 0) {
         resultsWrapper.empty();
         FA.ws.request('GetAllOrganizations', {}, null, 
         function(data) {
-            data = data.documentElement;
-            xml = data.children ? data.children : data.childNodes;
+            xml = FA.ws.getArrayOfChildren(data.documentElement);
             returnFAResults(xml, 'the United States', execSearch);
             setTimeout(function() { 
                 $('#find-fb-search-and-map-loading').hide(); 
@@ -176,9 +178,11 @@ function mapAllOrgs(execSearch) {
             resultsWrapper.show();
         });
     } else {
-        for (var i = 0; i < FBMapMarkers.length; i++) {
-            if (FBMapMarkers[i] !== undefined) {
-                FBMapMarkers[i].setVisible(true);
+        if (FBMapMarkers.length) {
+            for (var i = 0; i < FBMapMarkers.length; i++) {
+                if (FBMapMarkers[i] !== undefined) {
+                    FBMapMarkers[i].setVisible(true);
+                }
             }
         }
     }
@@ -205,45 +209,47 @@ function displayStateOrgs(state, name) {
 }
 
 function centerOnSearch(data, searchString) {
-    var mapBounds = new google.maps.LatLngBounds(),
-        currentZoom = 0,
+    var currentZoom = 0,
         headlineString = ' Feeding America Food Bank[s] that serve';
         
     if (data !== null) {
+        if (FBMapMarkers.length) {
+            var mapBounds = new google.maps.LatLngBounds();
+        }
+
         for (var key in data) {
             var org = data[key],
                 orgID = org.OrganizationID,
                 lat = Number(org.MailAddress.Latitude),
                 lng = Number(org.MailAddress.Longitude),
                 markerLatlng = new google.maps.LatLng(lat, lng),
-                /*
-                pinIcon = {
-                    url : "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|FE7569",
-                    scaledSize : new google.maps.Size(21, 34)
-                };
-                */
-                pinIcon = {
-                    url : "http://fa.pub30.convio.net/assets/images/fb-l-pin.png"
-                };
-            $('#find-fb-search-results .results-box[data-orgid="'+ orgID +'"]').show();
-            mapBounds.extend(markerLatlng);
+                pinIcon = { url : "http://fa.pub30.convio.net/assets/images/fb-l-pin.png" };
 
-            if (FBMapMarkers[orgID] !== undefined) {
-                FBMapMarkers[orgID].setVisible(true);
-                FBMapMarkers[orgID].setIcon(pinIcon);
+            $('#find-fb-search-results .results-box[data-orgid="'+ orgID +'"]').show();
+
+            if (FBMapMarkers.length) {
+                mapBounds.extend(markerLatlng);
+                if (FBMapMarkers[orgID] !== undefined) {
+                    FBMapMarkers[orgID].setVisible(true);
+                    FBMapMarkers[orgID].setIcon(pinIcon);
+                }
             }
         }
+
         // create the summary box, handle plural/singular result
         if (data.length === 1) {
             headlineString = '1' + headlineString.replace('[s]', '') + 's ';
         } else {
             headlineString = data.length.toString() + headlineString.replace('[s]', 's') + ' ';
         }
+
         $('#fbSearchSummary').html('<div class="headline">' + headlineString + searchString.toString() + '</div>' +
             '<!--<p class="countstring"></p>-->' +
             '<p>Feeding America food banks serve large areas and will be able to find a feeding program in your local community.</p>');
 
-        FBMap.fitBounds(mapBounds);
+        if (FBMapMarkers.length) {
+            FBMap.fitBounds(mapBounds);
+        }
     }
 }
 
@@ -302,8 +308,7 @@ function buildFAOrgsSummaryBox(data, resultsWrapper, searchString) {
 }
 
 function returnFAResults(data, searchString, execSearch) {
-    var resultsWrapper = $('#find-fb-search-results'),
-        mapPoints = [], mapPointInfoBoxes = [];
+    var resultsWrapper = $('#find-fb-search-results'), mapPointInfoBoxes = [];
 
     if (data !== null) {
         // Because of IE issues with long running js script,
@@ -319,7 +324,7 @@ function returnFAResults(data, searchString, execSearch) {
                     profileUrl = '/find-your-local-foodbank/' + (profileUrlName.replace(/[&]/g, 'and')).replace(/[\.,']/g, '') + '.html';
 
                 //save map ponts
-                mapPoints[org.OrganizationID] = [Number(org.MailAddress.Latitude),Number(org.MailAddress.Longitude)];
+                FBMapPoints[org.OrganizationID] = [Number(org.MailAddress.Latitude),Number(org.MailAddress.Longitude)];
 
                 //save infobox data
                 mapPointInfoBoxes[org.OrganizationID] = {
@@ -342,7 +347,9 @@ function returnFAResults(data, searchString, execSearch) {
 
         var finalizeFAResults = function() {
             //plot map points
-            plotPoints(mapPoints, mapPointInfoBoxes);
+            if (!isSmallScreen()) {
+                plotPoints(FBMapPoints, mapPointInfoBoxes);
+            }
 
             //check if we need to execute search
             if (typeof(execSearch) == "function") {
@@ -380,10 +387,10 @@ function initFBMap(execSearch) {
     mapAllOrgs(execSearch);
 }
 
-function plotPoints(mapPoints, mapPointInfoBoxes) {
+function plotPoints(FBMapPoints, mapPointInfoBoxes) {
     var mapBounds = new google.maps.LatLngBounds();
     var infowindow = new google.maps.InfoWindow();
-    $.each(mapPoints, function(point, geolocation) {
+    $.each(FBMapPoints, function(point, geolocation) {
         if (geolocation !== undefined && geolocation[0] !== 0) {
             var lat = geolocation[0], lng = geolocation[1];
             var markerLatlng = new google.maps.LatLng(lat, lng);
@@ -414,8 +421,8 @@ function plotPoints(mapPoints, mapPointInfoBoxes) {
 
             marker.set('fbid', point);
             marker.setIcon(pinIcon);
-
             FBMapMarkers[point] = marker;
+
             //create infobox
             google.maps.event.addListener(marker, 'click', function() {
                 var foodbankId = marker.get('fbid');
@@ -482,6 +489,11 @@ function clearFBMap() {
     $('#errorMessage').remove();
     $('#find-fb-search-form-zip').val('');
     $('#find-fb-search-form-state').val('');
+}
+
+function hideResultBoxes() {
+    $('#find-fb-search-results .results-box').hide();
+    $('#fbSearchSummary').show();
 }
 
 function initStickyMapWrapper(page) {
@@ -608,9 +620,9 @@ function buildProfilePageDisplay(data, orgId, resultsWrapper) {
             mediaContact = (org.MediaContact.FullName.length !== 0)? '<strong>Media Contact:</strong> <span>'+org.MediaContact.FullName+'</span><br>': '',
             mapString = 'https://www.google.com/maps/embed/v1/search?q=' + encodeURI((org.FullName).replace(/[&]/g, 'and') + ' ' + org.MailAddress.Address1 + ' ' + org.MailAddress.City + ' ' + org.MailAddress.State + ' ' + org.MailAddress.Zip),
             orgAgencyButton = '', orgDonateUrl = '', orgVolunteerURL = '', socialIcons = '', countyList = $('<span class="counties"/>'),
-            foodInsecurityCount = (Math.round(100 / Math.round(org.FI_AGGREGATE * 100)) > 10) ? 10 : Math.round(100 / Math.round(org.FI_AGGREGATE * 100)),
+            foodInsecurityCount = Math.round(100 / Math.round(org.FI_AGGREGATE * 100)),
             foodInsecurityStat = '1 in ' + foodInsecurityCount.toString() + ' people',
-            childFoodCount = (Math.round(100 / Math.round(org.CHILD_FI_PCT * 100)) > 10) ? 10 : Math.round(100 / Math.round(org.CHILD_FI_PCT * 100)),
+            childFoodCount = Math.round(100 / Math.round(org.CHILD_FI_PCT * 100)),
             childFoodStat = '1 in ' + childFoodCount.toString();
     
         //google map
@@ -816,6 +828,11 @@ function commaSeparateNumber(val){
     }
     return val;
 }
+
+function isSmallScreen() {
+    return ($(window).width() < 768);
+}
+
 $(document).ready(function() {
     //locator scripts, check if locator exists
     if ($('#fb-map-wrapper-inner').length) {

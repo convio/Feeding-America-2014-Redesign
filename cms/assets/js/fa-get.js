@@ -45,19 +45,35 @@ FA.httpWebService = function() { // FA web service helper
         });
     };
 
-    this.toXML = function(data){
+    this.toXML = function(data) {
         if ($.isXMLDoc(data)) {
             return data;
         }
         return $.parseXML(data);
     };
     
-    this.toJSON = function(data){
+    this.toJSON = function(data) {
         if ($.xml2json) {
             return $.xml2json(data);
         }
         warn("jQuery.soap: Missing JQuery Plugin 'xml2json'");
     };
+
+    this.getArrayOfChildren = function(data) {
+        var result = null;
+        if (data.childNodes) {
+            result = [];
+            var children = data.childNodes;
+            for (var i = 0 ; i < children.length ; i++) {
+                var node = children[i];
+                switch (node.nodeType) {
+                    case 1 : // ELEMENT_NODE
+                        result.push(node);
+                }
+            }
+        }
+        return result;
+    }
     
     // Private methods
     function digestResponse(path, data) {
