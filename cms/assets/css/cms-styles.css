@@ -3998,12 +3998,12 @@ shortcut to end of desktop
     max-width: 280px;
     margin: 0px auto 15px auto;
   }
-  body.single-display-template-ways-to-give-template div.fullwidthbody, body.connect-with-us #section-boxes .section-box.full-width.no-img div.fullwidthbody, body.press-room div.fullwidthbody {
+  body.single-display-template-ways-to-give-template div.fullwidthbody, body.connect-with-us #section-boxes .section-box.full-width.no-img div.fullwidthbody, body.press-room #section-boxes .section-box.full-width.no-img div.fullwidthbody {
     padding: 0px;
     max-width: 280px;
     margin: 0px auto;
   }
-  body.single-display-template-ways-to-give-template div.fullwidthbody a, body.press-room div.fullwidthbody a {
+  body.single-display-template-ways-to-give-template div.fullwidthbody a, body.press-room #section-boxes .section-box.full-width.no-img div.fullwidthbody a {
     display: block;
     width: 100%;
   }
