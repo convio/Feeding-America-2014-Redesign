@@ -4021,6 +4021,23 @@ shortcut to end of desktop
   .blog-posts.list-items-container.video-players .list-items .list-item {
     min-height: none;
   }
+
+.blog-posts.list-items-container .list-items .list-item-thumbnail {
+    position: static;
+    display: block;
+    width: auto;
+  }
+
+  .blog-posts.list-items-container .list-items .list-item-thumbnail img {
+    position: static;
+    display: block;
+    width: 100%;
+  }
+
+  .blog-posts.list-items-container .list-items .list-item-text {
+    padding-left: 0px;
+  }
+
   .video-players .list-items .list-item-thumbnail {
     position: static;
     display: block;
