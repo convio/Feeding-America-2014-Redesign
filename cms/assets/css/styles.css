@@ -2231,6 +2231,9 @@ body.expand-news #recent_news_boxes .recent_news_item img {
   height: 90px;
   padding: 20px 20px 25px 20px;
 }
+#recent_news_boxes .recent_news_item.four .news_preview {
+  padding: 10px 10px 15px 10px;
+}
 #recent_news_boxes .recent_news_item .news_preview span, #recent_news_boxes .recent_news_item .news_expanded span {
   font-size: 21px;
   line-height: 24px;
