@@ -4018,15 +4018,15 @@ shortcut to end of desktop
   #banner-donation-level-other-amount {
     width: 80px;
   }
-  .blog-posts.list-items-container .list-items .list-item {
+  .blog-posts.list-items-container.video-players .list-items .list-item {
     min-height: none;
   }
-  .list-items .list-item-thumbnail {
+  .video-players .list-items .list-item-thumbnail {
     position: static;
     display: block;
     width: auto;
   }
-  .blog-posts.list-items-container .list-items .list-item-text {
+  .blog-posts.list-items-container.video-players .list-items .list-item-text {
     padding-left: 0px;
     display: block;
     width: auto;
