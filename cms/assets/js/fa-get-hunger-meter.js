@@ -18,10 +18,17 @@ FA.howweareending = {
 
 // Hunger Meter
 function displayHungerMeterResults(loc, id, name, rate) {
+    var msg = 'In ';
     var link = FA.howweareending.state.link + name.replace(/ /g, '-').toLowerCase();
     var count = Math.round(100 / Math.round(rate * 100));
-    var msg = 'In ' + loc + ', 1 in ' + count.toString() + ' people';
     var hungerImg = (FA.howweareending.stat.img_src).replace('[count]', count);
+
+    switch (id) {
+        case 'DC' :
+            msg = 'In the ';
+            break;
+    }
+    msg += loc + ', 1 in ' + count.toString() + ' people';
 
     $('#howweareending_stat_msg').html(msg);
     $('#howweareending_stat_img').attr('src', hungerImg).attr('alt', msg);
