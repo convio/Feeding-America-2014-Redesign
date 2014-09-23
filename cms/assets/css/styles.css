@@ -1508,12 +1508,20 @@ li.no-dropdown.active:before, li.no-dropdown:hover:before {
   left: 50%;
   right: auto;
   border-top: 0;
-  border-right: 15px dotted rgba(255, 255, 255, 0);
+  border-right: 15px solid rgba(255, 255, 255, 0);
   border-bottom: 17px solid #dedede;
-  border-left: 15px dotted rgba(255, 255, 255, 0);
+  border-left: 15px solid rgba(255, 255, 255, 0);
   margin: 0 0 0 -15px;
   z-index: 3;
 }
+
+html.ie8 li.no-dropdown.active:before, html.ie8 li.no-dropdown:hover:before {
+  border-right: 15px dotted transparent;
+  border-left: 15px dotted transparent;
+}
+
+html.ie8 li.no-dropdown:hover {} /*IE 8 Hover hack to let :hover:before work UNTESTED */;
+
 li.no-dropdown:hover:before {
   top: 100%;
   bottom: auto;
