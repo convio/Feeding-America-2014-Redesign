@@ -13,6 +13,34 @@ FA.howweareending = {
     state: { 
         img_src: 'http://fa.pub30.convio.net/assets/images/state-icons/howweareending_[id].png',
         link: 'http://fa.pub30.convio.net/hunger-in-america/hunger-in-your-community/states/'
+    },
+    rate: function(num) {
+        num *= 100;
+        if (num < 6.5) {
+            return 14;
+        } else if (num < 7.5) {
+            return 13;
+        } else if (num < 8.5) {
+            return 12;
+        } else if (num < 9.5) {
+            return 11;
+        } else if (num < 10.5) {
+            return 10;
+        } else if (num < 11.5) {
+            return 9;
+        } else if (num < 13.5) {
+            return 8;
+        } else if (num < 15.5) {
+            return 7;
+        } else if (num < 18.5) {
+            return 6;
+        } else if (num < 22.5) {
+            return 5;
+        } else if (num < 23.5) {
+            return 4;
+        } else {
+            return 3;
+        }
     }
 }
 
@@ -20,7 +48,7 @@ FA.howweareending = {
 function displayHungerMeterResults(loc, id, name, rate) {
     var msg = 'In ';
     var link = FA.howweareending.state.link + name.replace(/ /g, '-').toLowerCase();
-    var count = Math.round(100 / Math.round(rate * 100));
+    var count = FA.howweareending.rate(rate);
     var hungerImg = (FA.howweareending.stat.img_src).replace('[count]', count);
 
     switch (id) {
