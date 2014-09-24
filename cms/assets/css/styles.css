@@ -1499,6 +1499,7 @@ html.mobile .navbar .dropdown:hover .dropdown-menu, html.tabletnarrow .navbar .d
   clip: rect(0,0,0,0);
   border: 0;
 }
+
 li.no-dropdown.active:before, li.no-dropdown:hover:before {
   content: "";
   position: absolute;
@@ -1507,7 +1508,7 @@ li.no-dropdown.active:before, li.no-dropdown:hover:before {
   top: 100%;
   left: 50%;
   right: auto;
-  border-top: 0;
+  border-top: 0px solid transparent;
   border-right: 15px solid rgba(255, 255, 255, 0);
   border-bottom: 17px solid #dedede;
   border-left: 15px solid rgba(255, 255, 255, 0);
@@ -1520,8 +1521,7 @@ html.ie8 li.no-dropdown.active:before, html.ie8 li.no-dropdown:hover:before {
   border-left: 15px dotted transparent;
 }
 
-html.ie8 li.no-dropdown:hover {} /*IE 8 Hover hack to let :hover:before work UNTESTED */;
-
+/*
 li.no-dropdown:hover:before {
   top: 100%;
   bottom: auto;
@@ -1529,7 +1529,7 @@ li.no-dropdown:hover:before {
   header.has-horizontal-nav li.no-dropdown:hover:before {
     top: auto;
     bottom: -19px;
-  }
+  }*/
 
 /* --------------------------------------------
   footer elements
@@ -4000,7 +4000,7 @@ body.expand-news #recent_news_boxes .recent_news_item img {
     padding: 0px 15px;
   }
   #util_search {
-    position: initial;
+    position: static;
     bottom: 0px;
     right: 20px;
     width: auto;
@@ -4090,7 +4090,7 @@ body.expand-news #recent_news_boxes .recent_news_item img {
     right: 100px;
   }
   .navbar-toggle {
-    display: initial;
+    display: block;
     margin: 0px;
     padding: 0px;
     height: 40px;
