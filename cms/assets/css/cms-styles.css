@@ -46,6 +46,14 @@
   padding: 5px 5px;
 }
 
+#SMS-opt {
+    font-size:11px;
+    font-style:italic;
+}
+
+#homepage_ourpartners_stayconnected .left {
+padding: 50px 40px 100px 20px;
+}
 /* Footer Promos */
 #footer_promos {
   background-color: #53682b;
@@ -121,7 +129,8 @@
   height: 40px;
   line-height: 38px;
 }
-#footer_promo_boxes .footer-promo .full-width {
+#footer_promo_boxes .footer-promo .full-width,
+#homepage_ourpartners_stayconnected .textalerts .full-width {
   width: 100%;
   margin: 0px auto 10px auto;
 }
@@ -134,6 +143,7 @@
 #footer_promo_boxes .footer-promo div.half-width {
   padding-left: 10px;
 }
+#homepage_ourpartners_stayconnected .textalerts  div.half-width button,
 #footer_promo_boxes .footer-promo div.half-width button {
   display: inline-block;
   vertical-align: top;
@@ -1467,13 +1477,15 @@ vertical-align: top;
   margin-top: 20px;
   padding: 0px 10px;
 }
-.sidebar-promo-box .sidebar-promo form .half-width {
+.sidebar-promo-box .sidebar-promo form .half-width,
+#homepage_ourpartners_stayconnected .textalerts .half-width {
   width: 50%;
   margin: 0px;
   display: inline-block;
   float: left;
 }
-.sidebar-promo-box .sidebar-promo form div.half-width {
+.sidebar-promo-box .sidebar-promo form div.half-width,
+#homepage_ourpartners_stayconnected .textalerts div.half-width {
   padding-left: 10px;
 }
 .sidebar-promo-box .sidebar-promo form div.half-width button {
@@ -2570,7 +2582,7 @@ shortcut to end of desktop
     margin-bottom: 25px;
   }
   .take-action-banner-body form input.full-width {
-    width: 194px;
+    width: 190px;
     display: inline-block;
     float: left;
     margin-right: 10px;
