@@ -562,7 +562,7 @@ function initStickyMapWrapper(page) {
     });
 }
 
-function getRelatedStories(state) {
+function getRelatedStories(state, foodInsecurityCount) {
     var box = $('#profile-featured-story'),
         bank = {        
             'id': box.data('bank_id'),
@@ -591,11 +591,16 @@ function getRelatedStories(state) {
         $.ajax({
             url: loadUrl, dataType: 'html', data: {},
             success: function (data) {
-                var $items = $('<div>' + data + '</div>').find('.list-items>.list-item');
+                var $bttns, $items = $('<div>' + data + '</div>').find('.list-items>.list-item');
                 if ($items.length) {
                     $items.tsort('span.date', {order: 'desc'});
                     box.find('#profile-featured-story-loader').remove();
-                    box.html($($items[0]).children()).show();
+                    $bttns = box.find('.profile-buttons').detach().show();
+                    box.html($($items[0]).children()).append($bttns).show();
+                    if (!foodInsecurityCount) {
+                        box.find('.profile-buttons a.button').css('margin-right','10px');
+                        box.find('#profile-story-area').css('position','relative').find('.thumbnail').css('top','0').css('left','0');
+                    }
                     return;
                 } else {
                     callback(box, contentURL, nextType, bank, callback);
@@ -613,12 +618,12 @@ function buildProfilePageDisplay(data, orgId, resultsWrapper) {
     if (data !== null) {
         //build our HTML
         var org = data[0],
+            mapString = '',
             stateName = statesAbbrToFull[org.MailAddress.State],
             profileElements = $('<div/>'),
             addressString = (org.MailAddress.Address2.length !== 0) ? org.MailAddress.Address1 + '<br>' + org.MailAddress.Address2 + '<br>' : org.MailAddress.Address1 + '<br>',
             chiefExec = (org.ED.FullName.length !== 0)? '<strong>Chief Executive:</strong> <span>'+org.ED.FullName+'</span><br>': '',
             mediaContact = (org.MediaContact.FullName.length !== 0)? '<strong>Media Contact:</strong> <span>'+org.MediaContact.FullName+'</span><br>': '',
-            mapString = 'https://www.google.com/maps/embed/v1/search?q=' + encodeURI((org.FullName).replace(/[&]/g, 'and') + ' ' + org.MailAddress.Address1 + ' ' + org.MailAddress.City + ' ' + org.MailAddress.State + ' ' + org.MailAddress.Zip),
             orgAgencyButton = '', orgDonateUrl = '', orgVolunteerURL = '', socialIcons = '', countyList = $('<span class="counties"/>'),
             foodInsecurityCount = FA.howweareending.rate(org.FI_AGGREGATE),
             foodInsecurityStat = '1 in ' + foodInsecurityCount.toString() + ' people',
@@ -626,7 +631,14 @@ function buildProfilePageDisplay(data, orgId, resultsWrapper) {
             childFoodStat = '1 in ' + childFoodCount.toString();
     
         //google map
-        $('#embmap iframe').attr('src', mapString + '&key=AIzaSyBQpaPmWkIRxYnrl1zPGEyuGnydaA9lkP4');
+        switch (org.MailAddress.State) {
+            case 'PR' :
+                mapString = encodeURI('Puerto Rico');
+                break;
+            default :
+                mapString = encodeURI((org.FullName).replace(/[&]/g, 'and') + ' ' + org.MailAddress.Address1 + ' ' + org.MailAddress.City + ' ' + org.MailAddress.State + ' ' + org.MailAddress.Zip);
+        }
+        $('#embmap iframe').attr('src', 'https://www.google.com/maps/embed/v1/search?q=' + mapString + '&key=AIzaSyBQpaPmWkIRxYnrl1zPGEyuGnydaA9lkP4');
 
         //logo and title
         $('h1.page-title, #profile-pounds .name, #profile-counties .name, #profile-area-info .name, #profile-area-info .state').html(org.FullName);
@@ -697,10 +709,15 @@ function buildProfilePageDisplay(data, orgId, resultsWrapper) {
         $('#profile-counties').append(countyList);
         $('#profile-area-info .people-stat .stat').html(foodInsecurityStat);
         $('#profile-area-info .children-stat .stat.green').html(childFoodStat);
-        $('#profile-area-info .people-stat img').attr('src', ('/assets/images/profile_1in[count].png').replace('[count]', foodInsecurityCount)).attr('alt', foodInsecurityStat);
+        if (foodInsecurityCount) {
+            $('#profile-area-info .people-stat img').attr('src', ('/assets/images/profile_1in[count].png').replace('[count]', foodInsecurityCount)).attr('alt', foodInsecurityStat);
+        } else {
+            $('#profile-area-info').hide();
+            $('#profile-featured-story').removeClass('right');
+        }
 
         // related stories
-        getRelatedStories(org.MailAddress.State);
+        getRelatedStories(org.MailAddress.State, foodInsecurityCount);
         
         if (org.ListPDOs !== '') {
             if (org.ListPDOs.PDO.length === undefined) {

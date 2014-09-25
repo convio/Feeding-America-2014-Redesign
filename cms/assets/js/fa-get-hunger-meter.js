@@ -15,6 +15,10 @@ FA.howweareending = {
         link: 'http://fa.pub30.convio.net/hunger-in-america/hunger-in-your-community/states/'
     },
     rate: function(num) {
+        if (isNaN(num) || num == 0) {
+            return false;
+        }
+        
         num *= 100;
         if (num < 6.5) {
             return 14;
