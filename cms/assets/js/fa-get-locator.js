@@ -11,6 +11,7 @@ FA.fbmap = {
 var FBMap;
 var FBMapPoints = [];
 var FBMapMarkers = [];
+var FBMapAllOrgs = [];
 var currentSearch = '';
 var statesAbbrToFull = {
     "AL": "Alabama",
@@ -128,7 +129,7 @@ function searchByZip(zip) {
             FA.fbmap.rendered = false;
             hideResultBoxes();
             centerOnSearch(data, zip);
-            setTimeout(function() { FA.fbmap.rendered = true; }, 3000);
+            setTimeout(function() { FA.fbmap.rendered = true; }, 1500);
         }, 
         function(response) { // Error
             resultsWrapper.append('There was an error processing your request');
@@ -140,16 +141,23 @@ function searchByZip(zip) {
 function searchByState(state) {
     var resultsWrapper = $('#find-fb-search-results'),
         fullStateName = $('#find-fb-search-form-state option:selected').text();
+        
     resultsWrapper.find('.results-box[data-orgid]').hide();
     clearFBMap();
+    
     if (state !== '') {
+        if (state == 'US') {
+            mapAllOrgs(null);
+            return;
+        }
+    
         FA.ws.request('GetOrganizationsByState', { state : state }, 
         'Organization', 
         function(data) {
             FA.fbmap.rendered = false;
             hideResultBoxes();
             centerOnSearch(data, fullStateName);
-            setTimeout(function() { FA.fbmap.rendered = true; }, 3000);
+            setTimeout(function() { FA.fbmap.rendered = true; }, 1500);
         }, 
         function(response) { // Error
             resultsWrapper.append('<p id="errorMessage">There was an error processing your request</p>');
@@ -171,7 +179,7 @@ function mapAllOrgs(execSearch) {
                 if (execSearch == null) {
                     FA.fbmap.rendered = true;
                 }
-            }, 3000);
+            }, 1500);
         }, 
         function(response) {// Error
             resultsWrapper.append('There was an error processing your request');
@@ -179,11 +187,17 @@ function mapAllOrgs(execSearch) {
         });
     } else {
         if (FBMapMarkers.length) {
+            FA.fbmap.rendered = false;
             for (var i = 0; i < FBMapMarkers.length; i++) {
                 if (FBMapMarkers[i] !== undefined) {
+                    FBMapMarkers[i].setIcon({url:"http://fa.pub30.convio.net/assets/images/fb-s-pin.png"});
                     FBMapMarkers[i].setVisible(true);
                 }
             }
+            fitFBMapBounds();
+            exposeMapPoints();
+            buildFAOrgsSummaryBox(FBMapAllOrgs, $('#find-fb-search-results'), 'the United States');
+            setTimeout(function() { FA.fbmap.rendered = true; }, 1500);
         }
     }
 }
@@ -253,6 +267,19 @@ function centerOnSearch(data, searchString) {
     }
 }
 
+function fitFBMapBounds() {
+    if (FBMapMarkers.length) {
+        var mapBounds = new google.maps.LatLngBounds();
+        for (var i = 0; i < FBMapMarkers.length; i++) {
+            var marker = FBMapMarkers[i];
+            if (marker !== undefined && marker.getVisible()) {
+                mapBounds.extend(marker.getPosition());
+            }
+        }
+        FBMap.fitBounds(mapBounds);
+    }
+}
+
 function buildFAOrgResultBox(org) {
     var resultsBox = $('<div class="results-box" data-orgid="'+org.OrganizationID+'">'),
         profileUrlName = org.FullName.replace(/ /g, '-').toLowerCase(),
@@ -298,6 +325,8 @@ function buildFAOrgsSummaryBox(data, resultsWrapper, searchString) {
     } else {
         headlineString = data.length.toString() + headlineString.replace('[s]', 's') + ' ';
     }
+    
+    $('#fbSearchSummary').remove();
     resultsWrapper.prepend(
         '<div class="results-box" id="fbSearchSummary">' +
             '<div class="headline">' + headlineString + searchString.toString() + '</div>' +
@@ -311,6 +340,8 @@ function returnFAResults(data, searchString, execSearch) {
     var resultsWrapper = $('#find-fb-search-results'), mapPointInfoBoxes = [];
 
     if (data !== null) {
+        FBMapAllOrgs = data;
+    
         // Because of IE issues with long running js script,
         // we have to break it down into chunks of 25 records per batch
         var processFAResults = function(current, cycles, total) {
@@ -446,8 +477,8 @@ function plotPoints(FBMapPoints, mapPointInfoBoxes) {
     google.maps.event.addListener(FBMap, 'bounds_changed', function() {
         exposeMapPoints();
     });
-
 }
+
 function exposeMapPoints() {
     for (var i = 0; i < FBMapMarkers.length; i++) {
         if (FBMapMarkers[i] !== undefined) {
@@ -813,6 +844,12 @@ function initFBPage() {
                 searchByState(searchState);
             }
         }
+    });
+    
+    //view all link
+    $('#find-fb-search-form a[href="#"]').click(function(e) {
+        e.preventDefault();
+        mapAllOrgs(null);
     });
 }
 
