@@ -3018,7 +3018,7 @@ body.expand-news #recent_news_boxes .recent_news_item img {
   #recent_news_boxes .recent_news_item.one .news_expanded {
     display: inline-block;
     vertical-align: top;
-    position: initial;
+    position: static;
     bottom: auto;
     left: auto;
     background: transparent;
@@ -3502,7 +3502,7 @@ body.expand-news #recent_news_boxes .recent_news_item img {
   #recent_news_boxes .recent_news_item.one .news_expanded {
     display: inline-block;
     vertical-align: middle;
-    position: initial;
+    position: static;
     bottom: auto;
     left: auto;
     background: transparent;
@@ -3569,7 +3569,7 @@ body.expand-news #recent_news_boxes .recent_news_item img {
     display: block;
     vertical-align: initial;
     float: none;
-    position: initial;
+    position: static;
   }
   html.gecko #homepage_ourpartners_stayconnected .left, html.ie #homepage_ourpartners_stayconnected .left {
     min-height: 415px;
@@ -3583,7 +3583,7 @@ body.expand-news #recent_news_boxes .recent_news_item img {
     margin-bottom: 25px;
   }
   #homepage_ourpartners_stayconnected .left img {
-    position: initial;
+    position: static;
     top: auto;
     right: auto;
     display: block;
@@ -4095,6 +4095,7 @@ body.expand-news #recent_news_boxes .recent_news_item img {
     padding: 0px;
     height: 40px;
     width: 40px;
+    overflow: visible;/*IE on Windows Phone */    
     border-left: 1px solid #ffffff;
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;
@@ -4108,6 +4109,7 @@ body.expand-news #recent_news_boxes .recent_news_item img {
     appearance: none;
     cursor: pointer;
   }
+
   .navbar-toggle:after {
     content: 'Menu';
     position: absolute;
@@ -4200,7 +4202,7 @@ body.expand-news #recent_news_boxes .recent_news_item img {
   }
   #footer_nav {
     border-left: none;
-    position: initial;
+    position: static;
     bottom: auto;
     right: auto;
     height: auto;
@@ -4240,7 +4242,7 @@ body.expand-news #recent_news_boxes .recent_news_item img {
     margin-left: 0px;
   }
   #footer_badges {
-    position: initial;
+    position: static;
     bottom: auto;
     right: auto;
     padding: 30px 20px 0px 20px;
@@ -4279,7 +4281,7 @@ body.expand-news #recent_news_boxes .recent_news_item img {
   }
   #homepage_slideshow .headline-bar {
     padding: 23px 20px 30px 20px;
-    position: initial;
+    position: static;
     background-image: none;
     background-color: #333333;
   }
@@ -4296,7 +4298,7 @@ body.expand-news #recent_news_boxes .recent_news_item img {
     margin-right: 0px;
   }
   #homepage_slideshow .headline-bar .headline-button {
-    position: initial;
+    position: static;
     bottom: auto;
     right: auto;
     display: inline-block;
@@ -4354,7 +4356,7 @@ body.expand-news #recent_news_boxes .recent_news_item img {
     margin: 0px;
   }
   #homepage_ending .left {
-    position: initial;
+    position: static;
     top: auto;
     left: auto;
     bottom: auto;
@@ -4493,7 +4495,7 @@ body.expand-news #recent_news_boxes .recent_news_item img {
     margin-bottom: 25px;
   }
   #homepage_ourpartners_stayconnected .left img {
-    position: initial;
+    position: static;
     top: auto;
     right: auto;
     display: block;
@@ -4503,7 +4505,7 @@ body.expand-news #recent_news_boxes .recent_news_item img {
     border-left: none;
     border-top: 1px solid #dedede;
     width: 100%;
-    position: initial;
+    position: static;
     top: auto;
     bottom: auto;
     left: auto;
@@ -4677,7 +4679,7 @@ body.expand-news #recent_news_boxes .recent_news_item img {
     display: none;
   }
   .section-banner.big-photo .container .headline-bar {
-    position: initial;
+    position: static;
     width: 100%;
   }
   .section-banner.big-photo.no-text .container .headline-bar, .section-banner.big-photo.with-text .container .headline-bar .container .headline-text {
