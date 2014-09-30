@@ -869,7 +869,7 @@ function initProfilePage() {
         function(response) {// Error
             $('#profile-counties').remove();
             $('#partner-distribution-orgs').remove();
-            resultsWrapper.find('#food-bank-profile-info').prepend('<p>There was an error processing your request</p>');
+            resultsWrapper.find('#food-bank-profile-info').prepend('<p>Sorry, local information is not available at this time.<a href="/find-your-local-foodbank/">Please try again.</a></p>');
             resultsWrapper.show();
         });
     }
