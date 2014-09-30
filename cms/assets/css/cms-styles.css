@@ -721,11 +721,17 @@ vertical-align: top;
 #profile-story-area {
   min-height: 132px;
   margin-bottom: 30px;
+  position: relative;
+  overflow: hidden;
 }
 #profile-story-area .thumbnail {
   position: absolute;
+  /*
   top: 72px;
   left: 40px;
+  */
+  top: 0px;
+  left: 0px;
   width: 200px;
 }
 #profile-story-area .thumbnail img {
