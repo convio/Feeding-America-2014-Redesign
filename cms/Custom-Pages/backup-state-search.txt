@@ -1,0 +1,32 @@
+        <div class="left" id="find-fb-search">
+            <div id="find-fb-search-formbox" class="has-results">
+                <div class="headline">
+                    <span>Search by</span><span>Zip Code or State</span>
+                </div>
+                <form id="find-fb-search-form" action="#">
+                    <div class="row">
+                        <input type="text" name="zip" id="find-fb-search-form-zip" placeholder="Zip Code" />
+                        <span>or</span>
+                        <div class="clearfix"></div>
+                    </div><!--/.row-->
+                    <div class="row">
+                        <select name="state" id="find-fb-search-form-state" placeholder="State">
+                        <option value="" selected="selected" disabled="disabled">State</option>
+                        <t:data name="state" class="categories" parent="/state" /> 
+                        <t:list id="state">
+                        <option  value="${name}">${label}</option>
+                        </t:list>
+                        </select><!--/#find-fb-search-form-state-->
+                        <button type="submit" class="red">
+                            GO
+                        </button>
+                        <div class="clearfix"></div>
+                    </div><!--/.row-->
+                    <div class="clearfix"></div>
+                    <a href="#">View Feeding America&rsquo;s full Member Food Bank Network &rsaquo;</a>
+                </form><!--/#find-fb-search-form-->
+            </div><!--/#find-fb-search-formbox-->
+            <div id="find-fb-search-results">
+
+            </div><!--/#find-fb-search-results-->
+        </div><!--/#find-fb-search.left-->

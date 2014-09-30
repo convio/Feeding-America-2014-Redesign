@@ -716,7 +716,9 @@ function buildProfilePageDisplay(data, orgId, resultsWrapper) {
             profileElements.append(socialIconsWrapper);
         }
 
-        resultsWrapper.append(profileElements);
+        var profileInfo = resultsWrapper.find('#food-bank-profile-info');
+        profileInfo.empty();
+        profileInfo.append(profileElements);
 
         //stat bar
         if (org.PoundageStats.ShowMeals && org.PoundageStats.ShowMeals == 'true') {
@@ -782,6 +784,8 @@ function buildProfilePageDisplay(data, orgId, resultsWrapper) {
         } else {
             $('#partner-distribution-orgs').hide();
         }
+        
+        resultsWrapper.show();
     }
 }
 
@@ -856,14 +860,16 @@ function initFBPage() {
 function initProfilePage() {
     var orgId = $('#fbid').text();
     if (orgId !== '') { // Do the request
-        var resultsWrapper = $('#food-bank-profile-address-map .left');
+        var resultsWrapper = $('#food-bank-profile-address-map');
         FA.ws.request('GetOrganizationsByOrgId', { a2horgid : orgId }, 
         'Organization', 
         function(data) {
-            buildProfilePageDisplay(data, orgId, resultsWrapper);
+            buildProfilePageDisplay(data, orgId, resultsWrapper); 
         }, 
         function(response) {// Error
-            resultsWrapper.append('There was an error processing your request');
+            $('#profile-counties').remove();
+            $('#partner-distribution-orgs').remove();
+            resultsWrapper.find('#food-bank-profile-info').prepend('<p>There was an error processing your request</p>');
             resultsWrapper.show();
         });
     }
