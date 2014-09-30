@@ -681,7 +681,7 @@ function buildProfilePageDisplay(data, orgId, resultsWrapper) {
         //state name
         //$('#profile-area-info .state').html(stateName);
         //left column profile
-        profileElements.append('<a class="profile-link" src="'+ org.URL+ '">' + org.URL + '</a>');
+        profileElements.append('<a class="profile-link" href="'+ org.URL+ '">' + org.URL + '</a>');
         profileElements.append('<p>' + addressString + org.MailAddress.City + ', ' + org.MailAddress.State + ' ' + org.MailAddress.Zip + '<br>' + org.Phone + '</p>');
 
         //exec contacts
