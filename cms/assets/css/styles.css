@@ -2033,14 +2033,30 @@ html.gecko #homepage_slideshow .homepage-slideshow-manual-control-nav li.flex-ac
   top: 30px;
 }
 #fb-state-wrapper.bottom {
+  /*
   bottom: 50px;
+  */
+  bottom: 0px;
   position: absolute;
   top: auto;
+  height: auto;
 }
 #fb-state-wrapper-inner {
   text-align: center;
   padding: 30px 0px 0px 0px;
 }
+#fb-state-wrapper.bottom #fb-state-wrapper-inner {
+  padding: 30px 0px 30px 0px;
+}
+
+#find-fb-map.bottom {
+  vertical-align: bottom !important;
+}
+.bottom#fb-map-wrapper {
+  bottom: 0px !important;
+  position: static !important;
+}
+
 
 /* "How We Are Ending Hunger" */
 #homepage_ending {
