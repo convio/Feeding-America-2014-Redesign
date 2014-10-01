@@ -120,19 +120,22 @@ function orgXmlToJson(node, attr) {
 
 function searchByZip(zip) {
     var resultsWrapper = $('#find-fb-search-results');
+
     resultsWrapper.find('.results-box[data-orgid]').hide();
     clearFBMap();
+
     if (zip !== '') { // Do the request
         FA.ws.request('GetOrganizationsByZip', { zip : zip }, 
         'Organization', 
         function(data) {
             FA.fbmap.rendered = false;
             hideResultBoxes();
-            centerOnSearch(data, zip);
+            centerOnSearch(data, zip, resultsWrapper, 'zip code');
             setTimeout(function() { FA.fbmap.rendered = true; }, 1500);
         }, 
         function(response) { // Error
-            resultsWrapper.append('There was an error processing your request');
+            hideResultBoxes();
+            resultsWrapper.append('<p id="errorMessage">There was an error processing your request</p>');
             resultsWrapper.show();
         });
     }
@@ -156,10 +159,11 @@ function searchByState(state) {
         function(data) {
             FA.fbmap.rendered = false;
             hideResultBoxes();
-            centerOnSearch(data, fullStateName);
+            centerOnSearch(data, fullStateName, resultsWrapper, 'state');
             setTimeout(function() { FA.fbmap.rendered = true; }, 1500);
         }, 
         function(response) { // Error
+            hideResultBoxes();
             resultsWrapper.append('<p id="errorMessage">There was an error processing your request</p>');
             resultsWrapper.show();
         });
@@ -182,7 +186,8 @@ function mapAllOrgs(execSearch) {
             }, 1500);
         }, 
         function(response) {// Error
-            resultsWrapper.append('There was an error processing your request');
+            hideResultBoxes();
+            resultsWrapper.append('<p id="errorMessage">There was an error processing your request</p>');
             resultsWrapper.show();
         });
     } else {
@@ -222,7 +227,7 @@ function displayStateOrgs(state, name) {
     }
 }
 
-function centerOnSearch(data, searchString) {
+function centerOnSearch(data, searchString, resultsWrapper, entity) {
     var currentZoom = 0,
         headlineString = ' Feeding America Food Bank[s] that serve';
         
@@ -259,11 +264,17 @@ function centerOnSearch(data, searchString) {
 
         $('#fbSearchSummary').html('<div class="headline">' + headlineString + searchString.toString() + '</div>' +
             '<!--<p class="countstring"></p>-->' +
-            '<p>Feeding America food banks serve large areas and will be able to find a feeding program in your local community.</p>');
+            '<p>Feeding America food banks serve large areas and will be able to find a feeding program in your local community.</p>').show();
 
         if (FBMapMarkers.length) {
+            clearListenerBoundsChanged();
             FBMap.fitBounds(mapBounds);
+            setTimeout(function() { addListenerBoundsChanged(); }, 750);
         }
+    } else {
+        $('#fbSearchSummary').hide();
+        resultsWrapper.append('<p id="errorMessage">This is in invalid ' + entity + '. Please try again.</p>');
+        resultsWrapper.show();
     }
 }
 
@@ -473,10 +484,17 @@ function plotPoints(FBMapPoints, mapPointInfoBoxes) {
     });
 
     FBMap.fitBounds(mapBounds);
+    addListenerBoundsChanged();
+}
 
+function addListenerBoundsChanged() {
     google.maps.event.addListener(FBMap, 'bounds_changed', function() {
         exposeMapPoints();
     });
+}
+
+function clearListenerBoundsChanged() {
+    google.maps.event.clearListeners(FBMap, 'bounds_changed');
 }
 
 function exposeMapPoints() {
@@ -511,20 +529,25 @@ function resetMap () {
 }
 
 function clearFBMap() {
+    var pinIcon = {
+        url : "http://fa.pub30.convio.net/assets/images/fb-s-pin.png"
+    };
     for (var i = 0; i < FBMapMarkers.length; i++) {
         if (FBMapMarkers[i] !== undefined) {
             FBMapMarkers[i].setVisible(false);
+            FBMapMarkers[i].setIcon(pinIcon);
         }
     }
     //reset search boxes
     $('#errorMessage').remove();
+    $('#fbSearchSummary').hide();
     $('#find-fb-search-form-zip').val('');
     $('#find-fb-search-form-state').val('');
 }
 
 function hideResultBoxes() {
     $('#find-fb-search-results .results-box').hide();
-    $('#fbSearchSummary').show();
+    $('#fbSearchSummary').hide();
 }
 
 function initStickyMapWrapper(page) {
