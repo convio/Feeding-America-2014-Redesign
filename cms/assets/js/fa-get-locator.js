@@ -123,18 +123,17 @@ function searchByZip(zip) {
 
     resultsWrapper.find('.results-box[data-orgid]').hide();
     clearFBMap();
+    hideResultBoxes();
 
     if (zip !== '') { // Do the request
         FA.ws.request('GetOrganizationsByZip', { zip : zip }, 
         'Organization', 
         function(data) {
             FA.fbmap.rendered = false;
-            hideResultBoxes();
             centerOnSearch(data, zip, resultsWrapper, 'zip code');
             setTimeout(function() { FA.fbmap.rendered = true; }, 1500);
         }, 
         function(response) { // Error
-            hideResultBoxes();
             resultsWrapper.append('<p id="errorMessage">There was an error processing your request</p>');
             resultsWrapper.show();
         });
@@ -147,6 +146,7 @@ function searchByState(state) {
         
     resultsWrapper.find('.results-box[data-orgid]').hide();
     clearFBMap();
+    hideResultBoxes();
     
     if (state !== '') {
         if (state == 'US') {
@@ -158,12 +158,10 @@ function searchByState(state) {
         'Organization', 
         function(data) {
             FA.fbmap.rendered = false;
-            hideResultBoxes();
             centerOnSearch(data, fullStateName, resultsWrapper, 'state');
             setTimeout(function() { FA.fbmap.rendered = true; }, 1500);
         }, 
         function(response) { // Error
-            hideResultBoxes();
             resultsWrapper.append('<p id="errorMessage">There was an error processing your request</p>');
             resultsWrapper.show();
         });
@@ -272,10 +270,14 @@ function centerOnSearch(data, searchString, resultsWrapper, entity) {
             setTimeout(function() { addListenerBoundsChanged(); }, 750);
         }
     } else {
-        $('#fbSearchSummary').hide();
-        resultsWrapper.append('<p id="errorMessage">This is in invalid ' + entity + '. Please try again.</p>');
-        resultsWrapper.show();
+        searchNoResults(resultsWrapper, entity);
     }
+}
+
+function searchNoResults(resultsWrapper, entity) {
+    $('#fbSearchSummary').hide();
+    resultsWrapper.append('<p id="errorMessage">This is in invalid ' + entity + '. Please try again.</p>');
+    resultsWrapper.show();
 }
 
 function fitFBMapBounds() {
@@ -859,12 +861,19 @@ function initFBPage() {
             searchState = $('#find-fb-search-form #find-fb-search-form-state').val();
 
         e.preventDefault();
-        if (searchZipCode.length >= 5 && !isNaN(searchZipCode)) {
-            if (searchZipCode !== currentSearch) {
-                currentSearch = searchZipCode;
-                searchByZip(searchZipCode);
-            }
 
+        if (searchZipCode.length > 0) {
+            if (searchZipCode !== currentSearch) {
+                var zip = searchZipCode.replace(/\D/g,'');
+                if (searchZipCode.length == 5 && searchZipCode == zip) {
+                    currentSearch = searchZipCode;
+                    searchByZip(searchZipCode);
+                } else {
+                    clearFBMap();
+                    hideResultBoxes();
+                    searchNoResults($('#find-fb-search-results'), 'zip code');
+                }
+            }
         } else if (searchState !== '' && searchState !== null) {
             if (searchState !== currentSearch) {
                 currentSearch = searchState;
@@ -892,7 +901,7 @@ function initProfilePage() {
         function(response) {// Error
             $('#profile-counties').remove();
             $('#partner-distribution-orgs').remove();
-            resultsWrapper.find('#food-bank-profile-info').prepend('<p>Sorry, local information is not available at this time.<a href="/find-your-local-foodbank/">Please try again.</a></p>');
+            resultsWrapper.find('#food-bank-profile-info').prepend('<p>Sorry, local information is not available at this time. <a href="/find-your-local-foodbank/">Please try again.</a></p>');
             resultsWrapper.show();
         });
     }
