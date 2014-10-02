@@ -19,6 +19,13 @@ body {
   position: relative;
   color: #333333;
 }
+html.ie, html.ie body {
+  max-height: 100%;
+  border: 0px;
+  margin: 0px;
+  padding: 0px;
+  display: block;
+}
 p, li, ol, ul, table, tr, th, td, .Explicit {
   font-family: 'Gotham A', 'Gotham B', Arial, sans-serif;
   font-size: inherit;
@@ -2443,6 +2450,13 @@ body.expand-news #recent_news_boxes .recent_news_item img {
   position: absolute;
   top: 110px;
   right: 40px;
+}
+html.ie #homepage-partners-carousel {
+  box-sizing: content-box;
+  overflow: hidden;
+}
+html.ie #homepage-partners-carousel .flex-viewport {
+  max-height: 100%;
 }
 #homepage_ourpartners_stayconnected .left img {
   /* border: 1px solid #dedede; */
