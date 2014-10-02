@@ -282,7 +282,7 @@ label {
   display: block;
   margin: 1.5em 0px 1em 0px;
 }
-input[type="text"], input[type="email"], input[type="tel"] {
+input[type="text"], input[type="email"], input[type="tel"], input[type="password"] {
   width: 280px;
 }
 textarea {
@@ -558,7 +558,7 @@ a.button.green:hover, a.grainbutton.green:hover, button.green:hover {
 }
 
 
-input[type="text"], input[type="email"], input[type="tel"] {
+input[type="text"], input[type="email"], input[type="tel"], input[type="password"] {
   display: inline-block;
   vertical-align: top;
   font-family: 'Gotham A', 'Gotham B', Arial, sans-serif;
@@ -3804,7 +3804,7 @@ html.ie #homepage-partners-carousel .flex-viewport {
 
 
   /* overriding font-weight for smaller screens */
-  #page-description, a.button, a.grainbutton, button, input[type="text"], input[type="email"], input[type="tel"], textarea, select, #util_search_query, #util_search_button, #footer_text, #homepage_slideshow .headline-bar .headline-button a, #homepage_zip_search_form input, #homepage_zip_search_form button, #homepage_ending_select, #recent_news_boxes .recent_news_item .news_preview span, #recent_news_boxes .recent_news_item .news_expanded span, .homepage_email .headline span:last-child:after, .homepage_email p, #together_form input, #together_form button, #textalerts_form input, #textalerts_form button, #homepage_fivesteps_find_out_more, #homepage_fivesteps_share_this, .section-banner .headline-subhead, #recent_news_boxes .recent_news_item.one .news_expanded p, #recent_news_boxes .recent_news_item.two .news_expanded p, #recent_news_boxes .recent_news_item.one .news_expanded span.link, #recent_news_boxes .recent_news_item.one .news_expanded p, #recent_news_boxes .recent_news_item.morenews, .navbar-toggle:after, #footer_links, #homepage_ending .left p {
+  #page-description, a.button, a.grainbutton, button, input[type="text"], input[type="email"], input[type="tel"], input[type="password"], textarea, select, #util_search_query, #util_search_button, #footer_text, #homepage_slideshow .headline-bar .headline-button a, #homepage_zip_search_form input, #homepage_zip_search_form button, #homepage_ending_select, #recent_news_boxes .recent_news_item .news_preview span, #recent_news_boxes .recent_news_item .news_expanded span, .homepage_email .headline span:last-child:after, .homepage_email p, #together_form input, #together_form button, #textalerts_form input, #textalerts_form button, #homepage_fivesteps_find_out_more, #homepage_fivesteps_share_this, .section-banner .headline-subhead, #recent_news_boxes .recent_news_item.one .news_expanded p, #recent_news_boxes .recent_news_item.two .news_expanded p, #recent_news_boxes .recent_news_item.one .news_expanded span.link, #recent_news_boxes .recent_news_item.one .news_expanded p, #recent_news_boxes .recent_news_item.morenews, .navbar-toggle:after, #footer_links, #homepage_ending .left p {
     font-weight: 300;
   }
 
@@ -4790,7 +4790,7 @@ html.ie #homepage-partners-carousel .flex-viewport {
 
 
   /* overriding font-weight for smaller screens */
-  #page-description, a.button, a.grainbutton, button, input[type="text"], input[type="email"], input[type="tel"], textarea, select, #util_search_query, #util_search_button, #footer_text, #homepage_slideshow .headline-bar .headline-button a, #homepage_zip_search_form input, #homepage_zip_search_form button, #homepage_ending_select, #recent_news_boxes .recent_news_item .news_preview span, #recent_news_boxes .recent_news_item .news_expanded span, .homepage_email .headline span:last-child:after, .homepage_email p, #together_form input, #together_form button, #textalerts_form input, #textalerts_form button, #homepage_fivesteps_find_out_more, #homepage_fivesteps_share_this, .section-banner .headline-subhead, #recent_news_boxes .recent_news_item.one .news_expanded p, #recent_news_boxes .recent_news_item.two .news_expanded p, #recent_news_boxes .recent_news_item.one .news_expanded span.link, #recent_news_boxes .recent_news_item.one .news_expanded p, #recent_news_boxes .recent_news_item.morenews, .navbar-toggle:after, #footer_links, #homepage_ending .left p {
+  #page-description, a.button, a.grainbutton, button, input[type="text"], input[type="email"], input[type="tel"], input[type="password"], textarea, select, #util_search_query, #util_search_button, #footer_text, #homepage_slideshow .headline-bar .headline-button a, #homepage_zip_search_form input, #homepage_zip_search_form button, #homepage_ending_select, #recent_news_boxes .recent_news_item .news_preview span, #recent_news_boxes .recent_news_item .news_expanded span, .homepage_email .headline span:last-child:after, .homepage_email p, #together_form input, #together_form button, #textalerts_form input, #textalerts_form button, #homepage_fivesteps_find_out_more, #homepage_fivesteps_share_this, .section-banner .headline-subhead, #recent_news_boxes .recent_news_item.one .news_expanded p, #recent_news_boxes .recent_news_item.two .news_expanded p, #recent_news_boxes .recent_news_item.one .news_expanded span.link, #recent_news_boxes .recent_news_item.one .news_expanded p, #recent_news_boxes .recent_news_item.morenews, .navbar-toggle:after, #footer_links, #homepage_ending .left p {
     font-weight: 300;
   }
 
