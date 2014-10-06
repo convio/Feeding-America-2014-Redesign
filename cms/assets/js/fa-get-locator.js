@@ -134,7 +134,7 @@ function searchByZip(zip) {
             setTimeout(function() { FA.fbmap.rendered = true; }, 1500);
         }, 
         function(response) { // Error
-            resultsWrapper.append('<p id="errorMessage">There was an error processing your request</p>');
+            resultsWrapper.append('<p id="errorMessage">Our online search is not working at this time. To find out your food bank, please call us at 800.771.2303.</p>');
             resultsWrapper.show();
         });
     }
@@ -162,7 +162,7 @@ function searchByState(state) {
             setTimeout(function() { FA.fbmap.rendered = true; }, 1500);
         }, 
         function(response) { // Error
-            resultsWrapper.append('<p id="errorMessage">There was an error processing your request</p>');
+            resultsWrapper.append('<p id="errorMessage">Our online search is not working at this time. To find out your food bank, please call us at 800.771.2303.</p>');
             resultsWrapper.show();
         });
     }
@@ -185,7 +185,7 @@ function mapAllOrgs(execSearch) {
         }, 
         function(response) {// Error
             hideResultBoxes();
-            resultsWrapper.append('<p id="errorMessage">There was an error processing your request</p>');
+            resultsWrapper.append('<p id="errorMessage">Our online search is not working at this time. To find out your food bank, please call us at 800.771.2303.</p>');
             resultsWrapper.show();
         });
     } else {

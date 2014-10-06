@@ -39,6 +39,7 @@ $(document).ready(function() {
                     }
 
                 }, function(response) { // Error
+                    results.append('Our online search is not working at this time. To find out your food bank, please call us at 800.771.2303');
                     stateHungerMeterByZip(zip);
                 });
 
