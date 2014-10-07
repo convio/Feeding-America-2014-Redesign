@@ -150,7 +150,7 @@ templateID: '${templateID}'
 </t:if>
 <body class="${pathclasses} ${templatename} ${bodyClass} ${expandnews}">
 <!-- Google Tag manager--> 
-<t:include id="convio-content-560900222"/>
+<!-- <t:include id="convio-content-560900222"/> --> 
 
 <t:if test="user.isanonymous == false">
   <t:set id="cms_cons_zip" value="crm('[[S1:home_zip]]')" />
@@ -242,8 +242,7 @@ templateID: '${templateID}'
   <script src="http://fa.pub30.convio.net/assets/js/selector.js"></script>
 
   <!-- Go to www.addthis.com/dashboard to customize your tools -->
-  <!-- TEST ID - CHANGE TO FA ADDTHIS ID -->
-  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4dd6bd6878e060e8"></script>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-54341d43694e8cbc"></script>
 
 
   <t:if test="param.cms_static == true">
