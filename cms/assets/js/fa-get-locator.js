@@ -276,7 +276,7 @@ function centerOnSearch(data, searchString, resultsWrapper, entity) {
 
 function searchNoResults(resultsWrapper, entity) {
     $('#fbSearchSummary').hide();
-    resultsWrapper.append('<p id="errorMessage">This is in invalid ' + entity + '. Please try again.</p>');
+    resultsWrapper.append('<p id="errorMessage">This is in invalid ' + entity + '. Please try a valid U.S. ' + entity + '.</p>');
     resultsWrapper.show();
 }
 
