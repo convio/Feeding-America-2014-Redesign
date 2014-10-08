@@ -4,28 +4,57 @@
     <t:set id="sourceCode" value="crm('[[S80:src]]')" />
   </t:if>
   <t:set id="cookieValue" value="replace(replace(replace(header.cookie, '(', ''), ')', ''), '=', '') " />
+  <t:set id="referer" value="header.referer" />
 
   <t:set id="itemDisplayed" value="0" />
   <t:set id="conditionalCategory" value="null" />
+
+<!-- debug: sourceCode: ${sourceCode}
+cookieValue: ${cookieValue}
+referrer: ${referer} -->
 
   <t:if test="!isNull(sourceCode) && substring(sourceCode, 0, 1) == 'Y' && substring(sourceCode, 4,5) == 'A'">
     <!-- from donated media -->
     <t:set id="conditionalCategory" value="'donated-media'" />
   </t:if>
   <t:else>
-    <t:if test="matches(cookieValue, '.*utmccndirect.*')">
-      <!-- direct -->
-      <t:set id="conditionalCategory" value="'direct'" />
+
+    <t:if test="matches(cookieValue, '.*CONVIO.referrer.*')">
+
+      <t:if test="matches(cookieValue, '.*yahoo.*') || matches(cookieValue, '.*google.*') || matches(cookieValue, '.*bing.*') || matches(cookieValue, '.*alltheweb.*') || matches(cookieValue, '.*lycos.*') || matches(cookieValue, '.*msn.*')">
+        <!-- organic -->
+        <t:set id="conditionalCategory" value="'organic-search'" />
+      </t:if>
+      <t:else>
+        <t:if test="matches(cookieValue, '.*fa.pub30.convio.net.*') || matches(cookieValue, '.*feedingamerica.org.*') || matches(cookieValue, '.*fa.pub30.convio.net.*') || matches(cookieValue, '.*feedingamerica.org.*')">
+          <!-- direct -->
+          <t:set id="conditionalCategory" value="'direct'" />
+        </t:if>
+        <t:else>
+          <!-- referral -->
+          <t:set id="conditionalCategory" value="'referral'" />
+        </t:else>
+      </t:else>
     </t:if>
-    <t:if test="matches(cookieValue, '.*utmccnreferral.*')">
-      <!-- referral -->
-      <t:set id="conditionalCategory" value="'referral'" />
-    </t:if>
-    <t:if test="matches(cookieValue, '.*utmccnorganic.*')">
-      <!-- organic -->
-      <t:set id="conditionalCategory" value="'organic-search'" />
-    </t:if>
+    <t:else>
+      <t:if test="matches(cookieValue, '.*utmccndirect.*')">
+        <!-- direct -->
+        <t:set id="conditionalCategory" value="'direct'" />
+      </t:if>
+      <t:if test="matches(cookieValue, '.*utmccnreferral.*')">
+        <!-- referral -->
+        <t:set id="conditionalCategory" value="'referral'" />
+      </t:if>
+      <t:if test="matches(cookieValue, '.*utmccnorganic.*')">
+        <!-- organic -->
+        <t:set id="conditionalCategory" value="'organic-search'" />
+      </t:if>
   </t:else>
+
+  <t:if test="!matches(cookieValue, '.*CONVIO.referrer.*') && !matches(cookieValue, '.*utmccn.*')">
+    <!-- direct -->
+    <t:set id="conditionalCategory" value="'direct'" />
+  </t:if>
 
   <t:list>
     <t:if test="filename != 'blank.html'">
