@@ -19,6 +19,13 @@ body {
   position: relative;
   color: #333333;
 }
+html.ie, html.ie body {
+  max-height: 100%;
+  border: 0px;
+  margin: 0px;
+  padding: 0px;
+  display: block;
+}
 p, li, ol, ul, table, tr, th, td, .Explicit {
   font-family: 'Gotham A', 'Gotham B', Arial, sans-serif;
   font-size: inherit;
@@ -275,7 +282,7 @@ label {
   display: block;
   margin: 1.5em 0px 1em 0px;
 }
-input[type="text"], input[type="email"], input[type="tel"] {
+input[type="text"], input[type="email"], input[type="tel"], input[type="password"] {
   width: 280px;
 }
 textarea {
@@ -551,7 +558,7 @@ a.button.green:hover, a.grainbutton.green:hover, button.green:hover {
 }
 
 
-input[type="text"], input[type="email"], input[type="tel"] {
+input[type="text"], input[type="email"], input[type="tel"], input[type="password"] {
   display: inline-block;
   vertical-align: top;
   font-family: 'Gotham A', 'Gotham B', Arial, sans-serif;
@@ -1499,6 +1506,7 @@ html.mobile .navbar .dropdown:hover .dropdown-menu, html.tabletnarrow .navbar .d
   clip: rect(0,0,0,0);
   border: 0;
 }
+
 li.no-dropdown.active:before, li.no-dropdown:hover:before {
   content: "";
   position: absolute;
@@ -1507,13 +1515,20 @@ li.no-dropdown.active:before, li.no-dropdown:hover:before {
   top: 100%;
   left: 50%;
   right: auto;
-  border-top: 0;
-  border-right: 15px dotted rgba(255, 255, 255, 0);
+  border-top: 0px solid transparent;
+  border-right: 15px solid rgba(255, 255, 255, 0);
   border-bottom: 17px solid #dedede;
-  border-left: 15px dotted rgba(255, 255, 255, 0);
+  border-left: 15px solid rgba(255, 255, 255, 0);
   margin: 0 0 0 -15px;
   z-index: 3;
 }
+
+html.ie8 li.no-dropdown.active:before, html.ie8 li.no-dropdown:hover:before {
+  border-right: 15px dotted transparent;
+  border-left: 15px dotted transparent;
+}
+
+/*
 li.no-dropdown:hover:before {
   top: 100%;
   bottom: auto;
@@ -1521,7 +1536,7 @@ li.no-dropdown:hover:before {
   header.has-horizontal-nav li.no-dropdown:hover:before {
     top: auto;
     bottom: -19px;
-  }
+  }*/
 
 /* --------------------------------------------
   footer elements
@@ -2025,14 +2040,30 @@ html.gecko #homepage_slideshow .homepage-slideshow-manual-control-nav li.flex-ac
   top: 30px;
 }
 #fb-state-wrapper.bottom {
+  /*
   bottom: 50px;
+  */
+  bottom: 0px;
   position: absolute;
   top: auto;
+  height: auto;
 }
 #fb-state-wrapper-inner {
   text-align: center;
   padding: 30px 0px 0px 0px;
 }
+#fb-state-wrapper.bottom #fb-state-wrapper-inner {
+  padding: 30px 0px 30px 0px;
+}
+
+#find-fb-map.bottom {
+  vertical-align: bottom !important;
+}
+.bottom#fb-map-wrapper {
+  bottom: 0px !important;
+  position: static !important;
+}
+
 
 /* "How We Are Ending Hunger" */
 #homepage_ending {
@@ -2067,9 +2098,7 @@ html.gecko #homepage_slideshow .homepage-slideshow-manual-control-nav li.flex-ac
   display: block;
   font-size: 40px;
   font-weight: 500;
-  /*
   margin-bottom: 10px;
-  */
   line-height: 40px;
 }
 #homepage_ending .left .orange {
@@ -2230,6 +2259,9 @@ body.expand-news #recent_news_boxes .recent_news_item img {
   color: #ffffff;
   height: 90px;
   padding: 20px 20px 25px 20px;
+}
+#recent_news_boxes .recent_news_item.four .news_preview {
+  padding: 10px 10px 15px 10px;
 }
 #recent_news_boxes .recent_news_item .news_preview span, #recent_news_boxes .recent_news_item .news_expanded span {
   font-size: 21px;
@@ -2416,6 +2448,13 @@ body.expand-news #recent_news_boxes .recent_news_item img {
   position: absolute;
   top: 110px;
   right: 40px;
+}
+html.ie #homepage-partners-carousel {
+  box-sizing: content-box;
+  overflow: hidden;
+}
+html.ie #homepage-partners-carousel .flex-viewport {
+  max-height: 100%;
 }
 #homepage_ourpartners_stayconnected .left img {
   /* border: 1px solid #dedede; */
@@ -3007,7 +3046,7 @@ body.expand-news #recent_news_boxes .recent_news_item img {
   #recent_news_boxes .recent_news_item.one .news_expanded {
     display: inline-block;
     vertical-align: top;
-    position: initial;
+    position: static;
     bottom: auto;
     left: auto;
     background: transparent;
@@ -3491,7 +3530,7 @@ body.expand-news #recent_news_boxes .recent_news_item img {
   #recent_news_boxes .recent_news_item.one .news_expanded {
     display: inline-block;
     vertical-align: middle;
-    position: initial;
+    position: static;
     bottom: auto;
     left: auto;
     background: transparent;
@@ -3558,7 +3597,7 @@ body.expand-news #recent_news_boxes .recent_news_item img {
     display: block;
     vertical-align: initial;
     float: none;
-    position: initial;
+    position: static;
   }
   html.gecko #homepage_ourpartners_stayconnected .left, html.ie #homepage_ourpartners_stayconnected .left {
     min-height: 415px;
@@ -3572,7 +3611,7 @@ body.expand-news #recent_news_boxes .recent_news_item img {
     margin-bottom: 25px;
   }
   #homepage_ourpartners_stayconnected .left img {
-    position: initial;
+    position: static;
     top: auto;
     right: auto;
     display: block;
@@ -3763,7 +3802,7 @@ body.expand-news #recent_news_boxes .recent_news_item img {
 
 
   /* overriding font-weight for smaller screens */
-  #page-description, a.button, a.grainbutton, button, input[type="text"], input[type="email"], input[type="tel"], textarea, select, #util_search_query, #util_search_button, #footer_text, #homepage_slideshow .headline-bar .headline-button a, #homepage_zip_search_form input, #homepage_zip_search_form button, #homepage_ending_select, #recent_news_boxes .recent_news_item .news_preview span, #recent_news_boxes .recent_news_item .news_expanded span, .homepage_email .headline span:last-child:after, .homepage_email p, #together_form input, #together_form button, #textalerts_form input, #textalerts_form button, #homepage_fivesteps_find_out_more, #homepage_fivesteps_share_this, .section-banner .headline-subhead, #recent_news_boxes .recent_news_item.one .news_expanded p, #recent_news_boxes .recent_news_item.two .news_expanded p, #recent_news_boxes .recent_news_item.one .news_expanded span.link, #recent_news_boxes .recent_news_item.one .news_expanded p, #recent_news_boxes .recent_news_item.morenews, .navbar-toggle:after, #footer_links, #homepage_ending .left p {
+  #page-description, a.button, a.grainbutton, button, input[type="text"], input[type="email"], input[type="tel"], input[type="password"], textarea, select, #util_search_query, #util_search_button, #footer_text, #homepage_slideshow .headline-bar .headline-button a, #homepage_zip_search_form input, #homepage_zip_search_form button, #homepage_ending_select, #recent_news_boxes .recent_news_item .news_preview span, #recent_news_boxes .recent_news_item .news_expanded span, .homepage_email .headline span:last-child:after, .homepage_email p, #together_form input, #together_form button, #textalerts_form input, #textalerts_form button, #homepage_fivesteps_find_out_more, #homepage_fivesteps_share_this, .section-banner .headline-subhead, #recent_news_boxes .recent_news_item.one .news_expanded p, #recent_news_boxes .recent_news_item.two .news_expanded p, #recent_news_boxes .recent_news_item.one .news_expanded span.link, #recent_news_boxes .recent_news_item.one .news_expanded p, #recent_news_boxes .recent_news_item.morenews, .navbar-toggle:after, #footer_links, #homepage_ending .left p {
     font-weight: 300;
   }
 
@@ -3989,7 +4028,7 @@ body.expand-news #recent_news_boxes .recent_news_item img {
     padding: 0px 15px;
   }
   #util_search {
-    position: initial;
+    position: static;
     bottom: 0px;
     right: 20px;
     width: auto;
@@ -4079,11 +4118,12 @@ body.expand-news #recent_news_boxes .recent_news_item img {
     right: 100px;
   }
   .navbar-toggle {
-    display: initial;
+    display: block;
     margin: 0px;
     padding: 0px;
     height: 40px;
     width: 40px;
+    overflow: visible;/*IE on Windows Phone */    
     border-left: 1px solid #ffffff;
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;
@@ -4097,6 +4137,7 @@ body.expand-news #recent_news_boxes .recent_news_item img {
     appearance: none;
     cursor: pointer;
   }
+
   .navbar-toggle:after {
     content: 'Menu';
     position: absolute;
@@ -4189,7 +4230,7 @@ body.expand-news #recent_news_boxes .recent_news_item img {
   }
   #footer_nav {
     border-left: none;
-    position: initial;
+    position: static;
     bottom: auto;
     right: auto;
     height: auto;
@@ -4229,7 +4270,7 @@ body.expand-news #recent_news_boxes .recent_news_item img {
     margin-left: 0px;
   }
   #footer_badges {
-    position: initial;
+    position: static;
     bottom: auto;
     right: auto;
     padding: 30px 20px 0px 20px;
@@ -4268,7 +4309,7 @@ body.expand-news #recent_news_boxes .recent_news_item img {
   }
   #homepage_slideshow .headline-bar {
     padding: 23px 20px 30px 20px;
-    position: initial;
+    position: static;
     background-image: none;
     background-color: #333333;
   }
@@ -4285,7 +4326,7 @@ body.expand-news #recent_news_boxes .recent_news_item img {
     margin-right: 0px;
   }
   #homepage_slideshow .headline-bar .headline-button {
-    position: initial;
+    position: static;
     bottom: auto;
     right: auto;
     display: inline-block;
@@ -4343,7 +4384,7 @@ body.expand-news #recent_news_boxes .recent_news_item img {
     margin: 0px;
   }
   #homepage_ending .left {
-    position: initial;
+    position: static;
     top: auto;
     left: auto;
     bottom: auto;
@@ -4482,7 +4523,7 @@ body.expand-news #recent_news_boxes .recent_news_item img {
     margin-bottom: 25px;
   }
   #homepage_ourpartners_stayconnected .left img {
-    position: initial;
+    position: static;
     top: auto;
     right: auto;
     display: block;
@@ -4492,7 +4533,7 @@ body.expand-news #recent_news_boxes .recent_news_item img {
     border-left: none;
     border-top: 1px solid #dedede;
     width: 100%;
-    position: initial;
+    position: static;
     top: auto;
     bottom: auto;
     left: auto;
@@ -4666,7 +4707,7 @@ body.expand-news #recent_news_boxes .recent_news_item img {
     display: none;
   }
   .section-banner.big-photo .container .headline-bar {
-    position: initial;
+    position: static;
     width: 100%;
   }
   .section-banner.big-photo.no-text .container .headline-bar, .section-banner.big-photo.with-text .container .headline-bar .container .headline-text {
@@ -4747,7 +4788,7 @@ body.expand-news #recent_news_boxes .recent_news_item img {
 
 
   /* overriding font-weight for smaller screens */
-  #page-description, a.button, a.grainbutton, button, input[type="text"], input[type="email"], input[type="tel"], textarea, select, #util_search_query, #util_search_button, #footer_text, #homepage_slideshow .headline-bar .headline-button a, #homepage_zip_search_form input, #homepage_zip_search_form button, #homepage_ending_select, #recent_news_boxes .recent_news_item .news_preview span, #recent_news_boxes .recent_news_item .news_expanded span, .homepage_email .headline span:last-child:after, .homepage_email p, #together_form input, #together_form button, #textalerts_form input, #textalerts_form button, #homepage_fivesteps_find_out_more, #homepage_fivesteps_share_this, .section-banner .headline-subhead, #recent_news_boxes .recent_news_item.one .news_expanded p, #recent_news_boxes .recent_news_item.two .news_expanded p, #recent_news_boxes .recent_news_item.one .news_expanded span.link, #recent_news_boxes .recent_news_item.one .news_expanded p, #recent_news_boxes .recent_news_item.morenews, .navbar-toggle:after, #footer_links, #homepage_ending .left p {
+  #page-description, a.button, a.grainbutton, button, input[type="text"], input[type="email"], input[type="tel"], input[type="password"], textarea, select, #util_search_query, #util_search_button, #footer_text, #homepage_slideshow .headline-bar .headline-button a, #homepage_zip_search_form input, #homepage_zip_search_form button, #homepage_ending_select, #recent_news_boxes .recent_news_item .news_preview span, #recent_news_boxes .recent_news_item .news_expanded span, .homepage_email .headline span:last-child:after, .homepage_email p, #together_form input, #together_form button, #textalerts_form input, #textalerts_form button, #homepage_fivesteps_find_out_more, #homepage_fivesteps_share_this, .section-banner .headline-subhead, #recent_news_boxes .recent_news_item.one .news_expanded p, #recent_news_boxes .recent_news_item.two .news_expanded p, #recent_news_boxes .recent_news_item.one .news_expanded span.link, #recent_news_boxes .recent_news_item.one .news_expanded p, #recent_news_boxes .recent_news_item.morenews, .navbar-toggle:after, #footer_links, #homepage_ending .left p {
     font-weight: 300;
   }
 

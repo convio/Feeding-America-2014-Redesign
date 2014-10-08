@@ -238,20 +238,23 @@ function interrupterShow() {
         $promos.each(function(){
             var $promo = $(this);
             if($promo.hasClass('donated-media')) {
-                window.setTimeout(function() { $promo.show(); }, 5000);
+                window.setTimeout(function() { $promo.show(); $promo.removeClass('closed').addClass('open'); }, 5000);
 
             } if($promo.hasClass('organic-search') || $promo.hasClass('referral') || $promo.hasClass('direct')) {
                 if($body.hasClass('is-homepage')) {
-                    window.setTimeout(function() { $promo.show(); }, 30000);
+                    window.setTimeout(function() { $promo.show(); $promo.removeClass('closed').addClass('open'); }, 30000);
                     $(window).scroll(function() {
                        if($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
                         $promo.show();
+                        $promo.removeClass('closed').addClass('open');
                        }
                     });
 
                 } else {
-                    window.setTimeout(function() { $promo.show(); }, 20000);
+                    window.setTimeout(function() { $promo.show(); $promo.removeClass('closed').addClass('open'); }, 20000);
                 }
+            } else {
+                window.setTimeout(function() { $promo.show(); $promo.removeClass('closed').addClass('open'); }, 20000);
             }
         });
     }

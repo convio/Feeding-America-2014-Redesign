@@ -42,6 +42,15 @@
   <!--[if lte IE 9]>
     <script src="http://fa.pub30.convio.net/assets/js/placeholders.js"></script>
   <![endif]-->
+  <!--[if IE]>
+    <script src="http://fa.pub30.convio.net/assets/js/pointer_events_polyfill.js"></script>
+    <script>
+    $(document).ready(function(){
+      PointerEventsPolyfill.initialize({});
+    });
+    </script>
+  <![endif]-->
+
   <script src="http://fa.pub30.convio.net/assets/js/modernizr.js"></script>
   <script src="http://fa.pub30.convio.net/assets/js/cookie.js"></script>
 <!-- testing conditional
@@ -105,8 +114,7 @@ templateID: '${templateID}'
   <script src="http://fa.pub30.convio.net/assets/js/scripts.js?t=${flushCache}"></script>
 
 <!-- Temp Google Analytics -->
-<t:include id="convio-content-556884252"/>
-
+<t:include id="convio-content-559055327"/>
 </head>
 
 
@@ -141,7 +149,8 @@ templateID: '${templateID}'
   <t:set id="expandnews" value="'expand-news'" />
 </t:if>
 <body class="${pathclasses} ${templatename} ${bodyClass} ${expandnews}">
-
+<!-- Google Tag manager--> 
+<!-- <t:include id="convio-content-560900222"/> --> 
 
 <t:if test="user.isanonymous == false">
   <t:set id="cms_cons_zip" value="crm('[[S1:home_zip]]')" />
@@ -149,6 +158,10 @@ templateID: '${templateID}'
   <input type="hidden" id="cms_cons_zip" name="cms_cons_zip" value="${cms_cons_zip}" />
   <input type="hidden" id="cms_cons_state" name="cms_cons_state" value="${cms_cons_state}" />
 </t:if>
+
+ <noscript><div class="container"><p style="color:red;" id="page-title">Please enable Javascript in your browser to experience all of the custom features of our site.</p></div></noscript>
+
+
 <t:if test="alert_banner.length > 0">
 <!-- Alert Banner promo -->
   <div class="hidden-phone">
@@ -187,6 +200,7 @@ templateID: '${templateID}'
         <div class="headline">How You Can Help Feeding America Solve Hunger</div>
           <div id="footer_promo_boxes">
   </t:if>
+
   <div class="templateComponent" id="body"></div>
   <t:if test="type == 'Promo' && templateid == 'Sidebar Promo'">
     </div><!-- /.column-2 -->
@@ -228,8 +242,7 @@ templateID: '${templateID}'
   <script src="http://fa.pub30.convio.net/assets/js/selector.js"></script>
 
   <!-- Go to www.addthis.com/dashboard to customize your tools -->
-  <!-- TEST ID - CHANGE TO FA ADDTHIS ID -->
-  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4dd6bd6878e060e8"></script>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-54341d43694e8cbc"></script>
 
 
   <t:if test="param.cms_static == true">
