@@ -11,7 +11,15 @@ $(document).ready(function() {
             var results = $('#homepage_zip_search_results');
             results.empty().hide(); // Clear the display
 
-            if (zip != '') { // Do the request
+            // Validate zip
+            var dZip = zip.replace(/\D/g,'');
+            if (dZip.length != 5 || dZip != zip) {
+                results.append('This is an invalid zip. Please try a valid U.S. zip').show();
+                return;
+            }
+
+            // Do the request
+            if (zip != '') {
                 results.append('<div class="loading-white"></div>').show(); // Loading...
                 setCookie('cms_cons_zip', zip, 365);
 
@@ -35,12 +43,11 @@ $(document).ready(function() {
                     }
 
                     if (counter == 0) { // No results
-                        results.append('The search did not produce any results');
+                        results.append('This is an invalid zip. Please try a valid U.S. zip');
                     }
 
                 }, function(response) { // Error
-                    results.append('Our online search is not working at this time. To find out your food bank, please call us at 800.771.2303');
-                    stateHungerMeterByZip(zip);
+                    results.html('Our online search is not working at this time. To find out your food bank, please call us at 800.771.2303');
                 });
 
                 if (doState) {
@@ -52,7 +59,7 @@ $(document).ready(function() {
         function stateHungerMeterByZip(zip) {
             if (zip != '') { // Do the request
                 FA.ws.request('GetStateStatisticsByZip', { zip: zip }, '/', function(data) {
-                    if (data && data.StateID) {
+                    if (data && data.StateID && data.Name) {
                         displayHungerMeterResults(data.Name, data.StateID, data.Name, data.StateStats.FoodInsecurityRate);
 
                         $('#homepage_ending_select').val(data.StateID);
