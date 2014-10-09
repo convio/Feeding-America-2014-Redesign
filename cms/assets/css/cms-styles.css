@@ -6,6 +6,9 @@
 /* --------------------------------------------
   Global Elements
 -------------------------------------------- */
+#recent_news_boxes .recent_news_item.news_placeholder, .news_placeholder {
+  display: none;
+}
 /* global promos */
 .secondary-promos,
 .interrupter {
@@ -2627,6 +2630,29 @@ shortcut to end of desktop
   /* --------------------------------------------
     global elements
   -------------------------------------------- */
+
+  #recent_news_boxes .recent_news_item.news_placeholder, .news_placeholder {
+    display: inline-block;
+    background-color: #e98300;
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: 300;
+    margin: 20px;
+    width: 280px;
+    height: 242px;
+    vertical-align: top;
+    float: left;
+    text-decoration: none;
+    position: relative;
+    padding: 20px 20px 25px 20px;
+    text-transform: uppercase;
+  }
+  .news_placeholder span {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+  }
   .sidebar-promo-box a.button {
     margin: 0px;
   }
@@ -4073,6 +4099,10 @@ shortcut to end of desktop
     padding-left: 0px;
     display: block;
     width: auto;
+  }
+
+  .partners-list-horizontal li .hover-text a, #body-content .partners-list-horizontal li .hover-text a {
+    display: block;
   }
 
   /* --------------------------------------------
