@@ -18,11 +18,11 @@ $(document).ready(function() {
         setTimeout(function(){tempThis.parent().removeAttr('style');}, 1000);
     });
 
-    $('.partners-list-horizontal li').click(function(e) {
+    $('.partners-list-horizontal li .mission-supporting-logo-box').click(function(e) {
         if ($(window).width() < 992) {
             e.preventDefault();
             $('.hover-text').hide();
-            $(this).find('.hover-text').show();
+            $(this).parent().find('.hover-text').show();
 //            if($(this).parent().find('.hover-text').is(':visible')) {
 //                $('.hover-text').hide();
 //                $(this).parent().find('.hover-text').show();
@@ -32,7 +32,7 @@ $(document).ready(function() {
         }
     });
 
-    $('.partners-list-horizontal li a').click(function(e) {
+    $('.partners-list-horizontal li > a').click(function(e) {
         if ($(window).width() < 992) {
             e.preventDefault();
             $('.hover-text').hide();
