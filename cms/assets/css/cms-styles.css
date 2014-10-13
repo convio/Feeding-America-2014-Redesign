@@ -3253,7 +3253,9 @@ shortcut to end of desktop
 
   }
 
-
+  .visible-mobile {
+    display: none;
+  }
 
 /* --------------------------------------------------------------
   Mobile Only: ~320px - 767px
@@ -3263,6 +3265,12 @@ shortcut to end of desktop
   /* --------------------------------------------
     global elements
   -------------------------------------------- */
+  .visible-desktop {
+    display: none;
+  }
+  .visible-mobile {
+    display: inherit;
+  }
   body.not-homepage header {
     margin-bottom: 30px;
   }

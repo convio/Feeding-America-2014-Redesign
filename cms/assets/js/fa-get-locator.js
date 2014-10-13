@@ -295,7 +295,7 @@ function fitFBMapBounds() {
 
 function buildFAOrgResultBox(org) {
     var resultsBox = $('<div class="results-box" data-orgid="'+org.OrganizationID+'">'),
-        profileUrlName = org.FullName.replace(/ /g, '-').toLowerCase(),
+        profileUrlName = (org.FullName.replace(/ - /g, '-')).replace(/ /g, '-').toLowerCase(),
         profileUrl = '/find-your-local-foodbank/' + (profileUrlName.replace(/[&]/g, 'and')).replace(/[^a-zA-Z0-9-]/g, '') + '.html',
         orgImage = '<a href="' + profileUrl + '"><img border="0" alt="' + org.FullName + '" src="' + org.LogoUrls.SecureConvioMain + '"></a>',
         orgName = '<p class="name"><a href="' + profileUrl + '">' + org.FullName + '</a></p>',
@@ -707,7 +707,13 @@ function buildProfilePageDisplay(data, orgId, resultsWrapper) {
         //$('#profile-area-info .state').html(stateName);
         //left column profile
         profileElements.append('<a class="profile-link" href="http://'+ org.URL+'">' + org.URL + '</a>');
-        profileElements.append('<p>' + addressString + org.MailAddress.City + ', ' + org.MailAddress.State + ' ' + org.MailAddress.Zip + '<br>' + org.Phone + '</p>');
+        profileElements.append(
+            '<p class="visible-desktop">' + addressString + org.MailAddress.City + ', ' + org.MailAddress.State + ' ' + org.MailAddress.Zip + '<br>' + org.Phone + '</p>' +
+            '<p class="visible-mobile">' +
+                '<a href="http://maps.google.com?q=' + mapString + '" target="_blank">' + addressString + org.MailAddress.City + ', ' + org.MailAddress.State + ' ' + org.MailAddress.Zip + '</a><br>' +
+                '<a href="tel:+' + org.Phone + '">' + org.Phone + '</a>' +
+            '</p>'
+        );
 
         //exec contacts
         profileElements.append('<p>' + chiefExec + mediaContact + '</p>');

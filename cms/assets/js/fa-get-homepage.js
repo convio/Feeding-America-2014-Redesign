@@ -32,7 +32,7 @@ $(document).ready(function() {
                         if (counter > 2) { return; } // Display only first two results
 
                         var org = data[key];
-                        var profileUrlName = org.FullName.replace(/ /g, '-').toLowerCase();
+                        var profileUrlName = (org.FullName.replace(/ - /g, '-')).replace(/ /g, '-').toLowerCase();
                         var profileUrl = '/find-your-local-foodbank/' + (profileUrlName.replace(/[&]/g, 'and')).replace(/[^a-zA-Z0-9-]/g, '') + '.html';
 
                         results.append([
