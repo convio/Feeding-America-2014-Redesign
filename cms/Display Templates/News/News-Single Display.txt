@@ -4,22 +4,24 @@
       <div id="page-title">
         <h1 class="page-title">${title}</h1>
       </div><!--/#page-title-->
-      <t:if test="!isNull(description)"><div id="page-description">
-        <p>${description}</p>
+      <t:if test="!isNull(subtitle) || !isNull(news_source) || !isNull(external_url)"><div id="page-description">
+        <t:if test="!isNull(subtitle)"><p>${subtitle}</p></t:if>
+        <t:if test="!isNull(news_source)"><p><t:if test="!isNull(external_url)"><a href="${external_url}"></t:if>${news_source}<t:if test="!isNull(external_url)"></a></t:if></p></t:if><t:else><t:if test="!isNull(external_url)"><a href="${external_url}">${external_url}</a></t:if></t:else>
+        
       </div></t:if><!--/#page-description-->
       <div id="body-content">
         <t:if test="related_video.length > 0"><div class="clearfix"></div><t:include id="templatelist-543941322" /></t:if>
         <t:else><t:if test="!isNull(video_url)">
           <div class="clearfix"></div>
           <t:set id="videoid" value="replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(video_url,'http://',''),'https://',''),'watch',''),'embed',''),'www.',''),'youtube.com',''),'youtu.be',''),'v=',''),'?',''),'&',''),'/','')" />
-          <div class="video-container"><iframe src="//www.youtube.com/embed/${videoid}?html5=1&controls=0&autohide=1&showinfo=0&enablejsapi=1" frameborder="0" allowfullscreen="" id="story-${itemID}-video"></iframe></div>
+          <div class="video-container"><iframe src="//www.youtube.com/embed/${videoid}?html5=1&autohide=1&showinfo=0&enablejsapi=1" frameborder="0" allowfullscreen="" id="story-${itemID}-video"></iframe></div>
         </t:if></t:else>
-        <t:if test="thumb.length > 0"><t:list id="thumb"><img src="${url}" alt="${alt_text}" class="image-right" /></t:list></t:if>
+        <t:if test="thumb.length > 0"><t:list id="thumb"><t:if test="!isNull(action_button_url)"><a href="${action_button_url}"></t:if><img src="${url}" alt="${alt_text}" class="image-right" /><t:if test="!isNull(action_button_url)"></a></t:if></t:list></t:if>
 
-        <t:if test="!isNull(date)">
+        <t:if test="!isNull(news_date)">
           <t:set id="skipdate" value="false" />
         <t:list id="news_type">
-          <t:if test="name == 'current_partner_promotion'">
+          <t:if test="name == 'current-partner-promotions'">
             <t:set id="skipdate" value="true" />
           </t:if>
         </t:list>
@@ -29,8 +31,8 @@
         </t:if>
 
         <t:if test="author_profile.length > 0 || !isNull(author_name)">
-          <t:if test="author_profile.length > 0"><div class="author"><t:list id="author_profile">${title}</t:list></div></t:if>
-          <t:else><t:if test="!isNull(author_name)"><div class="author">${author_name}</div></t:if></t:else>
+          <t:if test="author_profile.length > 0"><div class="author"><t:list id="author_profile">by ${title}</t:list></div></t:if>
+          <t:else><t:if test="!isNull(author_name)"><div class="author">by ${author_name}</div></t:if></t:else>
         </t:if>
 
         ${body}
@@ -38,6 +40,7 @@
      <t:list id="news_type"><t:if test="name=='our-perspective-post' || name=='hunger-in-the-news'">
      <t:if test="name=='our-perspective-post'"><t:set id="folderlink" value ="'our-perspective'"</t:if>
       <t:if test="name=='hunger-in-the-news'"><t:set id="folderlink" value ="'hunger-in-the-news'"</t:if>
+
 <t:set id="comma" value="''" />
 <t:if test="blog_topics.length > 0 || primary_tags.length > 0 || state.length > 0 || food_bank.length > 0 || partner.length > 0">Tags: 
 </t:if>
@@ -46,8 +49,20 @@
 <t:if test="state.length > 0"><t:list id ="state">${comma}<t:set id="comma" value="', '" /><a href="http://fa.pub30.convio.net/hunger-in-america/news-and-updates/${folderlink}/?mlstate=${name}">${label}</a></t:list></t:if>
 <t:if test="food_bank.length > 0"><t:list id ="food_bank">${comma}<t:set id="comma" value="', '" /><a href="http://fa.pub30.convio.net/hunger-in-america/news-and-updates/${folderlink}/?mlfood_bank=${itemid}">${title}</a></t:list></t:if>
 <t:if test="partner.length > 0"><t:list id ="partner">${comma}<t:set id="comma" value="', '" /><a href="http://fa.pub30.convio.net/hunger-in-america/news-and-updates/${folderlink}/?mlpartner=${itemid}">${title}</a></t:list></t:if>
-     </t:if></t:list>
 
+     </t:if>
+<!--     <t:if test="name=='current-partner-promotions' || name=='partner-news'">
+     <t:if test="partner.length>0">
+     <p><strong>Partner:</strong>
+     <t:list id="partner">
+     <a href="${url}">${title}</a><t:if test="index !=length">, </t:if>
+     </t:list>
+     </p>
+     </t:if>
+     </t:if> -->
+     </t:list>
+
+<!--  <t:list id="news_type"><t:if test="name=='our-perspective-post'">
         <div class="templateComponent" id="commentlist-540352587"></div>
         <h2>Leave a Comment</h2>
         <t:if test="user.isanonymous">
@@ -56,6 +71,8 @@
         <t:else>
           <div class="templateComponent" id="commentform-540352869"></div>
         </t:else>
+ </t:if></t:list> --> 
+
       </div><!--/#body-content -->
       <t:if test="inline_promo.length > 0"><t:include id="item-540519669" /></t:if>
       <t:else>
@@ -77,30 +94,48 @@
       <t:include id="item-541309505" />
 
 <!-- Search Box -->
+<t:if test="news_type.length>0">
 <t:list id="news_type"> 
 <t:if test="name =='our-perspective-post'">
 <t:include id="item-546600086"/>
+<div class="templateComponent" id="sectionNavigation-534789806"></div>
 </t:if>
 <t:else>
 <t:if test="name=='hunger-in-the-news'">
 <t:include id="item-546604832"/>
+<div class="templateComponent" id="sectionNavigation-534789806"></div>
 </t:if>
 <t:else>
 <t:if test="name=='current-partner-promotions'">
-<t:include id="item-546661796"/>
+<div style="display: inline;" class="templateComponent" id="sectionNavigation-547324267"></div>
 </t:if>
 <t:else>
 <t:if test="name=='partner-news'">
-<t:include id="item-546663730"/>
+<div style="display: inline;" class="templateComponent" id="sectionNavigation-547324380"></div>
 </t:if>
 <t:else>
-<t:include id="item-546600189"/>
+<t:include id="item-547077468"/>
+<div class="templateComponent" id="sectionNavigation-534789806"></div>
 </t:else>
 </t:else>
 </t:else>
 </t:else>
 </t:list>
+</t:if>
+<t:else>
+<t:include id="item-547077468"/>
+<div class="templateComponent" id="sectionNavigation-534789806"></div>
+</t:else>
+
+
       <!-- Related content -->
+<t:set id="showRelated" value="true" />
+<t:list id="news_type">
+<t:if test="name == 'current-partner-promotions'">
+  <t:set id="showRelated" value="false" />
+</t:if>
+</t:list>
+<t:if test="showRelated == 'true'">
       <t:if test="related_content.length > 0">
         <t:include id="templatelist-541315156" />
       </t:if>
@@ -109,7 +144,7 @@
         <div class="promos">
           <!-- news related to the page by news type & tags-->
           <div class="primary-promos">
-            <t:include id="templatelist-541315370" />
+            <t:include id="templatelist-546813726"/>
           </div><!-- /.primary-promos -->
           <!-- general content -->
           <div class="secondary-promos related-content">
@@ -132,6 +167,7 @@
           </div><!-- /.secondary-promos -->
         </div><!-- .promos -->
       </t:else>
+</t:if>
 
       <!-- Contextual Sidebar Promo -->
       <t:if test="sidebar_promos.length > 0">
@@ -195,21 +231,17 @@
         <div class="promos">
           <!-- contextual sidebar promos -->
           <div class="primary-promos">
-            <!-- global promos -->
-            <t:include id="templatelist-541539906" />
+            <!-- global promos <t:include id="templatelist-541539906" /> -->
+            <t:include id="templatelist-563337738"/>
           </div>
 
           <div class="secondary-promos">
-            <!-- advanced filtered by section -->
-            <t:include id="templatelist-541538772" />
+            <!-- advanced filtered by section  <t:include id="templatelist-541538772" /> -->
+            <t:include id="templatelist-563337945"/>    
           </div>
-
         </div><!-- /.promos -->
 
-
-        <!-- second sidebar promos item is at /assets/promos/wrpr/ -->
-        <t:include id="item-542536092" />
-
+        <!-- second sidebar promos item is at /assets/promos/wrpr/ <t:include id="item-542536092" /> -->
       </t:else>
 
     </div><!--/.column-2-->
@@ -248,19 +280,22 @@
           <t:if test="thumb.length > 0"><t:list id="thumb"><img src="${url}" alt="${alt_text}" /></t:list></t:if>
           <t:if test="!isNull(headline)"><div class="promo-title">${headline}</div></t:if>
           <t:if test="!isNull(description)"><div class="promo-text">${description}</div></t:if>
-
+          <t:if test="!isNull(body)"><div class="promo-action">${body}</div></t:if>
           <t:if test="!isNull(action_button_label) && !isNull(action_button_url)"><div class="promo-action"><a class="${buttonClasses}" href="${action_button_url}">${action_button_label}</a></div></t:if>
         </div>
       </t:list>
     </t:if>
     <t:else>
       <!-- dynamic footer promos -->
-      <!-- Learn -->
-      <t:include id="templatelist-541527765" />
-      <!-- Act -->
-      <t:include id="templatelist-541527691" />
-      <!-- Give -->
-      <t:include id="templatelist-541528010" />
+      <!-- Learn
+      <t:include id="templatelist-541527765" />  -->
+      <!-- Act
+      <t:include id="templatelist-541527691" />  -->
+      <!-- Give
+      <t:include id="templatelist-541528010" />  -->
+      <t:include id="item-562578897"/>
+      <t:include id="item-562579071"/>
+      <t:include id="item-562579319"/>
     </t:else>
 
       <div class="clearfix"></div>
