@@ -18,6 +18,11 @@ $(document).ready(function() {
         setTimeout(function(){tempThis.parent().removeAttr('style');}, 1000);
     });
 
+    $('.section-img-hover').click(function(e) {
+        e.preventDefault();
+        window.location = $(this).parent().find('a').attr('href');
+    });
+
     $('.partners-list-horizontal li .mission-supporting-logo-box').click(function(e) {
         if ($(window).width() < 992) {
             e.preventDefault();
