@@ -95,27 +95,44 @@
 
 <!-- Search Box -->
 <t:if test="news_type.length>0">
+<t:set id="sectionNavShown" value="false" />
 <t:list id="news_type"> 
 <t:if test="name =='our-perspective-post'">
+<t:if test="sectionNavShown == 'false'">
 <t:include id="item-546600086"/>
 <div class="templateComponent" id="sectionNavigation-534789806"></div>
+<t:set id="sectionNavShown" value="true" />
+</t:if>
 </t:if>
 <t:else>
 <t:if test="name=='hunger-in-the-news'">
+<t:if test="sectionNavShown == 'false'">
 <t:include id="item-546604832"/>
 <div class="templateComponent" id="sectionNavigation-534789806"></div>
+<t:set id="sectionNavShown" value="true" />
+</t:if>
 </t:if>
 <t:else>
 <t:if test="name=='current-partner-promotions'">
+<t:if test="sectionNavShown == 'false'">
 <div style="display: inline;" class="templateComponent" id="sectionNavigation-547324267"></div>
+<t:set id="sectionNavShown" value="true" />
+</t:if>
 </t:if>
 <t:else>
 <t:if test="name=='partner-news'">
+<t:if test="sectionNavShown == 'false'">
 <div style="display: inline;" class="templateComponent" id="sectionNavigation-547324380"></div>
+<t:set id="sectionNavShown" value="true" />
+</t:if>
 </t:if>
 <t:else>
+<t:if test="index == length">
+<t:if test="sectionNavShown == 'false'">
 <t:include id="item-547077468"/>
 <div class="templateComponent" id="sectionNavigation-534789806"></div>
+</t:if>
+</t:if>
 </t:else>
 </t:else>
 </t:else>
