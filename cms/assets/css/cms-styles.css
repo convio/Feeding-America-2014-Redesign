@@ -200,6 +200,12 @@ padding: 50px 40px 100px 20px;
   background-color: #bfd730;
   color: #333333;
 }
+
+#footer_promo_boxes .footer-promo .orange:hover {
+  background-color: #bfd730;
+  color: #333333;
+}
+
 #footer_promo_boxes .footer-promo .purple {
   background-color: #5a2559;
 }
