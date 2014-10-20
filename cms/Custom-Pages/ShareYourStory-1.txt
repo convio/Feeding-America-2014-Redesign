@@ -1,0 +1,79 @@
+<P>Stories: To submit your story, complete the fields below. You will have the opportunity to review and edit your story before it is submitted.</P>
+
+<P>Photos: You may attach a photo to your story. Photos should be in .jpg format, and no larger than 200x200 pixels.</P>
+NOTE: If you choose to edit your story, any photo you have uploaded will be lost and you will need to upload it again before submitting your story.</P>
+
+<P>Posting of stories: Stories may be edited for length/clarity. Not all submissions will be posted. Stories will be posted as space permits, and will be archived periodically. Archived stories will be available for viewing.</P>
+
+<H2>Step 1</H2>
+
+<style><!--
+#survey_6540 td {
+  padding: 0px;
+  border: none;
+  background-color: transparent;
+  vertical-align: middle;
+}
+#survey_6540 td.req {
+  vertical-align: top;
+}
+#survey_6540 label {
+  margin: 0px;
+}
+#cons_email_opt_in, #s_rememberMe {
+  margin-right: 10px;
+}
+input + label {
+  display: inline;
+}
+#survey_6540 table table tr:nth-child(9){
+  display: none !important;
+}
+#survey_6540 table table tr td {
+  padding-top: 20px;
+}
+#ACTION_SUBMIT_SURVEY_RESPONSE {
+display: block;
+vertical-align: top;
+margin: 0px;
+border: none;
+outline: none;
+-moz-appearance: none;
+-webkit-appearance: none;
+-ms-appearance: none;
+appearance: none;
+color: #ffffff;
+font-family: 'Gotham A', 'Gotham B', Arial, sans-serif;
+font-size: 14px;
+font-weight: 200;
+padding: 0px 20px;
+height: 40px;
+line-height: 40px;
+cursor: pointer;
+text-transform: uppercase;
+background-color: #e98300;
+}
+#ACTION_SUBMIT_SURVEY_RESPONSE:hover {
+  background-color: #bfd730;
+  color: #333333;
+}
+--></style>
+<script src="//cdnjs.cloudflare.com/ajax/libs/json2/20140204/json2.min.js"></script>
+<script>
+$(document).ready(function() {
+  $('#survey_6540').attr('method','get');
+  // $('#ACTION_SUBMIT_SURVEY_RESPONSE').before('<input type="hidden" name="NEXTURL" id="NEXTURL" value="http://www.feedingamerica.org/hunger-in-america/hunger-in-your-community/share-your-story/form.html" />');
+  $('#ACTION_SUBMIT_SURVEY_RESPONSE').click(function(){
+    var user_info = {
+        'cons_first_name': $('#cons_first_name').val(),
+        'cons_last_name': $('#cons_last_name').val(),
+        'cons_email': $('#cons_email').val(),
+        'cons_city': $('#cons_city').val(),
+        'cons_state': $('#cons_state').val(),
+        'cons_phone': $('#cons_phone').val()
+    };
+    setCookie('share_your_story', JSON.stringify(user_info));
+  });
+});
+</script>
+<div class="templateComponent" id="convio-content-562065627" style="display: inline;"></div>

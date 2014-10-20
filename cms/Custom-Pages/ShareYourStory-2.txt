@@ -1,0 +1,174 @@
+<t:if test="param.cms_static == true">
+<p>We are currently experiencing technical difficulties with our Share Your Story form, please try again in a few minutes.</p>
+</t:if>
+<t:else>
+<h2> Step 2</H2>
+
+<p><strong>Stories:</strong> To submit your story, complete the fields below. You will have the opportunity to review and edit your story before it is submitted.</p>
+<p><strong>Photos:</strong> You may attach a photo to your story. Photos should be in .jpg format, and no larger than 200x200 pixels.<br />
+NOTE: If you choose to edit your story, any photo you have uploaded will be lost and you will need to upload it again before submitting your story.</p>
+<p><strong>Posting of stories:</strong> Stories may be edited for length/clarity. Not all submissions will be posted. Stories will be posted as space permits, and will be archived periodically. Archived stories will be available for viewing.</p>
+<style>
+div.form-row {
+  margin: 10px 0px;
+}
+</style>
+<div id="share-your-story-form">
+  <div class="form-row"><label class="req">required fields</label></div>
+  <div class="two-boxes">
+    <div class="half-width">
+      <div class="form-row"><label class="req" for="form-first_name">First Name</label><input id="form-first_name" name="first_name" title="First Name" type="text" value="" validation="type:text;required:true" /></div>
+      <div class="form-row"><label for="form-last_name">Last Name</label><input id="form-last_name" name="last_name" size="20" title="Last Name" type="text" value="" validation="type:text" /></div>
+      <div class="form-row"><label class="req" for="form-email">Email</label><input id="form-email" name="email" title="Email" type="text" value="" validation="type:email;required:true" /></div>
+    </div><!--/.half-width-->
+    <div class="half-width" style="background-color: #ebebeb; padding-bottom: 20px;">
+      <div class="form-row"><label for="form-city">City</label><input id="form-city" name="city" title="City" type="text" value="" validation="type:text" /></div>
+      <div class="form-row"><label for="form-state">State</label><select style="width: 280px;" id="form-state" model="categories;categoryID=530006325" name="state" title="State" validation="type:string"> </select></div>
+      <div class="form-row" style="width: 280px;">
+        <div class="two-boxes">
+          <div class="half-width" style="padding-right: 5px;">
+            <label for="form-phone" style="margin-top: 10px;">Phone Number</label><input style="width: 100%;" id="form-phone" name="phone" title="Phone" type="text" value="" validation="type:text" />
+          </div>
+          <div class="half-width" style="padding-left: 5px;">
+            <label for="form-phone_type" style="margin-top: 10px;">Phone Type</label><select style="padding: 0px 24px 0px 5px; width: 100%;" id="form-phone_type" model="categories;categoryID=540482919" name="phone_type" title="Phone Type" validation="type:string"> </select>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </div><!--/.half-width-->
+    <div class="clearfix"></div>
+  </div><!--/.two-boxes-->
+  
+<script src="//cdnjs.cloudflare.com/ajax/libs/json2/20140204/json2.min.js"></script>
+<script>
+$(document).ready(function() {
+  var user_info = getCookie('share_your_story');
+  if (user_info != '') {
+    var user_info = JSON.parse(user_info);
+    if (user_info.cons_first_name) {
+      $('#form-first_name').val(user_info.cons_first_name);
+      $('#form-last_name').val(user_info.cons_last_name);
+      $('#form-email').val(user_info.cons_email);
+      $('#form-city').val(user_info.cons_city);
+      $('#form-phone').val(user_info.cons_phone);
+      switch (user_info.cons_state) {
+        case 'AL' : $('#form-state').val('530745874'); break;
+        case 'AK' : $('#form-state').val('530745875'); break;
+        case 'AZ' : $('#form-state').val('530745876'); break;
+        case 'AR' : $('#form-state').val('530745877'); break;
+        case 'CA' : $('#form-state').val('530745879'); break;
+        case 'CO' : $('#form-state').val('530745880'); break;
+        case 'CT' : $('#form-state').val('530745881'); break;
+        case 'DE' : $('#form-state').val('530745882'); break;
+        case 'DC' : $('#form-state').val('530745883'); break;
+        case 'FL' : $('#form-state').val('530745884'); break;
+        case 'GA' : $('#form-state').val('530745885'); break;
+        case 'HI' : $('#form-state').val('530745886'); break;
+        case 'ID' : $('#form-state').val('530745887'); break;
+        case 'IL' : $('#form-state').val('530745888'); break;
+        case 'IN' : $('#form-state').val('530745889'); break;
+        case 'IA' : $('#form-state').val('530745890'); break;
+        case 'KS' : $('#form-state').val('530745891'); break;
+        case 'KY' : $('#form-state').val('530745892'); break;
+        case 'LA' : $('#form-state').val('530745893'); break;
+        case 'ME' : $('#form-state').val('530745894'); break;
+        case 'MD' : $('#form-state').val('530745895'); break;
+        case 'MA' : $('#form-state').val('530745897'); break;
+        case 'MI' : $('#form-state').val('530745898'); break;
+        case 'MN' : $('#form-state').val('530745899'); break;
+        case 'MS' : $('#form-state').val('530745900'); break;
+        case 'MO' : $('#form-state').val('530745901'); break;
+        case 'MT' : $('#form-state').val('530745902'); break;
+        case 'NE' : $('#form-state').val('530745903'); break;
+        case 'NV' : $('#form-state').val('530745905'); break;
+        case 'NH' : $('#form-state').val('530745906'); break;
+        case 'NJ' : $('#form-state').val('530745907'); break;
+        case 'NM' : $('#form-state').val('530745908'); break;
+        case 'NY' : $('#form-state').val('530745909'); break;
+        case 'NC' : $('#form-state').val('530745910'); break;
+        case 'ND' : $('#form-state').val('530745911'); break;
+        case 'OH' : $('#form-state').val('530745912'); break;
+        case 'OK' : $('#form-state').val('530745914'); break;
+        case 'OR' : $('#form-state').val('530745915'); break;
+        case 'PA' : $('#form-state').val('530745916'); break;
+        case 'RI' : $('#form-state').val('530745917'); break;
+        case 'SC' : $('#form-state').val('530745918'); break;
+        case 'SD' : $('#form-state').val('530745919'); break;
+        case 'TN' : $('#form-state').val('530745920'); break;
+        case 'TX' : $('#form-state').val('530745921'); break;
+        case 'US' : $('#form-state').val('530745923'); break;
+        case 'UT' : $('#form-state').val('530745924'); break;
+        case 'VT' : $('#form-state').val('530745925'); break;
+        case 'VA' : $('#form-state').val('530745926'); break;
+        case 'WA' : $('#form-state').val('530745927'); break;
+        case 'WV' : $('#form-state').val('530745928'); break;
+        case 'WI' : $('#form-state').val('530745929'); break;
+        case 'WY' : $('#form-state').val('530745930'); break;
+      }
+    }
+  }
+});
+</script>  
+  
+  <div class="form-row">
+    <div>
+      <label>I am:</label>
+        <label for="story-type-client">
+          <input type="checkbox" name="story_type" value="542041495" id="story-type-client" validation="type:categoryarray">
+          <span>Someone who receives food assistance</span>
+        </label>
+        <label for="story-type-donor">
+          <input type="checkbox" name="story_type" value="540484320" id="story-type-donor" validation="type:categoryarray">
+          <span>a Donor</span>
+        </label>
+        <label for="story-type-staff-member">
+          <input type="checkbox" name="story_type" value="540484332" id="story-type-staff-member" validation="type:categoryarray">
+          <span>a Staff Member</span>
+        </label>
+        <label for="story-type-volunteer">
+          <input type="checkbox" name="story_type" value="540484366" id="story-type-volunteer" validation="type:categoryarray">
+          <span>a Volunteer</span>
+        </label>
+        <label for="story-type-advocate">
+          <input type="checkbox" name="story_type" value="540484324" id="story-type-advocate" validation="type:categoryarray">
+          <span>an Advocate</span>
+        </label>
+        <label for="story-type-other">
+          <input type="checkbox" name="story_type" value="540484453" id="story-type-other" validation="type:categoryarray">
+          <span>Other</span>
+        </label>
+    </div>
+    <div id="story-type-if-other-area">
+      <label>If Other:</label> <input id="form-story_type_other" name="story_type_other" title="Story Type Other" type="text" value="" validation="type:text" />
+    </div>
+  </div>
+<input type="hidden" name="top_featured_story" value="530006266" validation="type:string">
+  <input id="form-title" name="title" title="Title" type="hidden" value="" validation="type:text;required:true" />
+  <div class="form-row"><label class="req" for="form-story_date">Story Date: MM/DD/YYYY</label><input id="form-story_date" name="story_date" title="Story Date" type="text" value="" validation="type:date;showChooser:true;required:true" /></div>
+  <div class="form-row"><label class="req" for="form-body">Your Story</label><textarea id="form-body" name="body" title="Body" validation="type:text;required:true"></textarea></div>
+  <t:if test="matches(header.User_Agent,'.*Windows Phone 8.0.*')"></t:if><t:else><div class="form-row"><label for="form-thumb"> Image/ Photo</label><input id="form-thumb" model="file;typeID=492068403" name="thumb" title="Thumbnail Image" type="file" validation="type:file" /></div></t:else>
+  <div class="form-row"><label>YouTube Video</label>If you would like to include a video about your story, please upload the video to youtube.com and include the link to the youtube video here. <input id="form-video_url" name="video_url" title="Video URL" type="text" value="" validation="type:text" placeholder="Video URL" /></div>
+<hr>
+  <div class="form-row">
+    <label for="waiver">
+      <input type="checkbox" id="waiver" required="required" />
+      <span>By submitting your story, you are agreeing to have your story featured on the Web site and other Feeding America materials. Feeding America may contact you for more information. Please review the <a href="/preview!www.feedingamerica.org/hunger-in-america/hunger-in-your-community/share-your-story/feeding-america-transfer-of-rights-waiver-release.html" target="_blank">waiver and release</a> and check this box to confirm that you have read it and agree to its terms before submitting. By checking here, you are consenting to the use of your electronic signature in lieu of an original signature on paper.</span>
+    </label>
+  </div>
+  <div class="form-row">
+  <div class="captchaContainer">
+    <div id="captcha-audio"></div>
+      <img alt="CAPTCHA image" border="1" id="captcha-image" src="/system/servlet/captcha" title="CAPTCHA image" /><br /> <a class="captchaLink" href="#" onclick="changeCaptcha()">Change image</a> <a class="captchaLink" href="#" onclick="changeAudioCaptcha()"> <img align="top" alt="Visually impaired? Click here to have an audio challenge played.  You will then need to enter the code that is spelled out." border="0" src="/preview!www.feedingamerica.org/assets/form/inline/accessibility.gif" title="Visually impaired? Click here to have an audio challenge played.  You will then need to enter the code that is spelled out." /></a> <br /><input model="captcha" name="captcha" title="Captcha" type="text" validation="type:text" />
+    </div><!--/.captchaContainer-->
+  </div><!--/.form-row-->
+  <div class="form-row"><button type="submit">Submit</button></div>
+</div><!--/#share-your-story-form-->
+
+<script>
+$('#form-first_name').keyup(function(){
+  $('#form-title').val( $('#form-first_name').val() );
+});
+</script>
+</t:if>
+
+</t:else>
