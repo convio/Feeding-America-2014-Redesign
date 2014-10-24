@@ -40,7 +40,7 @@ FA.howweareending = {
             return 6;
         } else if (num < 22.5) {
             return 5;
-        } else if (num < 23.5) {
+        } else if (num < 32.5) {
             return 4;
         } else {
             return 3;
