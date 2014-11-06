@@ -16,7 +16,7 @@ FA.storyPaginator = function() {
         url: window.location.href,
         currentPage: 1,
         resultsPerPage: 5,
-		totalResults: 0,
+        totalResults: 0,
         resultsWrapper: 'your-stories-boxes',
         paginationSection: 'your-stories-load-more',
         paginationBttn: 'your-stories-load-more-bttn',
@@ -39,7 +39,7 @@ FA.storyPaginator = function() {
         }
 
         initHandlers();
-		displayTotals();
+        displayTotals();
     };
 
     // Private methods
@@ -51,17 +51,22 @@ FA.storyPaginator = function() {
     };
 
     function displayResults(results) {
-		if (results != '') {
-			var $stories = $(results);
-			$stories.imagesLoaded(function() { // show elements now they're ready
-				$('#' + self.options.resultsWrapper).append($stories).masonry('appended', $stories, true); 
-			});
-		} 
-		self.options.currentPage++;
-		displayTotals();
+        if (results != '') {
+            var $stories = $(results);
+            $stories.imagesLoaded(function() { // show elements now they're ready
+                $('#' + self.options.resultsWrapper).append($stories).masonry('appended', $stories, true); 
+                if (addthis) {
+                    $stories.find('.addthis_toolbox').each(function() {
+                        addthis.toolbox('#' + $(this).attr('id'));
+                    });
+                }
+            });
+        }
+        self.options.currentPage++;
+        displayTotals();
     }
-	
-	function displayTotals() {
+    
+    function displayTotals() {
         var processed = self.options.currentPage * self.options.resultsPerPage;
         if (processed >= self.options.totalResults) {
             processed = self.options.totalResults;
@@ -81,11 +86,11 @@ FA.storyPaginator = function() {
             async: true,
             type: 'GET',
             success: function(res) {
-				var data = res.split('|||');
+                var data = res.split('|||');
                 var results = '';
-				if(data.length == 3) {
-					results = $.trim(data[1]);
-				}
+                if(data.length == 3) {
+                    results = $.trim(data[1]);
+                }
                 displayResults(results);
             },
             error: function() {
