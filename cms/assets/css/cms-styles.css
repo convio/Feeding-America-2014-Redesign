@@ -525,6 +525,13 @@ body.expand-news #recent_news {
   width: 44px;
   height: 44px;
 }
+.partner-learn,
+.partner-donate,
+.partner-logo-1,
+.partner-logo-2  {
+  margin-right:15px;
+}
+
 @media only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
   #food-bank-profile-address-map .left .social_icons li a {
     background-image: url('../images/header_social_sprite2.png');
@@ -2420,6 +2427,9 @@ body.single-display-template-ways-to-give-template #section-boxes .section-box.f
 body.single-display-template-ways-to-give-template #section-boxes .full-width .section-img, #section-boxes .full-width.no-img .section-img {
   display: none;
 }
+body.single-display-template-ways-to-give-template #section-boxes .section-box.full-width .section-text, #section-boxes .section-box.full-width.no-img .section-text { /* fix for fullwidthbody box */
+    position: static;
+}
 body.single-display-template-ways-to-give-template div.fullwidthbody, #section-boxes .section-box.full-width.no-img div.fullwidthbody {
   margin: 40px 40px 25px 40px;
   padding: 10px 0px 0px 375px;
@@ -3609,6 +3619,33 @@ shortcut to end of desktop
     margin: 0px 0px 20px 0px;
     line-height: 20px;
   }
+  .partner-learn,
+  .partner-donate,
+  .partner-volunteer {
+    clear:both;
+    width:100%;
+    text-align:center;
+    margin-bottom:15px;
+  }
+  .partner-logo-1,
+  .partner-logo-2,
+  .partner-logo-3 {
+    display:block;
+    clear:both;
+    margin:0 auto;
+  }
+
+  .partner-list .list-items-container {
+    background:#fff;
+    border:none;
+    padding:0;
+  }
+
+  #body-content .partner-links ul li {
+    margin:0;
+  }
+
+  /* TODO reduce link margin */
 
   /* --------------------------------------------
     Find Your Local Food Bank elements
@@ -4147,3 +4184,12 @@ shortcut to end of desktop
   @media only screen and (min-width: 501px) and (max-width: 609px) {
 
   }
+
+@media print {
+   .national-office-jobs header, 
+   .national-office-jobs .column-2, 
+   .national-office-jobs #footer_promos, 
+   .national-office-jobs footer {
+    display:none !important;
+   }
+}
