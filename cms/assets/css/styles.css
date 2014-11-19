@@ -3023,7 +3023,7 @@ html.ie #homepage-partners-carousel .flex-viewport {
 -------------------------------------------------------------- */
 @media only screen and (min-width: 992px) {
   body.expand-news #recent_news_boxes .recent_news_item div.thumbnail {
-    height: 131px;
+    height: 112px;
     width: 100%;
     overflow: hidden;
   }
@@ -3031,7 +3031,7 @@ html.ie #homepage-partners-carousel .flex-viewport {
     display: block;
     width: auto;
     max-width: none;
-    height: 131px;
+    height: 112px;
   }
   body.expand-news #recent_news_boxes .recent_news_item.three div.thumbnail, body.expand-news #recent_news_boxes .recent_news_item.three img {
     width: 100%;
