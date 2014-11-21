@@ -987,6 +987,8 @@ vertical-align: top;
 }
 #find-fb-search-results .results-box img {
   display: block;
+  max-height: 115px;
+  max-width: 115px;
 }
 #find-fb-search-results .results-box p.name a {
   font-size: 16px;
