@@ -6,13 +6,14 @@
   <![endif]-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <t:value id="meta.keywords">meta.keywords</t:value>
-  <t:value id="meta.description">meta.description</t:value>
+  <meta name="description" content="${description}">
   <meta property="og:title" content="${title}" />
   <meta property="og:site_name" content="Feeding America"/>
   <meta property="og:url" content="${url}" />
   <meta property="og:description" content="${description}" />
   <t:if test="thumb.length>0"><meta property="og:image" content="${thumb.url}" /></t:if>
-  <title>Feeding America - <t:if test="!isNull(seo_title)">${seo_title}</t:if><t:else>${title}</t:else></title>
+  <t:if test="type=='Section Landing Page Box'"><META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW"></t:if><t:else><t:list id="nofollow"><t:if test="name=='yes'"><META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW"></t:if></t:list></t:else>
+  <title><t:if test="!isNull(seo_title)">${seo_title}</t:if><t:else>${title}</t:else></title>
   <t:set value="flushCache" id="6" />
 
   <link rel="stylesheet" type="text/css" href="//cloud.typography.com/6244492/752884/css/fonts.css" />
@@ -23,8 +24,8 @@
 <![endif]-->
 
   <!-- <link rel="stylesheet" type="text/css" href="/assets/webfonts/176374/c0ac71de07afe1eb1.css" /> -->
-  <link rel="stylesheet" href="http://fa.pub30.convio.net/assets/css/styles.css?t=3" type="text/css">
-  <link rel="stylesheet" href="http://fa.pub30.convio.net/assets/css/cms-styles.css?t=1" type="text/css">
+  <link rel="stylesheet" href="http://www.feedingamerica.org/assets/css/styles.css?t=4" type="text/css">
+  <link rel="stylesheet" href="http://www.feedingamerica.org/assets/css/cms-styles.css?t=3" type="text/css">
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -32,7 +33,7 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
   <![endif]-->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-  <script src="http://fa.pub30.convio.net/assets/js/wait.js"></script>
+  <script src="http://www.feedingamerica.org/assets/js/wait.js"></script>
   <!--[if lt IE 8]>
     <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE8.js"></script>
   <![endif]-->
@@ -40,10 +41,10 @@
     <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
   <![endif]-->
   <!--[if lte IE 9]>
-    <script src="http://fa.pub30.convio.net/assets/js/placeholders.js"></script>
+    <script src="http://www.feedingamerica.org/assets/js/placeholders.js"></script>
   <![endif]-->
   <!--[if IE]>
-    <script src="http://fa.pub30.convio.net/assets/js/pointer_events_polyfill.js"></script>
+    <script src="http://www.feedingamerica.org/assets/js/pointer_events_polyfill.js"></script>
     <script>
     $(document).ready(function(){
       PointerEventsPolyfill.initialize({});
@@ -51,8 +52,8 @@
     </script>
   <![endif]-->
 
-  <script src="http://fa.pub30.convio.net/assets/js/modernizr.js"></script>
-  <script src="http://fa.pub30.convio.net/assets/js/cookie.js"></script>
+  <script src="http://www.feedingamerica.org/assets/js/modernizr.js"></script>
+<!-- <script src="http://www.feedingamerica.org/assets/js/cookie.js"></script> -->
 <!-- testing conditional
 type: '${type}'
 templateID: '${templateID}'
@@ -60,7 +61,7 @@ templateID: '${templateID}'
 
   <t:if test="type == 'Section Landing Page / Homepage' && templateID == 'Single Display Template: Homepage'">
     <script type="text/javascript" src="/assets/js/jquery-flexslider-min.js"></script>
-    <link href="http://fa.pub30.convio.net/assets/css/flexslider.css" rel="stylesheet" type="text/css" />
+    <link href="http://www.feedingamerica.org/assets/css/flexslider.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" charset="utf-8">
       $('#homepage_slideshow').waitUntilExists(function() {
         $('#homepage_slideshow').flexslider({
@@ -94,7 +95,7 @@ templateID: '${templateID}'
 </t:if>
 
   <script type="text/javascript" src="/assets/js/jquery-fancybox-pack.js"></script>
-  <link href="http://fa.pub30.convio.net/assets/css/jquery-fancybox.css" rel="stylesheet" type="text/css" />
+  <link href="http://www.feedingamerica.org/assets/css/jquery-fancybox.css" rel="stylesheet" type="text/css" />
   <script type="text/javascript">
     $(document).ready(function() {
       $(".lightbox").fancybox({
@@ -109,12 +110,13 @@ templateID: '${templateID}'
       });
     });
   </script>
-  <script src="http://fa.pub30.convio.net/assets/js/jquery-tinysort.js"></script>
-  <script src="http://fa.pub30.convio.net/assets/js/jquery-equalheights-min.js"></script>
-  <script src="http://fa.pub30.convio.net/assets/js/scripts.js?t=${flushCache}"></script>
+  <script src="http://www.feedingamerica.org/assets/js/jquery-tinysort.js"></script>
+  <script src="http://www.feedingamerica.org/assets/js/jquery-equalheights-min.js"></script>
+  <script src="http://www.feedingamerica.org/assets/js/scripts.js?t=${flushCache}"></script>
 
 <!-- Temp Google Analytics -->
-<t:include id="convio-content-559055327"/>
+<t:include id="convio-content-565764978"/>
+
 </head>
 
 
@@ -149,17 +151,77 @@ templateID: '${templateID}'
   <t:set id="expandnews" value="'expand-news'" />
 </t:if>
 <body class="${pathclasses} ${templatename} ${bodyClass} ${expandnews}">
-<!-- Google Tag manager--> 
-<!-- <t:include id="convio-content-560900222"/> --> 
+<!-- Google Tag manager-->
+<t:include id="convio-content-565806095"/>
 
-<t:if test="user.isanonymous == false">
-  <t:set id="cms_cons_zip" value="crm('[[S1:home_zip]]')" />
-  <t:set id="cms_cons_state" value="crm('[[S1:home_stateprov]]')" />
-  <input type="hidden" id="cms_cons_zip" name="cms_cons_zip" value="${cms_cons_zip}" />
-  <input type="hidden" id="cms_cons_state" name="cms_cons_state" value="${cms_cons_state}" />
-</t:if>
 
  <noscript><div class="container"><p style="color:red;" id="page-title">Please enable Javascript in your browser to experience all of the custom features of our site.</p></div></noscript>
+
+<!-- Lightbox -->
+
+<t:list id="display_lightbox"><t:if test="label=='No'"><t:set id="nolightbox" value="no"/></t:if></t:list>
+
+<t:if test="nolightbox == 'no'"></t:if>
+<t:else>
+<!-- Global --> 
+<t:include id="templatelist-565373806"/>
+<!-- If not Global --> 
+           <t:if test="matches(path,'/')">
+            <t:include id="templatelist-565343064"/>
+            </t:if>
+            <t:else>
+                <t:if test="matches(path,'.*/hunger-in-america/.*')">
+               <t:include id="templatelist-565343442"/>
+                </t:if>
+                <t:else>
+                    <t:if test="matches(path,'.*/our-response/.*')">
+                   <t:include id="templatelist-565343676"/>
+                    </t:if>
+                    <t:else>
+                        <t:if test="matches(path,'.*/take-action/.*')">
+                        <t:include id="templatelist-565343882"/>
+                        </t:if>
+                        <t:else>
+                            <t:if test="matches(path,'.*/z-testing/.*')">
+                            <t:include id="templatelist-565344200"/>
+                             <!-- We got here --> 
+                            </t:if>
+                        </t:else>
+                    </t:else>
+                </t:else>
+            </t:else>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        var lightboxPromo = null;
+        $('.lightbox-promo').each(function() {
+            var box = $(this);
+            if (getCookie('lightbox_promo_' + box.data('id')) != 'dismissed') {
+                lightboxPromo = box;
+                return false; // break
+            }
+        });
+        if (lightboxPromo) {
+            $.fancybox.open(lightboxPromo, {
+                maxWidth    : 680,
+                padding     : 20,
+                scrolling   : 'visible',
+                openEffect  : 'none',
+                closeEffect : 'none',
+                nextEffect  : 'none',
+                prevEffect  : 'none',
+                margin      : [20, 60, 20, 60],
+                afterClose  : function() {
+                    setCookie('lightbox_promo_' + lightboxPromo.data('id'), 'dismissed', 365);
+                }
+            });
+        }
+    });
+</script>
+ <!-- end lightbox --> 
+
+</t:else>
+
 
 
 <t:if test="alert_banner.length > 0">
@@ -182,7 +244,7 @@ templateID: '${templateID}'
 </t:else>
 
   <!-- reus_wrpr_header -->
-    <t:include id="convio-content-520108847" />
+     <t:include id="convio-content-520108847" />
   <!-- /reus_wrpr_header -->
 
   <t:if test="(type == 'Promo' && templateid == 'Sidebar Promo') || title == 'Search Results'">
@@ -221,25 +283,10 @@ templateID: '${templateID}'
   <!-- /reus_wrpr_footer -->
 
 
+<!-- IMPORTANT - TEMPORARILY REMOVED --> 
+ 
 
-  <t:if test="interrupter_promo.length > 0">
-    <div class="hidden-phone">
-      <t:include id="templatelist-541778258" />
-    </div>
-  </t:if>
-  <t:else>
-    <div class="promos hidden-phone">
-      <div class="primary-promos">
-      <!-- global --><t:include id="templatelist-543968626" />
-
-       </div>
-      <div class="secondary-promos">
-        <t:include id="templatelist-541778726" />
-      </div>
-    </div>
-  </t:else>
-
-  <script src="http://fa.pub30.convio.net/assets/js/selector.js"></script>
+  <script src="http://www.feedingamerica.org/assets/js/selector.js"></script>
 
   <!-- Go to www.addthis.com/dashboard to customize your tools -->
   <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-54341d43694e8cbc"></script>

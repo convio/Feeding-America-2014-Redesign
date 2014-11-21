@@ -390,13 +390,15 @@ function returnFAResults(data, searchString, execSearch) {
         };
 
         var finalizeFAResults = function() {
+            var extraSearch = (typeof(execSearch) == "function");
+
             //plot map points
             if (!isSmallScreen()) {
-                plotPoints(FBMapPoints, mapPointInfoBoxes);
+                plotPoints(FBMapPoints, mapPointInfoBoxes, !extraSearch);
             }
 
             //check if we need to execute search
-            if (typeof(execSearch) == "function") {
+            if (extraSearch) {
                 execSearch();
                 return;
             }
@@ -431,7 +433,7 @@ function initFBMap(execSearch) {
     mapAllOrgs(execSearch);
 }
 
-function plotPoints(FBMapPoints, mapPointInfoBoxes) {
+function plotPoints(FBMapPoints, mapPointInfoBoxes, fitBounds) {
     var mapBounds = new google.maps.LatLngBounds();
     var infowindow = new google.maps.InfoWindow();
     $.each(FBMapPoints, function(point, geolocation) {
@@ -485,8 +487,10 @@ function plotPoints(FBMapPoints, mapPointInfoBoxes) {
         }
     });
 
-    FBMap.fitBounds(mapBounds);
-    addListenerBoundsChanged();
+    if (fitBounds) {
+        FBMap.fitBounds(mapBounds);
+        addListenerBoundsChanged();
+    }
 }
 
 function addListenerBoundsChanged() {
