@@ -142,7 +142,7 @@ function searchByZip(zip) {
 
 function searchByState(state) {
     var resultsWrapper = $('#find-fb-search-results'),
-        fullStateName = $('#find-fb-search-form-state option:selected').text();
+        fullStateName = $("#find-fb-search-form-state option[value='" + state + "']").text();
         
     resultsWrapper.find('.results-box[data-orgid]').hide();
     clearFBMap();
@@ -226,9 +226,6 @@ function displayStateOrgs(state, name) {
 }
 
 function centerOnSearch(data, searchString, resultsWrapper, entity) {
-    var currentZoom = 0,
-        headlineString = ' Feeding America Food Bank[s] that serve';
-        
     if (data !== null) {
         if (FBMapMarkers.length) {
             var mapBounds = new google.maps.LatLngBounds();
@@ -254,15 +251,7 @@ function centerOnSearch(data, searchString, resultsWrapper, entity) {
         }
 
         // create the summary box, handle plural/singular result
-        if (data.length === 1) {
-            headlineString = '1' + headlineString.replace('[s]', '') + 's ';
-        } else {
-            headlineString = data.length.toString() + headlineString.replace('[s]', 's') + ' ';
-        }
-
-        $('#fbSearchSummary').html('<div class="headline">' + headlineString + searchString.toString() + '</div>' +
-            '<!--<p class="countstring"></p>-->' +
-            '<p>Feeding America food banks serve large areas and will be able to find a feeding program in your local community.</p>').show();
+        buildFAOrgsSummaryBox(data, resultsWrapper, searchString);
 
         if (FBMapMarkers.length) {
             clearListenerBoundsChanged();
