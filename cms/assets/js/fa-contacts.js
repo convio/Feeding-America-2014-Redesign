@@ -42,7 +42,7 @@ function buildFAOrgContactBox(org) {
             org.FullName + '<br />' +
             org.MediaContact.FullName + ', ' + org.MediaContact.Title + '<br />' +
             org.MediaContact.Phone1 + '<br />' +
-            '<a href="mailto:' + org.MediaContact.Email + '">' + org.MediaContact.Email + '</a><br />' +
+            org.MediaContact.Email + '<br />' +
         '</p>'
     );
 
